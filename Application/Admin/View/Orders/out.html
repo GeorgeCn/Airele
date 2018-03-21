@@ -1,0 +1,67 @@
+<extend name="Layout/index" />
+<block name="breadcrumb-01">
+	<li>
+		<i class="icon-home home-icon"></i>
+		<a href="#">首页</a>
+	</li>
+	<li class="active">订单管理</li>
+</block>
+
+<block name="breadcrumb-02">
+	<h1>
+		订单管理
+		<small>
+			<i class="icon-double-angle-right"></i>
+			 退房
+		</small>
+	</h1>
+</block>
+<block name="main">
+		<table class="table">
+			<tr align='left' bgcolor="#ccc">
+				<th>编号</th>
+				<!-- <th>房东</th> -->
+				<th>房名</th>
+				<th>地址</th>
+				<th>租户</th>
+				<th>金额</th>
+				<th>订单状态</th>
+				<th>支付状态</th>
+				<th>取消状态</th>
+				<th>操作</th>
+				
+			</tr>
+			<if condition="$a eq a">
+				<tr><td colspan="9" style="text-align:center;">所有订单已处理完毕<a href="<{:U('Orders/index')}>">返回订单首页</a></td>
+				</tr>
+			<else />
+				<volist name="list" id="vo">
+					<tr>
+						<td><{$vo.id}></td>
+						<!-- <td><{$vo.gid}></td> -->
+						<td><{$vo.name}></td>
+						<td><{$vo.address}></td>
+						<td><{$vo.nickname}></td>
+						<td><{$vo.amount}></td>
+						<td>
+							<if condition="$vo.status egt 2">
+								已确定
+							<else />
+								<a class="btn btn-success" href="<{:U('Orders/confirm',array('id'=>$vo['id']))}>">确定
+								</a>
+							</if>
+						</td>
+						<td><if condition="$vo.ispay eq 1">未支付<else />已支付</if>
+						</td>
+						<td><if condition="$vo.cancel eq 1">已入住<else />订单取消</if></td>
+						
+					
+						<td>						
+							<a class="btn btn-success" href="<{:U('Orders/checkout',array('id'=>$vo['id']))}>">退房</a>	
+						</td>
+					</tr>
+				</volist>
+			</if>
+			
+		</table>
+</block>

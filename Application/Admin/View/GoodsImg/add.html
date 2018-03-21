@@ -1,0 +1,140 @@
+<extend name="Layout/index" />
+
+<block name="breadcrumb-01">
+	<li>
+		<i class="icon-home home-icon"></i>
+		<a href="#">首页</a>
+	</li>
+	<li class="active">房屋管理</li>
+</block>
+
+<block name="breadcrumb-02">
+	<h1>
+	房屋列表
+		<small>
+			<i class="icon-double-angle-right"></i>
+			房屋信息
+		</small>
+	</h1>
+</block>
+<block name="main">
+<div class="page-content">
+	<div class="row">
+		<div class="col-xs-12">
+		<!-- PAGE CONTENT BEGINS -->
+
+			<div class="alert alert-info">
+				<i class="icon-hand-right"></i>
+				Please note that demo server is not configured to save uploaded files, therefore you may get an error message.
+				<button class="close" data-dismiss="alert">
+					<i class="icon-remove"></i>
+				</button>
+			</div>
+				
+			<div id="dropzone" >
+				<form action="<{:U('GoodsImg/insert')}>" method="post"  style="padding:40px" enctype='multipart/form-data'>
+				
+						<div class="col-sm-12" style="margin-bottom:20px;padding:20px">
+							<span class="col-xs-12 col-sm-3">
+								<span class="middle red">airbnb去旅行,去生活&nbsp;房屋ID</span>
+							</span>
+							<input type="text" name="gid" id="form-field-2"  class="col-xs-7 col-sm-2" value="<?= empty($gid)?'请填写房屋ID':$gid?>"/>
+						</div>
+						
+						<input type="file" name="img" id="user_pic_input" />
+						<div class="col-md-offset-3 col-md-9">
+							<button class="h4 btn btn-info" type="submit">
+								<i class="icon-ok bigger-110"></i>
+								提交
+							</button>
+
+							&nbsp; &nbsp; &nbsp;
+							<button class="h4 btn" type="reset">
+								<i class="icon-undo bigger-110"></i>
+								重置
+							</button>
+						</div>
+							
+						
+				</form>
+			<!-- 	<form action="<{:U('GoodsImg/insert')}>" method='post' enctype='multipart/form-data'>
+		<input type="hidden" name='gid' value='<?= $gid?>'>
+		<input type="file" name="img">
+		<input type="submit" value='上传图片'>
+				</form> -->
+			</div><!-- PAGE CONTENT ENDS -->
+		</div><!-- /.col -->
+	</div><!-- /.row -->		
+</div><!-- /.main-container-inner -->
+
+		<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+			<i class="icon-double-angle-up icon-only bigger-110"></i>
+		</a>
+		<!-- basic scripts -->
+
+		<!--[if !IE]> -->
+
+
+		<!-- <![endif]-->
+
+		<!--[if IE]>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<![endif]-->
+
+		<!--[if !IE]> -->
+
+		<script type="text/javascript">
+			window.jQuery || document.write("<script src='__PUBLIC__/assets/js/jquery-2.0.3.min.js'>"+"<"+"/script>");
+		</script>
+
+		<!-- <![endif]-->
+
+		<!--[if IE]>
+<script type="text/javascript">
+ window.jQuery || document.write("<script src='__PUBLIC__/assets/js/jquery-1.10.2.min.js'>"+"<"+"/script>");
+</script>
+<![endif]-->
+
+		<script type="text/javascript">
+			if("ontouchend" in document) document.write("<script src='__PUBLIC__/assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+		</script>
+		<script src="__PUBLIC__/assets/js/bootstrap.min.js"></script>
+		<script src="__PUBLIC__/assets/js/typeahead-bs2.min.js"></script>
+
+		<!-- page specific plugin scripts -->
+
+		<script src="__PUBLIC__/assets/js/dropzone.min.js"></script>
+
+		<!-- ace scripts -->
+
+		<script src="__PUBLIC__/assets/js/ace-elements.min.js"></script>
+		<script src="__PUBLIC__/assets/js/ace.min.js"></script>
+
+		<!-- inline scripts related to this page -->
+
+		<script type="text/javascript">
+			jQuery(function($){
+			
+			try {
+			  $(".dropzone").dropzone({
+			    paramName: "file", // The name that will be used to transfer the file
+			    maxFilesize: 0.5, // MB
+			  
+				addRemoveLinks : true,
+				dictDefaultMessage :
+				'<span class="bigger-150 bolder"><i class="icon-caret-right red"></i> Drop files</span> to upload \
+				<span class="smaller-80 grey">(or click)</span> <br /> \
+				<i class="upload-icon icon-cloud-upload blue icon-3x"></i>'
+			,
+				dictResponseError: 'Error while uploading file!',
+				
+				//change the previewTemplate to use Bootstrap progress bars
+				previewTemplate: "<div class=\"dz-preview dz-file-preview\">\n  <div class=\"dz-details\">\n    <div class=\"dz-filename\"><span data-dz-name></span></div>\n    <div class=\"dz-size\" data-dz-size></div>\n    <img data-dz-thumbnail />\n  </div>\n  <div class=\"progress progress-small progress-striped active\"><div class=\"progress-bar progress-bar-success\" data-dz-uploadprogress></div></div>\n  <div class=\"dz-success-mark\"><span></span></div>\n  <div class=\"dz-error-mark\"><span></span></div>\n  <div class=\"dz-error-message\"><span data-dz-errormessage></span></div>\n</div>"
+			  });
+			} catch(e) {
+			  alert('Dropzone.js does not support older browsers!');
+			}
+			
+			});
+		</script>	
+</block>

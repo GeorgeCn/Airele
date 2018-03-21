@@ -1,0 +1,98 @@
+<extend name="Layout/index" />
+
+	<block name="breadcrumb-01">
+		<li>
+			<i class="icon-home home-icon"></i>
+			<a href="#">首页</a>
+		</li>
+		<li class="active">房屋管理</li>
+	</block>
+
+	<block name="breadcrumb-02">
+		<h1>
+		房屋列表
+			<small>
+				<i class="icon-double-angle-right"></i>
+				房屋信息
+			</small>
+		</h1>
+	</block>
+	<block name="goodsindex.css">
+		<link rel="stylesheet" href="__PUBLIC__/Css/goodsindex.css">	
+	</block>
+	<block name="main">	
+		<h5 class="bigger lighter red text-center">
+			<i class="icon-table"></i>
+		表格 & 信息
+		</h5>
+		<div id="search" style="margin:20px auto">
+			<form action="<{:U('Goods/search')}>" method='get' class="h5" style="font-weight:30px">
+			Category Name : <input type="text" name="id" class='search' placeholder="请输入: 房屋编号/分类编号">
+							<input class="button" type="submit" value="Search" >
+			</form>
+		</div>
+
+
+		<table class="table table-striped table-bordered table-hover">
+			<thead class="thin-border-bottom">
+				<tr>
+					<th class="hidden-480 text-center">
+						<i class="icon-table"></i>
+						&nbsp;房屋编号
+					</th>
+					<th class="hidden-480 text-center">
+						<i class="icon-user"></i>
+						&nbsp;入住人数
+					</th>
+					<th class="hidden-480 text-center">
+						<i class="icon-tablet"></i>
+						&nbsp;床位数量
+					</th>
+					<th class="hidden-480 text-center">
+						<i class="icon-bulidings"></i>
+						&nbsp;厕所数量
+					</th>
+					<th class="hidden-480 text-center">
+						<i class="icon-circle-blank"></i>
+						&nbsp;房屋描述
+					</th>
+					<th class="hidden-480 text-center">
+						<i class="icon-share-alt"></i>
+						&nbsp;查看封面
+					</th>
+					<th class="hidden-480 text-center">
+						&nbsp;添加图片
+						<i class="icon-edit"></i>
+					</th>
+					<th class="hidden-480 text-center">
+						<i class="icon-h-sign"></i>
+						&nbsp;上架
+					</th>	
+					</tr>
+			</thead>
+			<tbody>
+				<volist name="data" id="vo">
+					<tr>
+						<td class="hidden-480 text-center"><{$vo.id}></td>
+						<td class="hidden-480 text-center"><{$vo.persons}></td>
+						<td class="hidden-480 text-center"><{$vo.beds}></td>
+						<td class="hidden-480 text-center"><{$vo.toilets}></td>
+						<td class="hidden-480 text-center"><{$vo.desc}></td>
+						<td class="hidden-480 text-center">
+							<a href="<{:U('GoodsImg/index',array('gid'=>$vo['id']))}>" class="btn btn-common">查看图片</a>
+						</td>
+						<td class="hidden-480 text-center">
+							<a href="<{:U('GoodsImg/add',array('gid'=>$vo['id']))}>" class="btn btn-common">添加图片</a>
+						</td>
+						<td class="hidden-480 text-center">
+							<if condition="$vo.up eq 0">
+								<span class="label label-inverse text-center"><a href="<{:U('up',array('id'=>$vo['id'],'up'=>$vo['up']))}>">上架</a></span>
+							<elseif condition="$vo.up eq 1" />
+								<span class="label label-warning"><a href="<{:U('up',array('id'=>$vo['id'],'up'=>$vo['up']))}>">下架</a></span>
+							</if>
+						</td>
+					</tr>
+				</volist>
+			</tbody>
+		</table>
+	</block>

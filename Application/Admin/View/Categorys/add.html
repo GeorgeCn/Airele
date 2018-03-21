@@ -1,0 +1,39 @@
+<extend name="Layout/index" />
+
+<block name="breadcrumb-01">
+	<li>
+		<i class="icon-home home-icon"></i>
+		<a href="#">首页</a>
+	</li>
+	<li class="active">分类管理</li>
+</block>
+
+<block name="breadcrumb-02">
+	<h1>
+		分类管理
+		<small>
+			<i class="icon-double-angle-right"></i>
+			 分类添加
+		</small>
+	</h1>
+</block>
+
+<block name='main'>
+
+	<form action="<{:U('Categorys/doadd')}>" method="post" class='col-md-4'>
+		
+		<div class="form-group">
+		<label for="#" class="">添加分类名称：</label>
+		  <div class="input-group">
+		  	 <input type="text" name="name" class="form-control" aria-label="Amount (to the nearest dollar)">
+			  
+			  <span class="input-group-btn">
+			  	<button class="btn btn-default btn-sm">添加</button>
+			  </span>
+			  
+		  </div>
+		</div>
+		 <input type="hidden" name="pid" value="<present name="Think.get.pid"><{$Think.get.pid}><else />0</present>">
+
+	</form>
+	</block>

@@ -1,0 +1,65 @@
+<extend name="Layout/index" />
+<block name="breadcrumb-01">
+	<li>
+		<i class="icon-home home-icon"></i>
+		<a href="#">首页</a>
+	</li>
+	<li class="active">热门城市管理</li>
+</block>
+
+<block name="breadcrumb-02">
+	<h1>
+		热门城市管理
+		<small>
+			<i class="icon-double-angle-right"></i>
+			 修改信息
+		</small>
+	</h1>
+</block>
+<block name="main">
+	<!-- <{:var_dump($data)}> -->
+	
+	<div class="row">
+		<div class="col-md-12">
+			<form action="<{:U('City/csave')}>" method='post' class="form-horizontal" enctype="multipart/form-data">
+
+				<div class="form-group">
+					<label class="h4 col-lg-3 control-label no-padding-right" for="form-field-5">城市</label>
+
+					<div class="col-sm-9">
+						<select id="pro" name="cid">
+							<volist name="list" id="v">
+							<if condition="$data['cid'] == $v['id']">
+								<option value="<{$v.id}>" selected><{$v.name}></option>
+							
+							</if>
+							<if condition="$data['cid'] != $v['id']">
+								<option value="<{$v.id}>"><{$v.name}></option>
+							</if>
+							</volist>
+						</select>
+				
+					</div>
+				</div>
+
+
+				<div class="form-group">
+					<label class="h4 col-lg-3 control-label no-padding-right">图片<span class="required">*</span></label>
+					<div class="col-sm-9">
+						<img src="__PUBLIC__/uploads/<{$data.image}>" alt="" style='width:150px;height:150px;border:2px solid #ccc'>
+						<input type="file" name='image'>
+					</div>
+				</div>
+
+
+				<div class="form-group">
+				    <div class="col-sm-offset-3 col-sm-4">
+				      <input type="hidden" name="id" value="<{$data.id}>">
+				      <button type="submit" class="btn btn-default">修 改</button>
+				    </div>
+				</div>
+		
+			</form>
+		</div>
+	</div>
+</block>

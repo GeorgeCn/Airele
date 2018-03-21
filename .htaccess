@@ -4,8 +4,5 @@
 
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteRule ^(.*)$ admin.php/$1 [QSA,PT,L]
-Order Allow,Deny
-Allow from all
-Deny from 100.97
+  RewriteRule ^(.*)$ index.php/$1 [QSA,PT,L]
 </IfModule>

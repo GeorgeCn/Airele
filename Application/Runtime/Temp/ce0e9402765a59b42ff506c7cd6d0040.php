@@ -1,3 +1,0 @@
-<?php
-//000000003600a:2:{i:0;a:7:{s:2:"id";s:2:"55";s:4:"name";s:12:"分期查询";s:3:"url";s:24:"Staging/stagingList.html";s:9:"parent_id";s:2:"68";s:11:"create_time";s:10:"1442648596";s:13:"record_status";s:1:"1";s:8:"index_no";s:1:"2";}i:1;a:7:{s:2:"id";s:2:"69";s:4:"name";s:12:"放款管理";s:3:"url";s:24:"LoanManage/loanlist.html";s:9:"parent_id";s:2:"68";s:11:"create_time";s:10:"1446012004";s:13:"record_status";s:1:"1";s:8:"index_no";s:1:"2";}}
-?>

@@ -1,0 +1,254 @@
+<extend name="Layout/index" />
+
+<block name="breadcrumb-01">
+	<li>
+		<i class="icon-home home-icon"></i>
+		<a href="#">首页</a>
+	</li>
+	<li class="active">房屋管理</li>
+</block>
+
+<block name="breadcrumb-02">
+	<h1>
+		房屋添加
+		<small>
+			<i class="icon-double-angle-right"></i>
+			 房屋信息
+		</small>
+	</h1>
+</block>
+
+<block name="richtext">
+	<link rel="stylesheet" href="__PUBLIC__/Js/kind/themes/default/default.css">
+	<script src="__PUBLIC__/Js/kind/kindeditor-min.js"></script>
+	<script src="__PUBLIC__/Js/kind/lang/zh_CN.js"></script>
+	<script>
+			var editor;
+			KindEditor.ready(function(K) {
+				// textarea标签的name名
+				editor = K.create('textarea[name="desc"]', {
+					resizeType : 1,
+					allowPreviewEmoticons : false,
+					allowImageUpload : false,
+					items : [
+						'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
+						'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
+						'insertunorderedlist', '|', 'emoticons', 'image', 'link']
+				});
+
+				// 富文本编辑内容 编辑
+				// editor.html(' <?=  $v['desc']?>  ');
+			});
+	</script>
+</block>
+<block name="include">
+	<script src="__PUBLIC__/js/jquery.min.js"></script>
+	<script src="__PUBLIC__/assets/js/ace-extra.min.js"></script>
+</block>
+	
+
+
+<block name="main">
+	<div class="page-content">
+	<div class="row">
+		<div class="col-xs-12">
+			<!-- PAGE CONTENT BEGINS -->
+
+			<form action="<{:U('Goods/insert')}>" method="post"class="form-horizontal" role="form">
+				<div class="form-group">
+					<label class="h4 col-sm-3 control-label no-padding-right" for="form-field-1"> 房屋标题</label>
+
+					<div class="col-sm-9">
+						<input type="text" name="name" id="form-field-1" placeholder="房屋标题" class="col-xs-10 col-sm-5" />
+					</div>
+				</div>
+
+				<div class="space-4"></div>
+
+				<div class="form-group">
+					<label class="h4 col-sm-3 control-label no-padding-right" for="form-field-2"> 房屋类型 </label>
+
+					<div class="col-sm-9">
+						<input type="text" name="type" id="form-field-2" placeholder="(公寓/独立房间/合住房间)" class="col-xs-10 col-sm-5" />
+						<span class="help-inline col-xs-12 col-sm-7">
+							<span class="middle red">airbnb 去旅行，去生活</span>
+						</span>
+					</div>
+				</div>
+
+				<div class="space-4"></div>
+				<div class="form-group">
+					<label class="h4 col-lg-3 control-label no-padding-right" for="form-field-5">区域</label>
+
+					<div class="col-sm-9">
+						<select id="pro" name="province"></select>
+					    <select id="city" name="city"></select>
+					    <select id="area" name="town"></select>
+					</div>
+				</div>
+			    
+			    
+			  <script>
+			    //获取省份信息
+			    $.ajax({
+			        type:'get',
+			        url:"<{:U('Goods/address')}>",
+			        success:function(data){
+			            //先清空原先的数据
+			            //遍历省份数据
+			            for (var i = 0; i < data.length; i++) {
+			                $('<option value="'+data[i].id+'">'+data[i].name+'</option>').appendTo('#pro');
+			            }
+			        },
+			        dataType:'json',
+			        async:false,//同步!!!!!!
+			    })
+
+
+			    //绑定事件
+			    $('#pro,#city,#area').change(function(){
+			        //获取当前的vale值
+			        var pid = $(this).val();
+			        
+			        //一触发change事件,就清空后面所有的数据
+			        $(this).nextAll('select').show().empty();
+			        //保留$(this)变量
+			        var _this = $(this);
+			        // console.log($(this));
+
+			        //请求下一级数据
+			        $.ajax({
+			            type:'get',
+			            url: "<{:U('Goods/address')}>",
+			            data:"pid="+pid,
+			            success:function(data){
+			                //如果下一级没数据,就隐藏后面的下拉框
+			                if (!data) {
+			                    _this.nextAll('select').hide();
+			                    return;
+			                };
+			                // console.log(data);
+			                // console.log($(this).constructor);
+			                //填充下一级的数据
+			                for (var i = 0; i < data.length; i++) {
+			                    $('<option value="'+data[i].id+'">'+data[i].name+'</option>').appendTo(_this.next('select'));
+			                }
+			                //自动触发后面的select的change事件
+			                _this.next('select').trigger('change');
+			            },
+			            dataType:'json',
+			        })
+			    })
+
+			    //自动加载省份的change事件
+			    $('#pro').trigger('change');
+
+			    </script>
+				<div class="form-group">
+					<label class="h4 col-sm-3 control-label no-padding-right" for="form-input-readonly"> 房屋地址 </label>
+
+					<div class="col-sm-9">
+						<input  type="text" name="address" class="col-xs-10 col-sm-5" id="form-input-readonly"  placeholder="房屋地址"/>
+						<span class="help-inline col-xs-12 col-sm-7">
+							
+						</span>
+					</div>
+				</div>
+
+				<div class="space-4"></div>
+
+				<div class="form-group">
+					<label class="h4 col-md-3 control-label no-padding-right" for="form-field-4">租房价格</label>
+
+					<div class="col-sm-9">
+						<input class="input-sm" type="text" name="price" id="form-field-4" placeholder="价格/月" />
+						<div class="space-2"></div>
+
+						<div class="help-block" id="input-size-slider"></div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="h4 col-lg-3 control-label no-padding-right" for="form-field-5">是否热销 </label>
+
+					<div class="col-sm-9">
+						<div class="clearfix">
+							<input class="ace" type="checkbox" name="hot" value="1" id="id-disable-check" />
+								<span class="lbl"> 是</span>
+						</div>
+
+						<div class="space-2"></div>
+
+						<div class="help-block" id="input-span-slider"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="h4 col-sm-3 control-label no-padding-right">租赁时间</label>
+
+					<div class="col-sm-9">
+						<span class="input-icon">
+							<input type="text" name="months"id="form-field-icon-1" placeholder="数量/月"/>
+							<i class="icon-leaf blue"></i>
+						</span>
+
+						<!-- <span class="input-icon input-icon-right">
+							<input type="text" id="form-field-icon-2" />
+							<i class="icon-leaf green"></i>
+						</span> -->
+					</div>
+				</div>
+
+				<div class="space-4"></div>
+
+				<div class="form-group">
+					<label class="h4 col-sm-3 control-label no-padding-right" for="form-field-6">软床数量</label>
+					
+					<div class="col-sm-9">
+						<input type="text" name="beds" id="form-field-tags"  placeholder="数量/张" />
+						<label class="middle">
+								<input class="ace" type="checkbox" id="id-disable-check" />
+								<span class="lbl"> 加长</span>
+						</label>
+					</div>
+				</div>
+
+				<div class="space-4"></div>
+
+				<div class="form-group">
+					<label class="h4 col-sm-3 control-label no-padding-right" for="form-field-tags">厕所数量</label>
+
+					<div class="col-sm-9">
+						<input type="text" name="toilets" id="form-field-tags"  placeholder="数量/间" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="h4 col-sm-3 control-label no-padding-right" for="form-field-tags">容纳人数</label>
+
+					<div class="col-sm-9">
+						<input type="text" name="persons" id="form-field-tags"  placeholder="数量" />
+					</div>
+				</div>
+				<div style="margin-left:20px" class='h4'>描述: <textarea name="desc" ></textarea></div>
+
+				
+					
+				<div class="clearfix form-actions">
+					<div class="col-md-offset-3 col-md-9">
+						<button class="h4 btn btn-info" type="submit">
+							<i class="icon-ok bigger-110"></i>
+							提交
+						</button>
+
+						&nbsp; &nbsp; &nbsp;
+						<button class="h4 btn" type="reset">
+							<i class="icon-undo bigger-110"></i>
+							重置
+						</button>
+					</div>
+				</div>
+		</form>
+				<div class="hr hr-24"></div>
+
+</block>
+
+	

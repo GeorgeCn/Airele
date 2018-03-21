@@ -1,0 +1,869 @@
+[ 2016-11-06T17:05:00+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `category` WHERE ( pid=0 )  [ RunTime:0.0000s ]
+
+[ 2016-11-06T17:05:00+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html?pid=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `category` WHERE ( pid=1 )  [ RunTime:0.0010s ]
+
+[ 2016-11-06T17:05:03+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0190s ]
+SQL: SELECT * FROM `category` WHERE ( pid=0 )  [ RunTime:0.0010s ]
+
+[ 2016-11-06T17:05:03+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html?pid=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `category` WHERE ( pid=1 )  [ RunTime:0.0000s ]
+
+[ 2016-11-06T17:05:06+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `category` WHERE ( pid=0 )  [ RunTime:0.0000s ]
+
+[ 2016-11-06T17:05:06+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html?pid=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0430s ]
+SQL: SELECT * FROM `category` WHERE ( pid=1 )  [ RunTime:0.0010s ]
+
+[ 2016-11-06T17:05:08+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html?pid=2
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0210s ]
+SQL: SELECT * FROM `category` WHERE ( pid=2 )  [ RunTime:0.0000s ]
+
+[ 2016-11-06T17:05:09+08:00 ] ::1 /RealHome/index.php/Home/Search/search.html
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+
+[ 2016-11-06T17:05:19+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `category` WHERE ( pid=0 )  [ RunTime:0.0010s ]
+
+[ 2016-11-06T17:05:19+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html?pid=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `category` WHERE ( pid=1 )  [ RunTime:0.0300s ]
+
+[ 2016-11-06T17:05:21+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `category` WHERE ( pid=0 )  [ RunTime:0.0020s ]
+
+[ 2016-11-06T17:05:21+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html?pid=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `category` WHERE ( pid=1 )  [ RunTime:0.0000s ]
+
+[ 2016-11-06T17:05:44+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0180s ]
+SQL: SELECT * FROM `category` WHERE ( pid=0 )  [ RunTime:0.0010s ]
+
+[ 2016-11-06T17:05:44+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html?pid=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0180s ]
+SQL: SELECT * FROM `category` WHERE ( pid=1 )  [ RunTime:0.0010s ]
+
+[ 2016-11-06T17:05:47+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html?pid=2
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003001s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `category` WHERE ( pid=2 )  [ RunTime:0.0000s ]
+
+[ 2016-11-06T17:05:48+08:00 ] ::1 /RealHome/index.php/Home/Search/search.html
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+
+[ 2016-11-06T17:06:49+08:00 ] ::1 /RealHome/index.php/Home/Search/search.html
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+
+[ 2016-11-06T17:06:50+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0280s ]
+SQL: SELECT * FROM `category` WHERE ( pid=0 )  [ RunTime:0.0050s ]
+
+[ 2016-11-06T17:06:51+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html?pid=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0140s ]
+SQL: SELECT * FROM `category` WHERE ( pid=1 )  [ RunTime:0.0010s ]
+
+[ 2016-11-06T17:06:52+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `category` WHERE ( pid=0 )  [ RunTime:0.0010s ]
+
+[ 2016-11-06T17:06:53+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html?pid=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.2370s ]
+SQL: SELECT * FROM `category` WHERE ( pid=1 )  [ RunTime:0.0010s ]
+
+[ 2016-11-06T17:06:56+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html?pid=2
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `category` WHERE ( pid=2 )  [ RunTime:0.0000s ]
+
+[ 2016-11-06T17:06:57+08:00 ] ::1 /RealHome/index.php/Home/Search/search.html
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+
+[ 2016-11-06T17:07:36+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `category` WHERE ( pid=0 )  [ RunTime:0.0020s ]
+
+[ 2016-11-06T17:07:36+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html?pid=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `category` WHERE ( pid=1 )  [ RunTime:0.0010s ]
+
+[ 2016-11-06T17:07:40+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `category` WHERE ( pid=0 )  [ RunTime:0.0160s ]
+
+[ 2016-11-06T17:07:40+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html?pid=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `category` WHERE ( pid=1 )  [ RunTime:0.0000s ]
+
+[ 2016-11-06T17:07:47+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html?pid=2
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007001s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0200s ]
+SQL: SELECT * FROM `category` WHERE ( pid=2 )  [ RunTime:0.0010s ]
+
+[ 2016-11-06T17:07:48+08:00 ] ::1 /RealHome/index.php/Home/Search/search.html
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+
+[ 2016-11-06T17:08:56+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `category` WHERE ( pid=0 )  [ RunTime:0.0000s ]
+
+[ 2016-11-06T17:08:57+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html?pid=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `category` WHERE ( pid=1 )  [ RunTime:0.0010s ]
+
+[ 2016-11-06T17:08:58+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html?pid=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `category` WHERE ( pid=4 )  [ RunTime:0.0010s ]
+
+[ 2016-11-06T17:09:00+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `category` WHERE ( pid=0 )  [ RunTime:0.0010s ]
+
+[ 2016-11-06T17:09:00+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html?pid=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `category` WHERE ( pid=1 )  [ RunTime:0.0010s ]
+
+[ 2016-11-06T17:09:03+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html?pid=3
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `category` WHERE ( pid=3 )  [ RunTime:0.0010s ]
+
+[ 2016-11-06T17:09:03+08:00 ] ::1 /RealHome/index.php/Home/Search/search.html
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+
+[ 2016-11-06T17:09:08+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `category` WHERE ( pid=0 )  [ RunTime:0.0010s ]
+
+[ 2016-11-06T17:09:08+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html?pid=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `category` WHERE ( pid=1 )  [ RunTime:0.0010s ]
+
+[ 2016-11-06T17:09:11+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html?pid=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005001s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `category` WHERE ( pid=4 )  [ RunTime:0.0000s ]
+
+[ 2016-11-06T17:09:13+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html?pid=2
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `category` WHERE ( pid=2 )  [ RunTime:0.0010s ]
+
+[ 2016-11-06T17:09:17+08:00 ] ::1 /RealHome/index.php/Home/Search/search.html
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+
+[ 2016-11-06T17:09:19+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0280s ]
+SQL: SELECT * FROM `category` WHERE ( pid=0 )  [ RunTime:0.0000s ]
+
+[ 2016-11-06T17:09:19+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html?pid=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0320s ]
+SQL: SELECT * FROM `category` WHERE ( pid=1 )  [ RunTime:0.0000s ]
+
+[ 2016-11-06T17:09:22+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html?pid=3
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `category` WHERE ( pid=3 )  [ RunTime:0.0010s ]
+
+[ 2016-11-06T17:09:23+08:00 ] ::1 /RealHome/index.php/Home/Search/search.html
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+
+[ 2016-11-06T17:09:46+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0160s ]
+SQL: SELECT * FROM `category` WHERE ( pid=0 )  [ RunTime:0.0010s ]
+
+[ 2016-11-06T17:09:46+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html?pid=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `category` WHERE ( pid=1 )  [ RunTime:0.0020s ]
+
+[ 2016-11-06T17:09:49+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html?pid=2
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003001s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `category` WHERE ( pid=2 )  [ RunTime:0.0000s ]
+
+[ 2016-11-06T17:11:02+08:00 ] ::1 /RealHome/index.php/Home/Orders/css/im.css
+ERR: 非法操作:css
+
+[ 2016-11-06T17:11:02+08:00 ] ::1 /RealHome/index.php/Home/Orders/js/staticbutton.js
+ERR: 非法操作:js
+
+[ 2016-11-06T17:11:03+08:00 ] ::1 /RealHome/index.php/Home/Orders/css/im.css
+ERR: 非法操作:css
+
+[ 2016-11-06T17:11:03+08:00 ] ::1 /RealHome/index.php/Home/Orders/js/staticbutton.js
+ERR: 非法操作:js
+
+[ 2016-11-06T17:11:17+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `category` WHERE ( pid=0 )  [ RunTime:0.0020s ]
+
+[ 2016-11-06T17:11:17+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html?pid=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `category` WHERE ( pid=1 )  [ RunTime:0.0010s ]
+
+[ 2016-11-06T17:11:44+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `category` WHERE ( pid=0 )  [ RunTime:0.0000s ]
+
+[ 2016-11-06T17:11:44+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html?pid=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `category` WHERE ( pid=1 )  [ RunTime:0.0000s ]
+
+[ 2016-11-06T17:11:47+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `category` WHERE ( pid=0 )  [ RunTime:0.0000s ]
+
+[ 2016-11-06T17:11:47+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html?pid=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `category` WHERE ( pid=1 )  [ RunTime:0.0010s ]
+
+[ 2016-11-06T17:13:59+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0150s ]
+SQL: SELECT * FROM `category` WHERE ( pid=0 )  [ RunTime:0.0000s ]
+
+[ 2016-11-06T17:13:59+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html?pid=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `category` WHERE ( pid=1 )  [ RunTime:0.0010s ]
+
+[ 2016-11-06T17:14:14+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `category` WHERE ( pid=0 )  [ RunTime:0.0010s ]
+
+[ 2016-11-06T17:14:15+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html?pid=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `category` WHERE ( pid=1 )  [ RunTime:0.0020s ]
+
+[ 2016-11-06T17:14:52+08:00 ] ::1 /RealHome/index.php/Home/Orders/css/im.css
+ERR: 非法操作:css
+
+[ 2016-11-06T17:14:52+08:00 ] ::1 /RealHome/index.php/Home/Orders/js/staticbutton.js
+ERR: 非法操作:js
+
+[ 2016-11-06T17:14:52+08:00 ] ::1 /RealHome/index.php/Home/Orders/js/staticbutton.js
+ERR: 非法操作:js
+
+[ 2016-11-06T17:14:52+08:00 ] ::1 /RealHome/index.php/Home/Orders/css/im.css
+ERR: 非法操作:css
+
+[ 2016-11-06T17:15:58+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `category` WHERE ( pid=0 )  [ RunTime:0.0010s ]
+
+[ 2016-11-06T17:15:59+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html?pid=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `category` WHERE ( pid=1 )  [ RunTime:0.0010s ]
+
+[ 2016-11-06T17:16:00+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `category` WHERE ( pid=0 )  [ RunTime:0.0010s ]
+
+[ 2016-11-06T17:16:01+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html?pid=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `category` WHERE ( pid=1 )  [ RunTime:0.0010s ]
+
+[ 2016-11-06T17:16:29+08:00 ] ::1 /RealHome/index.php/Home/Orders/css/im.css
+ERR: 非法操作:css
+
+[ 2016-11-06T17:16:29+08:00 ] ::1 /RealHome/index.php/Home/Orders/js/staticbutton.js
+ERR: 非法操作:js
+
+[ 2016-11-06T17:16:29+08:00 ] ::1 /RealHome/index.php/Home/Orders/css/im.css
+ERR: 非法操作:css
+
+[ 2016-11-06T17:16:29+08:00 ] ::1 /RealHome/index.php/Home/Orders/js/staticbutton.js
+ERR: 非法操作:js
+
+[ 2016-11-06T17:16:36+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `category` WHERE ( pid=0 )  [ RunTime:0.0010s ]
+
+[ 2016-11-06T17:16:36+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html?pid=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006001s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `category` WHERE ( pid=1 )  [ RunTime:0.0010s ]
+
+[ 2016-11-06T17:16:42+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `category` WHERE ( pid=0 )  [ RunTime:0.0010s ]
+
+[ 2016-11-06T17:16:42+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html?pid=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `category` WHERE ( pid=1 )  [ RunTime:0.0000s ]
+
+[ 2016-11-06T17:17:41+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `category` WHERE ( pid=0 )  [ RunTime:0.0010s ]
+
+[ 2016-11-06T17:17:41+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html?pid=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004001s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `category` WHERE ( pid=1 )  [ RunTime:0.0010s ]
+
+[ 2016-11-06T17:17:44+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `category` WHERE ( pid=0 )  [ RunTime:0.0010s ]
+
+[ 2016-11-06T17:17:44+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html?pid=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `category` WHERE ( pid=1 )  [ RunTime:0.0010s ]
+
+[ 2016-11-06T17:28:39+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0220s ]
+SQL: SELECT * FROM `category` WHERE ( pid=0 )  [ RunTime:0.0010s ]
+
+[ 2016-11-06T17:28:39+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html?pid=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0120s ]
+SQL: SELECT * FROM `category` WHERE ( pid=1 )  [ RunTime:0.0010s ]
+
+[ 2016-11-06T17:28:42+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0220s ]
+SQL: SELECT * FROM `category` WHERE ( pid=0 )  [ RunTime:0.0010s ]
+
+[ 2016-11-06T17:28:42+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html?pid=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `category` WHERE ( pid=1 )  [ RunTime:0.0000s ]
+
+[ 2016-11-06T17:28:46+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `category` WHERE ( pid=0 )  [ RunTime:0.0000s ]
+
+[ 2016-11-06T17:28:46+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html?pid=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0290s ]
+SQL: SELECT * FROM `category` WHERE ( pid=1 )  [ RunTime:0.0000s ]
+
+[ 2016-11-06T17:28:46+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html?pid=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `category` WHERE ( pid=1 )  [ RunTime:0.0000s ]
+
+[ 2016-11-06T17:28:49+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `category` WHERE ( pid=0 )  [ RunTime:0.0020s ]
+
+[ 2016-11-06T17:28:49+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html?pid=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `category` WHERE ( pid=1 )  [ RunTime:0.0010s ]
+
+[ 2016-11-06T17:28:54+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0260s ]
+SQL: SELECT * FROM `category` WHERE ( pid=0 )  [ RunTime:0.0010s ]
+
+[ 2016-11-06T17:28:54+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html?pid=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `category` WHERE ( pid=1 )  [ RunTime:0.0010s ]
+
+[ 2016-11-06T17:28:57+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `category` WHERE ( pid=0 )  [ RunTime:0.0000s ]
+
+[ 2016-11-06T17:28:57+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html?pid=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `category` WHERE ( pid=1 )  [ RunTime:0.0190s ]
+
+[ 2016-11-06T17:29:07+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html?pid=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `category` WHERE ( pid=4 )  [ RunTime:0.0000s ]
+
+[ 2016-11-06T17:29:08+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html?pid=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `category` WHERE ( pid=1 )  [ RunTime:0.0000s ]
+
+[ 2016-11-06T17:29:08+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html?pid=2
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `category` WHERE ( pid=2 )  [ RunTime:0.0010s ]
+
+[ 2016-11-06T17:29:10+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `category` WHERE ( pid=0 )  [ RunTime:0.0020s ]
+
+[ 2016-11-06T17:29:10+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html?pid=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `category` WHERE ( pid=1 )  [ RunTime:0.0000s ]
+
+[ 2016-11-06T17:29:14+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html?pid=2
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.007000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `category` WHERE ( pid=2 )  [ RunTime:0.0000s ]
+
+[ 2016-11-06T17:29:16+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `category` WHERE ( pid=0 )  [ RunTime:0.0000s ]
+
+[ 2016-11-06T17:29:16+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html?pid=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `category` WHERE ( pid=1 )  [ RunTime:0.0050s ]
+
+[ 2016-11-06T17:29:26+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `category` WHERE ( pid=0 )  [ RunTime:0.0010s ]
+
+[ 2016-11-06T17:29:26+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html?pid=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `category` WHERE ( pid=1 )  [ RunTime:0.0010s ]
+
+[ 2016-11-06T17:29:33+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `category` WHERE ( pid=0 )  [ RunTime:0.0000s ]
+
+[ 2016-11-06T17:29:33+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html?pid=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `category` WHERE ( pid=1 )  [ RunTime:0.0010s ]
+
+[ 2016-11-06T17:30:51+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `category` WHERE ( pid=0 )  [ RunTime:0.0010s ]
+
+[ 2016-11-06T17:30:51+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html?pid=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `category` WHERE ( pid=1 )  [ RunTime:0.0000s ]
+
+[ 2016-11-06T17:31:07+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html?pid=2
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `category` WHERE ( pid=2 )  [ RunTime:0.0000s ]
+
+[ 2016-11-06T17:31:09+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `category` WHERE ( pid=0 )  [ RunTime:0.0000s ]
+
+[ 2016-11-06T17:31:09+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html?pid=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `category` WHERE ( pid=1 )  [ RunTime:0.0000s ]
+
+[ 2016-11-06T17:31:17+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `category` WHERE ( pid=0 )  [ RunTime:0.0010s ]
+
+[ 2016-11-06T17:31:17+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html?pid=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003001s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `category` WHERE ( pid=1 )  [ RunTime:0.0000s ]
+
+[ 2016-11-06T17:31:36+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `category` WHERE ( pid=0 )  [ RunTime:0.0000s ]
+
+[ 2016-11-06T17:31:36+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html?pid=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `category` WHERE ( pid=1 )  [ RunTime:0.0000s ]
+
+[ 2016-11-06T17:32:00+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `category` WHERE ( pid=0 )  [ RunTime:0.0010s ]
+
+[ 2016-11-06T17:32:00+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html?pid=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `category` WHERE ( pid=1 )  [ RunTime:0.0000s ]
+
+[ 2016-11-06T17:39:16+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `category` WHERE ( pid=0 )  [ RunTime:0.0010s ]
+
+[ 2016-11-06T17:39:16+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html?pid=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `category` WHERE ( pid=1 )  [ RunTime:0.0010s ]
+
+[ 2016-11-06T17:39:20+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `category` WHERE ( pid=0 )  [ RunTime:0.0080s ]
+
+[ 2016-11-06T17:39:21+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html?pid=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `category` WHERE ( pid=1 )  [ RunTime:0.0010s ]
+
+[ 2016-11-06T17:40:16+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `category` WHERE ( pid=0 )  [ RunTime:0.0000s ]
+
+[ 2016-11-06T17:40:17+08:00 ] ::1 /RealHome/index.php/Home/Search/address.html?pid=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `category` WHERE ( pid=1 )  [ RunTime:0.0010s ]
+
+[ 2016-11-06T19:33:03+08:00 ] ::1 /RealHome2/index.php/Home/Search/address.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006001s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0120s ]
+SQL: SELECT * FROM `category` WHERE ( pid=0 )  [ RunTime:0.0010s ]
+
+[ 2016-11-06T19:33:03+08:00 ] ::1 /RealHome2/index.php/Home/Search/address.html?pid=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `category` WHERE ( pid=1 )  [ RunTime:0.0010s ]
+
+[ 2016-11-06T21:17:21+08:00 ] ::1 /RealHome2/index.php/Home/Search/address.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0650s ]
+SQL: SELECT * FROM `category` WHERE ( pid=0 )  [ RunTime:0.0220s ]
+
+[ 2016-11-06T21:17:21+08:00 ] ::1 /RealHome2/index.php/Home/Search/address.html?pid=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0190s ]
+SQL: SELECT * FROM `category` WHERE ( pid=1 )  [ RunTime:0.0300s ]
+
+[ 2016-11-06T22:11:00+08:00 ] ::1 /RealHome2/index.php/Home/Search/address.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `category` WHERE ( pid=0 )  [ RunTime:0.0130s ]
+
+[ 2016-11-06T22:11:00+08:00 ] ::1 /RealHome2/index.php/Home/Search/address.html?pid=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `category` WHERE ( pid=1 )  [ RunTime:0.0010s ]
+
+[ 2016-11-06T22:13:39+08:00 ] ::1 /RealHome2/home/Email/index
+ERR: Think\Controller:diplay方法不存在！
+
+[ 2016-11-06T22:41:05+08:00 ] ::1 /RealHome2/index.php/Home/Search/address.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent (output started at D:\wamp\www\RealHome2\Application\Home\Common\smtp.php:274) D:\wamp\www\RealHome2\ThinkPHP\Common\functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0300s ]
+SQL: SELECT * FROM `category` WHERE ( pid=0 )  [ RunTime:0.0010s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\wamp\www\RealHome2\Application\Home\Common\smtp.php:274) D:\wamp\www\RealHome2\ThinkPHP\Library\Think\Controller.class.php 第 215 行.
+
+[ 2016-11-06T22:41:05+08:00 ] ::1 /RealHome2/index.php/Home/Search/address.html?pid=null
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent (output started at D:\wamp\www\RealHome2\Application\Home\Common\smtp.php:274) D:\wamp\www\RealHome2\ThinkPHP\Common\functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0280s ]
+SQL: SELECT * FROM `category` WHERE ( pid=null )  [ RunTime:0.0010s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\wamp\www\RealHome2\Application\Home\Common\smtp.php:274) D:\wamp\www\RealHome2\ThinkPHP\Library\Think\Controller.class.php 第 215 行.
+
+[ 2016-11-06T22:41:06+08:00 ] ::1 /RealHome2/index.php/Home/Search/address.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent (output started at D:\wamp\www\RealHome2\Application\Home\Common\smtp.php:274) D:\wamp\www\RealHome2\ThinkPHP\Common\functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `category` WHERE ( pid=0 )  [ RunTime:0.0000s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\wamp\www\RealHome2\Application\Home\Common\smtp.php:274) D:\wamp\www\RealHome2\ThinkPHP\Library\Think\Controller.class.php 第 215 行.
+
+[ 2016-11-06T22:41:06+08:00 ] ::1 /RealHome2/index.php/Home/Search/address.html?pid=null
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent (output started at D:\wamp\www\RealHome2\Application\Home\Common\smtp.php:274) D:\wamp\www\RealHome2\ThinkPHP\Common\functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `category` WHERE ( pid=null )  [ RunTime:0.0120s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\wamp\www\RealHome2\Application\Home\Common\smtp.php:274) D:\wamp\www\RealHome2\ThinkPHP\Library\Think\Controller.class.php 第 215 行.
+

@@ -1,0 +1,80 @@
+<extend name="Index/index" />
+<!--contact-->
+<block name="main">
+    <div>
+        <h2 style="text-align:center;line-height:80px;">个人中心</h2>
+    </div><br>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-2 col-md-4 main-sidebar">
+                <div class="view3">
+                    <div class="card sidebar-nav">
+                        <ul class="nav">
+                            <li class="is-current">
+                                <a href="<{:U('Personal/index')}>"><span class="icon icon-user nav-icon"></span><br>
+                                <span class="nav-title">个人信息</span></a>
+                            </li>
+
+                            <li>
+                                <a href="<{:U('Personal/avatar')}>"><span class="icon icon-eye nav-icon"></span><br>
+                                <span class="nav-title">修改头像</span></a>
+                            </li>
+
+                            <li>
+                                <a href="<{:U('Personal/security')}>"><span class="icon icon-lock2 nav-icon"></span><br>
+                                <span class="nav-title">安全设置</span></a>
+                            </li>
+
+                            <li>
+                                <a href="<{:U('Collect/index')}>"><span class="icon icon-th-stroke nav-icon"></span><br><span class="nav-title">我的收藏</span></a>
+                            </li>
+
+                            <li>
+                                <a href="<{:U('PersonOrders/index')}>"><span class="icon icon-switch nav-icon"></span><br>
+                                <span class="nav-title">我的订单</span></a>
+                            </li>
+
+                            <li>
+                                <a href="<{:U('Comment/index')}>"><span class="icon icon-switch nav-icon"></span><br>
+                                <span class="nav-title">我的评论</span></a>
+                            </li>
+
+                        </ul>
+                    </div><!--END sidebar-nav -->
+                </div>
+            </div>
+            <!-- *********************************************** -->
+            <div class="col-sm-10 col-md-8 main-content">
+                <div class="layer">
+                    <div class="view5 is-loaded">
+                        <div class="card profile-manager">
+                            <div class="card-content">
+                                    <h1>编辑个人资料</h1><br><br>
+                                <form action="<{:U('Personal/dosave')}>" method="post">
+                                    用户名：
+                                        <input type="text" name="nickname" value="<{$vo['nickname']}>"><br><br>
+                                    性别：
+                                        <input type="radio" name="sex" value="1" <if condition="$vo.sex eq 1">checked</if>>男
+                                        <input type="radio" name="sex" value="0" <if condition="$vo.sex eq 0">checked</if>>女
+                                        <input type="radio" name="sex" value="2" <if condition="$vo.sex eq 2">checked</if>>保密<br><br>
+                                    邮箱：
+                                        <input type="email" name="email" value="<{$vo['email']}>"><br><br>
+                                    破壳日：
+                                        <input type="date" name="birthday" value="<{$vo['birthday']}>"><br><br>
+                                    <!-- 密码：
+                                        <input type="text" name="pwd"><br><br>
+                                    确认密码：
+                                        <input type="text" name="repwd"><br><br> -->
+                                    <input type="hidden" name="id" value="<{$vo['id']}>">
+                                    <input type="submit" value="确认修改">
+                                </form>
+                            </div>
+                        </div>
+                    </div><!-- END view5-->
+                    <!-- ********************公告栏************************** -->
+                </div><!-- END layer-->
+            </div>
+        </div><!--END row-->
+    </div><!--END container-->
+
+</block>

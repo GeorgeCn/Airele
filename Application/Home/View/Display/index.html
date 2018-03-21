@@ -1,0 +1,222 @@
+<extend name="Index/index" />
+<!--contact-->
+<block name="main">
+<div class=" banner-buying">
+	<div class=" container">
+	<h3><span>Lor</span>em</h3> 
+	<!---->
+	<div class="menu-right">
+		 <ul class="menu">
+			<li class="item1"><a href="#"> Menu<i class="glyphicon glyphicon-menu-down"> </i> </a>
+			<ul class="cute">
+				<li class="subitem1"><a href="buy.html">Buy </a></li>
+				<li class="subitem2"><a href="buy.html">Rent </a></li>
+				<li class="subitem3"><a href="buy.html">Hostels </a></li>
+				<li class="subitem1"><a href="buy.html">Resale </a></li>
+				<li class="subitem2"><a href="loan.html">Home Loan</a></li>
+				<li class="subitem3"><a href="buy.html">Apartment </a></li>
+				<li class="subitem3"><a href="dealers.html">Dealers</a></li>
+			</ul>
+		</li>
+		</ul>
+	</div>
+	<div class="clearfix"> </div>
+		<!--initiate accordion-->
+		<script type="text/javascript">
+			$(function() {
+			    var menu_ul = $('.menu > li > ul'),
+			           menu_a  = $('.menu > li > a');
+			    menu_ul.hide();
+			    menu_a.click(function(e) {
+			        e.preventDefault();
+			        if(!$(this).hasClass('active')) {
+			            menu_a.removeClass('active');
+			            menu_ul.filter(':visible').slideUp('normal');
+			            $(this).addClass('active').next().stop(true,true).slideDown('normal');
+			        } else {
+			            $(this).removeClass('active');
+			            $(this).next().stop(true,true).slideUp('normal');
+			        }
+			    });
+			
+			});
+		</script>
+      		
+	</div>
+</div>
+<!--//header-->
+<!---->
+
+<div class="container"><!--中间部分   开头-->
+	
+<div class="buy-single-single">
+	
+			<div class="col-md-9 single-box">
+				
+       <div class=" buying-top">	
+<div class="flexslider">
+  <ul class="slides">
+    <li data-thumb="images/ss.jpg">
+      <img src="__PUBLIC__/Uploads/<{$file[0]}>" />
+    </li>
+ <!--    <li data-thumb="images/ss1.jpg">
+      <img src="__PUBLIC__/Uploads/<{$file[1]}>" />
+    </li>
+    <li data-thumb="images/ss2.jpg">
+      <img src="__PUBLIC__/Uploads/<{$file[2]}>" />
+    </li>
+    <li data-thumb="images/ss3.jpg">
+      <img src="__PUBLIC__/Uploads/<{$file[3]}>" />
+    </li> -->
+  </ul>
+</div>
+<!-- FlexSlider -->
+  <script defer src="js/jquery.flexslider.js"></script>
+<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
+
+<script>
+// Can also be used with $(document).ready()
+$(window).load(function() {
+  $('.flexslider').flexslider({
+    animation: "slide",
+    controlNav: "thumbnails"
+  });
+});
+</script>
+</div>
+<div class="buy-sin-single">
+			<div class="col-sm-5 middle-side immediate">
+						<form action="<{:U('Orders/index')}>" method="post">
+					     <h4>即刻拥有</h4>
+					     <p><span class="bath3">类型 :</span><span class="two"><{$info['type']}></span></p>
+					     <p>  <span class="bath3">软床 :</span><span class="two"><{$info['beds']}>/张</span></p>
+					     <p><span class="bath3">厕所 :</span><span class="two"><{$info['toilets']}>/间</span></p>
+					     <!-- <p>  <span class="bath4">入住人数 :</span>&nbsp;&nbsp;&nbsp;<span class="two"><{$info['persons']}>/位</span></p> -->
+					     <p><span class="bath4">地址 :</span><span class="two"><{$info['field']}></span></p>
+						 <p><span class="bath3">租期 :</span><span class="two"><{$info['months']}>月</span></p>
+						 <p><span class="bath3">价格 :</span><span class="two"><{$info['price']}>元</span></p>				 
+						<div class="right-side">
+							 <a href="<{:U('Like/doadd',array('uid'=>$_SESSION['user']['id'],'gid'=>$id))}>"  ><i class="icon-book"></i>点赞 <{$d[0]['like']}></a>  
+							 <a href="<{:U('Like/step',array('uid'=>$_SESSION['user']['id'],'gid'=>$id))}>"  ><i class="icon-book"></i>踩<{$d[0]['bad']}></a> 
+							 <a href="<{:U('Collect/doadd',array('uid'=>$_SESSION['user']['id'],'gid'=>$id))}>"  ><i class="icon-book"></i>收藏</a>     
+					 </div>
+
+					 <input type="hidden" name="gid" value="<{$id}>">
+						 <input type="hidden" name="uid" value="<{$_SESSION['user']['id']}>">
+						 <input type="hidden" name="photo" value="<{$file[0]}>">
+						 <input type="hidden" name="amount" value="<{$info['price']}>">
+						 <input type="hidden" name="persons" value="1">	
+						 <input type="hidden" name="address" value="<{$info['field']}>">
+						 <input type="hidden" name="phone" value="<{$_SESSION['user']['tel']}>">
+						 <input type="hidden" name="nickname" value="<{$_SESSION['user']['nickname']}>">
+					 <div class="   right-side">
+							 <input type="submit" class="hvr-sweep-to-right more"  value="立即下单"></input>     
+					    </div>
+					    </form>
+					</div>
+					 <div class="col-sm-7 buy-sin">
+					 	<h4>房屋描述</h4>
+					 	<p><{$info['desc']}></p>
+					 </div>
+					 <div class="clearfix"> </div>
+					</div>
+					 <div class="map-buy-single">
+					 	<h4>地图位置</h4>  <h5><{$info['field']}></h5>
+						 	<div class="col-md-6" id="allmap" style="height:400px;"></div>
+					</div>
+					<div class="video-pre">
+						<h4>评论</h4>
+						<!-- <iframe src=""  webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> -->
+						<volist name="c" id="v">	
+						<div>
+							<div class="facebox">
+							</div>
+							<div class="t">用户:<{$v['nickname']}> </a>
+							</div>
+							<div class="content">
+							<{$v['desc']}></div>
+							<div class="elinfo">
+							<span class="floor-date"><{$v['createtime']}></span>
+							</div>
+						</div>
+						</volist>
+
+					</div>
+		</div>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=B8cfd1501ae7f7c55dc3793ee989c354"></script>
+
+		<script type="text/javascript">
+			// 百度地图API功能
+			var map = new BMap.Map("allmap");
+			var point = new BMap.Point(116.331398,39.897445);
+			map.centerAndZoom(point,12);
+			// 创建地址解析器实例
+			var myGeo = new BMap.Geocoder();
+			// 将地址解析结果显示在地图上,并调整地图视野
+			map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+			myGeo.getPoint("<{$info['field']}>", function(point){
+				if (point) {
+					map.centerAndZoom(point, 16);
+					map.addOverlay(new BMap.Marker(point));
+				}else{
+					alert("您选择地址没有解析到结果!");
+				}
+			}, "北京市");
+		</script>
+	
+
+			
+		
+		<div class="col-md-3">
+			<div class="single-box-right right-immediate">
+		     	<h4>Featured Communities</h4>
+				<div class="single-box-img ">
+					<div class="box-img">
+						<a href="<{:U('Display/index',array('id'=>5))}>"><img class="img-responsive" src="__PUBLIC__/Uploads/<{$files[0]}>" alt=""></a>
+					</div>
+					<div class="box-text">
+						<p><a href="single.html">Lorem ipsum dolor sit amet</a></p>
+						<a href="single.html" class="in-box">More Info</a>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="single-box-img">
+					<div class="box-img">
+						<a href="<{:U('Display/index',array('id'=>6))}>"><img class="img-responsive" src="__PUBLIC__/Uploads/<{$files[1]}>" alt=""></a>
+					</div>
+					<div class="box-text">
+						<p><a href="single.html">Lorem ipsum dolor sit amet</a></p>
+						<a href="single.html" class="in-box">More Info</a>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="single-box-img">
+					<div class="box-img">
+						<a href="<{:U('Display/index',array('id'=>1))}>"><img class="img-responsive" src="__PUBLIC__/Uploads/<{$files[2]}>" alt=""></a>
+					</div>
+					<div class="box-text">
+						<p><a href="single.html">Lorem ipsum dolor sit amet</a></p>
+						<a href="single.html" class="in-box">More Info</a>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="single-box-img">
+					<div class="box-img">
+						<a href="<{:U('Display/index',array('id'=>7))}>"><img class="img-responsive" src="__PUBLIC__/Uploads/<{$files[3]}>" alt=""></a>
+					</div>
+					<div class="box-text">
+						<p><a href="single.html">Lorem ipsum dolor sit amet</a></p>
+						<a href="single.html" class="in-box">More Info</a>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+		 </div>
+			
+	  </div>
+		<div class="clearfix"> </div>
+		</div>
+	</div><!--中间部分 结束-->
+
+<!---->
+</div>
+</block>

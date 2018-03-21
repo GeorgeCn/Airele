@@ -1,0 +1,40 @@
+<extend name="Layout/index" />
+
+<block name="breadcrumb-01">
+	<li>
+		<i class="icon-home home-icon"></i>
+		<a href="#">首页</a>
+	</li>
+	<li class="active">首页管理</li>
+</block>
+
+<block name="breadcrumb-02">
+	<h1>
+		首页管理
+		<small>
+			<i class="icon-double-angle-right"></i>
+			 图片添加
+		</small>
+	</h1>
+</block>
+
+<block name='main'>
+
+	<form action="<{:U('Public/doupload')}>" method="post" class='col-md-4' enctype="multipart/form-data">
+		
+		<div class="form-group">
+		<label for="#" class="">添加图片：</label>
+		  <div class="input-group">
+		  	 <input type="text" name="name" class="form-control" aria-label="Amount (to the nearest dollar)">
+		  	 <input name="image" type="file" value="" />
+			  
+			  <span class="input-group-btn">
+			  	<button class="btn btn-default btn-sm">添加</button>
+			  </span>
+			  
+		  </div>
+		</div>
+		 <input type="hidden" name="pid" value="<present name="Think.get.pid"><{$Think.get.pid}><else />0</present>">
+
+	</form>
+	</block>

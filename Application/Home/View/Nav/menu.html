@@ -1,0 +1,19 @@
+<div class="head-nav">
+	<span class="menu"> </span>
+		<ul class="cl-effect-16">
+			<li class="active"><a href="<{:U('Index/index')}>" data-hover="HOME">home</a></li>
+			<li><a href="<{:U('Index/about')}>" data-hover="ABOUT US">about us</a></li>
+			<volist name="navList" id="vo">
+				<li><a href="<{:U('Index/about')}>" data-hover="<{$vo.name}>"><{$vo.name}></a></li>
+			</volist>
+				<div class="clearfix"> </div>
+		</ul>
+		
+		<script>
+			$( "span.menu" ).click(function() {
+			  $( ".head-nav ul" ).slideToggle(300, function() {
+				// Animation complete.
+			  });
+			});
+		</script>
+</div>

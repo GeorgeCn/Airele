@@ -1,0 +1,94 @@
+<extend name="Index/index" />
+<!--contact-->
+<block name="main">
+
+<div class="site-main">
+<div class="container">
+<div class="row">
+	<div class="wechat-label"><h2 style="text-align:center;line-height:80px;">个人中心</h2></div>
+<div class="col-sm-1 col-md-2 main-sidebar">
+<div class="view3">
+<div class="card sidebar-user hidden-sm"> 
+<div class="card-content info-wrap clearfix">
+<div class="avatar img-60 info-avatar" style="background-image:url(https://striker.teambition.net/thumbnail/110m74d1a40279158a29e1e2044012a5b866/w/200/h/200);"></div>
+<div class="info-items is-bfc">
+
+<div class="info-desc" data-original-title="" title="">
+
+</div>
+</div>
+</div>
+</div>
+<div class="card sidebar-nav">
+<ul class="nav">
+                            <li class="is-current">
+                                <a href="<{:U('Personal/index')}>"><span class="icon icon-user nav-icon"></span><br>
+                                <span class="nav-title">个人信息</span></a>
+                            </li>
+
+                            <li>
+                                <a href="<{:U('Personal/avatar')}>"><span class="icon icon-eye nav-icon"></span><br>
+                                <span class="nav-title">修改头像</span></a>
+                            </li>
+
+                            <li>
+                                <a href="<{:U('Personal/security')}>"><span class="icon icon-lock2 nav-icon"></span><br>
+                                <span class="nav-title">安全设置</span></a>
+                            </li>
+
+                            <li>
+                                <a href="<{:U('Collect/index')}>"><span class="icon icon-th-stroke nav-icon"></span><br><span class="nav-title">我的收藏</span></a>
+                            </li>
+
+                            <li>
+                                <a href="<{:U('PersonOrders/index')}>"><span class="icon icon-switch nav-icon"></span><br>
+                                <span class="nav-title">我的订单</span></a>
+                            </li>
+
+                            <li>
+                                <a href="<{:U('Comment/index')}>"><span class="icon icon-switch nav-icon"></span><br>
+                                <span class="nav-title">我的评论</span></a>
+                            </li>
+                        </ul></div></div></div>
+
+<div class="col-sm-10 col-md-8 main-content">
+<div class="layer"><div class="view5 is-loaded">
+<div class="card profile-manager">
+<div class="card-header"><h3 class="card-title">我的收藏</h3></div>
+<div class="card-content">
+	<br>
+
+	<table width=90% cellpadding="5" cellspacing="3" class="table table-striped">
+			<tr align='left' bgcolor="#ccc">
+				<th>ID</th>
+				<th>房源名称</th>
+				<th>地址</th>
+				<th>操作</th>
+			</tr>
+			<volist name="list" id="vo">
+				<tr>
+					<td><{$vo.id}></td>
+					<td>
+						<{$vo.name}>
+					</td>
+					<td><{$vo.address}></td>
+					<td>
+						<a class="btn-info" href="<{:U('Display/index',array('id'=>$vo['gid']))}>">查看详情</a>
+						
+						<a class="btn-warning" href="<{:U('Collect/del',array('id'=>$vo['id']))}>">删除</a>
+					</td>
+				</tr>
+			</volist>
+			
+		</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</block>
+<!--//contact-->
+<!--footer-->

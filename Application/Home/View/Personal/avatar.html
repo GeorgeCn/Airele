@@ -1,0 +1,95 @@
+<extend name="Index/index" />
+<!--contact-->
+<block name="main">
+    <div>
+        <h2 style="text-align:center;line-height:80px;">个人中心</h2>
+    </div><br>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-2 col-md-4 main-sidebar">
+                <div class="view3">
+                    <div class="card sidebar-nav">
+                        <ul class="nav">
+                            <li class="is-current">
+                                <a href="<{:U('Personal/index')}>"><span class="icon icon-user nav-icon"></span><br>
+                                <span class="nav-title">个人信息</span></a>
+                            </li>
+
+                            <li>
+                                <a href="<{:U('Personal/avatar')}>"><span class="icon icon-eye nav-icon"></span><br>
+                                <span class="nav-title">修改头像</span></a>
+                            </li>
+
+                            <li>
+                                <a href="<{:U('Personal/security')}>"><span class="icon icon-lock2 nav-icon"></span><br>
+                                <span class="nav-title">安全设置</span></a>
+                            </li>
+                            
+                            <li>
+                                <a href="<{:U('Collect/index')}>"><span class="icon icon-th-stroke nav-icon"></span><br><span class="nav-title">我的收藏</span></a>
+                            </li>
+
+                            <li>
+                                <a href="<{:U('PersonOrders/index')}>"><span class="icon icon-switch nav-icon"></span><br>
+                                <span class="nav-title">我的订单</span></a>
+                            </li>
+
+                            <li>
+                                <a href="<{:U('Comment/index')}>"><span class="icon icon-switch nav-icon"></span><br>
+                                <span class="nav-title">我的评论</span></a>
+                            </li>
+
+                        </ul>
+                    </div><!--END sidebar-nav -->
+                </div>
+            </div>
+            <!-- *********************************************** -->
+            <div class="col-sm-10 col-md-8 main-content">
+                <div class="layer">
+                    <div class="view5 is-loaded">
+                        <div class="card profile-manager">
+                            <div class="card-content">
+                                <caption>修改头像：</caption><br><br><br>
+                                <form action="<{:U('Personal/doupload')}>" class="form-horizontal" id="block-validate" novalidate="novalidate" method="post" enctype="multipart/form-data">
+                                    <div class="form-group">
+                                        <label class="control-label col-lg-4"></label>
+                                        <div class="col-lg-4">
+                                            <input name="image" type="file" value="" />
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-actions no-margin-bottom" style="text-align:center;">
+                                        <input type="submit" value="上传" class="btn btn-primary btn-lg ">
+                                    </div>
+                                </form>
+                                <!-- ********************************************** -->
+                                <div><!--news start-->
+                                    <div class="page-header">
+                                        <i>你还可以</i><h2>看看新闻</h2>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="table table-control">
+                                                <?php foreach ($newslist as $news): ?>
+                                                    <p>
+                                                        <a href="<?php echo $news->url; ?>" target="_blank" width="200px"><?php echo $news->title; ?></a>
+                                                    </p>
+                                                    <p>
+                                                        <?php echo $news->ctime ?>
+                                                    </p>
+                                                    <hr>
+                                                <?php endforeach ?>
+                                            </div>
+                                        </div>
+                                    </div>   
+                                </div><!--END news -->
+                            </div>
+                        </div>
+                    </div><!-- END view5-->
+                </div><!-- END layer-->
+            </div>
+        </div><!--END row-->
+    </div><!--END container-->
+
+</block>

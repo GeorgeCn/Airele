@@ -1,0 +1,58 @@
+<extend name="Layout/index" />
+<block name="breadcrumb-01">
+	<li>
+		<i class="icon-home home-icon"></i>
+		<a href="#">首页</a>
+	</li>
+	<li class="active">用户管理</li>
+</block>
+
+<block name="breadcrumb-02">
+	<h1>
+		用户管理
+		<small>
+			<i class="icon-double-angle-right"></i>
+			 用户列表
+		</small>
+	</h1>
+</block>
+<block name="main">
+
+	<div class="row">
+		<div class="col-md-12">
+			<form action="<{:U('User/doadd')}>" method='post' class="form-horizontal">
+
+				<div class="form-group" style="">
+					<label for="" class="col-sm-2 control-label">用户名：</label>
+					<div class="col-sm-4">
+						<input type="text" name="username" class="form-control" placeholder="用户名">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="" class="col-sm-2 control-label">真实姓名：</label>
+					<div class="col-sm-4">
+						<input  type="text" name="name" class="form-control" placeholder="">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="" class="col-sm-2 control-label">密  码 ：</label>
+					<div class="col-sm-4">
+						<input type="password" name="userpass" class="form-control" placeholder="">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="" class="col-sm-2 control-label">确认密码：</label>
+					<div class="col-sm-4">
+						<input type="password" name="reuserpass" class="form-control" placeholder="">
+					</div>
+				</div>
+				<div class="form-group">
+				    <div class="col-sm-offset-2 col-sm-4">
+				      <button type="submit" class="btn btn-default">添 加</button>
+				    </div>
+				</div>
+		
+			</form>
+		</div>
+	</div>
+</block>

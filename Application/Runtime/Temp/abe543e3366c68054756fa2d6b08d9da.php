@@ -1,3 +1,0 @@
-<?php
-//000000003600a:3:{i:0;a:7:{s:2:"id";s:2:"19";s:4:"name";s:12:"新增账户";s:3:"url";s:24:"Account/accountList.html";s:9:"parent_id";s:2:"78";s:11:"create_time";s:10:"1436785913";s:13:"record_status";s:1:"1";s:8:"index_no";s:1:"2";}i:1;a:7:{s:2:"id";s:2:"79";s:4:"name";s:12:"修改账户";s:3:"url";s:26:"Account/upaccountList.html";s:9:"parent_id";s:2:"78";s:11:"create_time";s:10:"1450923828";s:13:"record_status";s:1:"1";s:8:"index_no";s:1:"2";}i:2;a:7:{s:2:"id";s:2:"80";s:4:"name";s:12:"修改权限";s:3:"url";s:24:"Account/upprivilege.html";s:9:"parent_id";s:2:"78";s:11:"create_time";s:10:"1450924021";s:13:"record_status";s:1:"1";s:8:"index_no";s:1:"3";}}
-?>

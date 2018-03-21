@@ -1,0 +1,59 @@
+<extend name="Layout/index" />
+<block name="breadcrumb-01">
+    <li>
+        <i class="icon-home home-icon"></i>
+        <a href="#">用户管理</a>
+    </li>
+    <li class="active">前台用户管理</li>
+</block>
+
+<block name="breadcrumb-02">
+    <h1>
+        前台用户管理
+        <small>
+            <i class="icon-double-angle-right"></i>
+             前台用户列表
+        </small>
+    </h1>
+</block>
+<block name="main">
+
+    <table class="table table-bordered table-hover">
+        <tr class="active">
+            <th rowspan=$rowspan style='vertical-align: middle;text-align: center;'>序号</th>
+            <th rowspan=$rowspan style='vertical-align: middle;text-align: center;'>昵称</th>
+            <th rowspan=$rowspan style='vertical-align: middle;text-align: center;'>手机号</th>
+            <th rowspan=$rowspan style='vertical-align: middle;text-align: center;'>性别</th>
+            <th rowspan=$rowspan style='vertical-align: middle;text-align: center;'>邮箱</th>
+            <th rowspan=$rowspan style='vertical-align: middle;text-align: center;'>状态</th>
+            <th rowspan=$rowspan style='vertical-align: middle;text-align: center;'>操作</th>
+        </tr>
+        <volist name="list" id="vo">
+        <tr>
+            <td rowspan=$rowspan style='vertical-align: middle;text-align: center;'><{$vo['id']}></td>
+            <td rowspan=$rowspan style='vertical-align: middle;text-align: center;'><{$vo['nickname']}></td>
+            <td  rowspan=$rowspan style='vertical-align: middle;text-align: center;'><{$vo['tel']}></td>
+            <td rowspan=$rowspan style='vertical-align: middle;text-align: center;'>
+                <if condition="$vo['sex'] eq '0'" >女
+                <elseif condition="$vo['sex'] eq '1'" />男
+                <else />保密
+                </if>
+            </td>
+            <td rowspan=$rowspan style='vertical-align: middle;text-align: center;'><{$vo['email']}></td>
+            <td rowspan=$rowspan style='vertical-align: middle;text-align: center;'>
+                <a href="<{:U('Yonghu/dostatus',array('status'=>$vo['status'],'id'=>$vo['id']))}>">
+                    <button class="btn-info">
+                        <if condition="$vo['status'] eq '0'" >冻结
+                        <else />正常
+                        </if>
+                    </button>
+                </a>
+            </td>
+            <td rowspan=$rowspan style='vertical-align: middle;text-align: center;'>
+                <a href="<{:U('Yonghu/reset',array('id'=>$vo['id']))}>"><button class="btn-warning">重置密码</button></a>
+            </td>
+        </tr>
+        </volist>
+    </table>
+    <{$page}>
+</block>

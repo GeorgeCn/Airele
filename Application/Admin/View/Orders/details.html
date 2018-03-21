@@ -1,0 +1,71 @@
+<extend name="Layout/index" />
+<block name="breadcrumb-01">
+	<li>
+		<i class="icon-home home-icon"></i>
+		<a href="#">首页</a>
+	</li>
+	<li class="active">订单管理</li>
+</block>
+
+<block name="breadcrumb-02">
+	<h1>
+		订单管理
+		<small>
+			<i class="icon-double-angle-right"></i>
+			 订单详情
+		</small>
+	</h1>
+</block>
+<block name="main">
+	<h3>房源详情</h3>
+		<table class="table">
+			<tr align='left' bgcolor="#ccc">
+				<th>编号</th>
+				<!-- <th>房东</th> -->
+				<th>房名</th>
+				<th>地址</th>
+				<th>租金</th>
+				<th>描述</th>
+				<th>床</th>
+				<th>厕所</th>
+				<th>发布时间</th>
+				<!-- <th>操作</th> -->
+			</tr>
+			<tr>
+				<td><{$list.gid}></td>
+				<!-- <td><{$vo.gid}></td> -->
+				<td><{$list.name}></td>
+				<td><{$list.address}></td>
+				<td>¥<{$list.price}></td>
+				<td><{$list.desc}></td>
+				<td><{$list.beds}>张</td>
+				<td><{$list.toilets}>个</td>
+				<td><{$list.time}></td>
+			</tr>
+		</table>
+	<h3>租户详情</h3>
+		<table class="table">
+			<tr align='left' bgcolor="#ccc">
+				<!-- <th>房东</th> -->
+				<th>租户</th>
+				<th>手机号</th>
+				<th>金额</th>
+				<th>订单状态</th>
+				<th>支付状态</th>
+				<th>取消状态</th>
+
+			</tr>
+			<tr>
+				<td><{$list.nickname}></td>
+				<!-- <td><{$vo.gid}></td> -->
+				<td><{$list.tel}></td>
+				<td><{$list.price}></td>
+				<td><if condition="$list.status eq 1">未确认<else />已确认</if></td>
+				<td><if condition="$list.ispay eq 1">未支付<else />已支付</if></td>
+				<td><if condition="$list.cancel eq 1">已入住<else />订单取消</if></td>
+				
+			
+			</tr>
+		</table>
+	<a href="<{:U('Orders/index')}>">返回订单首页</a>
+</block>

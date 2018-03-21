@@ -1,0 +1,137 @@
+<extend name="Layout/index" />
+
+<block name="breadcrumb-01">
+    <li>
+        <i class="icon-home home-icon"></i>
+        <a href="#">首页</a>
+    </li>
+    <li class="active">广告管理</li>
+</block>
+
+<block name="breadcrumb-02">
+    <h1>
+        广告添加
+        <small>
+            <i class="icon-double-angle-right"></i>
+             广告信息
+        </small>
+    </h1>
+</block>
+
+<block name="richtext">
+    <link rel="stylesheet" href="__PUBLIC__/Js/kind/themes/default/default.css">
+    <script src="__PUBLIC__/Js/kind/kindeditor-min.js"></script>
+    <script src="__PUBLIC__/Js/kind/lang/zh_CN.js"></script>
+    <script>
+            var editor;
+            KindEditor.ready(function(K) {
+                // textarea标签的name名
+                editor = K.create('textarea[name="desc"]', {
+                    resizeType : 1,
+                    allowPreviewEmoticons : false,
+                    allowImageUpload : false,
+                    items : [
+                        'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
+                        'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
+                        'insertunorderedlist', '|', 'emoticons', 'image', 'link']
+                });
+
+                // 富文本编辑内容 编辑
+                // editor.html(' <?=  $v['desc']?>  ');
+            });
+    </script>
+</block>
+<block name="include">
+    <script src="__PUBLIC__/js/jquery.min.js"></script>
+    <script src="__PUBLIC__/assets/js/ace-extra.min.js"></script>
+</block>
+    
+
+
+<block name="main">
+    <div class="page-content">
+    <div class="row">
+        <div class="col-xs-12">
+            <!-- PAGE CONTENT BEGINS -->
+
+            <form action="<{:U('Advertise/insert')}>" method="post" class="form-horizontal" role="form" enctype='multipart/form-data'>
+                <div class="form-group">
+                    <label class="h4 col-sm-3 control-label no-padding-right" for="form-field-1">合作机构</label>
+
+                    <div class="col-sm-9">
+                        <input type="text" name="company" id="form-field-1" placeholder="机构名称" class="col-xs-10 col-sm-5" />
+                    </div>
+                </div>
+
+                <div class="space-4"></div>
+
+                <div class="form-group">
+                    <label class="h4 col-sm-3 control-label no-padding-right" for="form-field-2"> URL地址 </label>
+
+                    <div class="col-sm-9">
+                        <input type="text" name="url" id="form-field-2" placeholder="(https?/ftp/news)" class="col-xs-10 col-sm-5" />
+                        <span class="help-inline col-xs-12 col-sm-7">
+                            <span class="middle red">airbnb 去旅行，去生活</span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="space-4"></div>
+
+                <div class="form-group">
+                    <label class="h4 col-md-3 control-label no-padding-right" for="form-field-4">负责人</label>
+
+                    <div class="col-sm-9">
+                        <input class="input-sm" type="text" name="person" id="form-field-4" placeholder="姓名" />
+                        <div class="space-2"></div>
+
+                        <div class="help-block" id="input-size-slider"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="h4 col-lg-3 control-label no-padding-right" for="form-field-5">是否启用 </label>
+
+                    <div class="col-sm-9">
+                        <div class="clearfix">
+                            <input class="ace" type="checkbox" name="status" value="1" id="id-disable-check" />
+                                <span class="lbl"> 是</span>
+                        </div>
+
+                        <div class="space-2"></div>
+
+                        <div class="help-block" id="input-span-slider"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-9">
+                        <div class="clearfix" style="margin-left:160px">
+                            <input type="file" name="img" id="user_pic_input" />
+                        </div>
+
+                        <div class="space-2"></div>
+
+                        <div class="help-block" id="input-span-slider"></div>
+                    </div>
+                </div>
+                <div style="margin-left:80px " class='h4' >&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;描述: <textarea name="desc" ></textarea></div>
+
+                
+                    
+                <div class="clearfix form-actions">
+                    <div class="col-md-offset-3 col-md-9">
+                        <button class="h4 btn btn-info" type="submit">
+                            <i class="icon-ok bigger-110"></i>
+                            提交
+                        </button>
+
+                        &nbsp; &nbsp; &nbsp;
+                        <button class="h4 btn" type="reset">
+                            <i class="icon-undo bigger-110"></i>
+                            重置
+                        </button>
+                    </div>
+                </div>
+        </form>
+                <div class="hr hr-24"></div>
+
+</block>

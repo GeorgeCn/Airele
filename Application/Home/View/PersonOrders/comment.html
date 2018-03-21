@@ -1,0 +1,118 @@
+<extend name="Index/index" />
+<!--contact-->
+<block name="main">
+    <!-- <{:dump($_SESSION)}> -->
+    <div>
+        <h2 style="text-align:center;line-height:80px;">个人中心</h2>
+    </div><br>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-2 col-md-4 main-sidebar">
+                <div class="view3">
+                    <div class="card sidebar-nav">
+                        <ul class="nav">
+                            <li class="is-current">
+                                <a href="<{:U('Personal/index')}>"><span class="icon icon-user nav-icon"></span><br>
+                                <span class="nav-title">个人信息</span></a>
+                            </li>
+
+                            <li>
+                                <a href="<{:U('Personal/avatar')}>"><span class="icon icon-eye nav-icon"></span><br>
+                                <span class="nav-title">修改头像</span></a>
+                            </li>
+
+                            <li>
+                                <a href="<{:U('Personal/security')}>"><span class="icon icon-lock2 nav-icon"></span><br>
+                                <span class="nav-title">安全设置</span></a>
+                            </li>
+
+                            <li>
+                                <a href="<{:U('Collect/index')}>"><span class="icon icon-th-stroke nav-icon"></span><br><span class="nav-title">我的收藏</span></a>
+                            </li>
+
+                            <li>
+                                <a href="<{:U('PersonOrders/index')}>"><span class="icon icon-switch nav-icon"></span><br>
+                                <span class="nav-title">我的订单</span></a>
+                            </li>
+
+                            <li>
+                                <a href="<{:U('Comment/index')}>"><span class="icon icon-switch nav-icon"></span><br>
+                                <span class="nav-title">我的评论</span></a>
+                            </li>
+                        </ul>
+                    </div><!--END sidebar-nav -->
+                </div>
+            </div>
+            <!-- *********************************************** -->
+            <div class="col-sm-10 col-md-8 main-content">
+                <div class="layer">
+                    <div class="view5 is-loaded">
+                        <div class="card profile-manager">
+                            <div class="card-content">
+                                <caption>欧气·用户·评论</caption>
+                                <table class="order-list j_product" id="indent{$vo['id']}">
+                                <tr>
+                                    <td colspan="5" style="text-align:left;"><div><span>订单号：<{$vo.ordernum}></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>订单提交时间：<{:date('y-m-d h:i:s',$vo["time"])}></span></div></td>
+                                </tr>
+
+                                <tbody>
+                                    <tr>
+                                        <td>订单信息</td>
+                                        <td>实付金额</td>
+                                        <td>订单状态</td>
+                                        <td>支付状态</td>
+                                        <td>操作</td>
+                                    </tr>
+                                    <tr>
+                                        <td width="520" class="all-goods">
+                                            <a href="#" target="_blank"><img class="j_product_img" src="__PUBLIC__/uploads/<{$vo.filename1}>"></a>
+                                            <div class="m"><div>共住<{$vo.months}>个月</div></div>
+                                        </td>
+                                        <td class="amount" width="140">￥<{$vo.amount}></td>
+                                        <td width="140">
+                                            <if condition="($vo.status eq 1) "> 审核中
+                                            <elseif condition="$vo.status eq 2"/>已确认
+                                            <elseif condition="$vo.status eq 3"/>已入住
+                                            <else /> 已退房
+                                            </if>
+                                        </td>
+                                        <td width="140">
+                                            <if condition="$vo.ispay eq 2">已支付<else /><a href="<{:U('PersonOrders/pay',array('id'=>$vo['id']))}>">去支付</a></if>
+                                        </td>
+                                        <td width="140" class="operate">
+                                            <div>
+                                                <if condition="$vo.status eq 3">已退房
+                                                <else />    
+                                                    <a target="_blank" href="#">去点赞</a>
+                                                </if>
+                                                
+                                            </div>
+                                            <div>
+                                                <if condition="$vo.ispay eq 2"><a class="btn-org" href="">去投诉</a><else />
+                                                    <a target="_blank" href="<{:U(index/index);}>">再去逛逛</a>
+                                                </if>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table><br><br>
+                            <form action="<{:U('PersonOrders/doadd')}>">
+                                房屋名：
+                                    <input type="text" name="name" value="<{$vo['name']}>" readonly><br><br>
+                                评论内容：<br>
+                                <input type="textarea" name="desc" style="width:500px;height:150px;"><br><br>
+                                <input type="hidden" name="uid" value="<{$vo['uid']}>">
+                                <input type="hidden" name="gid" value="<{$vo['gid']}>">
+                                <input type="submit" value="提交评论">
+                            </form>
+                            </div>
+                        </div>
+                    </div><!-- END view5-->
+                </div><!-- END layer-->
+            </div>
+        </div><!--END row-->
+    </div><!--END container-->
+
+</block>
+<!--//contact-->
+<!--footer-->

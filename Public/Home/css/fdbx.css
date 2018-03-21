@@ -1,0 +1,107 @@
+﻿/*2016-1-27add*/
+/*2015-1-29添加广告*/
+.pre{ background:url(../images/ads_pre.png) no-repeat; width:980px; height:176px; margin-bottom:10px;}
+.pre img{ float:right; display:block; margin:55px 15px 0px 0px; width:84px; height:84px;}
+.a{ position:absolute; right:10px; top:145px; text-decoration:underline;width:84px;  color:#009cff; font-size:14px;}
+a:hover{ text-decoration:underline;}
+/*房客订单详情*/
+.iframe_for_rule{width: 100%;height: 100%;position: fixed;top: 0;z-index: 9;display:none;}
+.bbxr{line-height:25px;}
+.bbxr tr td{padding-right:20px;}
+.bbxr tr:first-child td{padding-right:0;}
+.bbxr tr td:first-child{padding-right:0;}
+/*下单页*/
+.ntd_div1{width:122px;}
+.ntd_div2{width:122px;}
+.ntd_div3{width:200px;}
+.ntd_div4{width:100px;}
+.ntd_div5{width:122px;}
+.ntd_div6{width:110px;}
+.ntd_div7{width:53px;}
+.ntd_div6,.ntd_div7{text-indent:0 !important;text-align:center;}
+.ntd_div1 input{width:102px;box-sizing:border-box;}
+.ntd_div3 input{width:158px;}
+.ntd_div5 input{width:80px;}
+.new_add td{padding-left:0 !important;text-indent:20px;}	  
+.inspersonDetail .selectIdcard{width:102px;padding: 2px 10px;margin-left:10px;border:1px solid #c1bcbc;line-height: 20px;}
+.selectNation{width:102px;padding: 2px 10px;margin-left:10px;border:1px solid #c1bcbc;line-height: 20px;}
+.selectsex{width:80px;padding: 2px 0 2px 5px;margin-left:10px;border:1px solid #c1bcbc;line-height: 20px;}
+.add_person_btn{text-align:right;border:1px solid #e0e0e0;padding:5px 10px;background-color:#fff;color:#322c27;font-size:16px;margin-right:-40px;margin-left:10px;}
+.xian_total{text-align:right;margin-top:10px;width:100%;float:right;cursor:pointer;color:#777776;}
+.insExpenses{border-bottom:1px dashed #777776;padding-bottom:2px;}
+.inspersonDetail td{color:#322c27;}
+.disnone{display:none;}
+.permanentcol{margin:10px 0 10px 22px;position:relative;}
+.permanent {cursor: pointer;display: inline-block;float: left;margin-bottom:5px;min-width:115px;position:relative;}
+.permanent input{position:relative;top:2px;margin-right:5px;}
+.permanent label{display:none;cursor:pointer;  position: absolute;right: 0;background-color: #f7f7f7;z-index: 999;}
+.each_person{padding-left:90px;}
+
+/*房东保险*/
+.fdbx_box{background: #fff4d6;padding:10px;}
+.complete_info{padding:0 0 10px 0;box-sizing:border-box;width:436px;margin-left:-218px;border:1px solid #c1bcbc}
+.complete_info .dp_header{margin-top:10px;font-size:16px;color:#322c27;}
+.decoration{line-height: 17px;font-weight: normal;font-size: 13px;}
+.complete_info .decoration{padding:0 50px;margin-bottom:15px;color:#777776;}
+.complete_info_input{color:#322c27;padding:0 30px;}
+.complete_info_input input[type="text"],.complete_info_input select{border:1px solid #c1bcbc;line-height:22px;padding:5px 10px;width:71%;margin-left: 14px;}
+.complete_info_input p{margin-bottom:14px;}
+.complete_info_input select,.t_area{margin-left: 10px;width: 260px;padding-left:7px;}
+.t_area{height:60px;padding-top:5px;overflow-y:visible;border:1px solid #c1bcbc;line-height:22px;resize:none;padding-left:10px;box-sizing:border-box;vertical-align:middle;}
+.complete_success,.complete_cancel{width:100px;height:40px;line-height:40px;color:#fff;cursor:pointer;font-size:16px;margin-top:10px;margin-bottom:10px;}
+.complete_success{background-color:#22bb62;margin-left:40px;float:left;}
+.complete_cancel{background-color:#bdbdbd;display:inline-block;text-align:center;float:right;margin-right:40px;}
+#alert_completed i{width:37px;height:29px;background:url(../images/c_sucess.png) no-repeat;background-size:37px 29px;margin-right:20px;display:inline-block;position:relative;top:5px;}
+#alert_completed{font-size:28px;text-align:center;display:none;padding:20px 0;color:#322c27;border:1px solid #c1bcbc;width:410px;}
+.safedetails, .details_link_details, .add_person_details, .ticket_link_details{position:fixed;}
+.inputcolor{cursor:pointer;}
+.clearfix:before, .clearfix:after{clear:both;}
+input, button, textarea, select, optgroup, option, pre{background:none;}
+.main {position: relative;width: 980px;margin: 10px auto;z-index: 1;zoom: 1;}
+.s_insurence,.insurence_details_link{cursor:pointer;}
+.iframe_for_rule_fd{width: 100%;height: 100%;position: fixed;top: 0;z-index: 9;display:none;}
+.insurence_detail_cover{position: absolute;left: 70px;display:none;z-index: 999;top: 40px;}
+.order-box{position:relative;}
+.insurence_link_fd{color:#22bb26;float:right;cursor:pointer;}
+.idcardsex{display:none;}
+.ID_number,.J_Select,.selectIdcard,.name_person,.selectsex,.selectNation{background-color:#fff;}
+/*房东拒绝*/
+.ff5d51{color:#ff5d51;}
+.refuse_info{margin-top:-270px;box-sizing:border-box;padding-bottom:10px;width:370px !important;margin-left:-185px;border:#c1bcbc;}
+.refuse_info .decoration{padding:0;margin-bottom:15px;color:#777776;}
+.refuse_info .dp_header{margin-top:10px;font-size:16px;color:#322c27;}
+.refuse_info .complete_success{margin-left:0;}
+.refuse_info .complete_cancel{margin-right:0;}
+.refuse_info .t_area{width:270px;height:100px;display:none;margin-left:0;position:relative;}
+.refuse_info_input{color:#322c27;}
+.refuse_info_input label input{margin-right:5px;margin-top:-4px;}
+.refuse_info .dp_daypicker{padding:10px 50px 10px 50px;}
+
+/*修改老版order.css*/
+.surveYY{opacity:0.5 !important}
+.safedetails,.details_link_details,.add_person_details,.ticket_link_details{position:fixed !important;}
+.insurence_link_fd{color:#22bb26;float:right;cursor:pointer;}
+#safeticket:hover,#ticket_des:hover,#insurence_detail{cursor:pointer !important;}
+#person1_idcard, #person1_name, #checkinnum{color:#322c27 !important;}
+/*修改新版order.css*/
+.insurance .safeticket2{cursor:pointer;}
+.insurance .safeticket2:hover{text-decoration:underline;}
+.makeSure_btn,.cancel_btn{cursor:pointer !important;}
+#safeticket:hover{cursor:pointer !important;}
+.new_gray-btn:hover{
+background:-moz-linear-gradient(top,#ececec 0%,#ffffff 100%);
+background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,#ececec),color-stop(100%,#ffffff));
+background:-webkit-linear-gradient(top,#ececec 0%,#ffffff 100%);
+background:-o-linear-gradient(top,#ececec 0%,#ffffff 100%);
+background:-ms-linear-gradient(top,#ececec 0%,#ffffff 100%);
+background:linear-gradient(to bottom,#ececec 0%,#ffffff 100%);
+}
+.new_gray-btn{
+background:-moz-linear-gradient(top,#ffffff 0%,#ececec 100%);
+background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,#ffffff),color-stop(100%,#ececec));
+background:-webkit-linear-gradient(top,#ffffff 0%,#ececec 100%);
+background:-o-linear-gradient(top,#ffffff 0%,#ececec 100%);
+background:-ms-linear-gradient(top,#ffffff 0%,#ececec 100%);
+background:linear-gradient(to bottom,#ffffff 0%,#ececec 100%);
+}
+	

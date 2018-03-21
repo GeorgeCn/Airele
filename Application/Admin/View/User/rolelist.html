@@ -1,0 +1,44 @@
+<extend name="Layout/index" />
+<block name="breadcrumb-01">
+	<li>
+		<i class="icon-home home-icon"></i>
+		<a href="#">首页</a>
+	</li>
+	<li class="active">用户管理</li>
+</block>
+
+<block name="breadcrumb-02">
+	<h1>
+		用户管理
+		<small>
+			<i class="icon-double-angle-right"></i>
+			 分配权限
+		</small>
+	</h1>
+</block>
+<block name="main">
+	<div class="row">
+		<div class="col-md-12">
+			<p>
+				给 <b><{$users.username}></b> 分配权限
+			</p>
+			
+			<form action="<{:U('User/saverole')}>" method='post'>
+			<p style="width:600px">
+				<volist name="list" id="vo">
+					<input type="checkbox" name="role[]"  value="<{$vo.id}>" <if condition="in_array($vo['id'],$role) eq true">checked</if>><{$vo.name}>
+					&nbsp;
+					&nbsp;
+					&nbsp;
+				</volist>
+			</p>
+			<input type="hidden" name="uid" value="<{$users.id}>">
+			<input type="submit" value="保存" class="btn btn-primary">
+
+			</form>
+	
+		</div>
+	</div>
+
+	
+</block>

@@ -1,3 +1,0 @@
-<?php
-//000000003600a:2:{i:0;a:7:{s:2:"id";s:2:"18";s:4:"name";s:12:"菜单管理";s:3:"url";s:24:"Sysmenu/sysmenuList.html";s:9:"parent_id";s:1:"9";s:11:"create_time";s:10:"1436783827";s:13:"record_status";s:1:"1";s:8:"index_no";s:1:"1";}i:1;a:7:{s:2:"id";s:2:"20";s:4:"name";s:12:"修改密码";s:3:"url";s:27:"Account/upPasswordPage.html";s:9:"parent_id";s:1:"9";s:11:"create_time";s:10:"1436786006";s:13:"record_status";s:1:"1";s:8:"index_no";s:1:"3";}}
-?>

@@ -1,0 +1,59 @@
+<extend name="Layout/index" />
+<block name="breadcrumb-01">
+	<li>
+		<i class="icon-home home-icon"></i>
+		<a href="#">首页</a>
+	</li>
+	<li class="active">公告管理</li>
+</block>
+
+<block name="breadcrumb-02">
+	<h1>
+		公告管理
+		<small>
+			<i class="icon-double-angle-right"></i>
+				修改公告
+		</small>
+	</h1>
+</block>
+<block name="main">
+
+	
+	<div class="row">
+		<div class="col-md-12">
+			<form action="<{:U('Notice/save')}>" method='post' class="form-horizontal">
+
+				<div class="form-group" style="">
+					<label for="" class="col-sm-2 control-label">原公告内容：</label>
+					<div class="col-sm-4">
+						<{$vo.content}>
+						
+					</div>
+				</div>
+				<div class="form-group" style="">
+					<label for="" class="col-sm-2 control-label">新的公告内容：</label>
+					<div class="col-sm-4">
+						<textarea id="noticeText" class="form-control" name="content" value="<{$vo.content}>" rows="4" placeholder="请输入新的公告内容"></textarea>
+						
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-4 col-sm-offset-2">
+						<input type="radio" name="status" value="1" <if condition="$vo.status eq 1">checked</if>>启用
+						<input type="radio" name="status" value="0" <if condition="$vo.status eq 0">checked</if>>禁用
+					</div>
+				</div>
+				<div class="form-group">
+				    <div class="col-sm-offset-2 col-sm-4">
+				    	<input type="hidden" name="id" value="<{$vo.id}>">
+				      	<button type="submit" class="btn btn-default">修 改</button>
+				    </div>
+				</div>
+		
+			</form>
+		</div>
+	</div>
+		
+		
+</block>
+

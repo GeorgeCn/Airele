@@ -1,3 +1,0 @@
-<?php
-//000000003600a:2:{i:0;a:7:{s:2:"id";s:5:"16668";s:4:"name";s:15:"淘房365发房";s:3:"url";s:24:"Openapi/fabulist365.html";s:9:"parent_id";s:5:"16667";s:11:"create_time";s:10:"1486619238";s:13:"record_status";s:1:"1";s:8:"index_no";s:1:"1";}i:1;a:7:{s:2:"id";s:5:"16669";s:4:"name";s:18:"淘房365已发房";s:3:"url";s:27:"Openapi/hadfabulist365.html";s:9:"parent_id";s:5:"16667";s:11:"create_time";s:10:"1486619268";s:13:"record_status";s:1:"1";s:8:"index_no";s:1:"2";}}
-?>

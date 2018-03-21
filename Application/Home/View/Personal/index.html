@@ -1,0 +1,136 @@
+<extend name="Index/index" />
+<!--contact-->
+<block name="main">
+    <!-- <{:dump($_SESSION)}> -->
+    <div>
+        <h2 style="text-align:center;line-height:80px;">个人中心</h2>
+    </div><br>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-2 col-md-4 main-sidebar">
+                <div class="view3">
+                    <div class="card sidebar-nav">
+                        <ul class="nav">
+                            <li class="is-current">
+                                <a href="<{:U('Personal/index')}>"><span class="icon icon-user nav-icon"></span><br>
+                                <span class="nav-title">个人信息</span></a>
+                            </li>
+
+                            <li>
+                                <a href="<{:U('Personal/avatar')}>"><span class="icon icon-eye nav-icon"></span><br>
+                                <span class="nav-title">修改头像</span></a>
+                            </li>
+
+                            <li>
+                                <a href="<{:U('Personal/security')}>"><span class="icon icon-lock2 nav-icon"></span><br>
+                                <span class="nav-title">安全设置</span></a>
+                            </li>
+
+                            <li>
+                                <a href="<{:U('Collect/index')}>"><span class="icon icon-th-stroke nav-icon"></span><br><span class="nav-title">我的收藏</span></a>
+                            </li>
+
+                            <li>
+                                <a href="<{:U('PersonOrders/index')}>"><span class="icon icon-switch nav-icon"></span><br>
+                                <span class="nav-title">我的订单</span></a>
+                            </li>
+
+                            <li>
+                                <a href="<{:U('Comment/index')}>"><span class="icon icon-switch nav-icon"></span><br>
+                                <span class="nav-title">我的评论</span></a>
+                            </li>
+
+                        </ul>
+                    </div><!--END sidebar-nav -->
+                </div>
+            </div>
+            <!-- *********************************************** -->
+            <div class="col-sm-10 col-md-8 main-content">
+                <div class="layer">
+                    <div class="view5 is-loaded">
+                        <div class="card profile-manager">
+                            <div class="card-content">
+                                <caption>个人信息</caption>
+                        		<table class="table table-hover table-border">
+                                    <tr>
+                                        <th>用户名：</th>
+                                        <td>
+                                            <if condition="$vo['nickname'] eq ''" >
+                                                Air·小冰
+                                            <else />
+                                                <{$vo['nickname']}>
+                                            </if>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>手机号：</th>
+                                        <td>
+                                            <{$vo['tel']}>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>性别：</th>
+                                        <td>
+                                            <if condition="$vo['sex'] eq '0'" >女
+                                            <elseif condition="$vo['sex'] eq '1'" />男
+                                            <else />保密
+                                            </if>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>头像：</th>
+                                        <td>
+                                            <if condition="$vo['icon'] eq false" >
+                                                <img src="__PUBLIC__/img/Home/lufei.gif" style='width:150px;height:150px'>
+                                            <else />
+                                                <img src="__PUBLIC__/Uploads/<{$vo['icon']}>" style='width:150px;height:150px'>
+                                            </if>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>邮箱：</th>
+                                        <td>
+                                            <{$vo['email']}>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>破壳日：</th>
+                                        <td>
+                                            <{$vo['birthday']}>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <form action="<{:U('Personal/edit')}>" method="post">
+                                    <input type="hidden" name="id" value="<{$vo['id']}>">
+                                    <button class="btn btn-primary btn-lg">编辑</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div><!-- END view5-->
+                    <!-- ********************公告栏************************** -->
+                    <div class="table-responsive">
+                        <table class="table table-condensed table-border">
+                            <th colspan="2" class="col-sm-2">
+                                公告
+                            </th>
+                            <volist name="list" id="vi">
+                            <tr>
+                                <td><span class="msg"><{$vi['content']}></span></td>
+                                <td><{$vi['time']}></td>
+                            </tr>
+                            </volist>
+                        </table>
+                        <div  style="float:right;width:420px;height:300px;" >
+                            <button onclick="alert('啊,关闭')" id='btn0' style="margin-right:-100px">关闭</button>
+                            <img src="__PUBLIC__/Uploads/<{$result[filename2]}>" frameborder="0" style="width:440px;height:220px;float:right"></img>
+                        </div>
+
+                    </div>
+                </div><!-- END layer-->
+            </div>
+        </div><!--END row-->
+    </div><!--END container-->
+
+</block>
+<!--//contact-->
+<!--footer-->

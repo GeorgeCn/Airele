@@ -1,0 +1,101 @@
+<extend name="Layout/index" />
+<block name="breadcrumb-01">
+    <li>
+        <i class="icon-home home-icon"></i>
+        <a href="#">首页</a>
+    </li>
+    <li class="active">广告管理</li>
+</block>
+
+<block name="breadcrumb-02">
+    <h1>
+        广告管理
+        <small>
+            <i class="icon-double-angle-right"></i>
+             广告列表
+        </small>
+    </h1>
+</block>
+<block name="goodsindex.css">
+        <link rel="stylesheet" href="__PUBLIC__/Css/goodsindex.css">    
+</block>    
+<block name="main">
+    <h5 class="bigger lighter red text-center">
+                <i class="icon-table"></i>
+            表格 & 信息
+    </h5>
+    <div id="search" style="margin:20px auto">
+            <form action="#" method='get' class="h5" style="font-weight:30px">
+            Advertise Name : <input type="text" name="id" class='search' placeholder="请输入: 广告编号">
+                            <input class="button" type="submit" value="Search" >
+            </form>
+    </div>
+    <div class=".table-responsive">
+    <table class="table table-striped table-bordered table-hover">
+            <thead class="thin-border-bottom">
+                <tr>
+                    <th class="hidden-480 text-center">
+                        <i class="icon-table"></i>
+                        &nbsp;广告编号
+                    </th>
+                    <th class="hidden-480 text-center">
+                        <i class="icon-user"></i>
+                        &nbsp;合作机构
+                    </th>
+                    <th class="hidden-480 text-center">
+                        <i class="icon-pencil"></i>
+                        &nbsp;URL地址
+                    </th>
+                    <th class="hidden-480 text-center">
+                        <i class="icon-pencil"></i>
+                        &nbsp;广告图片
+                    </th>
+                    <th class="hidden-480 text-center">
+                        <i class="icon-rocket"></i>
+                        &nbsp;广告描述
+                    </th>
+                    <th class="hidden-480 text-center">
+                        <i class="icon-spinner"></i>
+                        &nbsp;创建时间
+                    </th>
+                    <th class="hidden-480 text-center">
+                        <i class="icon-adjust"></i>
+                        &nbsp;状态
+                    </th>
+                    <th class="hidden-480 text-center">
+                        &nbsp;操作&nbsp;
+                        <i class="icon-share-alt"></i>
+                    </th>
+                        
+                    </tr>
+            </thead>
+            <tbody>
+                <volist name="data" id="vo">
+                    <tr>
+                        <td class="hidden-480 text-center"><{$vo.id}></td>
+                        <td class="hidden-480 text-center"><{$vo.company}></td>
+                        <td class="hidden-480 text-center"><{$vo.url}></td>
+                        <td>
+                        <img src="__PUBLIC__/Uploads/<{$vo.filename1}>">
+                        </td>
+                        <td class="hidden-480 text-center"><{$vo.desc}></td>
+                        <td class="hidden-480 text-center"><{$vo.createtime}></td>
+                        <td class="hidden-480 text-center">
+                            <if condition="$vo.status eq 1">
+                                <span class="label label-inverse text-center"><a href="<{:U('status',array('id'=>$vo['id'],'status'=>$vo['status']))}>">禁用</a></span>
+                            <elseif condition="$vo.status eq 0" />
+                                <span class="label label-warning"><a href="<{:U('status',array('id'=>$vo['id'],'status'=>$vo['status']))}>">启用</a></span>
+                            </if>
+                        </td>
+                        <td class="hidden-480 text-center">
+                        <a href="<{:U('delete',array('id'=>$vo['id']))}>" class="btn btn-danger">删除</a>
+                        </td>
+                    </tr>
+                </volist>
+            </tbody>
+        </table>
+    </div> <!--END responsive-->
+    <!-- 分页显示 -->
+    <{$page}>                      
+
+</block>

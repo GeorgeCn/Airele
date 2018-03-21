@@ -1,0 +1,156 @@
+<extend name="Index/index" />
+<!--contact-->
+<block name="main">
+
+<link href="__PUBLIC__/css/PersonOrders.css" rel="stylesheet" />
+
+<div class="site-main">
+<div class="container">
+<div class="row">
+	<div class="wechat-label"><h2 style="text-align:center;line-height:80px;">个人中心</h2></div>
+<div class="col-sm-1 col-md-2 main-sidebar">
+<div class="view3">
+<div class="card sidebar-user hidden-sm"> 
+<div class="card-content info-wrap clearfix">
+<div class="avatar img-60 info-avatar" style="background-image:url(https://striker.teambition.net/thumbnail/110m74d1a40279158a29e1e2044012a5b866/w/200/h/200);"></div>
+<div class="info-items is-bfc">
+
+<div class="info-desc" data-original-title="" title="">
+
+</div>
+</div>
+</div>
+</div>
+<div class="card sidebar-nav">
+<ul class="nav">
+                            <li class="is-current">
+                                <a href="<{:U('Personal/index')}>"><span class="icon icon-user nav-icon"></span><br>
+                                <span class="nav-title">个人信息</span></a>
+                            </li>
+
+                            <li>
+                                <a href="<{:U('Personal/avatar')}>"><span class="icon icon-eye nav-icon"></span><br>
+                                <span class="nav-title">修改头像</span></a>
+                            </li>
+
+                            <li>
+                                <a href="<{:U('Personal/security')}>"><span class="icon icon-lock2 nav-icon"></span><br>
+                                <span class="nav-title">安全设置</span></a>
+                            </li>
+
+                            <li>
+                                <a href="<{:U('Collect/index')}>"><span class="icon icon-th-stroke nav-icon"></span><br><span class="nav-title">我的收藏</span></a>
+                            </li>
+
+                            <li>
+                                <a href="<{:U('PersonOrders/index')}>"><span class="icon icon-switch nav-icon"></span><br>
+                                <span class="nav-title">我的订单</span></a>
+                            </li>
+
+                            <li>
+                                <a href="<{:U('Comment/index')}>"><span class="icon icon-switch nav-icon"></span><br>
+                                <span class="nav-title">我的评论</span></a>
+                            </li>
+
+                        </ul></div></div></div>
+
+<div class="col-sm-10 col-md-8 main-content">
+<div class="layer"><div class="view5 is-loaded">
+<div class="card profile-manager">
+<div class="card-header"><h3 class="card-title">我的订单</h3></div>
+	<div class="main myorder">
+		<div class="screened-select">
+			<div class="orderState">
+				<!-- <select name="" class="sele" id="selstate">
+					<option value="" selected="">全部状态</option>
+					<option value="1">未确认</option>
+					<option value="2">确认</option>
+					<option value="3">已入住</option>
+					<option value="4">退房</option>
+				</select> -->
+			</div>
+		</div>
+					
+		<div class="order-table" id="allorderlst">
+			<!-- <div class="order-list-head clearfix">
+				<span class="w520">订单信息</span>
+				<span class="w140">实付金额</span>
+				<span class="w140">订单状态</span>
+				<span class="w140">操作</span>
+			</div> -->
+			
+			<div class="order-list-body">
+				<ul class="j_allorderli">
+					<volist name="list" id="vo">
+						<li>
+							<table class="table table-striped order-list j_product" id="indent{$vo['id']}" >
+								<tr>
+									<td colspan="5" style="text-align:left;"><div><span>订单号：<{$vo.ordernum}></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>订单提交时间：<{:date('y-m-d h:i:s',$vo["time"])}></span></div></td>
+								</tr>
+								<br>
+								<tbody>
+									<tr>
+										<td>订单信息</td>
+										<td>实付金额</td>
+										<td>订单状态</td>
+										<td>支付状态</td>
+										<td>操作</td>
+									</tr>
+									<tr>
+										<td width="520" class="all-goods">
+											<a href="<{:U('Details/index',array('id'=>$vo['gid']))}>" target="_blank"><img class="j_product_img" src="__PUBLIC__/uploads/<{$vo.filename1}>"></a>
+											<div class="m"><div><{$vo.address}></div></div>
+										</td>
+										<td class="amount" width="140">￥<{$vo.amount}></td>
+										<td width="140">
+											<if condition="($vo.status eq 1) "> 审核中
+											<elseif condition="$vo.status eq 2"/>已确认
+											<elseif condition="$vo.status eq 3"/>已入住
+											<else /> 已退房
+											</if>
+										</td>
+										<td width="140">
+											<if condition="$vo.ispay eq 2">已支付<else /><a class="btn-success" href="<{:U('PersonOrders/pay',array('id'=>$vo['id']))}>">去支付</a>
+											</if>
+										</td>
+										<td width="140" class="operate">
+											<div>
+												<if condition="$vo.status eq 2"><a class="btn-success btn-org" href="<{:U('PersonOrders/stay',array('id'=>$vo['id']))}>">入住</a>
+												<elseif condition="$vo.status eq 3"/><a class="btn-danger btn-org" href="<{:U('PersonOrders/out',array('id'=>$vo['id']))}>">退房</a>
+												<else />	
+												<a class="btn-danger" target="_blank" href="<{:U('Like/doadd',array('gid'=>$vo['gid']))}>">去点赞</a>
+												</if>
+												
+											</div>
+											<div <if condition="$vo.ispay eq 1">style="display:none"</if>>
+												
+												<a class="btn-info btn-org" href="<{:U('PersonOrders/comment',array('id'=>$vo['id']));}>">去评价</a>
+												
+											</div>
+											<div>
+												<if condition="$vo.ispay eq 2"><a class="btn-org" href="<{:U('PersonOrders/complain',array('oid'=>$vo['id']))}>">去投诉</a><else />
+													<a target="_blank" href="<{:U(index/index);}>">再去逛逛</a>
+												</if>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</li>
+					</volist>
+				</ul>
+			</div>
+		</div>	
+
+	</div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</block>
+<!--//contact-->
+<!--footer-->

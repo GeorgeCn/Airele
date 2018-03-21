@@ -1,0 +1,58 @@
+<extend name="Layout/index" />
+
+<block name="breadcrumb-01">
+	<li>
+		<i class="icon-home home-icon"></i>
+		<a href="#">首页</a>
+	</li>
+	<li class="active">首页管理</li>
+</block>
+
+<block name="breadcrumb-02">
+	<h1>
+		首页管理
+		<small>
+			<i class="icon-double-angle-right"></i>
+			 图片添加
+		</small>
+	</h1>
+</block>
+
+<block name='main'>
+	
+	<!-- <{:var_dump($list)}> -->
+	<table class="table table-striped table-bordered table-hover">
+			<thead>
+				<tr align='left' bgcolor="#ccc">
+					<th>ID</th>
+					<th>图片名</th>
+					<th>图片</th>
+					<th>状态</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				<volist name="list" id="v">
+				<tr>
+					<!-- <td><{$vo.id}>在吗</td> -->
+					<td><{$v.id}></td>
+					<td><{$v.name}></td>
+					<td>
+						<span id="example4" href="assets/img/demoBig2.jpg" title="Cras neque mi, semper leon"><img src="__PUBLIC__/Uploads/<{$v.image}>" alt="" style='width:300px;height:200px'></span>
+					</td>
+					<td><if condition="$v.status eq 0"><a href="<{:U('Header/ssave',array('id'=>$v['id'],'status'=>$v['status']))}>">下架</a>
+						<else /> <a href="<{:U('Header/ssave',array('id'=>$v['id'],'status'=>$v['status']))}>">上架</a>
+						</if>
+</td>
+					<td>
+						<a href="<{:U('Header/delete',array('id'=>$v['id']))}>">删除</a>
+						<a href="<{:U('Header/edit',array('id'=>$v['id']))}>">修改</a>
+					</td>
+				</tr>
+				</volist>
+			</tbody>
+			
+			
+		</table>
+		
+</block>
