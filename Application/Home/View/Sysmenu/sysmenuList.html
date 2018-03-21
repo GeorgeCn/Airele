@@ -1,0 +1,84 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>系统管理</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 最新版本渲染 -->
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/basic.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common.css">
+
+</head>
+<body>
+<include file="Public/head_city" />
+     <div class="title cf">
+    	<div class="logo fl cf">
+			<img src="__PUBLIC__/images/logo.png">
+		</div>
+		<ul class="cf fl">
+		<li><a href="{:U('Welcome/welcome')}">首页</a></li>
+			{$menutophtml}
+		</ul>
+		<div class="cf fr title_right">
+			<a class="blue" href="javascript:">欢迎您 <?php echo cookie("admin_user_name");?></a>
+			<span>|</span>
+			<a href="{:U('/Index/outlogin')}">退出</a>
+		</div>
+    </div>
+	<div class="main">
+		<div class="main_left subNavBox">
+		<include file="Public/left_menu" />
+			{$menulefthtml}
+		</div>
+		<div class="main_right">
+			<div class="common_head">
+				<h2>菜单管理</h2>
+				<form action="">
+					<div class="common_head_main">
+						<table class="table_one">
+							<tr>
+								<td class="td_title">菜单名称：</td>
+								<td class="td_main"><input type="text"></td>
+								<td class="td_title"></td>
+								<td class="td_main"></td>
+							</tr>
+						</table>
+						<p class="head_p"><button class="btn_a">搜索</button></p>
+					</div>
+				</form>
+			</div>
+			<div class="common_main">
+				<h2>菜单列表<a href="{:U('Sysmenu/addSysmenu')}?type=add&mid={$mid}" class="btn_a">新增菜单</a></h2>
+				<div class="table">
+					<table>
+						<thead>
+							<tr>
+								<th>序号</th>
+								<th>菜单名称</th>
+								<th>下级菜单</th>
+								<th width="35%">链接</th>
+								<th>排序</th>
+								<th>修改</th>
+								<th>删除</th>
+							</tr>
+						</thead>
+						<tbody>
+						    <volist name="list" id="vo">
+							<tr>
+								<td>{$i}</td>
+								<td>{$vo.name}</td>
+								<td><a href="{:U('Sysmenu/sysmenuList')}?level_id={$vo.id}">下级菜单</a></td>
+								<td width="30%">{$vo.url}</td>
+								<td>{$vo.index_no}</td>
+								<td><a href="{:U('Sysmenu/upSysmenu')}?upid={$vo.id}&mid={$mid}">修改</a></td>
+								<td><a href="{:U('Sysmenu/delSysmenu')}?delid={$vo.id}">删除</a></td>
+							</tr>
+							</volist>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	  <script src="__PUBLIC__/js/jquery.js"></script>
+    <script src="__PUBLIC__/js/common.js"></script>
+</body>
+</html>

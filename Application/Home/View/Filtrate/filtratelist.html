@@ -1,0 +1,110 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>筛选项管理</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 最新版本渲染 -->
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/basic.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common.css">
+
+</head>
+<body>
+<include file="Public/head_city" />
+      <div class="title cf">
+    	<div class="logo fl cf">
+			<img src="__PUBLIC__/images/logo.png">
+		</div>
+		<ul class="cf fl">
+		<li><a href="{:U('Welcome/welcome')}">首页</a></li>
+			{$menutophtml}
+		</ul>
+		<div class="cf fr title_right">
+			<a class="blue" href="javascript:">欢迎您 <?php echo cookie("admin_user_name");?></a>
+			<span>|</span>
+			<a href="{:U('/Index/outlogin')}">退出</a>
+		</div>
+    </div>
+	<div class="main">
+		<div class="main_left subNavBox">
+		<include file="Public/left_menu" />
+			{$menulefthtml}
+		</div>
+		<div class="main_right">
+			<div class="common_head">
+				<h2>筛选项管理</h2>
+				<form action="__URL__/filtratelist.html" method="get" id="form">
+					<input type="hidden" name="no" value="1">
+			        <input type="hidden" name="leftno" value="140">
+					<table class="table_one">
+						<tr>
+							<td class="td_title">业务类型：</td>
+							<td class="td_main">
+							<select name="resourcetype">
+									<option value="1" <?php if($_GET['resourcetype']==1){echo "selected";}?>>整租</option>
+									<option value="0" <?php if($_GET['resourcetype']==0){echo "selected";}?>>合租</option>
+								</select>
+							</td>
+							<td class="td_title">筛选项</td>
+							<td class="td_main">
+								<select name="infotype">
+									<option value="1" <?php if($_GET['infotype']==1){echo"selected ";}?>>租金</option>
+									<option value="2" <?php if($_GET['infotype']==2){echo"selected ";}?>>品牌</option>
+								</select>
+							</td>
+						</tr>
+					</table>
+					<p class="head_p"><button  type="submit" class="btn_a">搜索</button></p>
+				 </form>
+				</div>
+				<div class="common_main">
+				<h2>筛选项列表<if condition="$_GET['infotype'] neq '2'"><a href="__URL__/addtemp.html?type=0&no=1&leftno=140" class="btn_a">新增筛选项</a></if></h2>
+				<div class="table">
+					<table>
+						<thead>
+							<tr>
+								<th>序号</th>
+								<th>类型编号</th>
+								<th>业务类型</th>
+								<th>详细类型</th>
+								<th>名称</th>
+								<th>数据状态</th>
+								<th>排序</th>
+								<th>操作</th>
+							</tr>
+						</thead>
+						<tbody>
+						<volist name="list" id="vo">
+							<tr>
+								<td>{$i}</td>
+								<td>{$vo['type_no']}</td>
+								<td><?php if($vo['resource_type']==0){echo"合租";}elseif($vo['resource_type']==1){echo"整租";}?></td>
+								<td><?php if($vo['info_type']==6){echo"租金";}elseif($vo['info_type']==19){echo"租金";}elseif($vo['info_type']==16){echo"品牌";}elseif($vo['info_type']==20){echo"品牌";}?></td>
+								<td>{$vo['name']}</td>
+								<td><?php if($vo['is_display']==1){echo"显示";}else{echo"隐藏";}?></td>
+								<td>{$vo['index_no']}</td>
+								<td><a href="javascript:;" onclick="if(confirm('确定要删除吗？')){deletedata('{$vo['id']}');}">删除</a>&nbsp;&nbsp;&nbsp;
+								<a href="__URL__/updatefiltrate.html?no=1&leftno=140&upid={$vo['id']}&type=1">修改</a></td>
+							</tr>
+						</volist>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			</div>
+			
+		</div>
+	</div>
+	<script type="text/javascript">
+	function deletedata(pid){
+		$.post('__URL__/filtratedelete.html',{pid:pid},function(data){
+			if(data.status!="200"){
+				alert(data.msg);
+			}window.location.reload();
+		},'json');
+	}
+
+</script>
+    <script src="__PUBLIC__/js/jquery.js"></script>
+ <script src="__PUBLIC__/js/common.js"></script>
+</body>
+</html>
+ 

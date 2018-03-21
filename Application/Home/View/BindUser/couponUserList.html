@@ -1,0 +1,120 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>用户绑定</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 最新版本渲染 -->
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/basic.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common.css">
+
+</head>
+<body>
+<include file="Public/head_city" />
+      <div class="title cf">
+    	<div class="logo fl cf">
+			<img src="__PUBLIC__/images/logo.png">
+		</div>
+		<ul class="cf fl">
+		<li><a href="{:U('Welcome/welcome')}">首页</a></li>
+			{$menutophtml}
+		</ul>
+		<div class="cf fr title_right">
+			<a class="blue" href="javascript:">欢迎您 <?php echo cookie("admin_user_name");?></a>
+			<span>|</span>
+			<a href="{:U('/Index/outlogin')}">退出</a>
+		</div>
+    </div>
+	<div class="main">
+		<div class="main_left subNavBox">
+		<include file="Public/left_menu" />
+			{$menulefthtml}
+		</div>
+		<div class="main_right">
+			<div class="common_head">
+				<h2>用户绑定</h2>
+				<form action="{:U('BindUser/subBindCoupon')}" method="post" id="form">
+					<table class="table_one">
+						<tr>
+							<td class="td_title">优惠码：</td>
+							<td class="td_main"><input type="text" name="coupon" value="{$userarr['customer_code']}"></td>
+							<td class="td_title">优惠活动：</td>
+							<td class="td_main">
+								<select name="code_id">
+								    <volist name="relist" id="vo">
+									<option value="{$vo['id']}">{$vo['name']}</option>
+									</volist>
+								</select>
+							</td>
+						</tr>
+					</table>
+					<input name="customer_id" type="hidden" value="{$userarr['customer_id']}">
+					<p class="head_p"><button class="btn_a" onclick="return check();">提交</button></p>
+				 </form>
+				 <form action="{:U('BindUser/couponUserList')}" method="post">
+						<table class="table_one" style="margin-top:0px">
+						<tr>
+							<td class="td_title">搜索：</td>
+							<td class="td_main">
+								<input type="text" name="mobile"/>
+								<button class="btn_a">搜索</button>
+							</td>
+							<td class="td_title"></td>
+							<td class="td_main"></td>
+						</tr>
+					</table>
+					 </form>
+				</div>
+				<div class="common_main">
+				<div class="table">
+					<table>
+						<thead>
+							<tr>
+								<th>序号</th>
+								<th>姓名</th>
+								<th>手机</th>
+								<th>总金额</th>
+								<th>优惠码</th>
+								<th>操作</th>
+							</tr>
+						</thead>
+						<tbody>
+						<volist name="list" id="vo">
+							<tr>
+								<td>{$i}</td>
+								<td>{$vo['true_name']}</td>
+								<td>{$vo['mobile']}</td>
+								<td>{$vo['account_money']}</td>
+								<td>{$vo['customer_code']}</td>
+								<td><a href="{:U('BindUser/delCoupon')}?deid={$vo['customer_id']}">删除</a>&nbsp;&nbsp;&nbsp;
+								<a href="{:U('BindUser/bindCoupon')}?paid={$vo['customer_id']}&no=1&leftno=43">修改</a></td>
+							</tr>
+						</volist>
+						</tbody>
+					</table>
+					<div class="skip cf">
+						<p class="fl skip_left">共{$pagecount}条记录，每页15条</p>
+						<p class="fr skip_right">
+							{$show}
+						</p>
+					</div>
+				</div>
+			</div>
+			</div>
+			
+		</div>
+	</div>
+	<script type="text/javascript">
+	/*提交表单*/
+ function check(){
+	   var coupon=$("input[name='coupon']").val();
+	   if(coupon==""){
+		    alert("请输入优惠码！");
+		    return false;
+	   }else{
+		   $("#form").submit();
+	   } 
+   }
+</script>
+    <script src="__PUBLIC__/js/jquery.js"></script>
+ <script src="__PUBLIC__/js/common.js"></script>
+</body>
+</html>

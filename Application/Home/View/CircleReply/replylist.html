@@ -1,0 +1,205 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>帖子管理</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 最新版本渲染 -->
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/basic.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/plug/jquery.datetimepicker.css"/>
+
+</head>
+<body>
+<include file="Public/head_city" />
+    <div class="title cf">
+    	<div class="logo fl cf">
+			<img src="__PUBLIC__/images/logo.png">
+		</div>
+		<ul class="cf fl">
+		<li><a href="{:U('Welcome/welcome')}">首页</a></li>
+			{$menutophtml}
+		</ul>
+		<div class="cf fr title_right">
+			<a class="blue" href="javascript:;">欢迎您 <?php echo cookie("admin_user_name");?></a>
+			<span>|</span>
+			<a href="{:U('/Index/outlogin')}">退出</a>
+		</div>
+    </div>
+	<div class="main">
+		<div class="main_left subNavBox">
+		<include file="Public/left_menu" />
+			{$menulefthtml}
+		</div>
+		<div class="main_right">
+			<div class="common_head">
+				<h2>回复查询</h2>
+				<div class="common_head_main">
+					<form action="{:U('CircleReply/replylist')}" method="get">
+					<input type="hidden" name="no" value="47"/>
+					<input type="hidden" name="leftno" value="67"/>
+						<table class="table_one">
+						    <tr>
+								<td class="td_title">回复时间：</td>
+						        <td class="td_main"><input class="inpt_a" type="text" name="startTime" id="datetimepicker" value="<?php echo I('get.startTime');?>">&nbsp;~&nbsp;<input class="inpt_a" type="text" name="endTime" id="datetimepicker1" value="<?php echo I('get.endTime');?>"></td>
+								<td class="td_title">创建者手机号：</td>
+								<td class="td_main"><input type="text" name="mobile" value="<?php echo I('get.mobile');?>"></td>
+								<td class="td_title">创建者姓名：</td>
+								<td class="td_main"><input type="text" name="name" value="<?php echo I('get.name'); ?>"></td>
+							</tr>
+							<tr>
+								<td class="td_title">帖子标题：</td>
+						        <td class="td_main"><input class="inpt_a" type="text" name="title" value="<?php echo I('get.title');?>"></td>
+								<td class="td_title">回复内容：</td>
+								<td class="td_main"><input type="text" name="replycontent" value="<?php echo I('get.replycontent'); ?>"></td>
+								<td class="td_title">回复状态</td>
+								<td class="td_main">
+									<select name="replystatus" id="js_poststatus">
+									   <option value="99" <?php if(I('get.replystatus')==99){echo "selected";}?>>全部回复</option>
+									   <option value="0" <?php if(strlen(I('get.replystatus'))==1){echo "selected";}?>>隐藏的回复</option>
+									   <option value="1" <?php if(I('get.replystatus')==1){echo "selected";}elseif(!isset($_GET['replystatus'])){echo "selected";}?>>可见的回复</option>
+									</select>
+								</td>
+							</tr>
+						</table>
+						<p class="head_p"><button class="btn_a">搜索</button></p>
+					</form>
+				</div>
+			</div>
+			<div class="common_main">
+				<h2>所有回复列表<a style="margin-left:100px;display:none;" href="__URL__/downloadReply?<?php echo $_SERVER["QUERY_STRING"];?>" class="btn_a" id="btnDownload">下载</a></h2>
+				<div class="table">
+					<table>
+						<thead>
+							<tr>
+								<th>序号</th>
+								<th>帖子名称</th>
+								<th>回复内容</th>
+								<th>创建者姓名</th>
+								<th>创建者手机</th>
+								<th>回复时间</th>
+								<th>隐藏回复</th>
+					    	<!-- <th>回复TA</th> -->
+							</tr>
+						</thead>
+						<tbody>
+							  <volist name="list" id="vo">
+							<tr>
+								<td>{$i}</td>
+								<td>{$vo.post_title}</td>
+								<td>{$vo.reply_content}</td>
+								<td>{$vo.cname}</td>
+								<td>{$vo.mobile}</td>
+								<td>{$vo['create_time']|date="Y-m-d H:i:s",###}</td>
+								<td>
+									<if condition="strtoupper($vo['is_display']) eq '1'">
+								     <a href="javascript:;" onclick="upPostsState('{$vo.id}','{$vo.post_id}',this);">隐藏</a>
+								    <else/>
+								     <a href="javascript:;" onclick="upPostsState('{$vo.id}','{$vo.post_id}',this);">取消隐藏</a>
+								    </if>
+								</td>
+								<!-- <td><a href="javascript:;">回复TA</a></td> -->
+								<input type="hidden" name="parent_id" value="{$vo['id']}">
+						    	<input type="hidden" name="parent_customer_id" value="{$vo['customer_id']}">
+						    	<input type="hidden" name="parent_post_id" value="{$vo['post_id']}">
+							</tr>
+							</volist>
+						</tbody>
+					</table>
+					<div class="skip cf">
+						<p class="fl skip_left">共{$pagecount}条记录，每页10条</p>
+						<p class="fr skip_right">
+							{$show}
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="addReply" style="display:none;">
+		<div class="addReply_main">
+			<form method="post" action="{:U('CircleReply/layersReplyPosts')}" id="form1">
+			 <input type="hidden" name="js_post_id">
+			 <input type="hidden" name="js_parent_id">
+			 <input type="hidden" name="js_parent_customer_id">
+				<div class="cf reply_text">
+					<span>回复内容</span>
+					<textarea name="reply_content" id="reply_content1"></textarea>
+				</div>
+				<div class="cf reply_message">
+					<div class="fl cf">
+						<label for="a">创建者手机</label>
+						<input type="tel" name="mobile" id="mobile">
+					</div>
+				</div>
+				<div class="anniu cf">	
+					<a href="#" class="anniu_back">返回</a>
+					<button class="anniu_add" onclick="return check1();">添加回复</button>
+
+				</div>
+			</form>
+		</div>
+	</div>
+    <script src="__PUBLIC__/js/jquery.js"></script>
+    <script src="__PUBLIC__/js/common.js"></script>
+    <script src="__PUBLIC__/js/listdata.js"></script>
+    <script src="__PUBLIC__/plug/jquery.datetimepicker.js"></script>
+
+    <script type="text/javascript">
+    var login_name='<?php echo cookie("admin_user_name");?>';
+	if(login_name=='admin' || login_name=='yantaojie'){
+		$("#btnDownload").show();
+	}
+
+        $('#datetimepicker').datetimepicker({step:10,lang:'ch',timepicker:false,format:"Y-m-d"});
+	    $('#datetimepicker1').datetimepicker({step:10,lang:'ch',timepicker:false,format:"Y-m-d"});
+
+        $(function(){
+		   $(".table tr").children("td:nth-child(8)").bind("click",function(){
+               var parent_id=$(this).parents("tr").find("input[name='parent_id']").val();
+               var post_id=$(this).parents("tr").find("input[name='parent_post_id']").val();
+               var parent_customer_id=$(this).parents("tr").find("input[name='parent_customer_id']").val();
+                 $("input[name='js_parent_id']").val(parent_id);
+                 $("input[name='js_parent_customer_id']").val(parent_customer_id);
+                 $("input[name='js_post_id']").val(post_id);
+		     	 $(".addReply").show();
+		    })
+		   $(".anniu_back").on("click",function(){
+		       $(".addReply").hide();
+		   })
+		});
+
+    function upPostsState(cid,pid,object){
+    	if(cid!=""){
+	        $.get("__URL__/upCircleReplayState.html",{cid:cid,pid:pid},function(data){
+					if(data.status==200){
+					   var is_display=data.is_display;
+					   if(is_display==0){
+					   	 $(object).html("取消隐藏");
+					   }else if(is_display==1){
+					     $(object).html("隐藏");
+					   }
+					}
+				},"json");
+	    }
+    }
+    </script>
+    <script type="text/javascript">
+    function check1(){
+	   var reply_content=$("#reply_content1").val();
+	   var mobile=$("#mobile").val();
+	   if(reply_content==""){
+		    alert("回复内容不能为空！");
+		    return false;
+	   }else if(mobile==""){
+		   alert("创建者手机不能为空！");
+		   return false;
+	   }else if(mobile.length!=11){
+	   	   	alert("电话格式不正确！");
+		   return false;
+	   }else{
+		   $("#form1").submit();
+	   } 
+    }
+    </script>
+</body>
+</html>

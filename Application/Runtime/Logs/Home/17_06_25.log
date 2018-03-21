@@ -1,0 +1,1336 @@
+[ 2017-06-25T14:53:33+08:00 ] ::1 /hizhu/admin.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001001s ]
+
+[ 2017-06-25T14:53:33+08:00 ] ::1 /hizhu/admin.php/Index/verufy.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2017-06-25T14:53:38+08:00 ] ::1 /hizhu/Index/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.012000s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.012001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' AND `user_pwd` = '0c6b4038cefe52dbba27c6434dc1fecd'  [ RunTime:0.011001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.011001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-25T14:53:40+08:00 ] ::1 /hizhu/Welcome/welcome.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.012000s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.010001s ]
+SQL: SHOW COLUMNS FROM `adminmenulist` [ RunTime:0.009000s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 0 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.011000s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 0 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.010001s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 1 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.009001s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 3 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.010001s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 4 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.009001s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 6 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.009000s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 7 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.011001s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 47 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.008000s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 77 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.011000s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 87 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.008001s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 107 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.012000s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 141 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.011001s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 162 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.009001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' AND `record_status` = 1 LIMIT 1   [ RunTime:0.009000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-25T14:53:48+08:00 ] ::1 /hizhu/Orders/auditHouseOrders.html?no=4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.011001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.009001s ]
+SQL: SHOW COLUMNS FROM `adminmenulist` [ RunTime:0.009000s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 29 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.009001s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 39 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.010001s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 68 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.010000s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 72 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.010000s ]
+SQL: SHOW COLUMNS FROM `adminmenulistlimit` [ RunTime:0.009000s ]
+SQL: SELECT * FROM `adminmenulistlimit` WHERE `city_auth` = 1 AND `user_name` = 'admin'  [ RunTime:0.035002s ]
+NOTIC: [8] Undefined index: startTime D:\wamp\www\hizhu\Application\Home\Controller\OrdersController.class.php 第 26 行.
+NOTIC: [8] Undefined index: endTime D:\wamp\www\hizhu\Application\Home\Controller\OrdersController.class.php 第 27 行.
+NOTIC: [8] Undefined index: orderStatus D:\wamp\www\hizhu\Application\Home\Controller\OrdersController.class.php 第 28 行.
+NOTIC: [8] Undefined index: mobile D:\wamp\www\hizhu\Application\Home\Controller\OrdersController.class.php 第 29 行.
+NOTIC: [8] Undefined index: orderid D:\wamp\www\hizhu\Application\Home\Controller\OrdersController.class.php 第 30 行.
+NOTIC: [8] Undefined index: landmobile D:\wamp\www\hizhu\Application\Home\Controller\OrdersController.class.php 第 31 行.
+NOTIC: [8] Undefined index: landlord D:\wamp\www\hizhu\Application\Home\Controller\OrdersController.class.php 第 32 行.
+NOTIC: [8] Undefined index: tenant D:\wamp\www\hizhu\Application\Home\Controller\OrdersController.class.php 第 33 行.
+NOTIC: [8] Undefined index: source D:\wamp\www\hizhu\Application\Home\Controller\OrdersController.class.php 第 34 行.
+SQL: SHOW COLUMNS FROM `orders` [ RunTime:0.011001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `orders` WHERE orders.record_status = 1 LIMIT 1   [ RunTime:0.012000s ]
+NOTIC: [2] urlencode() expects parameter 1 to be string, array given D:\wamp\www\hizhu\Application\Home\Controller\OrdersController.class.php 第 73 行.
+SQL: SELECT orders.id,orders.renter_name,orders.renter_phone,orders.price_cnt,orders.order_status,orders.order_pirce_cnt,orders.create_time FROM `orders` WHERE orders.record_status = 1 ORDER BY orders.create_time desc LIMIT 0,15   [ RunTime:0.011000s ]
+SQL: SELECT sum(orders.price_cnt) as sumprice_cunt,sum(orders.order_pirce_cnt) as sumorder_pirce_cnt FROM `orders` WHERE orders.record_status = 1 ORDER BY orders.create_time desc LIMIT 1   [ RunTime:0.011001s ]
+SQL: SHOW COLUMNS FROM `customercoupon` [ RunTime:0.013000s ]
+SQL: SELECT SUM(coupon_money) FROM `customercoupon` WHERE `coupon_type` = 2 AND `flag` = 1 LIMIT 1   [ RunTime:0.013000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: startTime D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 72 行.
+NOTIC: [8] Undefined index: endTime D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 72 行.
+NOTIC: [8] Undefined index: mobile D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 74 行.
+NOTIC: [8] Undefined index: landmobile D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 76 行.
+NOTIC: [8] Undefined index: orderStatus D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 81 行.
+NOTIC: [8] Undefined index: orderStatus D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 82 行.
+NOTIC: [8] Undefined index: orderStatus D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 83 行.
+NOTIC: [8] Undefined index: orderStatus D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 84 行.
+NOTIC: [8] Undefined index: orderStatus D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 85 行.
+NOTIC: [8] Undefined index: orderStatus D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 86 行.
+NOTIC: [8] Undefined index: orderStatus D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 87 行.
+NOTIC: [8] Undefined index: orderStatus D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 88 行.
+NOTIC: [8] Undefined index: orderStatus D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 89 行.
+NOTIC: [8] Undefined index: orderStatus D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 90 行.
+NOTIC: [8] Undefined index: tenant D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 94 行.
+NOTIC: [8] Undefined index: orderid D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 96 行.
+NOTIC: [8] Undefined index: source D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 102 行.
+NOTIC: [8] Undefined index: source D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 103 行.
+NOTIC: [8] Undefined index: source D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 104 行.
+NOTIC: [8] Undefined index: source D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 105 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.033002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.033002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2017-06-25T14:54:03+08:00 ] ::1 /hizhu/Sysmenu/sysmenuList.html?no=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.012001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.011000s ]
+SQL: SHOW COLUMNS FROM `adminmenulist` [ RunTime:0.014001s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 9 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.010001s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 78 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.012000s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 21 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.009001s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 125 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.011000s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 138 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.012000s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 208 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.011001s ]
+NOTIC: [8] Undefined index: level_id D:\wamp\www\hizhu\Application\Home\Controller\SysmenuController.class.php 第 17 行.
+SQL: SELECT * FROM `adminmenulist` WHERE `record_status` = 1 AND `parent_id` = 0 ORDER BY id asc  [ RunTime:0.376021s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.043003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.043003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-25T14:55:04+08:00 ] ::1 /hizhu/Sysmenu/sysmenuList.html?level_id=4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.011000s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.012001s ]
+SQL: SHOW COLUMNS FROM `adminmenulist` [ RunTime:0.010000s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `record_status` = 1 AND `parent_id` = 4 ORDER BY id asc  [ RunTime:0.011001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-25T14:55:06+08:00 ] ::1 /hizhu/Sysmenu/addSysmenu.html?type=add&mid=4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.012001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.012001s ]
+NOTIC: [8] Undefined index: addtype D:\wamp\www\hizhu\Application\Home\Controller\SysmenuController.class.php 第 37 行.
+NOTIC: [8] Undefined index: uptype D:\wamp\www\hizhu\Application\Home\Controller\SysmenuController.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `adminmenulist` [ RunTime:0.012000s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `record_status` = 1 AND `parent_id` = 4 ORDER BY id asc  [ RunTime:0.012001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-25T14:55:18+08:00 ] ::1 /hizhu/Sysmenu/addSysmenu.html?type=add&mid=4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.053003s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.012000s ]
+NOTIC: [8] Undefined index: addtype D:\wamp\www\hizhu\Application\Home\Controller\SysmenuController.class.php 第 37 行.
+NOTIC: [8] Undefined index: uptype D:\wamp\www\hizhu\Application\Home\Controller\SysmenuController.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `adminmenulist` [ RunTime:0.012001s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `record_status` = 1 AND `parent_id` = 4 ORDER BY id asc  [ RunTime:0.012000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-25T14:55:37+08:00 ] ::1 /hizhu/Sysmenu/addSysmenu.html?type=add&mid=4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.012000s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.220013s ]
+NOTIC: [8] Undefined index: addtype D:\wamp\www\hizhu\Application\Home\Controller\SysmenuController.class.php 第 37 行.
+NOTIC: [8] Undefined index: uptype D:\wamp\www\hizhu\Application\Home\Controller\SysmenuController.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `adminmenulist` [ RunTime:0.010000s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `record_status` = 1 AND `parent_id` = 4 ORDER BY id asc  [ RunTime:0.012000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-25T14:55:44+08:00 ] ::1 /hizhu/Sysmenu/addSysmenu.html?type=add&mid=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.013001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.013001s ]
+NOTIC: [8] Undefined index: addtype D:\wamp\www\hizhu\Application\Home\Controller\SysmenuController.class.php 第 37 行.
+NOTIC: [8] Undefined index: uptype D:\wamp\www\hizhu\Application\Home\Controller\SysmenuController.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `adminmenulist` [ RunTime:0.012001s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `record_status` = 1 AND `parent_id` = 0 ORDER BY id asc  [ RunTime:0.013001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-25T14:56:00+08:00 ] ::1 /hizhu/Sysmenu/addSysmenu.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.014001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.013001s ]
+SQL: SHOW COLUMNS FROM `adminmenulist` [ RunTime:0.013001s ]
+SQL: INSERT INTO `adminmenulist` (`name`,`url`,`parent_id`,`create_time`,`record_status`,`index_no`) VALUES ('端口订单','javascript:;',4,1498373760,1,4) [ RunTime:0.014001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: uptype D:\wamp\www\hizhu\Application\Home\Controller\SysmenuController.class.php 第 52 行.
+NOTIC: [8] Undefined index: type D:\wamp\www\hizhu\Application\Home\Controller\SysmenuController.class.php 第 67 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-25T14:56:02+08:00 ] ::1 /hizhu/Sysmenu/sysmenuList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.013001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.015001s ]
+NOTIC: [8] Undefined index: level_id D:\wamp\www\hizhu\Application\Home\Controller\SysmenuController.class.php 第 17 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.039002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.039002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2017-06-25T14:57:28+08:00 ] ::1 /hizhu/Orders/auditHouseOrders.html?no=4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.011000s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.011001s ]
+NOTIC: [8] Undefined index: startTime D:\wamp\www\hizhu\Application\Home\Controller\OrdersController.class.php 第 26 行.
+NOTIC: [8] Undefined index: endTime D:\wamp\www\hizhu\Application\Home\Controller\OrdersController.class.php 第 27 行.
+NOTIC: [8] Undefined index: orderStatus D:\wamp\www\hizhu\Application\Home\Controller\OrdersController.class.php 第 28 行.
+NOTIC: [8] Undefined index: mobile D:\wamp\www\hizhu\Application\Home\Controller\OrdersController.class.php 第 29 行.
+NOTIC: [8] Undefined index: orderid D:\wamp\www\hizhu\Application\Home\Controller\OrdersController.class.php 第 30 行.
+NOTIC: [8] Undefined index: landmobile D:\wamp\www\hizhu\Application\Home\Controller\OrdersController.class.php 第 31 行.
+NOTIC: [8] Undefined index: landlord D:\wamp\www\hizhu\Application\Home\Controller\OrdersController.class.php 第 32 行.
+NOTIC: [8] Undefined index: tenant D:\wamp\www\hizhu\Application\Home\Controller\OrdersController.class.php 第 33 行.
+NOTIC: [8] Undefined index: source D:\wamp\www\hizhu\Application\Home\Controller\OrdersController.class.php 第 34 行.
+SQL: SHOW COLUMNS FROM `orders` [ RunTime:0.012000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `orders` WHERE orders.record_status = 1 LIMIT 1   [ RunTime:0.010001s ]
+NOTIC: [2] urlencode() expects parameter 1 to be string, array given D:\wamp\www\hizhu\Application\Home\Controller\OrdersController.class.php 第 73 行.
+SQL: SELECT orders.id,orders.renter_name,orders.renter_phone,orders.price_cnt,orders.order_status,orders.order_pirce_cnt,orders.create_time FROM `orders` WHERE orders.record_status = 1 ORDER BY orders.create_time desc LIMIT 0,15   [ RunTime:0.012001s ]
+SQL: SELECT sum(orders.price_cnt) as sumprice_cunt,sum(orders.order_pirce_cnt) as sumorder_pirce_cnt FROM `orders` WHERE orders.record_status = 1 ORDER BY orders.create_time desc LIMIT 1   [ RunTime:0.010000s ]
+SQL: SHOW COLUMNS FROM `customercoupon` [ RunTime:0.016001s ]
+SQL: SELECT SUM(coupon_money) FROM `customercoupon` WHERE `coupon_type` = 2 AND `flag` = 1 LIMIT 1   [ RunTime:0.016001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: startTime D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 72 行.
+NOTIC: [8] Undefined index: endTime D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 72 行.
+NOTIC: [8] Undefined index: mobile D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 74 行.
+NOTIC: [8] Undefined index: landmobile D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 76 行.
+NOTIC: [8] Undefined index: orderStatus D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 81 行.
+NOTIC: [8] Undefined index: orderStatus D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 82 行.
+NOTIC: [8] Undefined index: orderStatus D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 83 行.
+NOTIC: [8] Undefined index: orderStatus D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 84 行.
+NOTIC: [8] Undefined index: orderStatus D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 85 行.
+NOTIC: [8] Undefined index: orderStatus D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 86 行.
+NOTIC: [8] Undefined index: orderStatus D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 87 行.
+NOTIC: [8] Undefined index: orderStatus D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 88 行.
+NOTIC: [8] Undefined index: orderStatus D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 89 行.
+NOTIC: [8] Undefined index: orderStatus D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 90 行.
+NOTIC: [8] Undefined index: tenant D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 94 行.
+NOTIC: [8] Undefined index: orderid D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 96 行.
+NOTIC: [8] Undefined index: source D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 102 行.
+NOTIC: [8] Undefined index: source D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 103 行.
+NOTIC: [8] Undefined index: source D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 104 行.
+NOTIC: [8] Undefined index: source D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 105 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.035002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.035002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-25T14:57:39+08:00 ] ::1 /hizhu/Staging/stagingList.html?no=4&leftno=55
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.012000s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.011000s ]
+SQL: SHOW COLUMNS FROM `orderpayinstallment` [ RunTime:0.012000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `orderpayinstallment` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.011001s ]
+SQL: SELECT * FROM `orderpayinstallment` WHERE ( 1=1 ) ORDER BY create_time desc LIMIT 0,15   [ RunTime:0.014001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-25T14:58:08+08:00 ] ::1 /hizhu/Customer/authenticationList.html?no=6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.012000s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.013001s ]
+SQL: SHOW COLUMNS FROM `adminmenulist` [ RunTime:0.012000s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 31 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.012001s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 32 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.237013s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 191 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.012000s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.029002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `customer` WHERE `is_auth` = 1 AND ( `auth_time` > 1427817600 AND `auth_time` < 1743523200  ) LIMIT 1   [ RunTime:0.013001s ]
+NOTIC: [2] urlencode() expects parameter 1 to be string, array given D:\wamp\www\hizhu\Application\Home\Controller\CustomerController.class.php 第 44 行.
+NOTIC: [2] urlencode() expects parameter 1 to be string, array given D:\wamp\www\hizhu\Application\Home\Controller\CustomerController.class.php 第 44 行.
+SQL: SELECT * FROM `customer` WHERE `is_auth` = 1 AND ( `auth_time` > 1427817600 AND `auth_time` < 1743523200  ) ORDER BY auth_time desc LIMIT 0,15   [ RunTime:0.056003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: startTime D:\wamp\www\hizhu\Application\Runtime\Cache\Home\ef908816fe1538536da457bb5abcc42d.php 第 72 行.
+NOTIC: [8] Undefined index: endTime D:\wamp\www\hizhu\Application\Runtime\Cache\Home\ef908816fe1538536da457bb5abcc42d.php 第 72 行.
+NOTIC: [8] Undefined index: mobile D:\wamp\www\hizhu\Application\Runtime\Cache\Home\ef908816fe1538536da457bb5abcc42d.php 第 74 行.
+NOTIC: [8] Undefined index: name D:\wamp\www\hizhu\Application\Runtime\Cache\Home\ef908816fe1538536da457bb5abcc42d.php 第 78 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2017-06-25T14:58:31+08:00 ] ::1 /hizhu/Sysmenu/sysmenuList.html?no=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.013001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.013001s ]
+NOTIC: [8] Undefined index: level_id D:\wamp\www\hizhu\Application\Home\Controller\SysmenuController.class.php 第 17 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-25T14:59:07+08:00 ] ::1 /hizhu/Orders/auditHouseOrders.html?no=4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.027001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.012001s ]
+NOTIC: [8] Undefined index: startTime D:\wamp\www\hizhu\Application\Home\Controller\OrdersController.class.php 第 26 行.
+NOTIC: [8] Undefined index: endTime D:\wamp\www\hizhu\Application\Home\Controller\OrdersController.class.php 第 27 行.
+NOTIC: [8] Undefined index: orderStatus D:\wamp\www\hizhu\Application\Home\Controller\OrdersController.class.php 第 28 行.
+NOTIC: [8] Undefined index: mobile D:\wamp\www\hizhu\Application\Home\Controller\OrdersController.class.php 第 29 行.
+NOTIC: [8] Undefined index: orderid D:\wamp\www\hizhu\Application\Home\Controller\OrdersController.class.php 第 30 行.
+NOTIC: [8] Undefined index: landmobile D:\wamp\www\hizhu\Application\Home\Controller\OrdersController.class.php 第 31 行.
+NOTIC: [8] Undefined index: landlord D:\wamp\www\hizhu\Application\Home\Controller\OrdersController.class.php 第 32 行.
+NOTIC: [8] Undefined index: tenant D:\wamp\www\hizhu\Application\Home\Controller\OrdersController.class.php 第 33 行.
+NOTIC: [8] Undefined index: source D:\wamp\www\hizhu\Application\Home\Controller\OrdersController.class.php 第 34 行.
+SQL: SHOW COLUMNS FROM `orders` [ RunTime:0.010000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `orders` WHERE orders.record_status = 1 LIMIT 1   [ RunTime:0.010001s ]
+NOTIC: [2] urlencode() expects parameter 1 to be string, array given D:\wamp\www\hizhu\Application\Home\Controller\OrdersController.class.php 第 73 行.
+SQL: SELECT orders.id,orders.renter_name,orders.renter_phone,orders.price_cnt,orders.order_status,orders.order_pirce_cnt,orders.create_time FROM `orders` WHERE orders.record_status = 1 ORDER BY orders.create_time desc LIMIT 0,15   [ RunTime:0.011001s ]
+SQL: SELECT sum(orders.price_cnt) as sumprice_cunt,sum(orders.order_pirce_cnt) as sumorder_pirce_cnt FROM `orders` WHERE orders.record_status = 1 ORDER BY orders.create_time desc LIMIT 1   [ RunTime:0.008000s ]
+SQL: SHOW COLUMNS FROM `customercoupon` [ RunTime:0.013001s ]
+SQL: SELECT SUM(coupon_money) FROM `customercoupon` WHERE `coupon_type` = 2 AND `flag` = 1 LIMIT 1   [ RunTime:0.012001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: startTime D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 72 行.
+NOTIC: [8] Undefined index: endTime D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 72 行.
+NOTIC: [8] Undefined index: mobile D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 74 行.
+NOTIC: [8] Undefined index: landmobile D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 76 行.
+NOTIC: [8] Undefined index: orderStatus D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 81 行.
+NOTIC: [8] Undefined index: orderStatus D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 82 行.
+NOTIC: [8] Undefined index: orderStatus D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 83 行.
+NOTIC: [8] Undefined index: orderStatus D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 84 行.
+NOTIC: [8] Undefined index: orderStatus D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 85 行.
+NOTIC: [8] Undefined index: orderStatus D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 86 行.
+NOTIC: [8] Undefined index: orderStatus D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 87 行.
+NOTIC: [8] Undefined index: orderStatus D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 88 行.
+NOTIC: [8] Undefined index: orderStatus D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 89 行.
+NOTIC: [8] Undefined index: orderStatus D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 90 行.
+NOTIC: [8] Undefined index: tenant D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 94 行.
+NOTIC: [8] Undefined index: orderid D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 96 行.
+NOTIC: [8] Undefined index: source D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 102 行.
+NOTIC: [8] Undefined index: source D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 103 行.
+NOTIC: [8] Undefined index: source D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 104 行.
+NOTIC: [8] Undefined index: source D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 105 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.040002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.041002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-25T14:59:13+08:00 ] ::1 /hizhu/stores/storesList.html?no=162
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.014001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.013001s ]
+SQL: SHOW COLUMNS FROM `adminmenulist` [ RunTime:0.012001s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 163 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.012001s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 167 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.012001s ]
+SQL: SHOW COLUMNS FROM `stores` [ RunTime:0.012001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `stores` WHERE `city_code` = '001009001' AND `record_status` = 1 AND `is_special` = 0 LIMIT 1   [ RunTime:0.032002s ]
+SQL: SELECT `id`,`name`,`medal_type`,`create_time`,`update_time`,`credit_score`,`earnestmoney` FROM `stores` WHERE `city_code` = '001009001' AND `record_status` = 1 AND `is_special` = 0 ORDER BY create_time desc LIMIT 0,10   [ RunTime:0.013001s ]
+SQL: SHOW COLUMNS FROM `storemembers` [ RunTime:0.012001s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = 'DE449CD5-5257-2269-2062-D9E10718A7C7' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.031001s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.015001s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = '9fabde7d-03aa-c161-87c6-bdb74f1a9fd6' AND `record_status` = 1 LIMIT 1   [ RunTime:0.016001s ]
+SQL: SHOW COLUMNS FROM `houseroom` [ RunTime:0.016001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = 'DE449CD5-5257-2269-2062-D9E10718A7C7' AND `record_status` = 1 LIMIT 1   [ RunTime:0.014001s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = '8BBA3CE6-A291-C8CB-7E02-75C9CA506A1F' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.011001s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = 'ce345dae-d56f-163f-5acf-945560ba3d92' AND `record_status` = 1 LIMIT 1   [ RunTime:0.014001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = '8BBA3CE6-A291-C8CB-7E02-75C9CA506A1F' AND `record_status` = 1 LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = '44DD8B44-33C3-83C9-ED79-DF0EF2EB2538' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.013001s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = 'c75547c0-28a1-9702-ee4b-b89900ac4c53' AND `record_status` = 1 LIMIT 1   [ RunTime:0.017001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = '44DD8B44-33C3-83C9-ED79-DF0EF2EB2538' AND `record_status` = 1 LIMIT 1   [ RunTime:0.013000s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = '397A58FC-EB1B-2871-6658-BB67117EF27D' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.012001s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = '30f7667e-7eb0-942a-f817-2b5bc599c179' AND `record_status` = 1 LIMIT 1   [ RunTime:0.014001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = '397A58FC-EB1B-2871-6658-BB67117EF27D' AND `record_status` = 1 LIMIT 1   [ RunTime:0.013001s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = 'B0092307-557B-0C87-6DB2-2222A008D496' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.012001s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = 'bdb25db7-ae01-13ef-7892-800058715245' AND `record_status` = 1 LIMIT 1   [ RunTime:0.014000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = 'B0092307-557B-0C87-6DB2-2222A008D496' AND `record_status` = 1 LIMIT 1   [ RunTime:0.012001s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = 'FEFF79A5-43FA-6FB3-F5AC-C9AF28B3D630' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.011001s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = 'f557523b-83ec-2ae3-1db7-0e935641e5a0' AND `record_status` = 1 LIMIT 1   [ RunTime:0.014001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = 'FEFF79A5-43FA-6FB3-F5AC-C9AF28B3D630' AND `record_status` = 1 LIMIT 1   [ RunTime:0.013001s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = 'c2c3dd69-475b-34cb-7034-f33d4866f95a' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.012000s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = 'D86E4A8C-8DE6-4D54-0FB1-AFCD48B01F73' AND `record_status` = 1 LIMIT 1   [ RunTime:0.023002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = 'c2c3dd69-475b-34cb-7034-f33d4866f95a' AND `record_status` = 1 LIMIT 1   [ RunTime:0.012000s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = '0AA79366-263D-4B9C-FA74-27E026F39086' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.012001s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = '3793ae81-d456-fafc-ef59-67b146c7f05e' AND `record_status` = 1 LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = '0AA79366-263D-4B9C-FA74-27E026F39086' AND `record_status` = 1 LIMIT 1   [ RunTime:0.014001s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = '3B49E3C8-62CB-1C09-CD0D-39114AC67A9A' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.011001s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = 'ffd35ffc-d8f4-9c7b-6eab-34b3aa995ca7' AND `record_status` = 1 LIMIT 1   [ RunTime:0.013001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = '3B49E3C8-62CB-1C09-CD0D-39114AC67A9A' AND `record_status` = 1 LIMIT 1   [ RunTime:0.011000s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = '2FD9ADFC-6223-227B-3611-B0BF8C32CA5E' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.011001s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = 'd35551af-5de4-8ac5-7d0d-0c57ba4fa77f' AND `record_status` = 1 LIMIT 1   [ RunTime:0.013001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = '2FD9ADFC-6223-227B-3611-B0BF8C32CA5E' AND `record_status` = 1 LIMIT 1   [ RunTime:0.012001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: type D:\wamp\www\hizhu\Application\Runtime\Cache\Home\9d94da0cf008813badfe0710e96249fc.php 第 81 行.
+NOTIC: [8] Undefined index: type D:\wamp\www\hizhu\Application\Runtime\Cache\Home\9d94da0cf008813badfe0710e96249fc.php 第 82 行.
+NOTIC: [8] Undefined index: type D:\wamp\www\hizhu\Application\Runtime\Cache\Home\9d94da0cf008813badfe0710e96249fc.php 第 83 行.
+NOTIC: [8] Undefined index: type D:\wamp\www\hizhu\Application\Runtime\Cache\Home\9d94da0cf008813badfe0710e96249fc.php 第 84 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.038003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.038003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-25T14:59:20+08:00 ] ::1 /hizhu/Stores/signOnLine.html?no=162&leftno=190
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.012001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.010000s ]
+SQL: SHOW COLUMNS FROM `adminmenulistlimit` [ RunTime:0.644037s ]
+SQL: SELECT * FROM `adminmenulistlimit` WHERE `city_auth` = 1 AND `user_name` = 'admin'  [ RunTime:0.039002s ]
+SQL: SHOW COLUMNS FROM `contractdetail` [ RunTime:0.011001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `contractdetail` WHERE `record_status` = 1 LIMIT 1   [ RunTime:0.015001s ]
+SQL: SELECT `id`,`customer_mobile`,`renter_name`,`renter_mobile`,`price`,`pledge_price`,`star_time`,`end_time`,`status_code`,`sign_time` FROM `contractdetail` WHERE `record_status` = 1 ORDER BY create_time desc LIMIT 0,10   [ RunTime:0.011001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: status_code D:\wamp\www\hizhu\Application\Runtime\Cache\Home\e6e5823c77395f75828d05b14a353d72.php 第 83 行.
+NOTIC: [8] Undefined index: status_code D:\wamp\www\hizhu\Application\Runtime\Cache\Home\e6e5823c77395f75828d05b14a353d72.php 第 84 行.
+NOTIC: [8] Undefined index: status_code D:\wamp\www\hizhu\Application\Runtime\Cache\Home\e6e5823c77395f75828d05b14a353d72.php 第 85 行.
+NOTIC: [8] Undefined index: status_code D:\wamp\www\hizhu\Application\Runtime\Cache\Home\e6e5823c77395f75828d05b14a353d72.php 第 86 行.
+NOTIC: [8] Undefined index: status_code D:\wamp\www\hizhu\Application\Runtime\Cache\Home\e6e5823c77395f75828d05b14a353d72.php 第 87 行.
+NOTIC: [8] Undefined index: status_code D:\wamp\www\hizhu\Application\Runtime\Cache\Home\e6e5823c77395f75828d05b14a353d72.php 第 88 行.
+NOTIC: [8] Undefined index: status_code D:\wamp\www\hizhu\Application\Runtime\Cache\Home\e6e5823c77395f75828d05b14a353d72.php 第 89 行.
+NOTIC: [8] Undefined index: customer_id D:\wamp\www\hizhu\Application\Runtime\Cache\Home\e6e5823c77395f75828d05b14a353d72.php 第 121 行.
+NOTIC: [8] Undefined index: customer_id D:\wamp\www\hizhu\Application\Runtime\Cache\Home\e6e5823c77395f75828d05b14a353d72.php 第 121 行.
+NOTIC: [8] Undefined index: customer_id D:\wamp\www\hizhu\Application\Runtime\Cache\Home\e6e5823c77395f75828d05b14a353d72.php 第 121 行.
+NOTIC: [8] Undefined index: customer_id D:\wamp\www\hizhu\Application\Runtime\Cache\Home\e6e5823c77395f75828d05b14a353d72.php 第 121 行.
+NOTIC: [8] Undefined index: customer_id D:\wamp\www\hizhu\Application\Runtime\Cache\Home\e6e5823c77395f75828d05b14a353d72.php 第 121 行.
+NOTIC: [8] Undefined index: customer_id D:\wamp\www\hizhu\Application\Runtime\Cache\Home\e6e5823c77395f75828d05b14a353d72.php 第 121 行.
+NOTIC: [8] Undefined index: customer_id D:\wamp\www\hizhu\Application\Runtime\Cache\Home\e6e5823c77395f75828d05b14a353d72.php 第 121 行.
+NOTIC: [8] Undefined index: customer_id D:\wamp\www\hizhu\Application\Runtime\Cache\Home\e6e5823c77395f75828d05b14a353d72.php 第 121 行.
+NOTIC: [8] Undefined index: customer_id D:\wamp\www\hizhu\Application\Runtime\Cache\Home\e6e5823c77395f75828d05b14a353d72.php 第 121 行.
+NOTIC: [8] Undefined index: customer_id D:\wamp\www\hizhu\Application\Runtime\Cache\Home\e6e5823c77395f75828d05b14a353d72.php 第 121 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.035002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.036002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2017-06-25T15:07:09+08:00 ] ::1 /hizhu/Orders/auditHouseOrders.html?no=4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.016001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: startTime D:\wamp\www\hizhu\Application\Home\Controller\OrdersController.class.php 第 26 行.
+NOTIC: [8] Undefined index: endTime D:\wamp\www\hizhu\Application\Home\Controller\OrdersController.class.php 第 27 行.
+NOTIC: [8] Undefined index: orderStatus D:\wamp\www\hizhu\Application\Home\Controller\OrdersController.class.php 第 28 行.
+NOTIC: [8] Undefined index: mobile D:\wamp\www\hizhu\Application\Home\Controller\OrdersController.class.php 第 29 行.
+NOTIC: [8] Undefined index: orderid D:\wamp\www\hizhu\Application\Home\Controller\OrdersController.class.php 第 30 行.
+NOTIC: [8] Undefined index: landmobile D:\wamp\www\hizhu\Application\Home\Controller\OrdersController.class.php 第 31 行.
+NOTIC: [8] Undefined index: landlord D:\wamp\www\hizhu\Application\Home\Controller\OrdersController.class.php 第 32 行.
+NOTIC: [8] Undefined index: tenant D:\wamp\www\hizhu\Application\Home\Controller\OrdersController.class.php 第 33 行.
+NOTIC: [8] Undefined index: source D:\wamp\www\hizhu\Application\Home\Controller\OrdersController.class.php 第 34 行.
+SQL: SHOW COLUMNS FROM `orders` [ RunTime:0.016001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `orders` WHERE orders.record_status = 1 LIMIT 1   [ RunTime:0.014001s ]
+NOTIC: [2] urlencode() expects parameter 1 to be string, array given D:\wamp\www\hizhu\Application\Home\Controller\OrdersController.class.php 第 73 行.
+SQL: SELECT orders.id,orders.renter_name,orders.renter_phone,orders.price_cnt,orders.order_status,orders.order_pirce_cnt,orders.create_time FROM `orders` WHERE orders.record_status = 1 ORDER BY orders.create_time desc LIMIT 0,15   [ RunTime:0.015001s ]
+SQL: SELECT sum(orders.price_cnt) as sumprice_cunt,sum(orders.order_pirce_cnt) as sumorder_pirce_cnt FROM `orders` WHERE orders.record_status = 1 ORDER BY orders.create_time desc LIMIT 1   [ RunTime:0.015001s ]
+SQL: SHOW COLUMNS FROM `customercoupon` [ RunTime:0.013000s ]
+SQL: SELECT SUM(coupon_money) FROM `customercoupon` WHERE `coupon_type` = 2 AND `flag` = 1 LIMIT 1   [ RunTime:0.012001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: startTime D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 72 行.
+NOTIC: [8] Undefined index: endTime D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 72 行.
+NOTIC: [8] Undefined index: mobile D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 74 行.
+NOTIC: [8] Undefined index: landmobile D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 76 行.
+NOTIC: [8] Undefined index: orderStatus D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 81 行.
+NOTIC: [8] Undefined index: orderStatus D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 82 行.
+NOTIC: [8] Undefined index: orderStatus D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 83 行.
+NOTIC: [8] Undefined index: orderStatus D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 84 行.
+NOTIC: [8] Undefined index: orderStatus D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 85 行.
+NOTIC: [8] Undefined index: orderStatus D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 86 行.
+NOTIC: [8] Undefined index: orderStatus D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 87 行.
+NOTIC: [8] Undefined index: orderStatus D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 88 行.
+NOTIC: [8] Undefined index: orderStatus D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 89 行.
+NOTIC: [8] Undefined index: orderStatus D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 90 行.
+NOTIC: [8] Undefined index: tenant D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 94 行.
+NOTIC: [8] Undefined index: orderid D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 96 行.
+NOTIC: [8] Undefined index: source D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 102 行.
+NOTIC: [8] Undefined index: source D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 103 行.
+NOTIC: [8] Undefined index: source D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 104 行.
+NOTIC: [8] Undefined index: source D:\wamp\www\hizhu\Application\Runtime\Cache\Home\8a436c5d778533395daa1212453563e4.php 第 105 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.039002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.039002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-25T15:07:14+08:00 ] ::1 /hizhu/Service/awaitlist.html?no=4&leftno=73
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.011001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.010001s ]
+SQL: SHOW COLUMNS FROM `serviceorder` [ RunTime:0.011000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `serviceorder` WHERE `record_status` = 1 AND `order_status` < 4 AND `info_id` <> 'sixyuanbanjia' LIMIT 1   [ RunTime:0.011001s ]
+NOTIC: [2] urlencode() expects parameter 1 to be string, array given D:\wamp\www\hizhu\Application\Home\Controller\ServiceController.class.php 第 62 行.
+NOTIC: [2] urlencode() expects parameter 1 to be string, array given D:\wamp\www\hizhu\Application\Home\Controller\ServiceController.class.php 第 62 行.
+NOTIC: [2] urlencode() expects parameter 1 to be string, array given D:\wamp\www\hizhu\Application\Home\Controller\ServiceController.class.php 第 62 行.
+SQL: SELECT * FROM `serviceorder` WHERE `record_status` = 1 AND `order_status` < 4 AND `info_id` <> 'sixyuanbanjia' ORDER BY create_time desc LIMIT 0,15   [ RunTime:0.011001s ]
+SQL: SHOW COLUMNS FROM `serviceinfo` [ RunTime:0.011001s ]
+SQL: SELECT * FROM `serviceinfo` WHERE `id` = '6122F88E-AE8E-E0D3-257A-9341C9A1F1E7' LIMIT 1   [ RunTime:0.012000s ]
+SQL: SHOW COLUMNS FROM `serviceoptions` [ RunTime:0.011001s ]
+SQL: SELECT * FROM `serviceoptions` WHERE `id_no` = 1 LIMIT 1   [ RunTime:0.011001s ]
+SQL: SELECT * FROM `serviceinfo` WHERE `id` = '6122F88E-AE8E-E0D3-257A-9341C9A1F1E7' LIMIT 1   [ RunTime:0.019001s ]
+SQL: SELECT * FROM `serviceoptions` WHERE `id_no` = 1 LIMIT 1   [ RunTime:0.009000s ]
+SQL: SELECT * FROM `serviceinfo` WHERE `id` = '6122F88E-AE8E-E0D3-257A-9341C9A1F1E7' LIMIT 1   [ RunTime:0.010001s ]
+SQL: SELECT * FROM `serviceoptions` WHERE `id_no` = 1 LIMIT 1   [ RunTime:0.009000s ]
+SQL: SELECT * FROM `serviceinfo` WHERE `id` = '6122F88E-AE8E-E0D3-257A-9341C9A1F1E7' LIMIT 1   [ RunTime:0.009001s ]
+SQL: SELECT * FROM `serviceoptions` WHERE `id_no` = 1 LIMIT 1   [ RunTime:0.009001s ]
+SQL: SELECT * FROM `serviceinfo` WHERE `id` = '6122F88E-AE8E-E0D3-257A-9341C9A1F1E7' LIMIT 1   [ RunTime:0.009000s ]
+SQL: SELECT * FROM `serviceoptions` WHERE `id_no` = 1 LIMIT 1   [ RunTime:0.010001s ]
+SQL: SELECT * FROM `serviceinfo` WHERE `id` = '6122F88E-AE8E-E0D3-257A-9341C9A1F1E7' LIMIT 1   [ RunTime:0.009000s ]
+SQL: SELECT * FROM `serviceoptions` WHERE `id_no` = 1 LIMIT 1   [ RunTime:0.009001s ]
+SQL: SELECT * FROM `serviceinfo` WHERE `id` = '6122F88E-AE8E-E0D3-257A-9341C9A1F1E7' LIMIT 1   [ RunTime:0.047003s ]
+SQL: SELECT * FROM `serviceoptions` WHERE `id_no` = 1 LIMIT 1   [ RunTime:0.009000s ]
+SQL: SELECT * FROM `serviceinfo` WHERE `id` = '6122F88E-AE8E-E0D3-257A-9341C9A1F1E7' LIMIT 1   [ RunTime:0.009001s ]
+SQL: SELECT * FROM `serviceoptions` WHERE `id_no` = 1 LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT * FROM `serviceinfo` WHERE `id` = '6122F88E-AE8E-E0D3-257A-9341C9A1F1E7' LIMIT 1   [ RunTime:0.009001s ]
+SQL: SELECT * FROM `serviceoptions` WHERE `id_no` = 1 LIMIT 1   [ RunTime:0.648037s ]
+SQL: SELECT * FROM `serviceinfo` WHERE `id` = '6122F88E-AE8E-E0D3-257A-9341C9A1F1E7' LIMIT 1   [ RunTime:0.010001s ]
+SQL: SELECT * FROM `serviceoptions` WHERE `id_no` = 1 LIMIT 1   [ RunTime:0.009000s ]
+SQL: SELECT * FROM `serviceinfo` WHERE `id` = '90ADA1E2-1EE6-0575-0087-E203FA916536' LIMIT 1   [ RunTime:0.010001s ]
+SQL: SELECT * FROM `serviceoptions` WHERE `id_no` = 3 LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT * FROM `serviceinfo` WHERE `id` = '6122F88E-AE8E-E0D3-257A-9341C9A1F1E7' LIMIT 1   [ RunTime:0.010001s ]
+SQL: SELECT * FROM `serviceoptions` WHERE `id_no` = 1 LIMIT 1   [ RunTime:0.009001s ]
+SQL: SELECT * FROM `serviceinfo` WHERE `id` = '6122F88E-AE8E-E0D3-257A-9341C9A1F1E7' LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT * FROM `serviceoptions` WHERE `id_no` = 1 LIMIT 1   [ RunTime:0.011001s ]
+SQL: SELECT * FROM `serviceinfo` WHERE `id` = '6122F88E-AE8E-E0D3-257A-9341C9A1F1E7' LIMIT 1   [ RunTime:0.011001s ]
+SQL: SELECT * FROM `serviceoptions` WHERE `id_no` = 1 LIMIT 1   [ RunTime:0.009000s ]
+SQL: SELECT * FROM `serviceinfo` WHERE `id` = '6122F88E-AE8E-E0D3-257A-9341C9A1F1E7' LIMIT 1   [ RunTime:0.010001s ]
+SQL: SELECT * FROM `serviceoptions` WHERE `id_no` = 1 LIMIT 1   [ RunTime:0.009000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: name D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 75 行.
+NOTIC: [8] Undefined index: price_cnt D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 86 行.
+NOTIC: [8] Undefined index: mobile D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 90 行.
+NOTIC: [8] Undefined index: address D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 92 行.
+NOTIC: [8] Undefined index: order_status D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 96 行.
+NOTIC: [8] Undefined index: order_status D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 97 行.
+NOTIC: [8] Undefined index: order_status D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 98 行.
+NOTIC: [8] Undefined index: order_status D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 99 行.
+NOTIC: [8] Undefined index: orderid D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 105 行.
+NOTIC: [8] Undefined index: startTime D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 107 行.
+NOTIC: [8] Undefined index: endTime D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 107 行.
+NOTIC: [8] Undefined index: man_name D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 143 行.
+NOTIC: [8] Undefined index: man_mobile D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 144 行.
+NOTIC: [8] Undefined index: man_name D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 143 行.
+NOTIC: [8] Undefined index: man_mobile D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 144 行.
+NOTIC: [8] Undefined index: man_name D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 143 行.
+NOTIC: [8] Undefined index: man_mobile D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 144 行.
+NOTIC: [8] Undefined index: man_name D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 143 行.
+NOTIC: [8] Undefined index: man_mobile D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 144 行.
+NOTIC: [8] Undefined index: man_name D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 143 行.
+NOTIC: [8] Undefined index: man_mobile D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 144 行.
+NOTIC: [8] Undefined index: man_name D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 143 行.
+NOTIC: [8] Undefined index: man_mobile D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 144 行.
+NOTIC: [8] Undefined index: man_name D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 143 行.
+NOTIC: [8] Undefined index: man_mobile D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 144 行.
+NOTIC: [8] Undefined index: man_name D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 143 行.
+NOTIC: [8] Undefined index: man_mobile D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 144 行.
+NOTIC: [8] Undefined index: man_name D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 143 行.
+NOTIC: [8] Undefined index: man_mobile D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 144 行.
+NOTIC: [8] Undefined index: man_name D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 143 行.
+NOTIC: [8] Undefined index: man_mobile D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 144 行.
+NOTIC: [8] Undefined index: man_name D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 143 行.
+NOTIC: [8] Undefined index: man_mobile D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 144 行.
+NOTIC: [8] Undefined index: man_name D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 143 行.
+NOTIC: [8] Undefined index: man_mobile D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 144 行.
+NOTIC: [8] Undefined index: man_name D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 143 行.
+NOTIC: [8] Undefined index: man_mobile D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 144 行.
+NOTIC: [8] Undefined index: man_name D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 143 行.
+NOTIC: [8] Undefined index: man_mobile D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 144 行.
+NOTIC: [8] Undefined index: man_name D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 143 行.
+NOTIC: [8] Undefined index: man_mobile D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 144 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.065004s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.066004s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2017-06-25T15:07:14+08:00 ] ::1 /hizhu/Public/css/order_manage_check.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2017-06-25T15:41:41+08:00 ] ::1 /hizhu/Service/awaitlist.html?no=4&leftno=73
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.011000s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.011001s ]
+SQL: SHOW COLUMNS FROM `serviceorder` [ RunTime:0.012001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `serviceorder` WHERE `record_status` = 1 AND `order_status` < 4 AND `info_id` <> 'sixyuanbanjia' LIMIT 1   [ RunTime:0.011000s ]
+NOTIC: [2] urlencode() expects parameter 1 to be string, array given D:\wamp\www\hizhu\Application\Home\Controller\ServiceController.class.php 第 62 行.
+NOTIC: [2] urlencode() expects parameter 1 to be string, array given D:\wamp\www\hizhu\Application\Home\Controller\ServiceController.class.php 第 62 行.
+NOTIC: [2] urlencode() expects parameter 1 to be string, array given D:\wamp\www\hizhu\Application\Home\Controller\ServiceController.class.php 第 62 行.
+SQL: SELECT * FROM `serviceorder` WHERE `record_status` = 1 AND `order_status` < 4 AND `info_id` <> 'sixyuanbanjia' ORDER BY create_time desc LIMIT 0,15   [ RunTime:0.011000s ]
+SQL: SHOW COLUMNS FROM `serviceinfo` [ RunTime:0.011001s ]
+SQL: SELECT * FROM `serviceinfo` WHERE `id` = '6122F88E-AE8E-E0D3-257A-9341C9A1F1E7' LIMIT 1   [ RunTime:0.012001s ]
+SQL: SHOW COLUMNS FROM `serviceoptions` [ RunTime:0.012000s ]
+SQL: SELECT * FROM `serviceoptions` WHERE `id_no` = 1 LIMIT 1   [ RunTime:0.011001s ]
+SQL: SELECT * FROM `serviceinfo` WHERE `id` = '6122F88E-AE8E-E0D3-257A-9341C9A1F1E7' LIMIT 1   [ RunTime:0.011001s ]
+SQL: SELECT * FROM `serviceoptions` WHERE `id_no` = 1 LIMIT 1   [ RunTime:0.011000s ]
+SQL: SELECT * FROM `serviceinfo` WHERE `id` = '6122F88E-AE8E-E0D3-257A-9341C9A1F1E7' LIMIT 1   [ RunTime:0.011001s ]
+SQL: SELECT * FROM `serviceoptions` WHERE `id_no` = 1 LIMIT 1   [ RunTime:0.010001s ]
+SQL: SELECT * FROM `serviceinfo` WHERE `id` = '6122F88E-AE8E-E0D3-257A-9341C9A1F1E7' LIMIT 1   [ RunTime:0.011000s ]
+SQL: SELECT * FROM `serviceoptions` WHERE `id_no` = 1 LIMIT 1   [ RunTime:0.011001s ]
+SQL: SELECT * FROM `serviceinfo` WHERE `id` = '6122F88E-AE8E-E0D3-257A-9341C9A1F1E7' LIMIT 1   [ RunTime:0.011001s ]
+SQL: SELECT * FROM `serviceoptions` WHERE `id_no` = 1 LIMIT 1   [ RunTime:0.011001s ]
+SQL: SELECT * FROM `serviceinfo` WHERE `id` = '6122F88E-AE8E-E0D3-257A-9341C9A1F1E7' LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT * FROM `serviceoptions` WHERE `id_no` = 1 LIMIT 1   [ RunTime:0.012001s ]
+SQL: SELECT * FROM `serviceinfo` WHERE `id` = '6122F88E-AE8E-E0D3-257A-9341C9A1F1E7' LIMIT 1   [ RunTime:0.011001s ]
+SQL: SELECT * FROM `serviceoptions` WHERE `id_no` = 1 LIMIT 1   [ RunTime:0.011000s ]
+SQL: SELECT * FROM `serviceinfo` WHERE `id` = '6122F88E-AE8E-E0D3-257A-9341C9A1F1E7' LIMIT 1   [ RunTime:0.011001s ]
+SQL: SELECT * FROM `serviceoptions` WHERE `id_no` = 1 LIMIT 1   [ RunTime:0.011001s ]
+SQL: SELECT * FROM `serviceinfo` WHERE `id` = '6122F88E-AE8E-E0D3-257A-9341C9A1F1E7' LIMIT 1   [ RunTime:0.011000s ]
+SQL: SELECT * FROM `serviceoptions` WHERE `id_no` = 1 LIMIT 1   [ RunTime:0.011001s ]
+SQL: SELECT * FROM `serviceinfo` WHERE `id` = '6122F88E-AE8E-E0D3-257A-9341C9A1F1E7' LIMIT 1   [ RunTime:0.011001s ]
+SQL: SELECT * FROM `serviceoptions` WHERE `id_no` = 1 LIMIT 1   [ RunTime:0.011000s ]
+SQL: SELECT * FROM `serviceinfo` WHERE `id` = '90ADA1E2-1EE6-0575-0087-E203FA916536' LIMIT 1   [ RunTime:0.011001s ]
+SQL: SELECT * FROM `serviceoptions` WHERE `id_no` = 3 LIMIT 1   [ RunTime:0.011001s ]
+SQL: SELECT * FROM `serviceinfo` WHERE `id` = '6122F88E-AE8E-E0D3-257A-9341C9A1F1E7' LIMIT 1   [ RunTime:0.011000s ]
+SQL: SELECT * FROM `serviceoptions` WHERE `id_no` = 1 LIMIT 1   [ RunTime:0.010001s ]
+SQL: SELECT * FROM `serviceinfo` WHERE `id` = '6122F88E-AE8E-E0D3-257A-9341C9A1F1E7' LIMIT 1   [ RunTime:0.011001s ]
+SQL: SELECT * FROM `serviceoptions` WHERE `id_no` = 1 LIMIT 1   [ RunTime:0.011000s ]
+SQL: SELECT * FROM `serviceinfo` WHERE `id` = '6122F88E-AE8E-E0D3-257A-9341C9A1F1E7' LIMIT 1   [ RunTime:0.011001s ]
+SQL: SELECT * FROM `serviceoptions` WHERE `id_no` = 1 LIMIT 1   [ RunTime:0.011001s ]
+SQL: SELECT * FROM `serviceinfo` WHERE `id` = '6122F88E-AE8E-E0D3-257A-9341C9A1F1E7' LIMIT 1   [ RunTime:0.011000s ]
+SQL: SELECT * FROM `serviceoptions` WHERE `id_no` = 1 LIMIT 1   [ RunTime:0.011001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: name D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 75 行.
+NOTIC: [8] Undefined index: price_cnt D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 86 行.
+NOTIC: [8] Undefined index: mobile D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 90 行.
+NOTIC: [8] Undefined index: address D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 92 行.
+NOTIC: [8] Undefined index: order_status D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 96 行.
+NOTIC: [8] Undefined index: order_status D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 97 行.
+NOTIC: [8] Undefined index: order_status D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 98 行.
+NOTIC: [8] Undefined index: order_status D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 99 行.
+NOTIC: [8] Undefined index: orderid D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 105 行.
+NOTIC: [8] Undefined index: startTime D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 107 行.
+NOTIC: [8] Undefined index: endTime D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 107 行.
+NOTIC: [8] Undefined index: man_name D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 143 行.
+NOTIC: [8] Undefined index: man_mobile D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 144 行.
+NOTIC: [8] Undefined index: man_name D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 143 行.
+NOTIC: [8] Undefined index: man_mobile D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 144 行.
+NOTIC: [8] Undefined index: man_name D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 143 行.
+NOTIC: [8] Undefined index: man_mobile D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 144 行.
+NOTIC: [8] Undefined index: man_name D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 143 行.
+NOTIC: [8] Undefined index: man_mobile D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 144 行.
+NOTIC: [8] Undefined index: man_name D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 143 行.
+NOTIC: [8] Undefined index: man_mobile D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 144 行.
+NOTIC: [8] Undefined index: man_name D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 143 行.
+NOTIC: [8] Undefined index: man_mobile D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 144 行.
+NOTIC: [8] Undefined index: man_name D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 143 行.
+NOTIC: [8] Undefined index: man_mobile D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 144 行.
+NOTIC: [8] Undefined index: man_name D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 143 行.
+NOTIC: [8] Undefined index: man_mobile D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 144 行.
+NOTIC: [8] Undefined index: man_name D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 143 行.
+NOTIC: [8] Undefined index: man_mobile D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 144 行.
+NOTIC: [8] Undefined index: man_name D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 143 行.
+NOTIC: [8] Undefined index: man_mobile D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 144 行.
+NOTIC: [8] Undefined index: man_name D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 143 行.
+NOTIC: [8] Undefined index: man_mobile D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 144 行.
+NOTIC: [8] Undefined index: man_name D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 143 行.
+NOTIC: [8] Undefined index: man_mobile D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 144 行.
+NOTIC: [8] Undefined index: man_name D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 143 行.
+NOTIC: [8] Undefined index: man_mobile D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 144 行.
+NOTIC: [8] Undefined index: man_name D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 143 行.
+NOTIC: [8] Undefined index: man_mobile D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 144 行.
+NOTIC: [8] Undefined index: man_name D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 143 行.
+NOTIC: [8] Undefined index: man_mobile D:\wamp\www\hizhu\Application\Runtime\Cache\Home\3df1a788ec8818cf0b460fb3f649cbc2.php 第 144 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.044003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.044003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-25T15:41:41+08:00 ] ::1 /hizhu/Public/css/order_manage_check.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2017-06-25T15:42:00+08:00 ] ::1 /hizhu/Sysmenu/sysmenuList.html?no=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.012001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.012001s ]
+NOTIC: [8] Undefined index: level_id D:\wamp\www\hizhu\Application\Home\Controller\SysmenuController.class.php 第 17 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.034002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.034002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002001s ]
+
+[ 2017-06-25T15:42:03+08:00 ] ::1 /hizhu/HizhuParameter/portConfigureList.html?no=1&leftno=209
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.014000s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.013000s ]
+SQL: SHOW COLUMNS FROM `ownerfeecontent` [ RunTime:0.012001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ownerfeecontent` LIMIT 1   [ RunTime:0.011001s ]
+SQL: SELECT `id`,`time_type`,`timelimit`,`price`,`city_code`,`record_status`,`create_time`,`create_man`,`coupon_title`,`house_num`,`is_owner` FROM `ownerfeecontent` ORDER BY create_time desc LIMIT 0,10   [ RunTime:0.012001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.037002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.037002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-25T15:42:17+08:00 ] ::1 /hizhu/HizhuParameter/portOrderList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.013000s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.011001s ]
+SQL: SHOW COLUMNS FROM `ownerorder` [ RunTime:0.012000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ownerorder` WHERE `record_status` = 1 LIMIT 1   [ RunTime:0.012001s ]
+SQL: SELECT `id`,`customer_mobile`,`create_time`,`city_code`,`price`,`pay_type`,`is_owner`,`create_man` FROM `ownerorder` WHERE `record_status` = 1 ORDER BY create_time desc LIMIT 0,10   [ RunTime:0.037002s ]
+ERR: 1054:Unknown column 'customer_mobile' in 'field list'
+ [ SQL语句 ] : SELECT `id`,`customer_mobile`,`create_time`,`city_code`,`price`,`pay_type`,`is_owner`,`create_man` FROM `ownerorder` WHERE `record_status` = 1 ORDER BY create_time desc LIMIT 0,10  
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\hizhu\Application\Home\Controller\HizhuParameterController.class.php 第 149 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: city_code D:\wamp\www\hizhu\Application\Runtime\Cache\Home\9a1dd69618296259366ab6f05476d5eb.php 第 83 行.
+NOTIC: [8] Undefined index: city_code D:\wamp\www\hizhu\Application\Runtime\Cache\Home\9a1dd69618296259366ab6f05476d5eb.php 第 84 行.
+NOTIC: [8] Undefined index: city_code D:\wamp\www\hizhu\Application\Runtime\Cache\Home\9a1dd69618296259366ab6f05476d5eb.php 第 85 行.
+NOTIC: [8] Undefined index: city_code D:\wamp\www\hizhu\Application\Runtime\Cache\Home\9a1dd69618296259366ab6f05476d5eb.php 第 86 行.
+NOTIC: [8] Undefined index: city_code D:\wamp\www\hizhu\Application\Runtime\Cache\Home\9a1dd69618296259366ab6f05476d5eb.php 第 87 行.
+NOTIC: [8] Undefined index: city_code D:\wamp\www\hizhu\Application\Runtime\Cache\Home\9a1dd69618296259366ab6f05476d5eb.php 第 88 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-25T15:43:05+08:00 ] ::1 /hizhu/HizhuParameter/portOrderList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.011001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.011001s ]
+SQL: SHOW COLUMNS FROM `ownerorder` [ RunTime:0.011001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ownerorder` WHERE `record_status` = 1 LIMIT 1   [ RunTime:0.013001s ]
+SQL: SELECT `id`,`customer_mobile`,`create_time`,`city_code`,`price`,`pay_type`,`is_owner`,`create_man` FROM `ownerorder` WHERE `record_status` = 1 ORDER BY create_time desc LIMIT 0,10   [ RunTime:0.010000s ]
+ERR: 1054:Unknown column 'customer_mobile' in 'field list'
+ [ SQL语句 ] : SELECT `id`,`customer_mobile`,`create_time`,`city_code`,`price`,`pay_type`,`is_owner`,`create_man` FROM `ownerorder` WHERE `record_status` = 1 ORDER BY create_time desc LIMIT 0,10  
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\hizhu\Application\Home\Controller\HizhuParameterController.class.php 第 149 行.
+NOTIC: [8] Undefined variable: list D:\wamp\www\hizhu\Application\Home\Controller\HizhuParameterController.class.php 第 157 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-25T15:43:23+08:00 ] ::1 /hizhu/HizhuParameter/portOrderList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.011000s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.010001s ]
+SQL: SHOW COLUMNS FROM `ownerorder` [ RunTime:0.011001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ownerorder` WHERE `record_status` = 1 LIMIT 1   [ RunTime:0.010001s ]
+SQL: SELECT `id`,`customer_mobile`,`create_time`,`city_code`,`price`,`pay_type`,`is_owner`,`create_man` FROM `ownerorder` WHERE `record_status` = 1 ORDER BY create_time desc LIMIT 0,10   [ RunTime:0.010000s ]
+ERR: 1054:Unknown column 'customer_mobile' in 'field list'
+ [ SQL语句 ] : SELECT `id`,`customer_mobile`,`create_time`,`city_code`,`price`,`pay_type`,`is_owner`,`create_man` FROM `ownerorder` WHERE `record_status` = 1 ORDER BY create_time desc LIMIT 0,10  
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-25T15:44:25+08:00 ] ::1 /hizhu/HizhuParameter/portOrderList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.013001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.012000s ]
+SQL: SHOW COLUMNS FROM `ownerorder` [ RunTime:0.012001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ownerorder` WHERE `record_status` = 1 LIMIT 1   [ RunTime:0.011000s ]
+SQL: SELECT `id`,`customer_id`,`create_time`,`city_code`,`price`,`pay_type`,`is_owner`,`create_man` FROM `ownerorder` WHERE `record_status` = 1 ORDER BY create_time desc LIMIT 0,10   [ RunTime:0.012000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-25T15:44:37+08:00 ] ::1 /hizhu/HizhuParameter/portOrderList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.015000s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.014000s ]
+SQL: SHOW COLUMNS FROM `ownerorder` [ RunTime:0.015001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ownerorder` WHERE `record_status` = 1 LIMIT 1   [ RunTime:0.013000s ]
+SQL: SELECT `id`,`customer_id`,`create_time`,`city_code`,`price`,`pay_type`,`is_owner`,`create_man` FROM `ownerorder` WHERE `record_status` = 1 ORDER BY create_time desc LIMIT 0,10   [ RunTime:0.014000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: city_code D:\wamp\www\hizhu\Application\Runtime\Cache\Home\9a1dd69618296259366ab6f05476d5eb.php 第 83 行.
+NOTIC: [8] Undefined index: city_code D:\wamp\www\hizhu\Application\Runtime\Cache\Home\9a1dd69618296259366ab6f05476d5eb.php 第 84 行.
+NOTIC: [8] Undefined index: city_code D:\wamp\www\hizhu\Application\Runtime\Cache\Home\9a1dd69618296259366ab6f05476d5eb.php 第 85 行.
+NOTIC: [8] Undefined index: city_code D:\wamp\www\hizhu\Application\Runtime\Cache\Home\9a1dd69618296259366ab6f05476d5eb.php 第 86 行.
+NOTIC: [8] Undefined index: city_code D:\wamp\www\hizhu\Application\Runtime\Cache\Home\9a1dd69618296259366ab6f05476d5eb.php 第 87 行.
+NOTIC: [8] Undefined index: city_code D:\wamp\www\hizhu\Application\Runtime\Cache\Home\9a1dd69618296259366ab6f05476d5eb.php 第 88 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2017-06-25T15:44:46+08:00 ] ::1 /hizhu/HizhuParameter/portOrderList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.011001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.011001s ]
+SQL: SHOW COLUMNS FROM `ownerorder` [ RunTime:0.015001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ownerorder` WHERE `record_status` = 1 LIMIT 1   [ RunTime:0.012000s ]
+SQL: SELECT `id`,`customer_id`,`create_time`,`city_code`,`price`,`pay_type`,`is_owner`,`create_man` FROM `ownerorder` WHERE `record_status` = 1 ORDER BY create_time desc LIMIT 0,10   [ RunTime:0.014000s ]
+NOTIC: [8] Undefined variable: list D:\wamp\www\hizhu\Application\Home\Controller\HizhuParameterController.class.php 第 157 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-25T15:44:57+08:00 ] ::1 /hizhu/HizhuParameter/portOrderList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.013001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.013000s ]
+SQL: SHOW COLUMNS FROM `ownerorder` [ RunTime:0.013001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ownerorder` WHERE `record_status` = 1 LIMIT 1   [ RunTime:0.013000s ]
+SQL: SELECT `id`,`customer_id`,`create_time`,`city_code`,`price`,`pay_type`,`is_owner`,`create_man` FROM `ownerorder` WHERE `record_status` = 1 ORDER BY create_time desc LIMIT 0,10   [ RunTime:0.013000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-25T15:45:16+08:00 ] ::1 /hizhu/HizhuParameter/portOrderList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.013001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.013001s ]
+SQL: SHOW COLUMNS FROM `ownerorder` [ RunTime:0.013000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ownerorder` WHERE `record_status` = 1 LIMIT 1   [ RunTime:0.012001s ]
+SQL: SELECT `id`,`customer_id`,`create_time`,`city_code`,`price`,`pay_type`,`is_owner`,`create_man` FROM `ownerorder` WHERE `record_status` = 1 ORDER BY create_time desc LIMIT 0,10   [ RunTime:0.012001s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.017001s ]
+SQL: SELECT `mobile` FROM `customer` WHERE `id` = '39C2850B-4B1B-E752-C4C4-3C01A3CD0FE7' LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT `mobile` FROM `customer` WHERE `id` = '39C2850B-4B1B-E752-C4C4-3C01A3CD0FE7' LIMIT 1   [ RunTime:0.014001s ]
+SQL: SELECT `mobile` FROM `customer` WHERE `id` = '39C2850B-4B1B-E752-C4C4-3C01A3CD0FE7' LIMIT 1   [ RunTime:0.014001s ]
+SQL: SELECT `mobile` FROM `customer` WHERE `id` = '39C2850B-4B1B-E752-C4C4-3C01A3CD0FE7' LIMIT 1   [ RunTime:0.013000s ]
+SQL: SELECT `mobile` FROM `customer` WHERE `id` = '39C2850B-4B1B-E752-C4C4-3C01A3CD0FE7' LIMIT 1   [ RunTime:0.014001s ]
+SQL: SELECT `mobile` FROM `customer` WHERE `id` = '8C185319-B0A1-D1E0-B078-A24A5DF0F46B' LIMIT 1   [ RunTime:0.012001s ]
+SQL: SELECT `mobile` FROM `customer` WHERE `id` = '8C185319-B0A1-D1E0-B078-A24A5DF0F46B' LIMIT 1   [ RunTime:0.013001s ]
+SQL: SELECT `mobile` FROM `customer` WHERE `id` = '8C185319-B0A1-D1E0-B078-A24A5DF0F46B' LIMIT 1   [ RunTime:0.013000s ]
+SQL: SELECT `mobile` FROM `customer` WHERE `id` = 'EE09CACE-A372-F404-05DD-9BEC478F8349' LIMIT 1   [ RunTime:0.014000s ]
+SQL: SELECT `mobile` FROM `customer` WHERE `id` = 'E20E0847-94E1-CA06-E74E-21583A52E08A' LIMIT 1   [ RunTime:0.015001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2017-06-25T15:45:45+08:00 ] ::1 /hizhu/HizhuParameter/portOrderList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.010001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.012001s ]
+SQL: SHOW COLUMNS FROM `ownerorder` [ RunTime:0.012001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ownerorder` WHERE `record_status` = 1 LIMIT 1   [ RunTime:0.010001s ]
+SQL: SELECT `id`,`customer_id`,`create_time`,`city_code`,`price`,`pay_type`,`is_owner`,`create_man` FROM `ownerorder` WHERE `record_status` = 1 ORDER BY create_time desc LIMIT 0,10   [ RunTime:0.011000s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.014000s ]
+SQL: SELECT `mobile` FROM `customer` WHERE `id` = '39C2850B-4B1B-E752-C4C4-3C01A3CD0FE7' LIMIT 1   [ RunTime:0.011000s ]
+SQL: SELECT `mobile` FROM `customer` WHERE `id` = '39C2850B-4B1B-E752-C4C4-3C01A3CD0FE7' LIMIT 1   [ RunTime:0.012001s ]
+SQL: SELECT `mobile` FROM `customer` WHERE `id` = '39C2850B-4B1B-E752-C4C4-3C01A3CD0FE7' LIMIT 1   [ RunTime:0.011001s ]
+SQL: SELECT `mobile` FROM `customer` WHERE `id` = '39C2850B-4B1B-E752-C4C4-3C01A3CD0FE7' LIMIT 1   [ RunTime:0.011000s ]
+SQL: SELECT `mobile` FROM `customer` WHERE `id` = '39C2850B-4B1B-E752-C4C4-3C01A3CD0FE7' LIMIT 1   [ RunTime:0.013001s ]
+SQL: SELECT `mobile` FROM `customer` WHERE `id` = '8C185319-B0A1-D1E0-B078-A24A5DF0F46B' LIMIT 1   [ RunTime:0.011001s ]
+SQL: SELECT `mobile` FROM `customer` WHERE `id` = '8C185319-B0A1-D1E0-B078-A24A5DF0F46B' LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT `mobile` FROM `customer` WHERE `id` = '8C185319-B0A1-D1E0-B078-A24A5DF0F46B' LIMIT 1   [ RunTime:0.011000s ]
+SQL: SELECT `mobile` FROM `customer` WHERE `id` = 'EE09CACE-A372-F404-05DD-9BEC478F8349' LIMIT 1   [ RunTime:0.011001s ]
+SQL: SELECT `mobile` FROM `customer` WHERE `id` = 'E20E0847-94E1-CA06-E74E-21583A52E08A' LIMIT 1   [ RunTime:0.011000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: city_code D:\wamp\www\hizhu\Application\Runtime\Cache\Home\9a1dd69618296259366ab6f05476d5eb.php 第 83 行.
+NOTIC: [8] Undefined index: city_code D:\wamp\www\hizhu\Application\Runtime\Cache\Home\9a1dd69618296259366ab6f05476d5eb.php 第 84 行.
+NOTIC: [8] Undefined index: city_code D:\wamp\www\hizhu\Application\Runtime\Cache\Home\9a1dd69618296259366ab6f05476d5eb.php 第 85 行.
+NOTIC: [8] Undefined index: city_code D:\wamp\www\hizhu\Application\Runtime\Cache\Home\9a1dd69618296259366ab6f05476d5eb.php 第 86 行.
+NOTIC: [8] Undefined index: city_code D:\wamp\www\hizhu\Application\Runtime\Cache\Home\9a1dd69618296259366ab6f05476d5eb.php 第 87 行.
+NOTIC: [8] Undefined index: city_code D:\wamp\www\hizhu\Application\Runtime\Cache\Home\9a1dd69618296259366ab6f05476d5eb.php 第 88 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-25T15:45:52+08:00 ] ::1 /hizhu/Stores/signOnLine.html?no=6&leftno=190&startTime=&endTime=&mobile=17317571127&order=&city_code=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.013000s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.047003s ]
+SQL: SHOW COLUMNS FROM `contractdetail` [ RunTime:0.011001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `contractdetail` WHERE `record_status` = 1 LIMIT 1   [ RunTime:0.012000s ]
+SQL: SELECT `id`,`customer_mobile`,`renter_name`,`renter_mobile`,`price`,`pledge_price`,`star_time`,`end_time`,`status_code`,`sign_time` FROM `contractdetail` WHERE `record_status` = 1 ORDER BY create_time desc LIMIT 0,10   [ RunTime:0.010001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: status_code D:\wamp\www\hizhu\Application\Runtime\Cache\Home\e6e5823c77395f75828d05b14a353d72.php 第 83 行.
+NOTIC: [8] Undefined index: status_code D:\wamp\www\hizhu\Application\Runtime\Cache\Home\e6e5823c77395f75828d05b14a353d72.php 第 84 行.
+NOTIC: [8] Undefined index: status_code D:\wamp\www\hizhu\Application\Runtime\Cache\Home\e6e5823c77395f75828d05b14a353d72.php 第 85 行.
+NOTIC: [8] Undefined index: status_code D:\wamp\www\hizhu\Application\Runtime\Cache\Home\e6e5823c77395f75828d05b14a353d72.php 第 86 行.
+NOTIC: [8] Undefined index: status_code D:\wamp\www\hizhu\Application\Runtime\Cache\Home\e6e5823c77395f75828d05b14a353d72.php 第 87 行.
+NOTIC: [8] Undefined index: status_code D:\wamp\www\hizhu\Application\Runtime\Cache\Home\e6e5823c77395f75828d05b14a353d72.php 第 88 行.
+NOTIC: [8] Undefined index: status_code D:\wamp\www\hizhu\Application\Runtime\Cache\Home\e6e5823c77395f75828d05b14a353d72.php 第 89 行.
+NOTIC: [8] Undefined index: customer_id D:\wamp\www\hizhu\Application\Runtime\Cache\Home\e6e5823c77395f75828d05b14a353d72.php 第 121 行.
+NOTIC: [8] Undefined index: customer_id D:\wamp\www\hizhu\Application\Runtime\Cache\Home\e6e5823c77395f75828d05b14a353d72.php 第 121 行.
+NOTIC: [8] Undefined index: customer_id D:\wamp\www\hizhu\Application\Runtime\Cache\Home\e6e5823c77395f75828d05b14a353d72.php 第 121 行.
+NOTIC: [8] Undefined index: customer_id D:\wamp\www\hizhu\Application\Runtime\Cache\Home\e6e5823c77395f75828d05b14a353d72.php 第 121 行.
+NOTIC: [8] Undefined index: customer_id D:\wamp\www\hizhu\Application\Runtime\Cache\Home\e6e5823c77395f75828d05b14a353d72.php 第 121 行.
+NOTIC: [8] Undefined index: customer_id D:\wamp\www\hizhu\Application\Runtime\Cache\Home\e6e5823c77395f75828d05b14a353d72.php 第 121 行.
+NOTIC: [8] Undefined index: customer_id D:\wamp\www\hizhu\Application\Runtime\Cache\Home\e6e5823c77395f75828d05b14a353d72.php 第 121 行.
+NOTIC: [8] Undefined index: customer_id D:\wamp\www\hizhu\Application\Runtime\Cache\Home\e6e5823c77395f75828d05b14a353d72.php 第 121 行.
+NOTIC: [8] Undefined index: customer_id D:\wamp\www\hizhu\Application\Runtime\Cache\Home\e6e5823c77395f75828d05b14a353d72.php 第 121 行.
+NOTIC: [8] Undefined index: customer_id D:\wamp\www\hizhu\Application\Runtime\Cache\Home\e6e5823c77395f75828d05b14a353d72.php 第 121 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2017-06-25T15:46:42+08:00 ] ::1 /hizhu/HizhuParameter/portOrderList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.014001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.013001s ]
+SQL: SHOW COLUMNS FROM `ownerorder` [ RunTime:0.012000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ownerorder` WHERE `record_status` = 1 LIMIT 1   [ RunTime:0.012001s ]
+SQL: SELECT `id`,`customer_id`,`create_time`,`city_code`,`price`,`pay_type`,`is_owner`,`create_man` FROM `ownerorder` WHERE `record_status` = 1 ORDER BY create_time desc LIMIT 0,10   [ RunTime:0.012001s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.014000s ]
+SQL: SELECT `mobile` FROM `customer` WHERE `id` = '39C2850B-4B1B-E752-C4C4-3C01A3CD0FE7' LIMIT 1   [ RunTime:0.013001s ]
+SQL: SELECT `mobile` FROM `customer` WHERE `id` = '39C2850B-4B1B-E752-C4C4-3C01A3CD0FE7' LIMIT 1   [ RunTime:0.013001s ]
+SQL: SELECT `mobile` FROM `customer` WHERE `id` = '39C2850B-4B1B-E752-C4C4-3C01A3CD0FE7' LIMIT 1   [ RunTime:0.013001s ]
+SQL: SELECT `mobile` FROM `customer` WHERE `id` = '39C2850B-4B1B-E752-C4C4-3C01A3CD0FE7' LIMIT 1   [ RunTime:0.013001s ]
+SQL: SELECT `mobile` FROM `customer` WHERE `id` = '39C2850B-4B1B-E752-C4C4-3C01A3CD0FE7' LIMIT 1   [ RunTime:0.013000s ]
+SQL: SELECT `mobile` FROM `customer` WHERE `id` = '8C185319-B0A1-D1E0-B078-A24A5DF0F46B' LIMIT 1   [ RunTime:0.013001s ]
+SQL: SELECT `mobile` FROM `customer` WHERE `id` = '8C185319-B0A1-D1E0-B078-A24A5DF0F46B' LIMIT 1   [ RunTime:0.013001s ]
+SQL: SELECT `mobile` FROM `customer` WHERE `id` = '8C185319-B0A1-D1E0-B078-A24A5DF0F46B' LIMIT 1   [ RunTime:0.012001s ]
+SQL: SELECT `mobile` FROM `customer` WHERE `id` = 'EE09CACE-A372-F404-05DD-9BEC478F8349' LIMIT 1   [ RunTime:0.013000s ]
+SQL: SELECT `mobile` FROM `customer` WHERE `id` = 'E20E0847-94E1-CA06-E74E-21583A52E08A' LIMIT 1   [ RunTime:0.013001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: city_code D:\wamp\www\hizhu\Application\Runtime\Cache\Home\9a1dd69618296259366ab6f05476d5eb.php 第 83 行.
+NOTIC: [8] Undefined index: city_code D:\wamp\www\hizhu\Application\Runtime\Cache\Home\9a1dd69618296259366ab6f05476d5eb.php 第 84 行.
+NOTIC: [8] Undefined index: city_code D:\wamp\www\hizhu\Application\Runtime\Cache\Home\9a1dd69618296259366ab6f05476d5eb.php 第 85 行.
+NOTIC: [8] Undefined index: city_code D:\wamp\www\hizhu\Application\Runtime\Cache\Home\9a1dd69618296259366ab6f05476d5eb.php 第 86 行.
+NOTIC: [8] Undefined index: city_code D:\wamp\www\hizhu\Application\Runtime\Cache\Home\9a1dd69618296259366ab6f05476d5eb.php 第 87 行.
+NOTIC: [8] Undefined index: city_code D:\wamp\www\hizhu\Application\Runtime\Cache\Home\9a1dd69618296259366ab6f05476d5eb.php 第 88 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-25T15:46:45+08:00 ] ::1 /hizhu/HizhuParameter/portOrderList.html?no=6&leftno=190&startTime=&endTime=&mobile=17317571127&order=&city_code=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.014001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.014001s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.014001s ]
+SQL: SELECT `id` FROM `customer` WHERE `mobile` = '17317571127' LIMIT 1   [ RunTime:0.016001s ]
+SQL: SHOW COLUMNS FROM `ownerorder` [ RunTime:0.016001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ownerorder` WHERE `record_status` = 1 AND `customer_id` = '39C2850B-4B1B-E752-C4C4-3C01A3CD0FE7' LIMIT 1   [ RunTime:0.012001s ]
+SQL: SELECT `id`,`customer_id`,`create_time`,`city_code`,`price`,`pay_type`,`is_owner`,`create_man` FROM `ownerorder` WHERE `record_status` = 1 AND `customer_id` = '39C2850B-4B1B-E752-C4C4-3C01A3CD0FE7' ORDER BY create_time desc LIMIT 0,10   [ RunTime:0.013000s ]
+SQL: SELECT `mobile` FROM `customer` WHERE `id` = '39C2850B-4B1B-E752-C4C4-3C01A3CD0FE7' LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT `mobile` FROM `customer` WHERE `id` = '39C2850B-4B1B-E752-C4C4-3C01A3CD0FE7' LIMIT 1   [ RunTime:0.011001s ]
+SQL: SELECT `mobile` FROM `customer` WHERE `id` = '39C2850B-4B1B-E752-C4C4-3C01A3CD0FE7' LIMIT 1   [ RunTime:0.012001s ]
+SQL: SELECT `mobile` FROM `customer` WHERE `id` = '39C2850B-4B1B-E752-C4C4-3C01A3CD0FE7' LIMIT 1   [ RunTime:0.011000s ]
+SQL: SELECT `mobile` FROM `customer` WHERE `id` = '39C2850B-4B1B-E752-C4C4-3C01A3CD0FE7' LIMIT 1   [ RunTime:0.011001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+

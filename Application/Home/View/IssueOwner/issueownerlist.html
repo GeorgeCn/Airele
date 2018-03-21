@@ -1,0 +1,197 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>问题房东</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 最新版本渲染 -->
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/basic.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/plug/jquery.datetimepicker.css"/>
+
+</head>
+<body>
+<include file="Public/head_city" />
+    <div class="title cf">
+    	<div class="logo fl cf">
+			<img src="__PUBLIC__/images/logo.png">
+		</div>
+		<ul class="cf fl">
+		<li><a href="{:U('Welcome/welcome')}">首页</a></li>
+			{$menutophtml}
+		</ul>
+		<div class="cf fr title_right">
+			<a class="blue" href="javascript:;">欢迎您 <?php echo cookie("admin_user_name");?></a>
+			<span>|</span>
+			<a href="{:U('/Index/outlogin')}">退出</a>
+		</div>
+    </div>
+	<div class="main">
+		<div class="main_left subNavBox">
+		<include file="Public/left_menu" />
+			{$menulefthtml}
+		</div>
+		<div class="main_right">
+			<div class="common_head">
+				<h2>问题房东查询</h2>
+				<div class="common_head_main">
+					<form action="{:U('IssueOwner/issueownerlist')}" method="get">
+					<input type="hidden" name="no" value="3"/>
+					<input type="hidden" name="leftno" value="99"/>
+						<table class="table_one">
+							<tr>
+								<td class="td_title">处理时间：</td>
+								<td class="td_main"><input class="inpt_a" type="text" name="startTime" id="datetimepicker" value="<?php echo $_GET['startTime'] ?>">&nbsp;~&nbsp;<input class="inpt_a" type="text"  name="endTime" id="datetimepicker1" value="<?php echo $_GET['endTime'] ?>"></td>
+								<td class="td_title">房东手机号：</td>
+								<td class="td_main"><input type="text" name="ownermobile" value="<?php echo $_GET['ownermobile'] ?>"></td>
+								<td class="td_title"></td>
+								<td class="td_main"></td>
+							</tr>
+						</table>
+						<p class="head_p"><button class="btn_a">搜索</button></p>
+					</form>
+				</div>
+			</div>
+			<div class="common_main">
+				<h2>问题房东列表 <a href="__URL__/downloadExcel?<?php echo $_SERVER['QUERY_STRING'];?>" class="btn_a">下载</a></h2>
+				<div class="table">
+					<table>
+						<thead>
+							<tr>
+								<th>序号</th>
+								<th>房东手机</th>
+								<th>400号码</th>
+								<th>问题次数</th>
+								<th>是否付费</th>
+								<th>房东负责人</th>
+								<th>查看联系记录</th>
+								<th>是否处理</th>
+								<th>备注</th>
+								<th>处理人</th>
+								<th>处理时间</th>
+							</tr>
+						</thead>
+						<tbody>
+							  <volist name="list" id="vo">
+							<tr>
+								<td>{$i}</td>
+								<if condition="strtoupper($ruleauth['roomauth']) eq '1'">
+								   <td><a href="__APP__/HouseRoom/searchroom.html?no=3&leftno=44&clientPhone={$vo['owner_mobile']}&delState=1" target="_blank">{$vo['owner_mobile']}</a></td>
+								<else/>
+								   <td>{$vo['owner_mobile']}</td>
+								</if>
+								<td><if condition="strtoupper($vo['big_code']) neq ''">{$vo['big_code']}-{$vo['ext_code']}</if></td>
+								<td>{$vo['times']}</td>
+								<td></td>
+								<td></td>
+								<if condition="strtoupper($ruleauth['conowner']) eq '1'">
+								  <td><a href="__APP__/ContactOwner/contactOwnerList.html?no=3&leftno=28&temp=q&ownerphone={$vo['owner_mobile']}&unknown=on&abandon=on" target="_blank">查看联系记录</a></td>
+								<else/>
+							    	<td>查看联系记录</td>
+							    </if>
+							    <td><if condition="$vo['status_code'] eq '0'"><a href="javascript:;" onclick="upstatus('{$vo['id']}','{$vo['owner_id']}',1,this);">批量下架</a>&nbsp&nbsp&nbsp&nbsp<a href="javascript:;" onclick="upstatus('{$vo['id']}','{$vo['owner_id']}',2,this);">通过</a><elseif condition="$vo['status_code'] eq '1'"/>已处理</if></td>
+							   	<td>
+							   		<if condition="strtoupper($vo['memo']) eq ''">
+									<a href="javascript:;" onclick="AddMemo('{$vo['id']}',this);">添加备注</a>
+							   		<else/>
+							   		{$vo['memo']}
+									</if>
+							   	</td>
+							   	<td>{$vo['handle_man']}</td>
+								<td><if condition="strtoupper($vo['handle_time']) neq 0">{$vo['handle_time']|date="Y-m-d H:i:s",###}</if></td>
+								<input type="hidden" name="owner_id" value="{$vo['owner_id']}">
+							</tr>
+							</volist>
+							<input type="hidden" name="pid" value="" id="js_pid">
+						</tbody>
+					</table>
+					<div class="skip cf">
+						<p class="fl skip_left">共{$pagecount}条记录，每页15条 &nbsp;&nbsp;</p>
+						<p class="fr skip_right">
+							{$show}
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="addReply" style="display:none;">
+		<div class="addReply_main" style="height:230px;">
+				<div class="cf reply_text">
+					<span></span>
+					<textarea name="reply_content" id="reply_content" style="margin-left:100px;"></textarea>
+				</div>
+				
+				<div class="anniu cf">	
+					<a href="javascript:;" class="anniu_back">取消</a>
+					<button class="anniu_add">提交</button>
+				</div>
+		</div>
+	</div>
+
+    <script src="__PUBLIC__/js/jquery.js"></script>
+    <script src="__PUBLIC__/js/common.js"></script>
+    <script src="__PUBLIC__/js/listdata.js"></script>
+    <script src="__PUBLIC__/plug/jquery.datetimepicker.js"></script>
+	<script>
+	$('#datetimepicker').datetimepicker({step:10,lang:'ch',timepicker:false,format:"Y-m-d"});
+	$('#datetimepicker1').datetimepicker({step:10,lang:'ch',timepicker:false,format:"Y-m-d"});
+    </script>
+    <script type="text/javascript">
+		   function upstatus(problems_id,owner_id,type,object){
+		   	     if(type==1){
+		   	        var message="确认批量下架所有房间?";
+		   	     }else if(type==2){
+		   	     	var message="确认通过？";
+		   	     }
+		   		if(confirm(message)){
+	               $.get("__URL__/upproblemsstatus.html",{problems_id:problems_id,owner_id:owner_id,type:type},function(data){
+	               	    if(data.status=="200"){
+	               	    	$(object).parent().text("已处理");
+	               	    }
+					},"json");
+              }
+           }
+
+          function AddMemo(problems_id,object){
+               $(".addReply").show();
+                $("#js_pid").val(problems_id);
+               $(".anniu_add").click(function(){
+               	  var reply_content=$("#reply_content").val();
+               	  var pb_id=$("#js_pid").val();
+               	  if(reply_content==""){
+               	  	alert("请填写备注");
+               	  	return false;
+               	  }
+                  $.get("__URL__/addmemodata.html",{problems_id:pb_id,content:reply_content},function(data){
+		       			if(data.status=200){
+		       				$(object).parent().text(reply_content);
+		       				$(".addReply").hide();
+		       				$("#reply_content").val("");
+		       				 $("#js_pid").val("");
+		       			}
+			       },"json");
+               })
+          }
+
+         $(".anniu_back").on("click",function(){
+		       $(".addReply").hide();
+		       $("#reply_content").val("");
+		        $("#js_pid").val("");
+		        location.reload();
+		   })
+
+       $(".table table tr").each(function(index,object){
+		  	var reply='';
+		    var owner_id=$(object).find("input[name='owner_id']").val();
+	      if(owner_id!="undefined"&&owner_id!=""){
+		    $.get("__URL__/getownerdata.html",{owner_id:owner_id,index:index},function(data){
+		          $(".table table").find("tr:eq("+index+")").children("td:eq(4)").text(data.pay_type);
+		       	  $(".table table").find("tr:eq("+index+")").children("td:eq(5)").text(data.principal_man);
+			  },"json");
+		    }
+	   });
+
+
+    </script>
+</body>
+</html>

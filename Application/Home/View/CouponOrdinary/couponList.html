@@ -1,0 +1,197 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>普通优惠劵列表</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 最新版本渲染 -->
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/basic.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/plug/jquery.datetimepicker.css"/>
+    <style type="text/css">
+   .js_days{display: none;}
+    </style>
+</head>
+<body>
+<include file="Public/head_city" />
+      <div class="title cf">
+    	<div class="logo fl cf">
+			<img src="__PUBLIC__/images/logo.png">
+		</div>
+		<ul class="cf fl">
+		<li><a href="{:U('Welcome/welcome')}">首页</a></li>
+			{$menutophtml}
+		</ul>
+		<div class="cf fr title_right">
+			<a class="blue" href="javascript:">欢迎您 <?php echo cookie("admin_user_name");?></a>
+			<span>|</span>
+			<a href="{:U('/Index/outlogin')}">退出</a>
+		</div>
+    </div>
+	<div class="main">
+		<div class="main_left subNavBox">
+			<include file="Public/left_menu" />
+			{$menulefthtml}
+		</div>
+		<div class="main_right">
+			<div class="common_head">
+				<h2>优惠劵搜索</h2>
+				<form action="__URL__/couponList.html?no=1&leftno=42" method="get">
+				  	<input type="hidden" name="no" value="77">
+				  	<input type="hidden" name="leftno" value="83">
+					<table class="table_one">
+						<tr>
+							<td class="td_title">优惠劵名称：</td>
+							<td class="td_main"><input type="text" name="name" value="<?php echo I('get.name')?>"></td>
+							<td class="td_title">活动编号：</td>
+							<td class="td_main"><input type="text" name="hdid" value="<?php echo I('get.hdid')?>"></td>
+							<td class="td_title">优惠劵总量：</td>
+							<td class="td_main"><input type="text" name="total_count" value="<?php echo I('get.total_count')?>"></td>
+						</tr>
+						<tr>
+							<td class="td_title">活动金额：</td>
+							<td class="td_main"><input type="text" name="price" value="<?php echo I('get.price')?>"></td>
+							<td class="td_title">房东电话：</td>
+							<td class="td_main"><input type="text" name="owner_mobile" value="<?php echo I('get.owner_mobile')?>"></td>
+							<td class="td_title"></td>
+							<td class="td_main"></td>
+						</tr>
+					</table>
+					<p class="head_p"><button class="btn_a">搜索</button></p>
+				 </form>
+				  
+				</div>
+				<div class="common_main">
+				<h2>普通优惠劵列表<a href="__URL__/addnewtemp.html?no=77&leftno=83" class="btn_a">新增优惠劵</a></h2>
+
+				<div class="table">
+					<table>
+						<thead>
+							<tr>
+								<th>序号</th>
+								<th>优惠劵类型</th>
+								<th>优惠劵名称</th>
+								<th>开始时间</th>
+								<th>结束时间</th>
+								<th>优惠劵金额</th>
+								<th>有效期</th>
+								<th>优惠劵总量</th>
+								<th>使用条件</th>
+								<th>是否可叠加使用</th>
+								<th>操作</th>
+							</tr>
+						</thead>
+						<tbody id="tb1">
+						<volist name="list" id="vo">
+							<tr>
+								<td>{$i}</td>
+								<td>
+									<if condition="strtoupper($vo['coupon_type']) eq '1'">
+										普通优惠劵
+									<else/>
+									  商家优惠劵
+									</if>
+								</td>
+								<td>{$vo['name']}</td>
+								<td>{$vo['start_date']|date="Y-m-d H:i:s",###}</td>
+								<td>{$vo['end_date']|date="Y-m-d H:i:s",###}</td>
+								<td>{$vo['price']}</td>
+								<td>
+								   <if condition="strtoupper($vo['effective_type']) eq '0'">
+								       {$vo['effective_date']|date="Y-m-d H:i:s",###}
+								   <else/>
+									   {$vo['effective_date']}
+								   </if>
+								</td>
+								<td>{$vo['total_count']}</td>
+								<td>{$vo['limit_txt']}</td>
+								<td>
+								     <if condition="strtoupper($vo['use_type']) eq '0'">
+								       不可叠加
+									<else/>
+									   可叠加
+									</if>
+								</td>
+								<td>
+								<if condition="strtoupper($vo['id']) GT '999'">
+								<a href="{:U('CouponOrdinary/delCouponManage')}?delid={$vo['id']}?no=77&leftno=83">删除</a>&nbsp;&nbsp;&nbsp;
+								<a href="{:U('CouponOrdinary/upnewtemp')}?upid={$vo['id']}?no=77&leftno=83">修改</a>
+								<else/>
+								<span style="color:#666">删除&nbsp;&nbsp;&nbsp;修改</span>
+								</if>
+								</td>
+								<input name="activity_id" type="hidden" class="activity_id" value="{$vo['id']}">
+							</tr>
+						</volist>
+						</tbody>
+					</table>
+				        <div class="skip cf">
+						<p class="fl skip_left">共{$pagecount}条记录，每页20条</p>
+						<p class="fr skip_right">
+							{$show}
+						</p>
+					</div>
+				</div>
+			</div>
+			</div>
+			
+		</div>
+	</div>
+<script src="__PUBLIC__/js/jquery.js"></script>
+<script src="__PUBLIC__/js/common.js"></script>
+<script src="__PUBLIC__/plug/jquery.datetimepicker.js"></script>
+
+<script type="text/javascript">
+	$('#datetimepicker').datetimepicker({step:10,lang:'ch',timepicker:true,format:"Y-m-d h:m"});
+	$('#datetimepicker1').datetimepicker({step:10,lang:'ch',timepicker:true,format:"Y-m-d h:m"});
+	$('#datetimepickertimes').datetimepicker({step:10,lang:'ch',timepicker:true,format:"Y-m-d h:m"});
+	/*提交表单*/
+ function check(){
+	   var cname=$("input[name='cname']").val();
+	   var startTime=$("input[name='startTime']").val();
+	   var cmoney=$("input[name='cmoney']").val();
+	   var total_count=$("input[name='total_count']").val();
+	   var hdid=$("input[name='hdid']").val();
+	   if(cname==""){
+		    alert("活动名称不能为空！");
+		    return false;
+	   }else if(startTime==""){
+		   alert("活动开始时间不能为空！");
+		   return false;
+	   }else if(cmoney==""){
+		   alert("活动金额不能为空！");
+		   $("#index_no").focus();
+		   return false;
+	   }else if(total_count==""){
+		   alert("活动领取个数不能为空！");
+		   return false;
+	   }else if(hdid==""){
+		   alert("活动编号不能为空！");
+		   return false;
+	   }else{
+		   $("#form").submit();
+	   } 
+   }
+
+
+</script>
+<script>
+$.each($("#tb1").find("input.activity_id"), function(){
+       		GetCouponCount($(this).val());
+    });
+function GetCouponCount(activity_id){
+    var UrlParam ={
+	 	activity_id: activity_id
+	  };
+	 $.ajax({
+	        type: "GET",
+	        cache: false,
+	        url: "__URL__/getCouponCount.html",
+	        data: UrlParam,
+	        dataType: "json",       
+	        success: function(json){
+				$("#"+json.activity_id).text(json.count);
+	        }
+	  });
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>区域板块</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 最新版本渲染 -->
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/audit_rent_orders.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/basic.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common.css">
+</head>
+<body>
+<include file="Public/head_city" />
+    <div class="title cf">
+    	<div class="logo fl cf">
+			<img src="__PUBLIC__/images/logo.png">
+		</div>
+		<ul class="cf fl">
+		<li><a href="{:U('Welcome/welcome')}">首页</a></li>
+			{$menutophtml}
+		</ul>
+		<div class="cf fr title_right">
+			<a class="blue" href="javascript:">欢迎您 <?php echo cookie("admin_user_name");?></a>
+			<span>|</span>
+			<a href="{:U('/Index/outlogin')}">退出</a>
+		</div>
+    </div>
+	<div class="main">
+		<div class="main_left subNavBox">
+		<include file="Public/left_menu" />
+			{$menulefthtml}
+		</div>
+		<div class="main_right">
+			<div class="common_head">
+				<h2>新增<?php if($_GET['addtype']==1){echo"区域";}else{echo"板块";}?></h2>
+			</div>
+			<div class="common_main">
+				<form method="post" action="__URL__/addParamRegion.html" id="form">
+				    <input name="type" type="hidden" value="add">
+				    <input name="addtype" type="hidden" value="<?php echo I('get.addtype');?>">
+				    <table class="table_one table_two">
+				    <if condition="$_GET['addtype']==2">   	
+						<tr>
+							<td class="td_title">区域：</td>
+							<td class="td_main">
+								<select name="parent_id">
+								  <volist name="region_list" id="vo">
+								  <option value="<?php echo$vo['id'];?>"><?php echo$vo['cname'];?></option>
+								  </volist>
+							   </select>
+							</td>
+						</tr>
+					</if>
+					<tr>
+						<td class="td_title">名称：</td>
+						<td class="td_main">
+							<input type="text" name="cname" >
+						</td>
+					</tr>
+					<tr>
+						<td class="td_title">全拼：</td>
+						<td class="td_main">
+						   <input type="text" name="full_py">
+						</td>
+					</tr>
+					<tr>
+						<td class="td_title">首字母：</td>
+						<td class="td_main">
+						   <input type="text" name="first_py">
+						</td>
+					</tr>
+					<tr>
+						<td class="td_title">坐标经度：</td>
+						<td class="td_main">
+						   <input type="text" name="lpt_x" >
+						</td>
+					</tr>
+					<tr>
+						<td class="td_title">坐标纬度：</td>
+						<td class="td_main">
+						   <input type="text" name="lpt_y">
+						</td>
+					</tr>
+					<tr>
+						<td class="td_title">排序：</td>
+						<td class="td_main">
+						   <input type="text" name="order_index">
+						</td>
+					</tr>
+					<tr>
+						<td class="td_title">数据状态：</td>
+						<td class="td_main">
+						        <input type="radio" id="show" name="is_display" value="1" checked>
+								<label for="show">显示</label>
+								<input type="radio" id="hide" name="is_display" value="0">
+								<label for="hide">隐藏</label>
+						</td>
+					</tr>
+				</table>
+			 	 <div class="addhouse_last addhouse_last_room"><button class="btn_a" onclick="return check();">提交</button></div>
+				</form>
+			</div>
+		</div>
+</body>
+<script src="__PUBLIC__/js/jquery.js"></script>
+<script src="__PUBLIC__/js/common.js"></script>
+<script src="__PUBLIC__/js/jquery.form.js"></script>
+<script type="text/javascript">
+	/*提交表单*/
+ function check(){
+	   var cname=$("input[name='cname']").val();
+	   var full_py=$("input[name='full_py']").val();
+	   var first_py=$("input[name='first_py']").val();
+	   var order_index=$("input[name='order_index']").val();
+	   var lpt_x=$("input[name='lpt_x']").val();
+	   var lpt_y=$("input[name='lpt_y']").val();
+	   if(cname==""){
+		    alert("名称不能为空！");
+		    return false;
+	   }else if(full_py==""){
+		   alert("全拼不能为空！");
+		   return false;
+	   }else if(first_py==""){
+		   alert("首字母不能为空！");
+		   return false;
+	   }else if(order_index==""){
+		   alert("排序不能为空！");
+		   return false;
+	   }else if(lpt_x==""){
+		   alert("坐标经度不能为空！");
+		   return false;
+	   }else if(lpt_y==""){
+		   alert("坐标纬度不能为空！");
+		   return false;
+	   }else if(index_no==""){
+		   alert("坐标纬度不能为空！");
+		   return false;
+	   }else{
+		   $("#form").submit();
+	   } 
+   }
+</script>
+</html>

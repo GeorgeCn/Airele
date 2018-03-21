@@ -1,0 +1,174 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>合同详情</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 最新版本渲染 -->
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/audit_rent_orders.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/basic.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common.css">
+    <script src="__PUBLIC__/js/jquery.js"></script>
+</head>
+<body>
+<include file="Public/head_city" />
+  <div class="title cf">
+    	<div class="logo fl cf">
+			<img src="__PUBLIC__/images/logo.png">
+		</div>
+		<ul class="cf fl">
+		<li><a href="{:U('Welcome/welcome')}">首页</a></li>
+		{$menutophtml}
+		</ul>
+		<div class="cf fr title_right">
+			<a class="blue" href="javascript:">欢迎您 <?php echo cookie("admin_user_name");?></a>
+			<span>|</span>
+			<a href="{:U('/Index/outlogin')}">退出</a>
+		</div>
+    </div>
+
+
+	<div class="main">
+		<div class="main_left subNavBox">
+		<include file="Public/left_menu" />
+			{$menulefthtml}
+		</div>
+		<div class="main_right">
+			<div class="common_head">
+				<!-- <h2>确认退款</h2><span class="operate">操作记录</span> -->
+			</div>
+			<div class="common_main">
+				<table class="table_one">
+					<tr>
+						<td colspan="4"><span>合同信息</span></td>
+					</tr>
+					<tr>
+						<td class="td_title">租客手机：</td>
+						<td class="td_main">{$data['mobile']}</td>
+						<td class="td_title">合同状态：</td>
+						<td class="td_main red">
+							 <if condition="strtoupper($data['status']) eq '1'">
+							 待审核
+							<elseif condition="strtoupper($data['status']) eq '2'"/>
+					    	未通过
+							<elseif condition="strtoupper($data['status']) eq '3'"/>
+						    已通过
+							</if>
+						</td>
+					</tr>
+					<tr>
+						<td class="td_title">提交时间：</td>
+						<td class="td_main">{$data['create_time']|date="Y-m-d H:i:s",###}</td>
+						<td class="td_title">数据状态</td>
+						<td class="td_main red">
+							<if condition="strtoupper($data['record_status']) eq '1'">
+							 正常
+							<elseif condition="strtoupper($data['status']) eq '0'"/>
+					    	删除
+							</if>
+						</td>
+					</tr>
+					<tr>
+						<td class="td_title">房源负责人：</td>
+						<td class="td_main">{$roomarr['create_man']}</td>
+						<td class="td_title"></td>
+						<td class="td_main red"></td>
+					</tr>
+					
+					
+				</table>
+					<div id="tab">
+					<div class="tabList">
+						<ul class="cf">
+							<li class="cur">合同照片</li>
+
+						</ul>
+					</div>
+					<div class="tabCon" style="height:auto;width:auto;">
+					    <div class="module cf" style="height:auto;min-height:280px;">
+					       <?php $count=count(explode(',',$data['img_url']))?>
+				                <?php 
+							       $imgarr=explode(',',$data['img_url']); 
+						          for($index=0;$index<count($imgarr);$index++){ 
+									 echo '<a href="javascript:"><img src="'.$imgarr[$index].'"></a>';
+								  } 
+							    ?>
+						</div>
+					</div>
+					<div class="tabfloat">
+						<img src="{$data.img_url}">
+					</div>
+				</div>
+			</div>
+			<if condition="strtoupper($data['record_status']) eq '1'">
+			<div class="common_bottom cf">
+				<div class="back fl" style="width:15%"></div>
+				<div class="remarks fl" style="height:60px;width:480px;">
+				<span class="fl" style="font-size:18px;line-height:60px;">操作:</span>
+				<select id="js_status" style="width:140px;height:34px;margin-top:13px;float:left;margin-left:20px;">
+					<option value="2" <?php if($data['status']==2){echo "selected";}?>>未通过</option>
+					<option value="3" <?php if($data['status']==3){echo "selected";}?>>已通过</option>
+			    </select>
+			    <span class="fl" style="font-size:18px;line-height:60px;display:block;margin-left:15px;">备注:</span>
+			    <textarea style="height:100px;margin-top:13px;float:left;margin-left:10px;width:160px;resize:none;" id="jsdesc">{$data['desc']}</textarea>
+				</div>
+				<if condition="strtoupper($data['status']) neq '1'">
+				<div class="through fl"><button class="buttom" disabled="disabled">确认提交</button></div>
+				<else/>
+				<div class="through fl"><button class="buttom jujue" onclick="UpdateRemark('{$data['id']}')">确认提交</button></div>
+				</if>
+			
+			</div>
+			</if>
+		</div>
+</body>
+    <script src="__PUBLIC__/js/jquery.js"></script>
+     <script src="__PUBLIC__/js/common.js"></script>
+<script>
+
+    function UpdateRemark(orderid){
+			if(confirm("确认提交？")){
+				var status=$("#js_status").val();
+				var jsdesc=$("#jsdesc").val();
+				if(jsdesc==""){
+					alert("请填写备注");
+					return false;
+				}else{
+					$.get("__URL__/servicedesc.html",{id:orderid,status:status,desc:jsdesc},function(data){
+	    	   			 if(data.status==200){
+	    	   			   location.reload(); 
+	    	   			 }
+					},"json");
+				}
+
+			}
+	}
+
+</script>
+<script>
+	$(function(){
+		$(".tabList li").bind("click",function(){
+			$(this).addClass("cur").siblings().removeClass("cur");
+			$(".module").hide().eq($(".tabList li").index(this)).show();
+		});
+
+		$(".tabCon img").bind("click",function(){
+			var img=$(this).attr("src"); 
+			$(".tabfloat img").attr("src",img); 
+			$(".tabfloat").fadeIn();
+		});
+		$(".tabfloat img").bind("click",function(){
+			$(".tabfloat").fadeOut();
+		})
+	})
+
+</script>
+<script>
+	$(function(){
+		$(".operate").click(function(){
+			$(".floatDiv").fadeIn();
+		})
+		$(".out").click(function(){
+			$(".floatDiv").fadeOut();
+		})
+	})
+</script>
+</html>

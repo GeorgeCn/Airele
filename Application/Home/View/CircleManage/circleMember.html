@@ -1,0 +1,92 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>圈子管理</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 最新版本渲染 -->
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/basic.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/plug/jquery.datetimepicker.css"/>
+
+</head>
+<body>
+<include file="Public/head_city" />
+    <div class="title cf">
+    	<div class="logo fl cf">
+			<img src="__PUBLIC__/images/logo.png">
+		</div>
+		<ul class="cf fl">
+		<li><a href="{:U('Welcome/welcome')}">首页</a></li>
+			{$menutophtml}
+		</ul>
+		<div class="cf fr title_right">
+			<a class="blue" href="javascript:;">欢迎您 <?php echo cookie("admin_user_name");?></a>
+			<span>|</span>
+			<a href="{:U('/Index/outlogin')}">退出</a>
+		</div>
+    </div>
+	<div class="main">
+		<div class="main_left subNavBox">
+			<include file="Public/left_menu" />
+			{$menulefthtml}
+		</div>
+		<div class="main_right">
+			<div class="common_head">
+				<h2>成员查询</h2>
+				<div class="common_head_main">
+					<form action="{:U('CircleManage/circleMember')}" method="get">
+					<input type="hidden" name="no" value="47"/>
+					<input type="hidden" name="leftno" value="49"/>
+					<input type="hidden" name="cid" value="{$postsid}"/>
+						<table class="table_one">
+							<tr>
+								<td class="td_title">成员手机号：</td>
+						        <td class="td_main"><input class="inpt_a" type="text" name="creatorphone" value="<?php echo $_GET['creatorphone'] ?>"></td>
+								<td class="td_title">成员姓名：</td>
+								<td class="td_main"><input type="text" name="circlename" value="<?php echo $_GET['circlename'] ?>"></td>
+								<td class="td_title"></td>
+								<td class="td_main"></td>
+							</tr>
+						</table>
+						<p class="head_p"><button class="btn_a">搜索</button></p>
+					</form>
+				</div>
+			</div>
+			<div class="common_main">
+				<h2>成员列表  ({$cirletitle['title']})</h2>
+				<div class="table">
+					<table>
+						<thead>
+							<tr>
+								<th>序号</th>
+								<th>成员手机</th>
+								<th>成员姓名</th>
+								<th>加入时间</th>
+								<th>成员状态</th>
+							</tr>
+						</thead>
+						<tbody>
+							  <volist name="list" id="vo">
+							<tr <if condition="strtoupper($vo['user_level']) eq '1'">bgcolor="#ccc";</if>>
+								<td>{$i}</td>
+								<td>{$vo.mobile}</td>
+								<td>{$vo.cname}</td>
+								<td>{$vo['create_time']|date="Y-m-d H:i:s",###}</td>
+								<td><a href="{:U('CircleManage/delCircleMemberState')}?cid={$vo.id}&pid={$postsid}">删除</a></td>
+							</tr>
+							</volist>
+						</tbody>
+					</table>
+					<div class="skip cf">
+						<p class="fl skip_left">共{$pagecount}条记录，每页15条</p>
+						<p class="fr skip_right">
+							{$show}
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+    <script src="__PUBLIC__/js/jquery.js"></script>
+    <script src="__PUBLIC__/js/common.js"></script>
+</body>
+</html>

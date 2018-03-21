@@ -1,0 +1,258 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>打款管理</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 最新版本渲染 -->
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/audit_rent_orders.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/basic.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common.css">
+
+</head>
+<body>
+<include file="Public/head_city" />
+  <div class="title cf">
+    	<div class="logo fl cf">
+			<img src="__PUBLIC__/images/logo.png">
+		</div>
+		<ul class="cf fl">
+		<li><a href="{:U('Welcome/welcome')}">首页</a></li>
+			{$menutophtml}
+		</ul>
+		<div class="cf fr title_right">
+			<a class="blue" href="javascript:">欢迎您 <?php echo cookie("admin_user_name");?></a>
+			<span>|</span>
+			<a href="{:U('/Index/outlogin')}">退出</a>
+		</div>
+    </div>
+
+    <div class="floatDiv">
+		<div class="desk"></div>
+		<div class="floatDiv_main">
+			<table>
+				<caption>订单编号:{$ordersdetails.id}</caption>
+				<thead>
+					<th>序号</th>
+					<th>操作</th>
+					<th>操作人</th>
+					<th>操作时间</th>
+					<th>备注</th>
+				</thead>
+				<tbody>
+				  <volist name="statuslist" id="vo">
+					<tr>
+						<td>{$i}</td>
+						<td><?php if($vo['order_status']==0){echo"租客提交订单";}elseif($vo['order_status']==1){echo"租客取消订单";}elseif($vo['order_status']==2){echo"审核通过";}elseif($vo['order_status']==3){echo"审核拒绝";}elseif($vo['order_status']==4){echo"租客付款";}elseif($vo['order_status']==6){echo"机构打款";}elseif($vo['order_status']==7){echo"直接退款";}elseif($vo['order_status']==8){echo"打款失败退款";}?></td>
+						<td>{$vo['oper_id']}</td>
+						<td>{$vo['create_time']|date="Y-m-d H:i:s",###}</td>
+						<td>{$vo['desc']}</td>
+					</tr>
+			     </volist>
+					<tr class="out"><td colspan="5"><a href="javascript:">关闭</a></td></tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div class="main">
+		<div class="main_left subNavBox">
+		<include file="Public/left_menu" />
+			{$menulefthtml}
+		</div>
+		<div class="main_right">
+			<div class="common_head">
+				<h2>确认打款</h2><span class="operate">操作记录</span>
+			</div>
+			<div class="common_main">
+				<table class="table_one">
+					<tr>
+						<td colspan="4"><span>租客信息</span></td>
+					</tr>
+					<tr>
+						<td class="td_title">姓名：</td>
+						<td class="td_main">{$ordersdetails['renter_name']}</td>
+						<td class="td_title">支付方式：</td>
+						<td>
+							<if condition="strtoupper($paymanner['pay_platform']) eq '0'">
+							 微信
+							<elseif condition="strtoupper($paymanner['pay_platform']) eq '1'"/>
+							 银联
+							<elseif condition="strtoupper($paymanner['pay_platform']) eq '2'"/>
+							支付宝
+							</if>
+						</td>
+					</tr>
+					<tr>
+						<td class="td_title">手机：</td>
+						<td class="td_main">{$ordersdetails['renter_phone']}</td>
+						<td class="td_title">租客付款金额：</td>
+						<td class="td_main">{$ordersdetails.price_cnt}元</td>
+					</tr>
+					<tr>
+						<td class="td_title">租房地址：</td>
+						<td class="td_main">{$ordersdetails.province_name},{$ordersdetails.city_name},{$ordersdetails.district_name},{$ordersdetails.address}</td>
+						<td class="td_title">订单来源：</td>
+						<td class="td_main">
+						<if condition="strtoupper($ordersdetails['platform']) eq '0'">
+						  微信
+						<elseif condition="strtoupper($ordersdetails['platform']) eq '1'"/>
+					     Android
+						<elseif condition="strtoupper($ordersdetails['platform']) eq '2'"/>
+						  iPhone
+						</if>
+						</td>
+
+					</tr>
+					<tr>
+						<td colspan="4"><span>房东信息</span></td>
+					</tr>
+					<tr>
+						<td class="td_title">订单编号：</td>
+						<td class="td_main">{$client['order_id']}</td>
+						<td class="td_title">打款给：</td>
+						<td>
+						   <if condition="strtoupper($client['bankcard_type']) eq '1'">
+							 支付宝账号
+							<elseif condition="strtoupper($client['bankcard_type']) eq '2'"/>
+					    	私人银行卡
+							<elseif condition="strtoupper($client['bankcard_type']) eq '3'"/>
+						     微信
+						     <elseif condition="strtoupper($client['bankcard_type']) eq '4'"/>
+						     对公账号
+							</if>
+						</td>
+					</tr>
+					<tr>
+						 <if condition="strtoupper($client['bankcard_type']) eq '4'">
+					      <td class="td_title">收款单位：</td>
+				    	<else/>
+					      <td class="td_title">收款人：</td>
+					     </if>
+						<td class="td_main">{$client['name']}<if condition="strtoupper($authentication['is_auth']) eq '1'">【良心房东】</if></td>
+						<if condition="strtoupper($client['bankcard_type']) eq '1'">
+						<td class="td_title">支付宝账号：</td>
+						<elseif condition="strtoupper($client['bankcard_type']) eq '2'"/>
+						<td class="td_title">银行卡号：</td>
+						<elseif condition="strtoupper($client['bankcard_type']) eq '3'"/>
+						<td class="td_title">微信账号：</td>
+						<elseif condition="strtoupper($client['bankcard_type']) eq '4'"/>
+						<td class="td_title">对公账号：</td>
+						</if>
+						<td class="td_main">{$client['bankcard_no']}</td>
+					</tr>
+					<tr>
+						<td class="td_title">手机：</td>
+						<td class="td_main">{$client['mobile']}</td>
+						<td class="td_title">需打款金额：</td>
+						<td class="td_main red">{$ordersdetails.order_pirce_cnt}元</td>
+					</tr>
+				</table>
+			</div>
+			<!-- <div class="common_bottom cf">
+				    <div class="back fl"><a href="{:U('Finance/financeList')}">返回</a></div>
+		     		<form  action="{:U('Finance/updateFinanceStatus')}" method="post">
+					<input name="orderid" type="hidden" value="{$ordersdetails.id}">
+					<div class="remarks fl">
+						<label for="">备注：</label>
+						<input type="text" name="remark">
+					</div>
+					<div class="through fl"><button class="buttom jujue">确认打款</button></div>
+					</form>
+			   </div> -->
+
+			   
+				<table class="table_one">
+				<!--优惠劵信息-->
+					<tr><td colspan="8"><span>优惠劵信息</span></td></tr>
+					<volist name="couponarr" id="vo">
+					<tr> 
+					    <td class="td_title">优惠劵类型：</td>
+						<td class="td_main" style="width:auto;">
+							<if condition="strtoupper($vo['coupon_type']) eq '0'">
+							 微信分享
+							<elseif condition="strtoupper($vo['coupon_type']) eq '1'"/>			
+							 普通优惠劵
+							<elseif condition="strtoupper($vo['coupon_type']) eq '2'"/>
+							 商家优惠劵
+							</if>
+						</td>
+						<td class="td_title">优惠劵金额：</td>
+						<td class="td_main" style="width:auto;">{$vo.coupon_money}</td>
+						<td class="td_title">优惠劵来源：</td>
+						<td class="td_main" style="width:auto;">{$vo.coupon_from}</td>
+						<td class="td_title">是否叠加：</td>
+						<td class="td_main" style="width:auto;">
+							<if condition="strtoupper($vo['use_type']) eq '0'">
+							 不可叠加
+							<elseif condition="strtoupper($vo['use_type']) eq '1'"/>
+							可以叠加
+							</if>		
+						</td>
+					</tr>
+					</volist>
+				</table>
+			</div>
+			<div class="common_bottom cf">
+				<div class="back fl"></div>
+				<div class="common_bottom_right cf fl">
+					<div class="tabList1">
+						<ul>
+							<li class="cur">打款</li>
+							<li>直接退款</li>
+						</ul>
+					</div>
+					<div class="tabCon1">
+						<div class="module1 cf">
+							<form  action="{:U('Finance/updateFinanceStatus')}" method="post">
+							<input name="orderid" type="hidden" value="{$ordersdetails.id}">
+							<input name="formtype" type="hidden" value="remit">
+								<div class="remarks fl">
+									<label for="">备注：</label>
+									<input type="text" name="remark">
+								</div>
+								<div class="through1 fl"><button class="buttom jujue">确认打款</button></div>
+							</form>
+						</div>
+						<div class="module1 cf" style="display:none;">
+						   <form action="{:U('Finance/updateFinanceStatus')}" method="post">
+						   <input name="orderid" type="hidden" value="{$ordersdetails.id}">
+						   <input name="formtype" type="hidden" value="reimburse">
+								<div class="remarks fl">
+									<label for="">退款原因：</label>
+									<input type="text" name="remark">
+								</div>
+							    <div class="through1 fl"><button class="buttom jujue">确认退款</button></div>
+						   </form>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+</body>
+    <script src="__PUBLIC__/js/jquery.js"></script>
+<script>
+	$(function(){
+		$(".tabList li").bind("click",function(){
+			$(this).addClass("cur").siblings().removeClass("cur");
+			$(".module").hide().eq($(".tabList li").index(this)).show();
+		});
+	})
+
+	$(function(){
+		$(".tabList1 li").bind("click",function(){
+			$(this).addClass("cur").siblings().removeClass("cur");
+			$(".module1").hide().eq($(".tabList1 li").index(this)).show();
+		});
+	})
+</script>
+<script>
+	$(function(){
+		$(".operate").click(function(){
+			$(".floatDiv").fadeIn();
+		})
+		$(".out").click(function(){
+			$(".floatDiv").fadeOut();
+		})
+	})
+</script>
+</html>

@@ -1,0 +1,217 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>已听录音</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 最新版本渲染 -->
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/basic.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/plug/jquery.datetimepicker.css"/>
+</head>
+<body>
+<include file="Public/head_city" />
+    <div class="title cf">
+    	<div class="logo fl cf">
+			<img src="__PUBLIC__/images/logo.png">
+		</div>
+		<ul class="cf fl">
+		<li><a href="{:U('Welcome/welcome')}">首页</a></li>
+			{$menutophtml}
+		</ul>
+		<div class="cf fr title_right">
+			<a class="blue" href="javascript:;">欢迎您 <?php echo cookie("admin_user_name");?></a>
+			<span>|</span>
+			<a href="{:U('/Index/outlogin')}">退出</a>
+		</div>
+    </div>
+	<div class="main">
+		<div class="main_left subNavBox">
+		<include file="Public/left_menu" />
+			{$menulefthtml}
+		</div>
+		<div class="main_right">
+			<div class="common_head">
+				<h2>已听录音查询</h2>
+				<div class="common_head_main">
+					<form action="{:U('ContactOwner/thearlist')}" method="get">
+					<input type="hidden" name="no" value="3">
+					<input type="hidden" name="leftno" value="98">
+					<input type="hidden" name="temp" value="q">
+					<input type="hidden" name="pagecnt" value="{$pagecnt}">
+						<table class="table_one">
+							<tr>
+								<td class="td_title">拨打时间：</td>
+								<td class="td_main"><input class="inpt_a" type="text" name="startTime" value="<?php echo I('get.startTime'); ?>">&nbsp;~&nbsp;<input class="inpt_a" type="text"  name="endTime" value="<?php echo I('get.endTime'); ?>"></td>
+								<td class="td_title">租客手机号：</td>
+								<td class="td_main"><input type="text" name="loginphone" value="<?php echo I('get.loginphone'); ?>"></td>
+								<td class="td_title">房东手机号：</td>
+								<td class="td_main"><input type="text" name="ownerphone" value="<?php echo I('get.ownerphone'); ?>"></td>
+							</tr>
+							<tr>
+								<td class="td_title">房源负责人：</td>
+								<td class="td_main"><input type="text" name="charge_man" value="<?php echo I('get.charge_man'); ?>"></td>
+								<td class="td_title">品牌公寓：</td>
+								<td class="td_main">
+									<select id="brand_type" name="brand_type">
+										<option value="">全部</option>
+										{$brandTypeList}
+									</select></td>
+								<td class="td_title">来源平台：</td>
+								<td class="td_main">
+									<select name="platform" id="js_platform">
+									   <option value="">全部</option>
+									   <option value="6">h5</option>
+									   <option value="1">android</option>
+									   <option value="2">iphone</option>
+									   <option value="3">400系统</option>
+										<option value="8">小程序</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td class="td_title">来源：</td>
+								<td class="td_main">
+								    <select name="info_resource_type" style="width:110px;">
+								    	{$infoResourceTypeList}
+								    </select>
+								    <select name="info_resource" style="width:110px;">
+								    	<option value=""></option>
+								    	{$infoResourceList}
+								    </select>
+							    </td>
+							    <td class="td_title">拨打人员：</td>
+								<td class="td_main">
+									<select name="makcall" id="js_makcall">
+									   <option value="">全部人员</option>
+									   <option value="0">外部人员</option>
+									   <option value="1">内部人员</option>
+									</select>
+								</td>
+								<td class="td_title">操作人：</td>
+								<td class="td_main"><input type="text" name="handleman" value="<?php echo I('get.handleman'); ?>"></td>
+							</tr>
+							<tr>
+								<td class="td_title">是否中介:</td>
+								<td class="td_main">
+								   <select name="is_owner">
+										<option value="">全部</option>
+										<option value="5" <?php if(I('get.is_owner')==5)echo 'selected'; ?>>是</option>
+										<option value="999" <?php if(I('get.is_owner')==999)echo 'selected'; ?>>否</option>
+									</select>
+							    </td>
+							    <td class="td_title"></td>
+								<td class="td_main"></td>
+								<td class="td_title"></td>
+								<td class="td_main"></td>
+							</tr>
+							
+						</table>
+						
+					</form>
+					<p class="head_p">点击查看数据&nbsp;<button class="btn_a" id="btn_search">搜索</button></p>
+				</div>
+			</div>
+			<div class="common_main">
+				<h2>已听录音列表<a href="#" onclick="downloadData()" class="btn_a">下载</a></h2>
+				<div class="table">
+					<table>
+						<thead>
+							<tr>
+								<th>序号</th>
+								<th>房间编号</th>
+								<th>来源</th><th>是否有佣金</th>
+								<th>租客手机</th>
+								<th>房东手机</th>
+								<th>房东姓名</th>
+								<th>房源负责人</th>
+								<th>电话状态</th>
+								<th>被叫时长(秒)</th>
+								<th>拨打时间</th>
+								<th>录音</th>
+								<th>操作人</th>
+								<th>操作时间</th>
+								<th>录音内容</th>
+								<th>是否中介录音</th>
+								<th>录音文本</th>
+							</tr>
+						</thead>
+						<tbody>
+							  <volist name="list" id="vo">
+							<tr>
+								<td>{$i}</td>
+								<td>{$vo.room_id}</td>
+								<td>{$vo.info_resource}</td><td><switch name="vo.is_commission"><case value="1">是</case><case value="2">否</case></switch></td>
+								<td>{$vo.mobile}</td>
+								<td>{$vo.owner_mobile}</td>
+								<td>{$vo.owner_name}</td>
+								<td>{$vo.charge_man}</td>
+								<td>成功</td>
+								<td>{$vo['called_length']}</td>
+								<td><gt name="vo.call_time" value="0">{$vo['call_time']|date="Y-m-d H:i",###}</gt></td>
+								<if condition="strtoupper($vo['source']) eq '10'">
+								   <td><audio  controls="controls" preload="none"  style="width:42px;height:30px;"  src="<?php echo C('CALL_RECORD_URL');?>/virtual/<?php echo substr($vo['call_id'],0,2);?>/<?php echo substr($vo['call_id'],2,2);?>/<?php echo $vo['call_id']?>.mp3"/>请升级浏览器版本</audio></td>
+								<else/>
+								   <td><audio  controls="controls" preload="none"  style="width:42px;height:30px;"  src="<?php echo C('CALL_RECORD_URL');?>/NumFour/<?php echo substr($vo['call_id'],0,2);?>/<?php echo substr($vo['call_id'],2,2);?>/{$vo['call_id']}.mp3"/>请升级浏览器版本</audio></td>
+							    </if>
+								<td>{$vo['updata_man']}</td>
+								<td><gt name="vo.update_time" value="0">{$vo['update_time']|date="Y-m-d H:i",###}</gt></td>
+								<td>{$vo['memo']}</td>
+								<td><if condition="strtoupper($vo['is_owner']) eq '5'">是<else/>否</if></td>
+								<td><p style="width:220px;word-wrap:break-word;word-break:break-all;height:180px;overflow-y:scroll;line-height:24px;">{$vo.recording_txt}</p></td>
+								<input name="room_id" type="hidden" value="{$vo['room_id']}">
+							</tr>
+							</volist>
+						</tbody>
+					</table>
+					<div class="skip cf">
+						<p class="fl skip_left">共{$pagecnt}条记录，每页8条</p>
+						<p class="fr skip_right">
+							{$show}
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+    <script src="__PUBLIC__/js/jquery.js"></script>
+    <script src="__PUBLIC__/js/common.js"></script>
+    <script src="__PUBLIC__/js/listdata.js"></script>
+    <script src="__PUBLIC__/plug/jquery.datetimepicker.js"></script>
+   <script type="text/javascript">
+   $('.inpt_a').datetimepicker({step:10,lang:'ch',timepicker:false,format:"Y-m-d"});
+
+   $("#brand_type").val("<?php echo I('get.brand_type'); ?>");
+   $("#js_platform").val("<?php echo I('get.platform'); ?>");
+   $("#js_makcall").val("<?php echo I('get.makcall'); ?>");
+   $("select[name='info_resource_type']").val('<?php echo I("get.info_resource_type"); ?>');
+$("select[name='info_resource']").val('<?php echo I("get.info_resource"); ?>');
+   //下拉联动，来源
+	$("select[name='info_resource_type']").change(function(){
+		if($(this).val()==""){
+			$("select[name='info_resource']").html("");
+			return;
+		}
+		$.get("__ROOT__/HouseResource/getInforesourceByType",{type:$(this).val()},function(data){
+			$("select[name='info_resource']").html('<option value=""></option>'+data);
+		},"html");
+	});
+	$("#btn_search").click(function(){
+		$(this).unbind('click').text('搜索中');
+		$("form").submit();
+	});
+   function downloadData(){
+   		var start_date=$("input[name='startTime']").val();
+   		var end_date=$("input[name='endTime']").val();
+   		if(start_date=="" || end_date==""){
+   			alert("下载数据不能超过一个月！");return;
+   		}
+   		var start=new Date(start_date);
+   		start.setMonth(start.getMonth()+1);
+   		var end=new Date(end_date);
+   		if(end-start>0){
+   			alert("下载数据不能超过一个月！");return;
+   		}
+   		window.location.href="__URL__/dowthearlist.html?<?php echo $_SERVER['QUERY_STRING'];?>";
+   }
+   </script>
+</body>
+</html>

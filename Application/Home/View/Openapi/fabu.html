@@ -1,0 +1,87 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>发布</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 最新版本渲染 -->
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/audit_rent_orders.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/basic.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common.css">
+</head>
+<body>
+<include file="Public/head_city" />
+    <div class="title cf">
+    	<div class="logo fl cf">
+			<img src="__PUBLIC__/images/logo.png">
+		</div>
+		<ul class="cf fl">
+			<li><a href="{:U('Welcome/welcome')}">首页</a></li>
+			{$menutophtml}
+		</ul>
+		<div class="cf fr title_right">
+			<a class="blue" href="javascript:">欢迎您 <?php echo cookie("admin_user_name");?></a>
+			<span>|</span>
+			<a href="{:U('/Index/outlogin')}">退出</a>
+		</div>
+    </div>
+	<div class="main">
+		<div class="main_left subNavBox">
+			<include file="Public/left_menu" />
+			{$menulefthtml}
+		</div>
+		<div class="main_right">
+			<div class="common_head">
+				<h2>可编辑</h2>
+			</div>
+			<div class="common_main">
+				<form id="submitForm" action="__URL__/submitFabu" method="post">
+				<input type="hidden" name="select_ids" value="<?php echo isset($_POST['select_ids'])?$_POST['select_ids']:''; ?>">
+				<table class="table_one">
+					<tr>
+						<td class="td_title">帐号：</td>
+						<td class="td_main">{$accountOption}</td>
+					</tr>
+					<!--<tr>
+						<td class="td_title">广告：</td>
+						<td class="td_main"><input name="ad_desc" value="让你结交心动室友，刷卡支付房租，还能经常获取大量优惠"></td>
+					</tr>
+			
+					<tr>
+						<td class="td_title">房源描述1：</td>
+						<td class="td_main"><textarea style="width:90%;height:200px;" name="room_desc_start">嗨住简介
+					嗨住，一个年轻人的租住平台。我们致力于为年轻人解决“租房子，找室友，分期付房租”的问题，让这个陌生的城市因我们的努力多一些温暖。嗨住创始人来自宝洁、艺龙、平安、中原等高管团队，项目得到了国内最知名的VC经纬创投的投资。我们不是合租，我们是嗨住。
+					嗨住app下载方式
+					如果你正在使用电脑，举起手机扫描本页面二维码，下载嗨住app；或开启浏览器，输入“hizhu.com”打开嗨住官网
+					如果你正在使用手机，请到appstore或者各大应用市场搜索“嗨住”下载</textarea></td>
+					</tr> 
+					
+					<tr>
+						<td class="td_title">房源描述2：</td>
+						<td class="td_main"><textarea style="width:90%;height:400px;" name="room_desc_end"></textarea></td>
+					</tr> -->
+					<tr><td colspan="2" style="text-align:center;"><a class="btn_a">发布</a></td></tr>
+				</table>
+				</form>
+			</div>
+			
+		</div>
+	</div>
+</body>
+ <script src="__PUBLIC__/js/jquery.js"></script>
+ <script src="__PUBLIC__/js/common.js"></script>
+<script type="text/javascript">
+$(".btn_a").bind('click',function(){
+	subdata(this);
+});
+function subdata(obj){
+	if($("input[name='select_ids']").val()==""){
+		alert("操作失败");return;
+	}
+	var userCount=$("input[name^=userid]:checked").length;
+	if(userCount==0){
+		alert('必须选择一个帐号');return;
+	}
+	$(obj).unbind("click").text('发布中');
+	$("#submitForm").submit();
+}
+</script>
+</html>

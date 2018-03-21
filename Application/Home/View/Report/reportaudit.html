@@ -1,0 +1,172 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>举报审核</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 最新版本渲染 -->
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/basic.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/plug/jquery.datetimepicker.css"/>
+		<style>
+		.jubao{padding:50px 5%;width:60%;text-align:center;}
+		.jubao a{display:inline-block;margin:0 10px;}
+		.jubao select{width:180px;display:inline-block;height:30px;}
+		.btn_c{background:#e52c53;}
+		.btn_c:hover{background:#db0936;}
+	</style>
+</head>
+<body>
+<include file="Public/head_city" />
+    <div class="title cf">
+    	<div class="logo fl cf">
+			<img src="__PUBLIC__/images/logo.png">
+		</div>
+		<ul class="cf fl">
+		<li><a href="{:U('Welcome/welcome')}">首页</a></li>
+			{$menutophtml}
+		</ul>
+		<div class="cf fr title_right">
+			<a class="blue" href="javascript:;">欢迎您 <?php echo cookie("admin_user_name");?></a>
+			<span>|</span>
+			<a href="{:U('/Index/outlogin')}">退出</a>
+		</div>
+    </div>
+	<div class="main">
+		<div class="main_left subNavBox">
+		<include file="Public/left_menu" />
+			{$menulefthtml}
+		</div>
+		<div class="main_right">
+			<div class="common_head">
+				<h2>举报审核</h2>
+			</div>
+			<div class="common_main">
+			<table class="table_one table_two">
+					<tr>
+						<td class="td_title"><span>*</span>房源编号</td>
+						<td class="td_main"><p style="line-height:24px;">{$data['resource_no']}</p></td>
+					</tr>
+					<tr>
+						<td class="td_title"><span>*</span>房间编号</td>
+						<td><p style="line-height:24px;" id="room_no">{$data['room_no']}</p></td>
+					</tr>
+					<tr>
+						<td class="td_title"><span>*</span>房东电话</td>
+						<td class="td_main"><p style="line-height:24px;">{$data['owner_mobile']}</p></td>
+					</tr>
+					<tr>
+						<td class="td_title"><span>*</span>举报人电话</td>
+						<td class="td_main"><p style="line-height:24px;">{$data['customer_mobile']}</p></td>
+					</tr>
+					<tr>
+						<td class="td_title"><span>*</span>举报类型</td>
+						<td class="td_main"><p style="line-height:24px;">
+							<if condition="strtoupper($data['report_type']) eq '1'">房间已出租
+							<elseif condition="$data['report_type'] eq '2'"/>房东不接电话
+							<elseif condition="$data['report_type'] eq '3'"/>房东是中介
+							<elseif condition="$data['report_type'] eq '4'"/>其他
+							<elseif condition="$data['report_type'] eq '5'"/>房间地址错误
+							<elseif condition="$data['report_type'] eq '6'"/>房间信息错误
+							</if>
+						</p></td>
+					</tr>
+					<tr>
+						<td class="td_title"><span>*</span>举报内容</td>
+						<td class="td_main"><p style="line-height:24px;">{$data['report_content']}</p></td>
+					</tr>
+					<tr>
+						<td class="td_title"><span>*</span>拒绝理由</td>
+						<td class="td_main"><p style="line-height:24px;">{$data['deal_content']}</p></td>
+					</tr>
+				</table>
+				<div class="jubao" style="position:relative;padding-bottom:200px">
+					<a href="__URL__/reportlist.html?no=3&leftno=62" class="btn_b">返回</a>
+						<a href="javascript:;" class="btn_a" <?php if($data['deal_flag']==0){echo'id="js_tongguo"';}?>>通过</a>
+					<label>拒绝理由：</label>
+					<select name="deal_content" id="js_liyou">
+						<option value="房源仍然可租">房源仍然可租</option>
+						<option value="房东是自如，非中介">房东是自如，非中介</option>
+						<option value="房东是青客，非中介">房东是青客，非中介</option>
+						<option value="房东电话可打通">房东电话可打通</option>
+						<option value="已核实非中介，不收取任何中介费用哦~">已核实非中介，不收取任何中介费用哦~</option>
+						<option value="manual">其他</option>
+					</select>
+					<textarea id="txtReson" name="ma_reject" placeholder="请输入拒绝原因" style="display:inline-block;position:absolute;left:36%;top:90px;width:250px;height:80px;display:none;"></textarea>
+					<a href="javascript:;" class="btn_a btn_c" <?php if($data['deal_flag']==0){echo'id="js_jujue"';}?> >拒绝</a>
+				
+				</div>
+			</div>
+		</div>
+	</div>
+    <script src="__PUBLIC__/js/jquery.js"></script>
+    <script src="__PUBLIC__/js/common.js"></script>
+    <script type="text/javascript">
+		$(function(){
+			$("#js_liyou").change(function(){
+				if ($(this).val()=="manual"){
+					$("#txtReson").show();
+				}else{
+					$("#txtReson").hide();
+				};
+			})
+		})
+    </script>
+    <script type="text/javascript">
+      var pid="{$data['id']}";
+      var cid="{$data['customer_id']}";
+    $("#js_jujue").click(function(){
+    	var deal_content=$("#js_liyou").val();
+    	var qita=$("#txtReson").val();
+    	if(deal_content=='manual'){
+    		if(qita==""){
+    		  alert("拒绝原因不能为空");
+    		  return false;
+    	    }else{
+    	    	deal_content=qita;
+    	    }
+    	}
+    	if(confirm('确定拒绝？')){
+	    	window.location.href="__URL__/disposeaudit.html?type=2&pid="+pid+"&cid="+cid+"&deal_content="+deal_content;
+		}
+	});
+	$("#js_tongguo").click(function(){
+		var room_no = $("#room_no").text();
+		if(confirm('确定通过？')){
+			
+				
+			$.ajax({
+			            type:"get",
+			            url: "{:U('Report/disposeaudit')}",
+			            data:{"type":1,"pid":pid,"cid":cid},
+			            dataType: "json",
+			            success:function() {
+			            	$.ajax({
+					            type:"post",
+					            url: "{:U('Report/findStoreID')}",
+					            data:{"room_no":room_no},
+					            dataType: "json",
+					            success:function(data) {
+					            	if(data.code == 404) {
+					            		alert(data.message);
+					            	}
+					            	if(data.code == 200) {
+					            		if(confirm('是否去扣信用分')) {
+					            			window.open("__ROOT__/Stores/storeModifyCreScore.html?no=162&leftno=164&id="+data.id.store_id+"&room_no="+data.no.room_no,'_blank');
+					            		} else {
+					            			window.location.href="__URL__/reportlist.html?no=3&leftno=62";
+					            		}
+					            	}
+					            	if(data.code == 201) {
+					            		window.location.href="__URL__/reportlist.html?no=3&leftno=62";
+					            	}
+					            }	
+				    		})
+			            },	
+			            async:false,
+				    })
+			
+	     	// window.location.href="__URL__/disposeaudit.html?type=1&pid="+pid+"&cid="+cid;
+     	}
+	});
+    </script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>不透传白名单添加</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 最新版本渲染 -->
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/audit_rent_orders.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/basic.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common.css">
+</head>
+<body>
+<include file="Public/head_city" />
+    <div class="title cf">
+    	<div class="logo fl cf">
+			<img src="__PUBLIC__/images/logo.png">
+		</div>
+		<ul class="cf fl">
+		<li><a href="{:U('Welcome/welcome')}">首页</a></li>
+			{$menutophtml}
+		</ul>
+		<div class="cf fr title_right">
+			<a class="blue" href="javascript:">欢迎您 <?php echo cookie("admin_user_name");?></a>
+			<span>|</span>
+			<a href="{:U('/Index/outlogin')}">退出</a>
+		</div>
+    </div>
+	<div class="main">
+		<div class="main_left subNavBox">
+		<include file="Public/left_menu" />
+			{$menulefthtml}
+		</div>
+		<div class="main_right">
+			<div class="common_head">
+				<h2>新增不透传白名单</h2>
+			</div>
+
+			<div class="common_main">
+				<!-- 表单 -->
+				<form action="__URL__/saveBlackUser" method="post">
+				<table class="table_one table_two">
+					<tr>
+						<td class="td_title"><span>*</span>手机号：</td> 
+						<td><input type="text" name="mobile" maxlength="20"></td>
+					</tr>
+				
+					<tr>
+						<td class="td_title"><span> </span>备注信息：</td>
+						<td class="td_main">
+							<input type="text" name="bak_info" maxlength="50" style="width:100%">
+						</td>
+					</tr>
+				</table>
+				<input type="hidden" name="is_owner">
+				</form>
+				<div class="addhouse_last addhouse_last_room"><a href="javascript:window.history.back();" class="btn_b">返回</a>
+					<a href="javascript:;" class="btn_a">提交</a></div>
+			</div>
+		</div>
+</body>
+<script src="__PUBLIC__/js/jquery.js"></script>
+<script src="__PUBLIC__/js/common.js"></script>
+<script src="__PUBLIC__/js/jquery.form.js"></script>
+<script type="text/javascript">
+	function btnSubmit(){
+		var mobile=$("input[name='mobile']").val().replace(/\s+/g,'');
+		var isTel=/^[023456789]+\,{0,1}\d*$/;
+		var isMobile=/^1[34578]\d{9}$/;
+		if(!isTel.test(mobile) && !isMobile.test(mobile)){
+			alert("无效的联系电话");return;
+		}
+		var bak_info=$("input[name='bak_info']").val();
+		$(".btn_a").unbind("click").text('提交中');
+		$.get('__URL__/addapassthrough.html?mobile='+mobile+'&memo='+bak_info,function(result){
+			if(result.status=="201"){
+					$(".btn_a").bind("click",function(){
+						btnSubmit();
+					}).text('提交');
+			}else if(result.status=="300"){
+				alert(result.message);
+				$(".btn_a").bind("click",function(){
+					btnSubmit();
+				}).text('提交');
+			}else{
+				alert("提交成功");
+				window.location.href="__URL__/passthroughlist.html?no=6&leftno=160"; 
+			}
+		},'json');
+		
+	}
+	$(".btn_a").bind("click",function(){
+		btnSubmit();
+	})
+</script>
+</html>

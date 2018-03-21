@@ -1,0 +1,136 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>师傅库</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 最新版本渲染 -->
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/order_manage_check.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/basic.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/plug/jquery.datetimepicker.css"/>
+
+</head>
+<body>
+<include file="Public/head_city" />
+    <div class="title cf">
+    	<div class="logo fl cf">
+			<img src="__PUBLIC__/images/logo.png">
+		</div>
+		<ul class="cf fl">
+		<li><a href="{:U('Welcome/welcome')}">首页</a></li>
+			{$menutophtml}
+		</ul>
+		<div class="cf fr title_right">
+			<a class="blue" href="javascript:">欢迎您 <?php echo cookie("admin_user_name");?></a>
+			<span>|</span>
+			<a href="{:U('/Index/outlogin')}">退出</a>
+		</div>
+    </div>
+	<div class="main">
+		<div class="main_left subNavBox">
+		<include file="Public/left_menu" />
+			{$menulefthtml}
+		</div>
+		<div class="main_right">
+			<div class="common_head">
+				<h2>师傅查询</h2>
+				<div class="common_head_main">
+				<form action="__URL__/distributed.html" method="get">
+				<input type="hidden" name="no" value="4">
+				<input type="hidden" name="leftno" value="73">
+					<table class="table_one">
+						<tr>
+							<td class="td_title">师傅姓名：</td>
+							<td class="td_main"><input type="text" name="name" class="inpt_a" value="<?php echo$_GET['name']?>"></td>
+							<td class="td_title">师傅电话：</td>
+							<td class="td_main"><input type="text" name="mobile" class="inpt_a" value="<?php echo$_GET['mobile']?>"></td>
+							<td class="td_title">服务范围：</td>
+							<td class="td_main">
+							     <select name="class_id" style="width:100px;";>
+									<option value="">=全部=</option>
+									<option value="管道疏通">管道疏通</option>
+									<option value="家电维修">家电维修</option>
+									<option value="开锁换锁">开锁换锁</option>
+								 </select>
+							</td>
+						</tr>
+					</table>
+					<p class="head_p"><button type="submit" class="btn_a">搜索</button></p>
+					</form>
+				</div>
+			</div>
+			<div class="common_main">
+				<h2>师傅列表<a href="javascript:;" class="btn_a" id="subrequey" style="right:30px;left:auto;">确定</a></h2>
+				<div class="table">
+					<table>
+						<thead>
+							<tr>
+								<th>序号</th>
+								<th>师傅姓名</th>
+								<th>手机号</th>
+								<th>性别</th>
+								<th>服务范围</th>
+								<th>照片</th>
+								<th>累计接单次数</th>
+								<th>选择</th>
+							</tr>
+						</thead>
+						<tbody>
+						  <volist name="list" id="vo">
+							<tr>
+								<td>{$i}</td>
+								<td>{$vo['name']}</td>
+								<td>{$vo['mobile']}</td>
+								
+								<td>
+								    <if condition="$vo['sex'] eq '0'">
+									女
+								   <elseif condition="$vo['sex'] eq 1"/>
+								    男
+									</if>
+								</td>
+								<td>{$vo['service_scope']}</td>
+								<td><a href="{$vo['avatar_url']}" target="_blank" ><img src="{$vo['avatar_url']}" width="50" height="50"></a></td>
+								<td><span>{$vo['price_cnt']}</span></td>
+								<td>
+								    <input type="hidden" name="man_id" value="{$vo['id']}">
+									<input name="Fruit" type="radio" value=""/>
+								</td>
+							</tr> 
+				        	</volist>
+				        	<input type="hidden" name="get_manid">
+				        	<input type="hidden" name="oid" value="<?php echo$_GET['oid']?>">
+						</tbody>
+					</table>
+					<div class="skip cf">
+						<p class="fl skip_left">共{$pagecount}条记录，每页15条</p>
+						<p class="fr skip_right">
+							{$show}
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+    <script src="__PUBLIC__/js/jquery.js"></script>
+    <script src="__PUBLIC__/plug/jquery.datetimepicker.js"></script>
+    <script src="__PUBLIC__/js/common.js"></script>
+<script type="text/javascript">
+$(" .table tr ").each(function(){
+     $(this).find("input[type='radio']").click(function(){
+	 	var man_id=$(this).siblings("input[name='man_id']").val();
+	 	$("input[name='get_manid']").val(man_id);
+     })
+ });
+
+$("#subrequey").click(function(){
+	 	var man_id=$("input[name='get_manid']").val();
+	 	var orderid=$("input[name='oid']").val();
+        if(man_id==""){
+        	alert("请选择一个师傅");
+        }else{
+        	window.document.location.href="__URL__/subsend.html?no=4&leftno=73&manid="+man_id+"&orderid="+orderid;
+        }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>进出账管理</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 最新版本渲染 -->
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/basic.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/plug/jquery.datetimepicker.css"/>
+
+</head>
+<body>
+<include file="Public/head_city" />
+     <div class="title cf">
+    	<div class="logo fl cf">
+			<img src="__PUBLIC__/images/logo.png">
+		</div>
+		<ul class="cf fl">
+		<li><a href="{:U('Welcome/welcome')}">首页</a></li>
+			{$menutophtml}
+		</ul>
+		<div class="cf fr title_right">
+			<a class="blue" href="javascript:">欢迎您 <?php echo cookie("admin_user_name");?></a>
+			<span>|</span>
+			<a href="{:U('/Index/outlogin')}">退出</a>
+		</div>
+    </div>
+	<div class="main">
+		<div class="main_left subNavBox">
+		<include file="Public/left_menu" />
+			{$menulefthtml}
+		</div>
+		<div class="main_right">
+			<div class="common_head">
+				<h2>进出账下载</h2>
+				<div class="common_head_main">
+					<table class="table_one" style="width:500px">
+						<tr>
+							<td class="td_title">账单日期：</td>
+							<td class="td_main"><input class="inpt_a" type="text" name="startTime" id="datetimepicker">&nbsp;~&nbsp;<input class="inpt_a" type="text" name="endTime" id="datetimepicker1"></td>
+						</tr>
+					</table>
+					<p class="head_p" style="width:500px"><button type="button" class="btn_a" id="jsjin">进账</button>&nbsp;&nbsp;<button type="button" class="btn_a" id="jschu">出账</button>&nbsp;&nbsp;<button type="button" class="btn_a" id="jstui">退款</button></p>
+				</div>
+			</div>
+		
+		</div>
+	</div>
+	    <script src="__PUBLIC__/js/jquery.js"></script>
+    <script src="__PUBLIC__/plug/jquery.datetimepicker.js"></script>
+    <script src="__PUBLIC__/js/common.js"></script>
+    <script src="__PUBLIC__/js/listdata.js"></script>
+	<script>
+	$('#datetimepicker').datetimepicker({step:10,lang:'ch',timepicker:false,format:"Y-m-d"});
+	$('#datetimepicker1').datetimepicker({step:10,lang:'ch',timepicker:false,format:"Y-m-d"});
+      $("#jsjin").click(function(){
+          var starTime=$("#datetimepicker").val();
+          var endTime=$("#datetimepicker1").val();
+          if(starTime==""||endTime==""){
+          		alert("账单日期不能为空");
+          		return false;
+          }else{
+          	  window.location.href="__URL__/dowChecking.html?dowtype=1&startime="+starTime+"&endtime="+endTime; 
+          }
+      });
+      $("#jschu").click(function(){
+          var starTime=$("#datetimepicker").val();
+          var endTime=$("#datetimepicker1").val();
+          if(starTime==""||endTime==""){
+          		alert("账单日期不能为空");
+          		return false;
+          }else{
+          	  window.location.href="__URL__/dowChecking.html?dowtype=2&startime="+starTime+"&endtime="+endTime; 
+          }
+
+      });
+      $("#jstui").click(function(){
+          var starTime=$("#datetimepicker").val();
+          var endTime=$("#datetimepicker1").val();
+          if(starTime==""||endTime==""){
+          		alert("账单日期不能为空");
+          		return false;
+          }else{
+          	  window.location.href="__URL__/dowChecking.html?dowtype=3&startime="+starTime+"&endtime="+endTime; 
+          }
+
+      });
+</script>
+</body>
+</html>

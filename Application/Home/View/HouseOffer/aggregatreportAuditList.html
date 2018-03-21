@@ -1,0 +1,195 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>聚合房源举报审核</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 最新版本渲染 -->
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/basic.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/plug/jquery.datetimepicker.css">
+</head>
+<body>
+<include file="Public/head_city" />
+    <div class="title cf">
+    	<div class="logo fl cf">
+			<img src="__PUBLIC__/images/logo.png">
+		</div>
+		<ul class="cf fl">
+		<li><a href="{:U('Welcome/welcome')}">首页</a></li>
+			{$menutophtml}
+		</ul>
+		<div class="cf fr title_right">
+			<a class="blue" href="javascript:;">欢迎您 <?php echo cookie("admin_user_name");?></a>
+			<span>|</span>
+			<a href="{:U('/Index/outlogin')}">退出</a>
+		</div>
+    </div>
+	<div class="main">
+		<div class="main_left subNavBox">
+		<include file="Public/left_menu" />
+			{$menulefthtml}
+		</div>
+		<div class="main_right">
+			<div class="common_head">
+				<h2>查询</h2>
+				<div class="common_head_main">
+					<form id="searchForm" action="__URL__/aggregatreportAuditList.html" method="get">
+						<input type="hidden" name="no" value="3">
+						<input type="hidden" name="leftno" value="197">
+						<input type="hidden" name="totalCount" value="{$totalCount}"> 
+						<table class="table_one">
+							<tr>
+								<td class="td_title">举报时间：</td>
+								<td class="td_main"><input class="inpt_a" type="text" name="startTime"  value="<?php echo I('get.startTime'); ?>">&nbsp;~&nbsp;<input class="inpt_a" type="text"  name="endTime" value="<?php echo I('get.endTime'); ?>"></td>
+								<td class="td_title">状态：</td>
+								<td class="td_main">
+									<select name="handle_status">
+										<option value="">全部</option>
+										<option value="0">待审核</option>
+										<option value="1">通过</option>
+										<option value="2">拒绝</option>
+									</select>
+								</td>
+								<td class="td_title"></td>
+								<td class="td_main"></td>
+							</tr>
+						
+						</table>
+					</form>
+					<p class="head_p"><button class="btn_a" id="btnSearch">搜索</button></p>
+				</div>
+			</div>
+			<div class="common_main">
+				<h2>列表</h2>
+				<div class="table" id="dataDiv">
+					<table>
+						<thead>
+							<tr>
+								<th>序号</th>
+								<th>房间编号</th>
+								<th>举报内容</th>
+								<th>举报时间</th>
+								<th>状态</th>
+								<th>处理时间</th>
+								<th>处理人</th>
+								<th>操作</th>
+							</tr>
+						</thead>
+						<tbody>
+							<volist name="list" id="vo">
+							<tr>
+								<td>{$i}</td>
+								<td><a target="_blank" href="__ROOT__/HouseRoom/modifyroom?no=3&leftno=44&room_id={$vo.room_id}">{$vo.room_no}</a></td>
+								<td>{$vo.feedback_desc}</td>
+								<td><if condition="($vo.create_time gt 0)">{$vo['create_time']|date="Y-m-d H:i:s",###}</if></td>
+								<td><switch name="vo.handle_status"><case value="0">待审核</case><case value="1">通过</case><case value="2">拒绝</case></switch></td>
+								<td><if condition="($vo.handle_time gt 0)">{$vo['handle_time']|date="Y-m-d H:i:s",###}</if></td>
+								<td>{$vo.handle_man}</td>
+								<td><if condition="($vo.handle_status eq 0)"><a href="#" onclick="showDialog('{$vo.id}',this)">审核</a></if></td>							
+							</tr>
+							</volist>
+						</tbody>
+					</table>
+				<div class="skip cf">
+						<p class="fl skip_left" id="count">共{$totalCount}条记录，每页10条</p>
+						<p class="fr skip_right">
+							{$pageSHow}
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--浮层(审核) -->
+	<div id="dialogAudit" style="position:absolute;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.6);z-index:999;display:none;">
+		<div style="width:450px;height:120px;background:#fff;position:absolute;left:55%;margin-left:-300px;top:50%;margin-top:-55px;border-radius:10px;overflow:hidden;padding:30px;">
+			<label style="height:30px;line-height:30px;">拒绝理由：
+				<select id="ddlReason" style="width:60%;height:25px;">
+					<option value=""></option>
+					<option value="聚合房间信息无误">聚合房间信息无误</option>
+					<option value="发布房源和其他房源相同，聚合关系成立">发布房源和其他房源相同，聚合关系成立</option>
+					<option value="房源依然可租">房源依然可租</option>
+				</select>
+			</label><br>
+			<label style="height:30px;line-height:30px;margin-left:70px"><input type="text" id="txtReason" maxlength="40" style="width:80%;height:30px;"></label>
+			<div  style="text-align:center;margin-top:20px;">
+				<input type="hidden" name="modify_id" data-index="">
+				<button class="btn_b" style="margin-right:50px;" id="btn_cancel">取消</button>
+				<button class="btn_a" id="btn_pass">通过</button>
+				<button class="btn_a" id="btn_nopass">拒绝</button>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="__PUBLIC__/js/jquery.js"></script>
+<script src="__PUBLIC__/js/common.js"></script>
+<script src="__PUBLIC__/plug/jquery.datetimepicker.js"></script>
+
+<script type="text/javascript">
+$('.inpt_a').datetimepicker({validateOnBlur:false,step:5,lang:'ch',timepicker:false,format:"Y-m-d"});
+var status='<?php echo isset($_GET["handle_status"])?$_GET["handle_status"]:""; ?>';
+$("select[name='handle_status']").val(status);
+$('#btnSearch').click(function(){
+	$(this).unbind('click').text('搜索中');
+	$('form').submit();
+});
+	
+	function showDialog(mid,obj){
+		$("#dialogAudit").show();
+		$("input[name='modify_id']").val(mid).attr('data-index',$(obj).parent().parent().index());
+	}
+	$("#btn_cancel").click(function(){
+		$("#dialogAudit").hide();
+	});
+	$("#ddlReason").change(function(){
+		$("#txtReason").val($(this).val());
+	});
+	/*审核通过 */
+	$("#btn_pass").click(function(){
+		auditPass();
+	});
+	function auditPass(){
+		$("#btn_pass").unbind('click').text('操作中');
+		$.post('__URL__/aggregatreportSubmit',{id:$("input[name='modify_id']").val(),handle_status:1,handle_result:'通过'},function(data){
+			alert(data.message);
+			if(data.status=='200'){
+				var tr_index=$("input[name='modify_id']").attr('data-index');
+				tr_index=parseInt(tr_index)+1;
+				var tr_obj=$("#dataDiv table tr:eq("+tr_index+")");
+				tr_obj.children('td:eq(4)').html('通过');
+				tr_obj.children('td:eq(7)').html('');
+				$("#dialogAudit").hide();
+			}
+			$("#btn_pass").bind('click',function(){
+				auditPass();
+			}).text('通过');
+		},'json');
+	}
+	/*审核拒绝 */
+	$("#btn_nopass").click(function(){
+		auditnoPass();
+	});
+	function auditnoPass(){
+		var reason=$("#txtReason").val();
+		if(reason==''){
+			alert('请输入拒绝理由');return false;
+		}
+		$("#btn_nopass").unbind('click').text('操作中');
+		$.post('__URL__/aggregatreportSubmit',{id:$("input[name='modify_id']").val(),handle_status:2,handle_result:reason},function(data){
+			alert(data.message);
+			if(data.status=='200'){
+				var tr_index=$("input[name='modify_id']").attr('data-index');
+				tr_index=parseInt(tr_index)+1;
+				var tr_obj=$("#dataDiv table tr:eq("+tr_index+")");
+				tr_obj.children('td:eq(4)').html('拒绝');
+				tr_obj.children('td:eq(7)').html('');
+				$("#dialogAudit").hide();
+				$("#txtReason").val('');$("#ddlReason").val('');
+			}
+			$("#btn_nopass").bind('click',function(){
+				auditnoPass();
+			}).text('拒绝');
+		},'json');
+	}
+	</script>
+
+</html>

@@ -1,0 +1,108 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>新增菜单</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 最新版本渲染 -->
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/audit_rent_orders.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/basic.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common.css">
+
+</head>
+<body>
+<include file="Public/head_city" />
+   <div class="title cf">
+    	<div class="logo fl cf">
+			<img src="__PUBLIC__/images/logo.png">
+		</div>
+		<ul class="cf fl">
+		<li><a href="{:U('Welcome/welcome')}">首页</a></li>
+			{$menutophtml}
+		</ul>
+		<div class="cf fr title_right">
+			<a class="blue" href="javascript:">欢迎您 <?php echo cookie("admin_user_name");?></a>
+			<span>|</span>
+			<a href="{:U('/Index/outlogin')}">退出</a>
+		</div>
+    </div>
+	<div class="main">
+		<div class="main_left subNavBox">
+		<include file="Public/left_menu" />
+			{$menulefthtml}
+		</div>
+		<div class="main_right">
+			<div class="common_head">
+				<h2>新增菜单</h2>
+			</div>
+			<div class="common_main">
+				 <form action="{:U('Sysmenu/addSysmenu')}" method="post"  id="form">
+					<table class="table_one table_two">
+						<tr>
+							<td colspan="2">新增菜单</td>
+						</tr>
+
+						<if condition="strtoupper($updata['parent_id']) neq '0'">	
+						<tr>
+							<td class="td_title"><span>*</span><?php if($_GET['mid']==""){echo"主菜单";}else{echo"上级菜单";}?>：</td>
+							<td class="td_main">
+								<select name="parent_id">
+								    <volist name="list" id="vo">
+									<option value="{$vo.id}">{$vo.name}</option>
+									</volist>
+								</select>
+							</td>
+						</tr>
+						</if>
+						<tr>
+							<td class="td_title"><span>*</span>菜单名称：</td>
+							<td class="td_main"><input type="text" name="mname" value="{$updata.name}"></td>
+						</tr>
+						<tr>
+							<td class="td_title"><span>*</span>菜单链接：</td>
+							<td class="td_main"><input type="text" name="murl" value="{$updata.url}"></td>
+						</tr>
+						<tr>
+							<td class="td_title"><span>*</span>菜单排序：</td>
+							<td class="td_main"><input type="text" name="index_no" value="{$updata.index_no}"></td>
+						</tr>
+						<tr>
+						<td class="td_title"><span>*</span>城市：</td>
+							<td class="td_main">
+							<label><input type="checkbox" name="admincity[]" value="1" checked="">&nbsp;上海</label>&nbsp;&nbsp;&nbsp;<label>
+							<input type="checkbox" name="admincity[]" value="2" checked="">&nbsp;北京</label>&nbsp;&nbsp;&nbsp;							
+							</td>
+						</tr>
+					</table>
+					 <div class="addhouse_last addhouse_last_room">
+						<a href="{:U('Sysmenu/sysmenuList')}" class="btn_b">返回</a>
+						<input type="hidden" name="id" value="{$updata.id}" />
+						<input type="hidden" name="uptype" value="up" />
+						<button class="btn_a"  onclick="return check();">确定提交</button>
+					</div>
+				</form>
+			</div>
+		</div>
+    <script src="__PUBLIC__/js/jquery.js"></script>
+    <script src="__PUBLIC__/js/common.js"></script>
+		
+	<script type="text/javascript">
+	/*提交表单*/
+ function check(){
+	   var mname=$("input[name='mname']").val();
+	   var murl=$("input[name='murl']").val();
+	   var index_no=$("input[name='index_no']").val();
+	   if(mname==""){
+		    alert("菜单名称不能为空！");
+		    return false;
+	   }else if(murl==""){
+		   alert("菜单链接不能为空！");
+		   return false;
+	   }else if(index_no==""){
+		   alert("菜单排序不能为空！");
+		   return false;
+	   }else{
+		   $("#form").submit();
+	   } 
+   }
+</script>
+</body>
+</html>

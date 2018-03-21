@@ -1,0 +1,127 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>增加师傅</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 最新版本渲染 -->
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/basic.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/parameter_management_house.css">
+
+</head>
+<body>
+<include file="Public/head_city" />
+      <div class="title cf">
+    	<div class="logo fl cf">
+			<img src="__PUBLIC__/images/logo.png">
+		</div>
+		<ul class="cf fl">
+		<li><a href="{:U('Welcome/welcome')}">首页</a></li>
+			{$menutophtml}
+		</ul>
+		<div class="cf fr title_right">
+			<a class="blue" href="javascript:">欢迎您 <?php echo cookie("admin_user_name");?></a>
+			<span>|</span>
+			<a href="{:U('/Index/outlogin')}">退出</a>
+		</div>
+    </div>
+	<div class="main">
+		<div class="main_left subNavBox">
+		<include file="Public/left_menu" />
+			{$menulefthtml}
+		</div>
+		<div class="main_right">
+			<div class="common_head">
+				<h2>新增师傅信息</h2>
+				<form action="{:U('Service/addserviceman')}" method="post" id="submitForm" enctype='multipart/form-data'>
+					<table class="table_one">
+						<tr>
+							<td class="td_title">姓名：</td>
+							<td class="td_main"><input type="text" name="name"></td>
+							<td class="td_title">性别：</td>
+							<td class="td_main">
+								<select name="sex">
+							  	   <option value="1">男</option>  
+								   <option value="0">女</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td class="td_title">联系方式：</td>
+							<td class="td_main"><input type="text" name="mobile"></td>
+							<td class="td_title">服务范围：</td>
+							<td class="td_main">
+								<label><input name="servicename[]" type="checkbox" value="开锁换锁" />开锁换锁</label>&nbsp;&nbsp; 
+								<label><input name="servicename[]" type="checkbox" value="家电维修" />家电维修</label>&nbsp;&nbsp; 
+								<label><input name="servicename[]" type="checkbox" value="管道疏通" />管道疏通</label> 
+							</td>
+						</tr>
+						<tr>
+							<td class="td_title">师傅图像：</td>
+							<td class="td_main">
+								<div class="upload_photo">
+									<span>上传头像</span>
+									<input type="file" id="fileupload" name="mypic">
+								</div>
+								<ul class="cf" id="imglist"></ul>
+							</td>
+							<td class="td_title"></td>
+							<td class="td_main"></td>
+						</tr>
+					</table>
+					<p class="head_p"><button class="btn_a" onclick="return check();">提交</button></p>
+				 </form>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+    <script src="__PUBLIC__/js/jquery.js"></script>
+ <script src="__PUBLIC__/js/common.js"></script>
+   <script src="__PUBLIC__/js/jquery.form.js"></script>
+	<script type="text/javascript">
+$(function () {
+    $("#fileupload").change(function(){
+		$("#submitForm").ajaxSubmit({
+			dataType:  'json',
+			data:{submitType:'upload'},
+			beforeSend: function() {
+    		},
+    		uploadProgress: function(event, position, total, percentComplete) {
+    		},
+			success: function(result){
+				console.log(result);
+			$("#imglist").append('<li><img style="dispaly:inline-block;" src="'+result.data.imgUrl+'"><input type="hidden" name="bright" value="'+result.data.imgUrl+'" /></li>');
+				$("#fileupload").val('');
+			},
+			error:function(xhr){
+				alert(xhr.responseText);
+			}
+		});
+	});
+	
+});
+
+</script>
+<script type="text/javascript">
+	/*提交表单*/
+ function check(){
+	   var name=$("input[name='name']").val();
+	   var mobile=$("input[name='mobile']").val();
+	   var bright=$("input[name='bright']").length;
+	   var servicename=$("input[type='checkbox']").is(':checked')
+	   if(name==""){
+		    alert("姓名不能为空！");
+		    return false;
+	   }else if(mobile==""){
+		   alert("联系方式不能为空！");
+		   return false;
+	   }else if(servicename==false){
+		   alert("请选择服务范围");
+		   return false;
+	   }else{
+		   $("#submitForm").submit();
+	   } 
+   }
+</script>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>新增版本信息</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 最新版本渲染 -->
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/audit_rent_orders.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/basic.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common.css">
+</head>
+<body>
+<include file="Public/head_city" />
+    <div class="title cf">
+    	<div class="logo fl cf">
+			<img src="__PUBLIC__/images/logo.png">
+		</div>
+		<ul class="cf fl">
+		<li><a href="{:U('Welcome/welcome')}">首页</a></li>
+			{$menutophtml}
+		</ul>
+		<div class="cf fr title_right">
+			<a class="blue" href="javascript:">欢迎您 <?php echo cookie("admin_user_name");?></a>
+			<span>|</span>
+			<a href="{:U('/Index/outlogin')}">退出</a>
+		</div>
+    </div>
+	<div class="main">
+		<div class="main_left subNavBox">
+		<include file="Public/left_menu" />
+			{$menulefthtml}
+		</div>
+		<div class="main_right">
+			<div class="common_head">
+				<h2>新增版本信息</h2>
+			</div>
+			<div class="common_main">
+				<!-- 表单 -->
+				<form action="__URL__/modify" name="regForm" method="post">
+				<table class="table_one table_two">
+					<tr>
+						<td class="td_title"><span>*</span>软件类型：</td> 
+						<td>
+							<select name="softtype">
+								<option value="0" {$type == 0?'selected':''}>租客版</option>
+								<option value="1" {$type == 1?'selected':''}>房东版</option>
+								<option value="2" {$type == 2?'selected':''}>hi租房pro</option>
+							</select>
+							<span id="etab">* 必填项,请选择软件类型</span>
+						</td>
+					</tr>
+					<tr>
+						<td class="td_title"><span></span><span>*</span>版本号：</td> 
+						<td><input type="text" name="curver" value="{$list['curver']}" onblur="checkCurver()"><span id="ctab">&nbsp;* 必填项,请输入版本号</span></td>
+					</tr>
+					<tr>
+						<td class="td_title"><span>*</span>客户端平台：</td> 
+						<td><label><input type="radio" name="platform" value="0" {$list['platform'] == 'iphone'?'checked':''}>&nbsp;iPhone&nbsp;&nbsp;</label>
+							<label><input type="radio" name="platform" value="1" {$list['platform'] == 'android'?'checked':''}>&nbsp;Android</label>
+							<label><input type="radio" name="platform" value="2" {$list['platform'] == 'iphone_hizufang'?'checked':''}>&nbsp;hi租房pro</label>
+							<span>&nbsp;&nbsp;&nbsp;&nbsp;* 必填项</span>
+						</td>
+					</tr>
+					<tr>
+						<td class="td_title"><span>*</span>更新类别：</td> 
+						<td>
+							<label><input type="checkbox" class="up" name="update_type" value="0" {$list['update_type'] == 0?'checked':''} onclick="check(this)">提示更新</label>
+							<label><input type="checkbox" class="up" name="update_type" value="1" {$list['update_type'] == 1?'checked':''} onclick="check(this)">强制更新</label>
+							<label><input type="checkbox" class="up" name="update_type" value="2" {$list['update_type'] == 2?'checked':''} onclick="check(this)">无需更新</label>
+							<span>&nbsp;* 必填项</span>	
+						</td>
+					</tr>
+					<tr>
+						<td class="td_title"><span>*</span>URL地址：</td> 
+						<td><input type="text" name="url" value="{$list['url']}" onblur="checkUrl()"><span id="utab">* 必填项,请输入URL地址</span></td>
+					</tr>
+					<tr>
+						<td class="td_title"><span>*</span>标题:</td> 
+						<td><input type="text" name="title" value="{$list['title']}" onblur="checkTitle()" id="titles"><span id="ttab">&nbsp;* 必填项,请输入标题</span></td>
+					</tr>
+					<tr>
+						<td class="td_title"><span>*</span>内容:</td> 
+						<td><span id="atab">* 必填项,请输入内容</span><textarea name="content" onblur="checkContent()" id="contents">{$list['content']}</textarea></td>
+					</tr>
+					<input type="hidden" name="id" value="{$list['id']}">
+				</table>
+				</form>
+				<div class="addhouse_last addhouse_last_room"><a href="javascript:window.history.back();" class="btn_b">返回</a>
+					<a href="javascript:;" class="btn_a">提交</a></div>
+			</div>
+		</div>
+</body>
+<script src="__PUBLIC__/js/jquery.js"></script>
+<script src="__PUBLIC__/js/common.js"></script>
+<script src="__PUBLIC__/js/jquery.form.js"></script>
+<script type="text/javascript">
+   //js：
+   		//验证版本内容函数
+        function checkCurver() {
+            var curver = document.regForm.curver.value;
+            var ctab = document.getElementById('ctab');
+            if (curver == "") {
+                // 匹配失败
+                ctab.innerHTML = '* 内容不能为空!';
+                ctab.style.color = '#f00';
+                return false;
+            } else{
+                ctab.innerHTML = '* √通过验证!';
+                ctab.style.color = '#0a0';
+                return true;
+            }
+        }
+   		//验证URL地址函数：
+   		function checkUrl() {
+   			var url = document.regForm.url.value;
+   			var utab = document.getElementById('utab');
+   			if (url.match(/(http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?/) == null) {
+   				// 匹配失败
+                utab.innerHTML = '* URL地址格式为(http|ftp|https)';
+                utab.style.color = '#f00';
+                return false;
+   			} else {
+                utab.innerHTML = '* √通过验证!';
+                utab.style.color = '#0a0';
+                return true;
+            }
+   		}
+   		//验证标题函数
+        function checkTitle() {
+            var title = document.getElementById('titles').value;
+            var ttab = document.getElementById('ttab');
+            if (title == "") {
+                // 匹配失败
+                ttab.innerHTML = '* 内容不能为空!';
+                ttab.style.color = '#f00';
+                return false;
+            } else{
+                ttab.innerHTML = '* √通过验证!';
+                ttab.style.color = '#0a0';
+                return true;
+            }
+        }
+        //验证内容函数
+        function checkContent() {
+            var content = document.getElementById('contents').value;
+            var atab = document.getElementById('atab');
+            if (content == "") {
+                // 匹配失败
+                atab.innerHTML = '* 内容不能为空!';
+                atab.style.color = '#f00';
+                return false;
+            } else{
+                atab.innerHTML = '* √通过验证!';
+                atab.style.color = '#0a0';
+                return true;
+            }
+        }
+  //只能选择一个
+        function check(obj) {
+            $('.up').attr('checked', false);//清空所有复选框
+            $(obj).attr('checked', true);//给当前对象赋值
+        }
+        $(".btn_a").bind("click",function(){
+			if(checkCurver()&&checkUrl()&&checkTitle()&&checkContent()) {
+				$("form").submit();
+			}
+	})
+</script>
+</html>

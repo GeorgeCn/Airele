@@ -1,0 +1,349 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>房间列表</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 最新版本渲染 -->
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/basic.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/plug/jquery.datetimepicker.css"/>
+</head>
+<body>
+<include file="Public/head_city" />
+    <div class="title cf">
+    	<div class="logo fl cf">
+			<img src="__PUBLIC__/images/logo.png">
+		</div>
+		<ul class="cf fl">
+		<li><a href="{:U('Welcome/welcome')}">首页</a></li>
+			{$menutophtml}
+		</ul>
+		<div class="cf fr title_right">
+			<a class="blue" href="javascript:">欢迎您 <?php echo cookie("admin_user_name");?></a>
+			<span>|</span>
+			<a href="{:U('/Index/outlogin')}">退出</a>
+		</div>
+    </div>
+	<div class="main">
+		<div class="main_left subNavBox">
+		<include file="Public/left_menu" />
+			{$menulefthtml}
+		</div>
+		<div class="main_right">
+			<div class="common_head">
+				<h2>房间查询</h2>
+				<div class="common_head_main">
+					<form id="searchForm" action="__URL__/fabulistWubabrand" method="get">
+						<input type="hidden" name="no" value="3">
+						<input type="hidden" name="leftno" value="136"> 
+						<input type="hidden" id="jump" name="p">
+						<table class="table_one">
+							<tr>
+								<td class="td_title">更新日期：</td>
+								<td class="td_main"><input class="inpt_a" type="text" name="startTime" value="<?php echo isset($_GET['startTime'])?$_GET['startTime']:'' ?>">&nbsp;~&nbsp;<input class="inpt_a" type="text"  name="endTime" value="<?php echo isset($_GET['endTime'])?$_GET['endTime']:'' ?>"></td>
+								<td class="td_title">发布状态：</td>
+								<td class="td_main">未发布
+									<!-- <select id="roomStatus" name="roomStatus">
+										<option value="2">未入住</option>
+									</select> -->
+								</td>
+								<td class="td_title">小区名称：</td>
+								<td class="td_main"><input type="text" name="estateName" value="<?php echo isset($_GET['estateName'])?$_GET['estateName']:'' ?>"></td>
+								
+							</tr>
+							<tr>
+								<td class="td_title">房间编号：</td>
+								<td class="td_main"><input type="text" name="roomNo" value="<?php echo isset($_GET['roomNo'])?$_GET['roomNo']:'' ?>"></td>
+								<td class="td_title">业务类型：</td>
+								<td class="td_main">
+									<select id="business_type" name="business_type">
+										<option value="">全部</option>
+										{$businessTypeList}
+									</select>
+								</td>
+								<td class="td_title">房东电话：</td>
+								<td class="td_main"><input type="text" name="clientPhone" value="<?php echo isset($_GET['clientPhone'])?$_GET['clientPhone']:'' ?>"></td>
+							</tr>
+							<tr>
+								<td class="td_title">房间负责人：</td>
+								<td class="td_main">
+									<!--可输入的下拉列表-->
+									<input type="text" id="createman_input" style="width:100px">
+									<div id="estate_div" class="plotbox" style="width:98px;">
+										<ul>
+										</ul>
+									</div>
+									<select id="create_man" name="create_man" style="width:80px">
+										<option value=""></option>
+										{$createManList}
+									</select> 
+								</td>
+								<td class="td_title">数据来源：</td>
+								<td class="td_main">
+									<select name="info_resource_type" style="width:110px;">
+										{$infoResourceTypeList}
+									</select>
+									<select name="info_resource" style="width:110px;">
+										<option value=""></option>
+										{$infoResourceList}
+									</select>
+								</td>
+								<td class="td_title">品牌：</td>
+								<td class="td_main">
+									<select id="brand_type" name="brand_type">
+										<option value="">全部</option>
+										{$brandTypeList}
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td class="td_title">区域&板块：</td>
+								<td class="td_main">
+									<select id="ddl_region" name="region" style="width:100px">
+										<option value=""></option>
+										{$regionList}
+									</select>
+									<select id="ddl_scope" name="scope" style="width:100px">
+										{$scopeList}
+									</select>
+								</td>
+								<td class="td_title">创建日期：</td>
+								<td class="td_main"><input class="inpt_a" type="text" name="startTime_create" value="<?php echo isset($_GET['startTime_create'])?$_GET['startTime_create']:'' ?>">&nbsp;~&nbsp;<input class="inpt_a" type="text"  name="endTime_create" value="<?php echo isset($_GET['endTime_create'])?$_GET['endTime_create']:'' ?>"></td>
+								<td class="td_title">操作人：</td>
+								<td class="td_main">
+									<select id="update_man" name="update_man">
+										<option value=""></option>
+										{$createManList}
+									</select> </td>
+							</tr>
+							<tr>
+								<td class="td_title">房间面积：</td>
+								<td class="td_main">
+									<input type="tel" name="roomareaMin" maxlength="6" style="width:100px;" value="<?php echo I('get.roomareaMin');?>">~
+									<input type="tel" name="roomareaMax" maxlength="6" style="width:100px;" value="<?php echo I('get.roomareaMax');?>">
+								</td>
+								<td class="td_title">租金：</td>
+								<td class="td_main">
+									<input type="tel" name="moneyMin" maxlength="6" style="width:100px;" value="<?php echo I('get.moneyMin');?>">~
+									<input type="tel" name="moneyMax" maxlength="6" style="width:100px;" value="<?php echo I('get.moneyMax');?>">
+								</td>
+								<td class="td_title">是否中介：</td>
+								<td class="td_main">
+									<select name="isAgent">
+										<option value="">全部</option>
+										<option value="1"<?php if(I('get.isAgent')=="1"){echo"selected";}?>>是</option>
+										<option value="0"<?php if(I('get.isAgent')=="0"){echo"selected";}?>>否</option>
+									</select>
+								</td>
+							</tr>
+						</table>
+					</form>
+					<p class="head_p"><button class="btn_a" onclick="search()">搜索</button></p>
+				</div>
+			</div>
+			<div class="common_main">
+				<h2>共选中 <span id="selectNum">0</span><a class="btn_a" id="btn_choose">发布</a>&nbsp;&nbsp;<span style="margin-left:200px;">先添加筛选条件，搜索出结果，然后发布</span></h2>
+				<div class="table" id="dataDiv">
+					<table>
+						<thead>
+							<tr>
+								<th><input type="checkbox" id="checkall"></th>
+								<th>房源编号</th>
+								<th>房间编号</th>
+								<th>数据来源</th>
+								<th>小区名称</th>
+								<th>区域板块</th>
+								
+								<th>单间名称</th>
+								<th>面积（㎡）</th>
+								<th>租金（元）</th>
+								<th>总数量</th>
+								<th>可租数量</th>
+								<th>房东电话</th>
+								
+								<th>更新日期</th>
+								<th>操作人</th>
+								<th>房间负责人</th>
+							</tr>
+						</thead>
+						<tbody>
+							<foreach item="list" name="list">
+							<tr>
+								<td><input type="checkbox" value="{$list.room_id}"></td>
+								<td>{$list.house_no}</td>
+								<td>{$list.room_no}</td>
+								<td>{$list.info_resource}</td>
+								<td>{$list.estate_name}</td>
+								<td>{$list.region_scope}</td>
+								
+								<td>{$list.room_name}</td>
+								<td>{$list.room_area}</td>
+								<td>{$list.room_money}</td>
+								<td>{$list.total_count}</td>
+								<td>{$list.up_count}</td>
+								<td>{$list.client_phone}</td>
+								
+								<td>{$list.update_time}</td>
+								<td>{$list.update_man}</td>
+								<td>{$list.create_man}</td>
+								
+							</tr>
+							</foreach>
+						</tbody>
+					</table>
+					<div class="skip cf">
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--弹框 -->
+	<div id="dialogDiv" style="position:absolute;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.6);z-index:999;display:none;">
+		<div style="width:500px;background:#fff;position:absolute;left:50%;margin-left:-200px;top:50%;margin-top:-85px;border-radius:10px;">
+			<div style="margin:30px 30px 10px;" class="cf">
+				<label class="fl" style="height:36px;line-height:36px;width:100px;text-align:right;">帐号：</label>
+				<div id="accountDiv" class="fl cf" style="width:340px">
+				</div>
+			</div>
+			<div  style="text-align:center;padding-bottom:30px;">
+				<!-- <button class="btn_b" style="margin-right:50px;">取消</button> -->
+				<button class="btn_a" id="btn_submit">发布</button>
+				<input type="hidden" id="contact_id" data-index="">
+			</div>
+		</div>
+	</div>
+</body>
+<script src="__PUBLIC__/js/jquery.js"></script>
+<script src="__PUBLIC__/js/common.js"></script>
+<script src="__PUBLIC__/plug/jquery.datetimepicker.js"></script>
+<script type="text/javascript">
+	/*键值转换，业务类型、房间状态*/
+	
+	$("#create_man").val('<?php echo isset($_GET["create_man"])?$_GET["create_man"]:"" ?>');
+	$("#update_man").val('<?php echo isset($_GET["update_man"])?$_GET["update_man"]:"" ?>');
+	$("#business_type").val('<?php echo isset($_GET["business_type"])?$_GET["business_type"]:"" ?>');
+	$("#brand_type").val('<?php echo isset($_GET["brand_type"])?$_GET["brand_type"]:"" ?>');
+	$("#ddl_region").val('<?php echo isset($_GET["region"])?$_GET["region"]:"" ?>');
+	$("#ddl_scope").val('<?php echo isset($_GET["scope"])?$_GET["scope"]:"" ?>');
+	$('.inpt_a').datetimepicker({validateOnBlur:false,step:5,lang:'ch',timepicker:false,yearStart:2015,yearEnd:2018,format:"Y-m-d"});
+		$("select[name='info_resource_type']").val('<?php echo I("get.info_resource_type"); ?>');
+	$("select[name='info_resource']").val('<?php echo I("get.info_resource"); ?>');
+	//下拉联动，来源
+	$("select[name='info_resource_type']").change(function(){
+		if($(this).val()==""){
+			$("select[name='info_resource']").html("");
+			return;
+		}
+		$.get("__ROOT__/HouseResource/getInforesourceByType",{type:$(this).val()},function(data){
+			$("select[name='info_resource']").html('<option value=""></option>'+data);
+		},"html");
+	});
+	function search(){
+		$("#searchForm").submit();
+	}
+	function jump(){
+		if(/^\d{1,4}$/.test($("#jumpPage").val())){
+			$("#jump").val($("#jumpPage").val());
+			$("#searchForm").submit();
+		}
+	}
+	//下拉联动
+	$("#ddl_region").change(function(){
+		if($(this).val()==""){
+			$("#ddl_scope").html("");
+			return;
+		}
+		$.get("__ROOT__/HouseRoom/getScopes",{region_id:$(this).val()},function(data){
+			$("#ddl_scope").html(data);
+		},"html");
+	});
+	/*检索负责人*/
+	$("#createman_input").keyup(function(){
+		var key_word=$(this).val();
+		if(key_word.length<1){
+			return;
+		}
+		$.get("__ROOT__/HouseResource/searchHandleMen",{keyword:key_word,},function(result){
+			if(result.status=="200"){
+				var attr=result.data;
+				var len=attr.length;
+				var obj=$("#estate_div ul");
+				obj.html("");
+				for (var i = len-1; i >= 0; i--) {
+					obj.append("<li onclick=\"selectMen('"+attr[i].user_name+"','"+attr[i].real_name+"')\" >"+attr[i].real_name+"</li>");
+				};
+				if(len>0){
+					$("#estate_div").show();
+				}else{
+					$("#estate_div").hide();
+				}
+			}
+		},"json");
+	});
+	function selectMen(userName,realName){
+		$("#createman_input").val(realName);
+		$("#create_man").val(userName);
+		$("#estate_div").hide();
+	}
+	function getSelectNum(){
+		var selectNum=0;
+		$("#dataDiv table tbody tr").each(function(){
+			var select_object=$(this).children("td:eq(0)").find("input");
+			if(select_object.attr("checked")=="checked"){
+				selectNum+=1;
+			}
+		});
+		$("#selectNum").text(selectNum);
+	}
+	/*选择 */
+	$("#dataDiv table tbody tr").each(function(){
+		var select_object=$(this).children("td:eq(0)").find("input");
+		select_object.bind("click",function(){
+			getSelectNum();
+		})
+	});
+	$("#checkall").click(function(){
+		if($(this).attr("checked")=="checked"){
+			$("input[type='checkbox']").attr("checked","checked");
+		}else{
+			$("input[type='checkbox']").removeAttr("checked");
+		}
+		getSelectNum();
+	})
+	$("#btn_choose").bind("click",function(){
+		submitEdit(this);
+	});
+	function submitEdit(obj){
+		var ids="";
+		$("#dataDiv table tbody tr").each(function(){
+			var select_object=$(this).children("td:eq(0)").find("input");
+			if(select_object.attr("checked")=="checked"){
+				ids+=select_object.val()+",";
+			}
+		});
+		if(ids==""){
+			alert("没有勾选项");return;
+		}
+		$(obj).unbind("click").text("提交中");
+		$.get('__URL__/getOpenapiAccounts?handle=getcnt&third_type=4',function(data){
+			$("#dialogDiv").show();$("#accountDiv").html(data);
+			$("#btn_submit").click(function(){
+				if($("input[name^=userid]:checked").length==0){
+					alert('必须选择一个帐号');return;
+				}
+				var accounts="";
+				$("input[name^=userid]:checked").each(function(){
+					accounts+=$(this).val()+",";
+				});
+				$(this).unbind('click').text('发布中');
+				$.post('__URL__/submitFabu_wubabrand',{select_ids:ids,account:accounts},function(result){
+					alert(result);$("#dialogDiv").hide();$(obj).text("已完成");
+				});
+
+			});
+
+		});
+		
+	}
+</script>
+</html>

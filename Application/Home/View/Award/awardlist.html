@@ -1,0 +1,79 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>优惠劵领取列表</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 最新版本渲染 -->
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/basic.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common.css">
+    
+</head>
+<body>
+	<div class="main">
+		<div class="main_right" style="left:10%">
+			<div class="common_head">
+				<h2>心愿单列表
+					<form action="__URL__/awardlist.html" method="get" style="position:absolute;left:120px;top:0;">
+			            <select name="citycode" style="width:120px;margin-left:30px;height:30px;";>
+							<option value="" <?php if(I('get.citycode')==""){echo "selected";}?>>全部</option>
+							<option value="001009001" <?php if(I('get.citycode')=='001009001'){echo "selected";}?>>上海</option>
+							<option value="001011001" <?php if(I('get.citycode')=='001011001'){echo "selected";}?>>杭州</option>
+							<option value="001010001" <?php if(I('get.citycode')=='001010001'){echo "selected";}?>>南京</option>
+			    		</select>
+						<button type="submit" class="btn_a">搜索</button>
+					</form>
+				</h2>
+				
+			</div>
+			<div class="common_main">
+				<div class="table" id="dataDiv">
+					<table width="50%">
+						<thead>
+							<tr>
+								<th>序号</th>
+								<th>租客手机</th>
+								<th>奖品</th>
+								<th>选择房源</th>
+								<th>领取时间</th>
+								<th>城市</th>
+							</tr>
+						</thead>
+						<tbody>
+							  <volist name="list" id="vo">
+								<tr>
+									<td>{$i}</td>
+									<td>{$vo.mobile}</td>
+									<td>
+										<if condition="strtoupper($vo['award_type']) eq '1'">
+										   100元
+										 <elseif condition="strtoupper($vo['award_type']) eq '2'"/>
+									       50元
+										 <elseif condition="strtoupper($vo['award_type']) eq '3'"/>
+										   台历
+									     <elseif condition="strtoupper($vo['award_type']) eq '4'"/>
+										   无奖品
+										</if>
+									</td>
+									<td>{$vo.room_id}</td>
+									<td>{$vo.create_time|date="Y-m-d H:i:s",###}</td>
+									<td>
+									<if condition="strtoupper($vo['city_code']) eq '001009001'">
+									 上海
+									<elseif condition="strtoupper($vo['city_code']) eq '001001'"/>
+									  北京
+									<elseif condition="strtoupper($vo['city_code']) eq '001011001'"/>
+									  杭州
+									  <elseif condition="strtoupper($vo['city_code']) eq '001010001'"/>
+									  南京
+									</if>
+									</td>
+								</tr>
+							</volist>
+						</tbody>
+					</table>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

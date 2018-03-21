@@ -1,0 +1,261 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>个人信息修改</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 最新版本渲染 -->
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/audit_rent_orders.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/basic.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common.css">
+</head>
+<body>
+<include file="Public/head_city" />
+    <div class="title cf">
+    	<div class="logo fl cf">
+			<img src="__PUBLIC__/images/logo.png">
+		</div>
+		<ul class="cf fl">
+		<li><a href="{:U('Welcome/welcome')}">首页</a></li>
+			{$menutophtml}
+		</ul>
+		<div class="cf fr title_right">
+			<a class="blue" href="javascript:">欢迎您 <?php echo cookie("admin_user_name");?></a>
+			<span>|</span>
+			<a href="{:U('/Index/outlogin')}">退出</a>
+		</div>
+    </div>
+	<div class="main">
+		<div class="main_left subNavBox">
+		<include file="Public/left_menu" />
+			{$menulefthtml}
+		</div>
+		<div class="main_right">
+			<div class="common_head">
+				<h2>职业房东信息</h2>
+			</div>
+
+			<div class="common_main">
+				<!-- 表单 -->
+				<form method="post" action="__URL__/ownersModifyInfo.html">	
+				<input type="hidden" name="customer_id" value="{$info['id']}">
+				<table class="table_one table_two">	
+					<tr>
+						<td class="td_title">用户身份：</td> 
+						<td>
+							<switch name="info['is_owner']">
+							<case value="0">租客</case><case value="3">个人房东</case><case value="4">职业房东</case><case value="5">中介经纪人</case>
+							</switch>
+						</td>
+					</tr>
+					<tr>
+						<td class="td_title"><span>*</span>姓名：</td> 
+						<td><input type="text" name="true_name" maxlength="8" value="{$info['true_name']}"></td>
+					</tr>
+					<tr>
+						<td class="td_title"><span>*</span>手机号：</td>
+						<td class="td_main">
+							<label><input type="tel" name="mobile" maxlength="11" value="{$info['mobile']}"  readonly="readonly"></label>
+						</td>
+					</tr>
+					<tr>
+						<td class="td_title">跟进状态：</td> 
+						<td>
+							<select name="status" style="width:120px">
+								<option value="0">待跟进</option>
+								<option value="3">跟进中</option>
+								<option value="5">不合作</option>
+								<option value="2">已签约</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="td_title"><span>*</span>城市：</td> 
+						<td>
+							<select id="ddl_city" name="city_code" style="width:120px">
+								<option value=""></option>
+								<option value="001009001">上海</option>
+								<option value="001001">北京</option>
+								<option value="001010001">南京</option>
+								<option value="001011001">杭州</option>
+								<option value="001019002">深圳</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="td_title">主营区域：</td>
+						<td class="td_main">
+							<input type="hidden" name="region_name" value="{$info['region_name']}">
+							<select id="ddl_region" name="region_id" style="width:120px">
+								<option value="0"></option>
+								{$regionList}
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="td_title">房东负责人：</td>
+						<td class="td_main">
+							<label>
+							    <input type="text" name="principal_man" style="width:140px" value="{$info['principal_man']}">
+								<div id="div_principal_man" class="plotbox" style="width:150px;">
+									<ul>
+									</ul>
+								</div>
+							</label>
+						</td>
+					</tr>
+					<tr>
+						<td class="td_title">所属公司：</td> 
+						<td class="td_main">
+							<input type="hidden" name="agent_company_name" value="{$info['agent_company_name']}">
+							<select id="ddl_company" name="agent_company_id" style="width:180px">
+								<option value=""></option>
+								{$companyList}
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="td_title">所属门店：</td> 
+						<td>
+							<input type="hidden" name="company_store_name" value="{$info['company_store_name']}">
+							<select id="ddl_store" name="company_store_id" style="width:180px">
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="td_title">保证金：</td> 
+						<td><input type="text" name="margin" maxlength="5" style="width:140px"></td>
+					</tr>
+					<tr>
+						<td class="td_title">权益：</td> 
+						<td>
+							<switch name="info.owner_verify">
+										<case value="1">未认证</case>
+										<case value="2">已认证</case>
+										<case value="3">拒绝</case>
+										<case value="4">已取消</case>、
+										<case value="5">拉黑</case>
+										<default />空
+							</switch>
+						</td>
+					</tr>
+					<tr>
+						<td class="td_title">是否开启IM：</td> 
+						<td>
+							<if condition="$info.im_open eq 1">是
+							<else/>否
+							</if>
+						</td>
+					</tr>
+					<tr>
+						<td class="td_title">备注：</td>
+						<td class="td_main">
+							<label><textarea name="owner_remark" maxlength="255">{$info['owner_remark']}</textarea></label>
+						</td>
+					</tr>
+				</table>
+				</form>
+				<div class="addhouse_last addhouse_last_room"><a href="javascript:;" class="btn_a">提交</a></div>
+			</div>
+		</div>
+</body>
+<script src="__PUBLIC__/js/jquery.js"></script>
+<script src="__PUBLIC__/js/common.js"></script>
+<script src="__PUBLIC__/js/jquery.form.js"></script>
+<script type="text/javascript">
+	$("#ddl_city").val("{$info['city_code']}");
+	$("select[name='status']").val("{$info['status']}");
+	var _status = "{$info['status']}";
+	if( _status != 0) {
+		$("input[name='principal_man']").attr("disabled","disabled");
+	}
+	$(".btn_a").click(function(){
+		submitData();
+	});
+	function submitData(){
+	    var mobile=$("input[name='mobile']").val();
+	    if($("input[name='true_name']").val().replace(/\s+/g,'')==""){
+		  	return alert("请输入房东姓名");
+	    } else if($("input[name='principal_man']").val() == "") {
+	    	return alert("请选择房东负责人");
+	    } else {
+		    $(".btn_a").unbind('click').text('提交中');
+		    $('form').submit();    	
+	    }  
+	}
+	//区域
+	$("#ddl_region").val("{$info['region_id']}");
+	$("#ddl_region").change(function(){
+		var region_id=$(this).val();
+		var region_name=$("#ddl_region option[value="+region_id+"]").text();
+		$("input[name='region_name']").val(region_name);
+	});
+
+	//中介公司
+	// $("#ddl_company").val("{$info['agent_company_id']}");
+	$("#ddl_company option[value={$info['agent_company_id']}]").attr("selected",true);
+	$("#ddl_company").change(function(){
+		var company_id=$(this).val();
+		var company_name=$("#ddl_company option[value="+company_id+"]").text();
+		$("input[name='agent_company_name']").val(company_name);
+
+		//自动加载门店
+		var pid = company_id;
+		if(pid) {
+			$('#ddl_store').show().empty();
+			// 请求下一级数据
+			$.ajax({
+		            type:'post',
+		            url: "{:U('AgentsManage/companyStoreAjaxInfo')}",
+		            data:"id="+pid,
+		            async:"false",
+		            dataType:'json',	        
+		            success:function(data){
+		            	$('<option value=""></option>').appendTo($('#ddl_store'));
+		            	if(data != null) {
+			                for (var i = 0; i < data.length; i++) {
+			                    $('<option value="'+data[i].id+'">'+data[i].company_store+'</option>').appendTo($('#ddl_store'));
+			                }
+		            	}
+		            },
+			})		
+		}     
+	});
+	//门店
+	$("#ddl_company").trigger('change');
+	id = "{$info['company_store_id']}";
+	name = "{$info['company_store_name']}";
+	$('<option value="'+id+'">'+name+'</option>').appendTo($('#ddl_store'));
+	$("#ddl_store").change(function() {
+		var company_store_id=$(this).val();
+		var company_store_name=$("#ddl_store option[value="+company_store_id+"]").text();
+		$("input[name='company_store_name']").val(company_store_name);
+	});
+
+	/*房东负责人 */
+	$("input[name='principal_man']").keyup(function(){
+		var key_word=$(this).val();
+		if(key_word.length<1){
+			return;
+		}
+		$.get("__ROOT__/HouseResource/searchHandleMen",{keyword:key_word},function(result){
+			if(result.status=="200"){
+				var attr=result.data;
+				var len=attr.length;
+				var obj=$("#div_principal_man ul");
+				obj.html("");
+				for (var i = len-1; i >= 0; i--) {
+					obj.append("<li onclick=\"selectPrincipal('"+attr[i].user_name+"','"+attr[i].real_name+"')\" >"+attr[i].real_name+"</li>");
+				};
+				if(len>0){
+					$("#div_principal_man").show();
+				}else{
+					$("#div_principal_man").hide();
+				}
+			}
+		},"json");
+	});
+	function selectPrincipal(userName,realName){
+		$("input[name='principal_man']").val(userName);
+		$("#div_principal_man").hide();
+	}
+</script>
+</html>

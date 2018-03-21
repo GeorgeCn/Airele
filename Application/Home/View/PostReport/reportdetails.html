@@ -1,0 +1,189 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>举报详情</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 最新版本渲染 -->
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/audit_rent_orders.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/basic.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common.css">
+    <script src="__PUBLIC__/js/jquery.js"></script>
+    <style>
+	.bigImg{position:fixed;top:0;left:0;bottom:0;right:0;background:rgba(0, ,0,0.9);z-index:555;display:none;}
+	.opacity{position:absolute;left:0;top:0;right:0;bottom:0;}
+	.bigImg-div{width:660px;height:450px;line-height:450px;padding-bottom:50px;background:#111;position:absolute;left:50%;top:50%;margin-top:-250px;margin-left:-330px;text-align:center;}
+	.housePic{width:550px;display:inline-block;vertical-align:middle;transform:rotate(0deg);max-height:450px;max-width:450px;}
+	.bigImg-div button{position:absolute;right:10px;bottom:10px;}
+	.bigImg-div .rotate{right:100px;bottom:10px;}
+</style>
+</head>
+<body>
+<include file="Public/head_city" />
+  <div class="title cf">
+    	<div class="logo fl cf">
+			<img src="__PUBLIC__/images/logo.png">
+		</div>
+		<ul class="cf fl">
+		<li><a href="{:U('Welcome/welcome')}">首页</a></li>
+		{$menutophtml}
+		</ul>
+		<div class="cf fr title_right">
+			<a class="blue" href="javascript:">欢迎您 <?php echo cookie("admin_user_name");?></a>
+			<span>|</span>
+			<a href="{:U('/Index/outlogin')}">退出</a>
+		</div>
+    </div>
+
+
+	<div class="main">
+		<div class="main_left subNavBox">
+		<include file="Public/left_menu" />
+			{$menulefthtml}
+		</div>
+		<div class="main_right">
+			<div class="common_head">
+				<!-- <h2>确认退款</h2><span class="operate">操作记录</span> -->
+			</div>
+			<div class="common_main">
+				<table class="table_one">
+					<tr>
+						<td colspan="4"><span>审核举报</span></td>
+					</tr>
+					<tr>
+						<td class="td_title">被举报人手机号：</td>
+						<td class="td_main">{$reportarr['owner_mobile']} <if condition="strtoupper($owner_name) neq ''">({$owner_name})</if></td>
+						<td class="td_title">举报人手机：</td>
+						<td class="td_main ">{$reportarr['customer_mobile']}</td>
+					</tr>
+					<tr>
+						<td class="td_title">举报时间：</td>
+						<td class="td_main">{$reportarr['create_time']|date="Y-m-d H:i:s",###}</td>
+						<td class="td_title">共被举报次数：</td>
+						<td class="td_main ">{$recount}</td>
+					</tr>
+					<tr>
+						<td class="td_title">举报内容：</td>
+						<td class="td_main">{$reportarr['content']}</td>
+						<td class="td_title">是否有房：</td>
+						<td class="td_main"><?php if($resource){echo"是";}else{echo"否";}?></td>
+					</tr>
+					<tr>
+						<td class="td_title">房间价格：</td>
+						<td class="td_main"><?php if($postarr['money']==""){echo"不限";}else{echo $postarr['money'];}?></td>
+					    <td class="td_title">帖子标题：</td>
+						<td class="td_main ">{$postarr['title']}</td>
+					</tr>
+					<tr>
+					<if condition="strtoupper($reportarr['report_type']) eq '0'">
+						<td class="td_title">帖子内容：</td>
+					 <else/>
+						<td class="td_title">回帖内容：</td>
+					 </if>
+						<td class="td_main" colspan="3">{$postarr['describe']}</td>
+					</tr>
+				</table>
+				<if condition="strtoupper($imgarr[0][img_path]) neq ''">
+					<div id="tab">
+					<div class="tabList">
+						<p style="color:#f00;line-height:40px;padding-left:10px;">帖子图片</p>
+					</div>
+					<div class="tabCon" style="height:auto;">
+					    <div class="module cf" style="height:auto;">
+							  <volist name="imgarr" id="vo">
+							  <a href="javascript:" style="width:200px;height:160px;margin:5px 10px;"><img src="{$vo.img_path}" style="height:150px;"></a>
+						     </volist>
+						</div>
+					</div>
+					<div class="tabfloat">
+						<img src="{$data.img_url}">
+					</div>
+				</div>
+				</if>
+			</div>
+
+			<div class="common_bottom cf">
+				<div class="back fl" style="width:15%;"></div>
+				<div class="remarks fl" style="width:500px;">
+				<div class="cf">
+					<span class="fl" style="line-height:60px;">处罚被举报人:</span>
+					<select id="status" style="width:320px;height:30px;margin-top:14px;float:left;margin-left:20px;">
+						<option value="1" <?php if($reportarr['handle_status']==1){echo "selected";}?>>不做处罚</option>
+						<option value="5" <?php if($reportarr['handle_status']==5){echo "selected";}?>>删除信息</option>
+						<option value="3" <?php if($reportarr['handle_status']==3){echo "selected";}?>>删除信息，并禁止发帖三天</option>
+						<option value="6" <?php if($reportarr['handle_status']==6){echo "selected";}?>>删除信息，并禁止操作帖子所有功能三天</option>
+						<option value="8" <?php if($reportarr['handle_status']==8){echo "selected";}?>>禁用帖子功能，删除被举报信息，删除该帐号下所有帖子</option>
+						<option value="7" <?php if($reportarr['handle_status']==7){echo "selected";}?>>封号，禁止使用APP</option>
+				    </select>
+				 </div>
+				 <div class="cf" style="margin-bottom:10px;">
+				 	<span class="fl" style="line-height:40px;">回复被举报人:</span>
+				    <input type="text" id="byinformer" value="{$reportarr['byinformer']}" placeholder="如果没有文字内容就不推送，空格不算内容" style="width:320px;height:30px;margin-top:5px;float:left;margin-left:20px;">
+			    </div>
+			    <div class="cf">
+				 	<span class="fl" style="line-height:40px;display:inline-block;margin-left:1em;">回复举报人:</span>
+				    <input type="text" id="informer" value="{$reportarr['informer']}" placeholder="如果没有文字内容就不推送，空格不算内容"  style="width:320px;height:30px;margin-top:5px;float:left;margin-left:20px;">
+			    </div>
+				</div>
+
+				<if condition="strtoupper($reportarr['handle_status']) gt '0'">
+				<div class="through fl"><button class="buttom" disabled="disabled">确认提交</button></div>
+				<else/>
+				<div class="through fl"><button class="buttom jujue" id="jspost">确认提交</button></div>
+				<input type="hidden" value="{$reportarr['id']}" id="reportarr_id">
+				</if>
+			
+			</div>
+
+		</div>
+
+		<div class="bigImg">
+		<div class="opacity"></div>
+		<div class="bigImg-div">&nbsp;
+			<img class="housePic" src="">
+			<button class="rotate btn_a">旋转</button>
+			<button class="save btn_a">退出</button>
+		</div>
+	</div>
+</body>
+    <script src="__PUBLIC__/js/jquery.js"></script>
+     <script src="__PUBLIC__/js/common.js"></script>
+<script>
+
+    $("#jspost").click(function(){
+    	   if($("#byinformer").val()==""&&$("#status").val()==7){
+    	    	alert("回复被举报人不能为空");
+    	    	return false;
+    	    }
+			if(confirm("确认提交？")){
+				 $('#jspost').unbind("click");
+				var id=$("#reportarr_id").val();
+				var status=$("#status").val();
+				var byinformer=encodeURI($("#byinformer").val());
+				var informer=encodeURI($("#informer").val());
+				$.get("__URL__/handlereport.html",{id:id,status:status,byinformer:byinformer,informer:informer},function(data){
+    	   			 if(data.status==200){
+    	   		    	 window.location.href="__URL__/postreportlist.html?no=47&leftno=124";
+    	   			 }
+				},"json");
+			}
+    });
+    	 
+	
+
+$(function(){
+		var rotate = 0;//初始化旋转角度
+		//点击图片显示大图
+		$(".module img").click(function(){
+			var src = $(this).attr('src');
+			$(".bigImg").show();
+			$(".housePic").attr("src",src); 
+		});
+		//点击旋转 旋转图片
+		$(".rotate").click(function(){
+			$(".housePic").css("transform","rotate("+(++rotate)*90+"deg)");
+		});
+		$(".save").click(function(){$(this).parent().parent().hide()})
+	})
+
+</script>
+
+</html>

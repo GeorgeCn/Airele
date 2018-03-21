@@ -1,0 +1,86 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>中介房源报价审核</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 最新版本渲染 -->
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/basic.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common.css">
+</head>
+<body>
+
+	<div class="main">
+	
+		<div class="main_right">
+			
+			<div class="common_main">
+			
+				<div class="table" id="dataDiv">
+					<table style="width:90%">
+						<thead>
+							<tr>
+								<th>所属公司</th>
+								<th>姓名</th>
+								<th>报价人手机号</th>
+								<th>房东手机号</th>
+								<th>租金</th>
+								<th>中介费比率</th>
+							</tr>
+						</thead>
+						<tbody>
+							<volist name="list" id="vo">
+								<if condition="($vo.is_current eq 1)">
+									<tr style="background-color:#fbec85;">
+										<td>{$vo['company']}</td>
+										<td>{$vo['name']}</td>
+										<td>{$vo['phone']}</td>
+										<td>{$vo['owner_mobile']}</td>
+										<td>{$vo['room_price']}</td>	
+										<td>{$vo['comm_price']}</td>						
+									</tr>
+								<else/>
+									<tr>
+										<td>{$vo['company']}</td>
+										<td>{$vo['name']}</td>
+										<td>{$vo['phone']}</td>
+										<td>{$vo['owner_mobile']}</td>
+										<td>{$vo['room_price']}</td>	
+										<td>{$vo['comm_price']}</td>						
+									</tr>
+								</if>
+							
+							</volist>
+						</tbody>
+					</table>
+			
+				</div>
+				<div  style="text-align:left;margin-top:20px;">
+					<input type="hidden" name="mid" value="<?php echo I('get.mid'); ?>">
+					<input type="text" name="failReason" style="width:340px;line-height:28px;" placeholder="拒绝理由">
+					<button class="btn_b" style="margin-right:50px;" id="btn_fail">拒绝</button>
+					<button class="btn_a" id="btn_pass">通过</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="__PUBLIC__/js/jquery.js"></script>
+<script src="__PUBLIC__/js/common.js"></script>
+<script type="text/javascript">
+	$('#btn_fail').click(function(){
+		var failReason=$("input[name='failReason']").val();
+		if(failReason==''){
+			$("input[name='failReason']").focus();return;
+		}
+		$(this).unbind('click').text('操作中');
+		$.post('__URL__/quotationAuditSubmit',{htype:1,mid:$("input[name='mid']").val(),reason:failReason},function(result){
+			alert(result);$("#btn_fail").hide();$("#btn_pass").hide();
+		});
+	});
+	$('#btn_pass').click(function(){
+		$(this).unbind('click').text('操作中');
+		$.post('__URL__/quotationAuditSubmit',{htype:3,mid:$("input[name='mid']").val()},function(result){
+			alert(result);$("#btn_fail").hide();$("#btn_pass").hide();
+		});
+	});
+</script>
+</html>

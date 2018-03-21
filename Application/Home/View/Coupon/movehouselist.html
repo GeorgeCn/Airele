@@ -1,0 +1,80 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>免费搬家信息列表</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 最新版本渲染 -->
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/basic.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common.css">
+    
+</head>
+<body>
+	<div class="main">
+		<div class="main_right" style="left:10%">
+			<div class="common_head">
+				<h2>免费搬家信息列表
+						<form action="__URL__/movehouselist.html" method="get" style="position:absolute;left:120px;top:0;">
+			            <select name="citycode" style="width:120px;margin-left:30px;height:30px;";>
+							<option value="" <?php if(I('get.citycode')==""){echo "selected";}?>>全部</option>
+							<option value="001009001" <?php if(I('get.citycode')=='001009001'){echo "selected";}?>>上海</option>
+							<option value="001011001" <?php if(I('get.citycode')=='001011001'){echo "selected";}?>>杭州</option>
+							<option value="001010001" <?php if(I('get.citycode')=='001010001'){echo "selected";}?>>南京</option>
+			    		</select>
+			    		<select name="platform" style="width:120px;margin-left:30px;height:30px;";>
+							<option value="" <?php if(I('get.platform')==""){echo "selected";}?>>全部</option>
+							<option value="1" <?php if(I('get.platform')=='1'){echo "selected";}?>>微信</option>
+							<option value="2" <?php if(I('get.platform')=='2'){echo "selected";}?>>微博</option>
+			    		</select>
+						<button type="submit" class="btn_a">搜索</button>
+					</form>
+				</h2>
+				
+			</div>
+			<div class="common_main">
+				<div class="table" id="dataDiv">
+					<table width="50%">
+						<thead>
+							<tr>
+								<th>序号</th>
+								<th>手机号</th>
+								<th>微信</th>
+								<th>提交时间</th>
+								<th>来源</th>
+								<th>城市</th>
+							</tr>
+						</thead>
+						<tbody>
+							  <volist name="list" id="vo">
+								<tr>
+									<td>{$i}</td>
+									<td>{$vo.mobile}</td>
+									<td>{$vo.wxnumber}</td>
+									<td>{$vo.create_time|date="Y-m-d H:i:s",###}</td>
+									<td>
+										<if condition="strtoupper($vo['gaodu_platform']) eq '1'">
+										 微信
+										<elseif condition="strtoupper($vo['gaodu_platform']) eq '2'"/>
+										  微博
+										</if>
+									</td>
+									<td>
+										<if condition="strtoupper($vo['city_code']) eq '001009001'">
+										 上海
+										<elseif condition="strtoupper($vo['city_code']) eq '001001'"/>
+										  北京
+										<elseif condition="strtoupper($vo['city_code']) eq '001011001'"/>
+										  杭州
+										<elseif condition="strtoupper($vo['city_code']) eq '001010001'"/>
+										  南京
+										</if>
+									</td>
+								</tr>
+							</volist>
+						</tbody>
+					</table>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>修改服务订单</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 最新版本渲染 -->
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/basic.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/plug/jquery.datetimepicker.css"/>
+<style>
+		.anniu{text-align:center;padding:50px 0;width:70%;}
+		.anniu a{display:inline-block;margin:0 20px;}
+	</style>
+</head>
+<body>
+<include file="Public/head_city" />
+    <div class="title cf">
+    	<div class="logo fl cf">
+			<img src="__PUBLIC__/images/logo.png">
+		</div>
+		<ul class="cf fl">
+		<li><a href="{:U('Welcome/welcome')}">首页</a></li>
+			{$menutophtml}
+		</ul>
+		<div class="cf fr title_right">
+			<a class="blue" href="javascript:;">欢迎您 <?php echo cookie("admin_user_name");?></a>
+			<span>|</span>
+			<a href="{:U('/Index/outlogin')}">退出</a>
+		</div>
+    </div>
+	<div class="main">
+		<div class="main_left subNavBox">
+		<include file="Public/left_menu" />
+			{$menulefthtml}
+		</div>
+		<div class="main_right">
+			<div class="common_head">
+				<h2>服务订单修改</h2>
+			</div>
+			<div class="common_main">
+			  <form  id="submitForm" action="__URL__/subuporder.html" method="post">
+			   <input type="hidden" name="id" value="{$data['id']}">
+				<table class="table_one table_two">
+					<tr>
+						<td class="td_title"><span>*</span>用户姓名：</td>
+						<td class="td_main"><input type="text" name="customer_name" value="{$data['customer_name']}"></td>
+					</tr>
+					<tr>
+						<td class="td_title"><span>*</span>用户手机：</td>
+						<td class="td_main"><input type="text" name="customer_mobile" value="{$data['customer_mobile']}"></td>
+					</tr>
+					<tr>
+						<td class="td_title"><span>*</span>省市区：</td>
+						<td class="td_main">{$data['province_name']}-{$data['city_name']}-{$data['district_name']}</td>
+					</tr>
+					<tr>
+						<td class="td_title"><span>*</span>详细地址：</td>
+						<td class="td_main"><input type="text" name="address" value="{$data['address']}"></td>
+					</tr>
+					<tr>
+						<td class="td_title"><span>*</span>服务时间：</td>
+						<td class="td_main"><input type="text" name="service_time" id="datetimepicker" value="{$data['service_time']|date="Y-m-d H:i:s",###}"></td>
+					</tr>
+				</table>
+				<input type="hidden" name="type_id" value="{$data['type_id']}">
+				<div class="anniu">
+					<a href="__URL__/awaitlist.html?no=4&leftno=73" class="btn_b">返回</a>
+					<button class="btn_a" onclick="return check();">修改</button>
+				</div>
+			  </form>
+			</div>
+		</div>
+	</div>
+    <script src="__PUBLIC__/js/jquery.js"></script>
+    <script src="__PUBLIC__/js/common.js"></script>
+    <script src="__PUBLIC__/plug/jquery.datetimepicker.js"></script>
+	<script>
+		$('#datetimepicker').datetimepicker({step:10,lang:'ch',timepicker:true,format:"Y-m-d H:i:s"});
+		function check(){
+	   var customer_name=$("input[name='customer_name']").val();
+	   var customer_mobile=$("input[name='customer_mobile']").val();
+	   var address=$("input[name='address']").val();
+	   var service_time=$("input[name='service_time']").val();
+	   if(customer_name==""){
+		    alert("用户姓名不能为空");
+		    return false;
+	   }else if(customer_mobile==""){
+		    alert("用户手机不能为空");
+		    return false;
+	   }else if(address==""){
+		   alert("详细地址不能为空");
+		   return false;
+	   }else if(service_time==""){
+		   alert("服务时间不能为空");
+		   return false;
+	   }else{
+		   $("#submitForm").submit();
+	   } 
+   }
+    </script>
+</body>
+</html>

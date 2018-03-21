@@ -1,0 +1,133 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>短信签约</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 最新版本渲染 -->
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/basic.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/plug/jquery.datetimepicker.css"/>
+
+</head>
+<body>
+<include file="Public/head_city" />
+     <div class="title cf">
+    	<div class="logo fl cf">
+			<img src="__PUBLIC__/images/logo.png">
+		</div>
+		<ul class="cf fl">
+		<li><a href="{:U('Welcome/welcome')}">首页</a></li>
+			{$menutophtml}
+		</ul>
+		<div class="cf fr title_right">
+			<a class="blue" href="javascript:">欢迎您 <?php echo cookie("admin_user_name");?></a>
+			<span>|</span>
+			<a href="{:U('/Index/outlogin')}">退出</a>
+		</div>
+    </div>
+	<div class="main">
+		<div class="main_left subNavBox">
+		<include file="Public/left_menu" />
+			{$menulefthtml}
+		</div>
+		<div class="main_right">
+			<div class="common_head">
+				<h2>签约查询</h2>
+				<div class="common_head_main">
+				<form action="__URL__/smssignlist.html" method="get">
+				    <input type="hidden" name="no" value="6">
+					<input type="hidden" name="leftno" value="123">
+					<table class="table_one">
+						<tr>
+							<td class="td_title">签约时间：</td>
+							<td class="td_main"><input class="inpt_a" type="text" name="startTime" id="datetimepicker" value="<?php echo$_GET['startTime']?>">&nbsp;~&nbsp;<input class="inpt_a" type="text" name="endTime" id="datetimepicker1" value="<?php echo$_GET['endTime']?>"></td>
+							<td class="td_title">房东手机：</td>
+							<td class="td_main"><input type="tel" name="ownermobile" maxlength="11" value="<?php echo I('get.ownermobile');?>">
+							</td>
+						<td class="td_title">房东姓名：</td>
+							<td class="td_main">
+							   <input type="tel" name="ownername" maxlength="11" value="<?php echo I('get.ownername');?>">
+							</td>
+							</td>
+						</tr>
+						<tr>
+							<td class="td_title">佣金类型：</td>
+							<td class="td_main">
+								<select name="moneytype">
+									<option value="" <?php if(I('get.moneytype')===""){echo "selected";}?>>全部</option>
+									<option value="0" <?php if(strlen(I('get.moneytype'))==1){echo "selected";}?>>佣金比例</option>
+									<option value="1" <?php if(I('get.moneytype')==1){echo "selected";}?>>佣金金额</option>
+								</select>
+
+							</td>
+							<td class="td_title">发送人：</td>
+							<td class="td_main"><input type="text" name="updateman" value="<?php echo I('get.updateman');?>"></td>
+						    <td class="td_title"></td>
+							<td class="td_main"></td>
+							</td>
+						</tr>
+					</table>
+					<p class="head_p"><button type="submit" class="btn_a">搜索</button></p>
+					</form>
+				</div>
+			</div>
+			<div class="common_main">
+				<h2>签约列表<a href="__URL__/smssigntemp.html?no=6&leftno=123" class="btn_a">发送签约短信</a><a class="btn_a" style="left:350px;" href="__URL__/downloadExcel?<?php echo $_SERVER["QUERY_STRING"];?>">下载</a></h2>
+				<div class="table">
+					<table>
+						<thead>
+							<tr>
+								<th>序号</th>
+								<th>房东名字</th>
+								<th>房东手机</th>
+								<th>签约时间</th>
+								<th>短信发送时间</th>
+								<th>发送人</th>
+								<th>签约佣金</th>
+							</tr>
+						</thead>
+						<tbody>
+						  <volist name="list" id="vo">
+							<tr>
+								<td>{$i}</td>
+								<td>{$vo['owner_name']}</td>
+								<td>{$vo['owner_mobile']}</td>
+								<if condition="$vo['sign_time'] neq 0 ">
+								<td>{$vo['check_time']|date="Y-m-d H:i:s",###}</td>
+								 <else />
+								 <td></td>
+								 </if>
+								<td>{$vo['create_time']|date="Y-m-d H:i:s",###}</td>
+								<td>{$vo['update_man']}</td>
+								<td>
+									<if condition="strtoupper($vo['money_type']) eq '0'">
+									月租的{$vo['commission']}%
+									<elseif condition="strtoupper($vo['money_type']) eq '1'"/>
+								    固定{$vo['commission']}元
+									</if>
+								</td>
+							</tr>
+				        	</volist>
+						</tbody>
+					</table>
+					<div class="skip cf">
+						<p class="fl skip_left">共{$pagecount}条记录，每页15条</p>
+						<p class="fr skip_right">
+							{$show}
+						</p>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	    <script src="__PUBLIC__/js/jquery.js"></script>
+    <script src="__PUBLIC__/plug/jquery.datetimepicker.js"></script>
+    <script src="__PUBLIC__/js/common.js"></script>
+    <script src="__PUBLIC__/js/listdata.js"></script>
+	<script>
+	$('#datetimepicker').datetimepicker({step:10,lang:'ch',timepicker:false,format:"Y-m-d"});
+	$('#datetimepicker1').datetimepicker({step:10,lang:'ch',timepicker:false,format:"Y-m-d"});
+
+</script>
+</body>
+</html>

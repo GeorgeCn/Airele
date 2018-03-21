@@ -1,0 +1,220 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>所有评价管理</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 最新版本渲染 -->
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/basic.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common.css">
+     <link rel="stylesheet" type="text/css" href="__PUBLIC__/plug/jquery.datetimepicker.css"/>
+</head>
+<body>
+<include file="Public/head_city" />
+    <div class="title cf">
+    	<div class="logo fl cf">
+			<img src="__PUBLIC__/images/logo.png">
+		</div>
+		<ul class="cf fl">
+		<li><a href="{:U('Welcome/welcome')}">首页</a></li>
+			{$menutophtml}
+		</ul>
+		<div class="cf fr title_right">
+			<a class="blue" href="javascript:">欢迎您 <?php echo cookie("admin_user_name");?></a>
+			<span>|</span>
+			<a href="{:U('/Index/outlogin')}">退出</a>
+		</div>
+    </div>
+	<div class="main">
+		<div class="main_left subNavBox">
+		<include file="Public/left_menu" />
+			{$menulefthtml}
+		</div>
+		<div class="main_right">
+			<div class="common_head">
+				<h2>用户搜索</h2>
+				<div class="common_head_main">
+				<form action="{:U('Comment/AllCommentList')}" method="get">
+				   <input type="hidden" name="no" value="3">
+				    <input type="hidden" name="leftno" value="58">
+					<table class="table_one">
+						<tr>
+							<td class="td_title">评论人手机：</td>
+							<td class="td_main"><input type="text" name="mobile" value="<?php echo I('get.mobile')?>"></td>
+							<td class="td_title">评论内容：</td>
+							<td class="td_main"><input class="inpt_a" type="text" name="content" value="<?php echo I('get.content')?>"></td>
+							</td>
+							<td class="td_title">评论日期</td>
+							<td class="td_main"><input class="inpt_a" type="text" name="startTime" id="datetimepicker" value="<?php echo$_GET['startTime']?>">&nbsp;~&nbsp;<input class="inpt_a" type="text" name="endTime" id="datetimepicker1" value="<?php echo$_GET['endTime']?>"></td>
+						</tr>
+						
+					</table>
+					<p class="head_p"><button type="submit" class="btn_a">搜索</button></p>
+					</form>
+				</div>
+			</div>
+			<div class="common_main">
+				<h2>评价列表 <a style="margin-left:8px;" href="__URL__/downloadExcel.html?<?php echo $_SERVER["QUERY_STRING"];?>" class="btn_a">下载</a></h2>
+				<div class="table">
+					<table>
+						<thead>
+							<tr>
+								<th>序号</th>
+								<th>房东姓名</th>
+								<th>房东手机</th>
+								<th>总体评价</th>
+								<th>评价内容</th>
+								<th>房东回复</th>
+								<th>房间地址</th>
+								<th>是否匿名</th>
+								<th>是否显示地址</th>
+								<th>是否职业房东</th>
+								<th>评论日期</th>
+								<th>评论人</th>
+								<th>评论人手机</th>
+								<th>回复TA</th>
+								<th>操作</th>
+							</tr>
+						</thead>
+						<tbody>
+						  <volist name="list" id="vo">
+							<tr>
+								<td>{$i}</td>
+								<td>{$vo['owner_name']}</td>
+								<td>{$vo['owner_mobile']}</td>
+								<td>
+									<if condition="strtoupper($vo['comment_type']) eq '1'">
+									值得推荐
+									<elseif condition="strtoupper($vo['comment_type']) eq '2'"/>
+									有待改善
+									<elseif condition="strtoupper($vo['comment_type']) eq '3'"/>
+									问题很多
+									</if>
+								</td>
+								<td style="width:400px;">{$vo['content']}</td>
+								<td style="width:400px;text-align:left;">
+								<?php foreach ($vo['new_reply'] as $key => $value) {
+									echo"房东回复：".$value['reply_content']."</br>";
+								}?>
+								</td>
+								<td>{$vo['address']}</td>
+								<td>
+								<if condition="strtoupper($vo['is_anonymous']) eq '1'">
+									是
+								<elseif condition="strtoupper($vo['is_anonymous']) eq '0'"/>
+									否
+								</if>
+								</td>
+								<td>
+								<if condition="strtoupper($vo['is_anonymous_address']) eq '1'">
+									否
+								<elseif condition="strtoupper($vo['is_anonymous_address']) eq '0'"/>
+									是
+								</if>
+								</td>
+								<td>
+								<if condition="strtoupper($vo['is_owner']) eq '4'">
+									是
+								<else/>
+									否
+								</if>
+								</td>
+								<td>{$vo['create_time']|date="Y-m-d H:i:s",###}</td>
+								<td>{$vo['customer_name']}</td>
+								<td>{$vo['mobile']}</td>
+								<td><if condition="strtoupper($vo['parent_id']) eq ''"><a href="javascript:;">回复TA</a></if></td>
+								<td><a href="javascript:;" onclick="deletedata('{$vo['id']}','{$vo['owner_id']}')">删除</a></td>
+								<input type="hidden" name="parent_id" value="{$vo['id']}">
+						    	<input type="hidden" name="owner_id" value="{$vo['owner_id']}">
+						    	<input type="hidden" name="js_parent" value="{$vo['parent_id']}">
+							</tr>
+				        	</volist>
+						</tbody>
+					</table>
+					<div class="skip cf">
+						<p class="fl skip_left">共{$pagecount}条记录，每页15条</p>
+						<p class="fr skip_right">
+							{$show}
+						</p>
+					</div>
+		
+				</div>
+			</div>
+		</div>
+	</div>
+<div class="addReply" style="display:none;">
+		<div class="addReply_main">
+			<form method="post" action="{:U('Comment/subreply')}" id="form1">
+			 <input type="hidden" name="js_parent_id">
+			 <input type="hidden" name="js_owner_id">
+				<div class="cf reply_text">
+					<span>回复内容</span>
+					<textarea name="reply_content" id="reply_content1"></textarea>
+				</div>
+				<div class="cf reply_message">
+					<div class="fl cf">
+						<label for="a">创建者手机</label>
+						<input type="tel" name="mobile" id="mobile">
+					</div>
+				</div>
+				<div class="anniu cf">	
+					<a href="#" class="anniu_back">返回</a>
+					<button class="anniu_add" onclick="return check1();">添加回复</button>
+				</div>
+			</form>
+		</div>
+	</div>
+	<script src="__PUBLIC__/js/jquery.js"></script>
+    <script src="__PUBLIC__/js/common.js"></script>
+    <script src="__PUBLIC__/js/listdata.js"></script>
+        <script src="__PUBLIC__/plug/jquery.datetimepicker.js"></script>
+     <script type="text/javascript">
+     	$('#datetimepicker').datetimepicker({step:10,lang:'ch',timepicker:false,format:"Y-m-d"});
+	$('#datetimepicker1').datetimepicker({step:10,lang:'ch',timepicker:false,format:"Y-m-d"});
+        $(function(){
+		   $(".table tr").children("td:nth-child(14)").bind("click",function(){
+               var parent_id=$(this).parents("tr").find("input[name='parent_id']").val();
+               var owner_id=$(this).parents("tr").find("input[name='owner_id']").val();
+               var js_parent=$(this).parents("tr").find("input[name='js_parent']").val();
+                 $("input[name='js_parent_id']").val(parent_id);
+                 $("input[name='js_owner_id']").val(owner_id);
+                if(js_parent==""){
+		     	 $(".addReply").show();
+                }
+		    })
+		   $(".anniu_back").on("click",function(){
+		       $(".addReply").hide();
+		   })
+		});
+    </script>
+    <script type="text/javascript">
+    function check1(){
+	   var reply_content=$("#reply_content1").val();
+	   var mobile=$("#mobile").val();
+	   if(reply_content==""){
+		    alert("回复内容不能为空！");
+		    return false;
+	   }else if(mobile==""){
+		   alert("创建者手机不能为空！");
+		   return false;
+	   }else if(mobile.length!=11){
+	   	   	alert("电话格式不正确！");
+		   return false;
+	   }else{
+		   $("#form1").submit();
+	   } 
+    }
+    </script>
+	<script>
+function deletedata(resource_id,owner_id){
+		if(confirm("确认删除？")){
+			var url="__URL__/delDirComment.html?delid="+resource_id+"&owner_id="+owner_id;
+			window.location.href = url;
+		}
+	}
+
+$(".order_id").each(function(){  
+   OrderCouponList($(this).val());   
+             
+});   
+</script>
+</body>
+</html>

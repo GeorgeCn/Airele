@@ -1,0 +1,174 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>新增优惠劵</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 最新版本渲染 -->
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/audit_rent_orders.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/basic.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common.css">
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/plug/jquery.datetimepicker.css"/>
+<style type="text/css">
+	#js_days{display: none;} 
+</style>
+</head>
+<body>
+<include file="Public/head_city" />
+    <div class="title cf">
+    	<div class="logo fl cf">
+			<img src="__PUBLIC__/images/logo.png">
+		</div>
+		<ul class="cf fl">
+		<li><a href="{:U('Welcome/welcome')}">首页</a></li>
+			{$menutophtml}
+		</ul>
+		<div class="cf fr title_right">
+			<a class="blue" href="javascript:">欢迎您 <?php echo cookie("admin_user_name");?></a>
+			<span>|</span>
+			<a href="{:U('/Index/outlogin')}">退出</a>
+		</div>
+    </div>
+	<div class="main">
+		<div class="main_left subNavBox">
+			<include file="Public/left_menu" />
+			{$menulefthtml}
+		</div>
+		<div class="main_right">
+			<div class="common_head">
+				<h2>新增普通优惠劵</h2>
+			</div>
+			<div class="common_main">
+				<form action="__URL__/addCouponManage.html" method="post" id="form">
+					<table class="table_one table_two">
+					<tr>
+						<td class="td_title"><span>*</span>优惠券类型</td>
+						<td>普通优惠劵</td>
+					</tr>
+					<tr>
+						<td class="td_title"><span>*</span>优惠券名称</td>
+						<td><input type="text" name="cname"></td>
+					</tr>
+					<tr>
+						<td class="td_title"><span>*</span>活动时间</td>
+						<td class="td_main"><input type="text"  name="startTime" id="datetimepicker">&nbsp;&nbsp;~&nbsp;&nbsp;<input type="text"  name="endTime" id="datetimepicker1"></td>
+					</tr>
+					<tr>
+						<td class="td_title"><span>*</span>优惠券金额</td>
+						<td class="td_main"><input type="text" name="cmoney">&nbsp;&nbsp;元</td>
+					</tr>
+					<tr>
+						<td class="td_title"><span>*</span>有效期限</td>
+						<td class="td_main">
+							<select name="typestatus" id="selectid" onchange="checkselect()">
+								<option value="0">有效期限</option>
+								<option value="1">有效天数</option>
+							</select>
+						</td>
+					</tr>
+					<tr id="js_time">
+						<td class="td_title"><span>*</span>时间</td>
+						<td class="td_main"><input type="text" id="datetimepickertimes" name="times"></td>
+					</tr>
+					<tr id="js_days">
+						<td class="td_title"><span>*</span>天数</td>
+						<td class="td_main"><input type="text" name="days"></td>
+					</tr>
+					<tr>
+						<td class="td_title"><span>*</span>优惠券数量</td>
+						<td class="td_main"><input type="text" name="total_count" class="smallwidth">&nbsp;&nbsp;张</td>
+					</tr>
+					<tr>
+						<td class="td_title"><span>*</span>活动编号</td>
+						<td class="td_main"><input type="text" name="hdid">&nbsp;&nbsp;<span>填写该数字 <?php echo rand(1000,9999);?></span></td>
+					</tr>
+					<tr>
+						<td class="td_title"><span>*</span>限制使用条件</td>
+						<td class="td_main"><input type="text" name="limit_txt"></td>
+					</tr>
+					<tr>
+						<td class="td_title"><span>*</span>可叠加使用</td>
+						<td class="td_main">
+							<label><input type="radio" name="dj" value="1" checked/>&nbsp;是</label>&nbsp;&nbsp;&nbsp;
+							<label><input type="radio" name="dj" value="0"/>&nbsp;否</label>
+					</tr>
+				</table>
+					<div  class="addhouse_next">
+						<button class="btn_a" onclick="return check();">确定提交</button>
+					</div>
+				</form>
+			</div>
+		</div>
+</body>
+ <script src="__PUBLIC__/js/jquery.js"></script>
+<script src="__PUBLIC__/js/common.js"></script>
+<script src="__PUBLIC__/plug/jquery.datetimepicker.js"></script>
+
+<script type="text/javascript">
+	$('#datetimepicker').datetimepicker({step:10,lang:'ch',timepicker:false,format:"Y-m-d"});
+	$('#datetimepicker1').datetimepicker({step:10,lang:'ch',timepicker:false,format:"Y-m-d"});
+	$('#datetimepickertimes').datetimepicker({step:10,lang:'ch',timepicker:false,format:"Y-m-d"});
+</script>
+<script type="text/javascript">
+	/*提交表单*/
+ function check(){
+	   var cname=$("input[name='cname']").val();
+	   var startTime=$("input[name='startTime']").val();
+	   var endTime=$("input[name='endTime']").val();
+	   var cmoney=$("input[name='cmoney']").val();
+	   var owenr_mobile=$("input[name='owenr_mobile']").val();
+	   var total_count=$("input[name='total_count']").val();
+	   var hdid=$("input[name='hdid']").val();
+	   var selectid=$("#selectid").val();
+	   var js_ctype=$("#js_ctype").val();
+	   var times=$("input[name='times']").val();
+	    var total_count=$("input[name='total_count']").val();
+	    var days=$("input[name='days']").val();
+	   if(cname==""){
+		    alert("请输入优惠劵名称！");
+		    return false;
+	   }else if(startTime==""){
+		   alert("请输入活动开始时间！");
+		   return false;
+	   }else if(endTime==""){
+		   alert("请输入活动结束时间！");
+		   return false;
+	   }else if(cmoney==""){
+		   alert("请输入活动金额！");
+		   return false;
+	   }else if(times==""&&selectid==0){
+		    alert("请输入时间！");
+		   	return false;
+	   }else if(days==""&&selectid==1){
+		    alert("请输入天数！");
+		   	return false;
+	   }else if(total_count==""){
+		   alert("请输入优惠券数量！");
+		   return false;
+	   }else if(hdid==""){
+		   alert("请输入活动编号！");
+		   return false;
+	   }else{
+		   $("#form").submit();
+	   } 
+ }
+
+  /*获取有效期限类型*/
+function checkselect(){
+  var trid=$("#selectid").val();
+    if(trid==0){
+    	$("#js_time").show();
+    	$("#js_days").hide();
+    }else if(trid==1){
+    	$("#js_time").hide();
+       $("#js_days").show();
+    }
+}
+function couponselect(){
+   var trid=$("#js_ctype").val();
+    if(trid==2){
+    	$("#js_owmobile").show();
+    }else if(trid==1){
+    	$("#js_owmobile").hide();
+    }
+}
+</script>
+</html>

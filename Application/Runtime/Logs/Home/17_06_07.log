@@ -1,0 +1,314 @@
+[ 2017-06-07T09:44:27+08:00 ] ::1 /hizhu/admin.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-07T09:44:27+08:00 ] ::1 /hizhu/admin.php/Index/verufy.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-07T09:44:33+08:00 ] ::1 /hizhu/Index/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-06-07T09:44:37+08:00 ] ::1 /hizhu/admin.php/Index/verufy?d=0.6103161645658952
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-07T09:44:38+08:00 ] ::1 /hizhu/admin.php/Index/verufy?d=0.7390076011424578
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-07T09:44:40+08:00 ] ::1 /hizhu/admin.php/Index/verufy?d=0.09315955370027384
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-07T09:44:45+08:00 ] ::1 /hizhu/Index/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.020001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.022001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' AND `user_pwd` = '0c6b4038cefe52dbba27c6434dc1fecd'  [ RunTime:0.028002s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.014001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-07T09:44:48+08:00 ] ::1 /hizhu/Welcome/welcome.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.019001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.021002s ]
+SQL: SHOW COLUMNS FROM `adminmenulist` [ RunTime:0.023001s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 0 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.028002s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 0 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.025001s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 1 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.012001s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 3 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.023001s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 4 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.022001s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 6 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.016001s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 7 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.014001s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 47 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.013001s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 77 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.017001s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 87 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.013001s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 107 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.011001s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 141 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.021001s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 162 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.019001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' AND `record_status` = 1 LIMIT 1   [ RunTime:0.014001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-07T13:38:05+08:00 ] ::1 /hizhu/Customer/authenticationList.html?no=6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.017001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.015001s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.015000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `customer` WHERE `is_auth` = 1 AND ( `auth_time` > 1427817600 AND `auth_time` < 1743523200  ) LIMIT 1   [ RunTime:0.015000s ]
+NOTIC: [2] urlencode() expects parameter 1 to be string, array given D:\wamp\www\hizhu\Application\Home\Controller\CustomerController.class.php 第 44 行.
+NOTIC: [2] urlencode() expects parameter 1 to be string, array given D:\wamp\www\hizhu\Application\Home\Controller\CustomerController.class.php 第 44 行.
+SQL: SELECT * FROM `customer` WHERE `is_auth` = 1 AND ( `auth_time` > 1427817600 AND `auth_time` < 1743523200  ) ORDER BY auth_time desc LIMIT 0,15   [ RunTime:0.240013s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: startTime D:\wamp\www\hizhu\Application\Runtime\Cache\Home\ef908816fe1538536da457bb5abcc42d.php 第 72 行.
+NOTIC: [8] Undefined index: endTime D:\wamp\www\hizhu\Application\Runtime\Cache\Home\ef908816fe1538536da457bb5abcc42d.php 第 72 行.
+NOTIC: [8] Undefined index: mobile D:\wamp\www\hizhu\Application\Runtime\Cache\Home\ef908816fe1538536da457bb5abcc42d.php 第 74 行.
+NOTIC: [8] Undefined index: name D:\wamp\www\hizhu\Application\Runtime\Cache\Home\ef908816fe1538536da457bb5abcc42d.php 第 78 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.056003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.056003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-07T13:38:10+08:00 ] ::1 /hizhu/Jobowner/jobownerlist.html?no=6&leftno=111
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.015000s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.015000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.037002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.037002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-07T13:38:13+08:00 ] ::1 /hizhu/Jobowner/jobownerlist.html?handle=query&no=6&leftno=111&pagecount=0&name=&mobile=&source=&update_man=&principal_man=&startTime=&endTime=&signed=&marginMin=&marginMax=&is_commission=&is_black=&status=&isMonth=&monthStart=&monthEnd=&isFee=&region_id=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.014001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.014001s ]
+SQL: select count(1) as cnt from customer a right join customerinfo b on a.id=b.customer_id where a.record_status=1 and a.is_owner=4 and a.city_code='001009001'  [ RunTime:0.024001s ]
+SQL: select a.true_name,a.mobile,b.status,b.create_time,b.principal_man,b.source,b.update_man,b.signed,b.margin,b.owner_remark,a.is_black,a.is_commission,a.is_monthly,b.region_name,b.customer_id from customer a right join customerinfo b on a.id=b.customer_id where a.record_status=1 and a.is_owner=4 and a.city_code='001009001'  order by b.create_time desc,b.id desc limit 0,8 [ RunTime:0.235014s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.040002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.040002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002001s ]
+
+[ 2017-06-07T13:38:16+08:00 ] ::1 /hizhu/Jobowner/updatejobowner.html?no=6&leftno=111&cuid=BDB25DB7-AE01-13EF-7892-800058715245
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.012001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.010001s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.014000s ]
+SQL: SELECT * FROM `customer` WHERE `id` = 'BDB25DB7-AE01-13EF-7892-800058715245' LIMIT 1   [ RunTime:0.231013s ]
+SQL: SHOW COLUMNS FROM `customerinfo` [ RunTime:0.013001s ]
+SQL: SELECT * FROM `customerinfo` WHERE `customer_id` = 'BDB25DB7-AE01-13EF-7892-800058715245' LIMIT 1   [ RunTime:0.011000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-07T13:38:20+08:00 ] ::1 /hizhu/Commission/commissionMonthly.html?no=6&leftno=111&mobile=4001234567&customer_id=BDB25DB7-AE01-13EF-7892-800058715245
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.015001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.234013s ]
+SQL: select monthly_days,monthly_money,monthly_start,monthly_end,monthly_bak,is_open,create_man,create_time,update_man,update_time,customer_id,id,is_delay,contract_type from commissionmonthly where customer_id='BDB25DB7-AE01-13EF-7892-800058715245' order by id asc limit 10 [ RunTime:0.020001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.041002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.041002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2017-06-07T13:38:46+08:00 ] ::1 /hizhu/Commission/commissionMonthly.html?no=6&leftno=111&mobile=18110960571&customer_id=BE1102E0-6B96-7B21-E8FE-78EEE0F32C89
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.013000s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.014000s ]
+SQL: select monthly_days,monthly_money,monthly_start,monthly_end,monthly_bak,is_open,create_man,create_time,update_man,update_time,customer_id,id,is_delay,contract_type from commissionmonthly where customer_id='BE1102E0-6B96-7B21-E8FE-78EEE0F32C89' order by id asc limit 10 [ RunTime:0.014001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.034002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.034002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-07T14:15:16+08:00 ] ::1 /hizhu/Commission/commissionMonthly.html?no=6&leftno=111&mobile=4001234567&customer_id=BDB25DB7-AE01-13EF-7892-800058715245
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.011001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.014001s ]
+SQL: select monthly_days,monthly_money,monthly_start,monthly_end,monthly_bak,is_open,create_man,create_time,update_man,update_time,customer_id,id,is_delay,contract_type from commissionmonthly where customer_id='BDB25DB7-AE01-13EF-7892-800058715245' order by id asc limit 10 [ RunTime:0.015001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.035002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.035002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002001s ]
+

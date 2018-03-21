@@ -1,0 +1,188 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>服务人员管理</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 最新版本渲染 -->
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/basic.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common.css">
+
+</head>
+<body>
+<include file="Public/head_city" />
+     <div class="title cf">
+    	<div class="logo fl cf">
+			<img src="__PUBLIC__/images/logo.png">
+		</div>
+		<ul class="cf fl">
+		<li><a href="{:U('Welcome/welcome')}">首页</a></li>
+			{$menutophtml}
+		</ul>
+		<div class="cf fr title_right">
+			<a class="blue" href="javascript:">欢迎您 <?php echo cookie("admin_user_name");?></a>
+			<span>|</span>
+			<a href="{:U('/Index/outlogin')}">退出</a>
+		</div>
+    </div>
+	<div class="main">
+		<div class="main_left subNavBox">
+		<include file="Public/left_menu" />
+			{$menulefthtml}
+		</div>
+		<div class="main_right">
+			<div class="common_head">
+				<h2></h2>
+			    <div class="common_head_main"></div>
+			</div>
+			<div class="common_main">
+				<h2>服务人员管理列表<a href="__URL__/addleadtemp.html?no=1&leftno=126" class="btn_a">新增服务人员</a></h2>
+				<div class="table">
+					<table>
+						<thead>
+							<tr>
+								<th>序号</th>
+								<th>区域</th>
+								<th>服务标题</th>
+								<th>服务人姓名</th>
+								<th>服务人手机</th>
+								<th>付款人数</th>
+								<th>退款人数</th>
+								<th>排序</th>
+								<th>维护信息</th>
+								<th>租客信息</th>
+								<th>隐藏</th>
+								<th>设置找室友</th>
+							</tr>
+						</thead>
+						<tbody>
+						    <volist name="list" id="vo">
+							<tr>
+								<td class="sortindex">{$i} <input type="hidden" value="{$vo.sort_index}"></td>
+								<td  class="manid">{$vo.region_name}<input type="hidden" value="{$vo.id}"></td>
+								<td>{$vo.title}</td>
+								<td>{$vo.name}</td>
+								<td>{$vo.mobile}</td>
+								<td>0</td>
+								<td>0</td>
+								<td><a href="javascript:;" class="moveup"><img src="__PUBLIC__/images/up.png" alt=""></a>&nbsp;&nbsp;<a href="javascript:;" class="movedown"><img src="__PUBLIC__/images/down.png" alt=""></a></td>
+								<td><a href="__URL__/updatetemp.html?no=1&leftno=126&fid={$vo.id}">维护</a></td>
+								<td><a href="__URL__/checktenant.html?no=1&leftno=126&fid={$vo.id}">查看</a></td>
+								<if condition="$vo.record_status eq '1'" >
+								<td><a href="javascript:;" onclick="UpdateStatus('{$vo.id}',0)">隐藏</a></td>
+								<else />
+								<td><a href="javascript:;" onclick="UpdateStatus('{$vo.id}',1)">取消隐藏</a></td>
+								</if>
+								<if condition="$vo.is_post eq '0'" >
+								<td><a href="javascript:;" onclick="IsPost('{$vo.id}',1)">设置</a></td>
+								<else />
+								<td><a href="javascript:;" onclick="IsPost('{$vo.id}',0)">取消</a></td>
+								</if>
+								<input type="hidden" name="owner_id" value="{$vo.id}">
+							</tr>
+							</volist>
+						</tbody>
+					</table>
+				   <div class="skip cf">
+						<p class="fl skip_left">共{$pagecount}条记录，每页15条</p>
+						<p class="fr skip_right">
+							{$show}
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	 <script src="__PUBLIC__/js/jquery.js"></script>
+    <script src="__PUBLIC__/js/common.js"></script>
+	<script type="text/javascript">
+			$(".table table tbody tr").each(function(index,object){
+		    var owner_id=$(object).find("input[name='owner_id']").val(); 
+		      if(owner_id!="undefined"&&owner_id!=""){
+		      	var tr_obj=$(this);
+			    $.get("__URL__/pfcount.html",{owner_id:owner_id,index:index},function(data){
+				      tr_obj.children("td:eq(5)").text(data.pcount);
+				      tr_obj.children("td:eq(6)").text(data.fcount);
+				  },"json");
+			   }
+			});
+
+    	$(document).ready(function () {
+	        $('.moveup').bind('click', function (e) {
+	            var obj = $(e.target).closest('tr');
+	            c_pre($(obj[0]));
+	        });
+	        $('.movedown').bind('click', function (e) {
+	            var obj = $(e.target).closest('tr');
+	            c_next($(obj[0]));
+	        });
+	    });
+	 
+	    function c_pre(o) {
+	        var pres = o.prevAll('tr');
+	        if (pres.length > 0) {
+	            var tmp = o.clone(true);
+	            var oo = pres[0];
+	            /*roomid,sort*/
+	            var manidOne=$(oo).find('td.manid').find('input').val();
+	            var manidTwo=$(o).find('td.manid').find('input').val();
+	            var sortOne=$(oo).find('td.sortindex').find('input').val();
+	            var sortTwo=$(o).find('td.sortindex').find('input').val();
+	            $.get("__URL__/moveUpDownTopMan",{manid:manidOne,sort_index:sortTwo,manid2:manidTwo,sort_index2:sortOne},function(data){
+	            	if(data.status!="200"){
+	            		alert(data.msg);
+	            	}
+	            },"json");
+	            $(tmp).find('td.sortindex').find('input').val(sortOne);
+	            $(oo).find('td.sortindex').find('input').val(sortTwo);
+	            o.remove();
+	            $(oo).before(tmp);
+	        }
+	    }
+	    function c_next(o) {
+	        var nexts = o.nextAll('tr');
+	        if (nexts.length > 0) {
+	            var tmp = o.clone(true);
+	            var oo = nexts[0];
+	            /*roomid,sort*/
+	            var manidOne=$(oo).find('td.manid').find('input').val();
+	            var manidTwo=$(o).find('td.manid').find('input').val();
+	            var sortOne=$(oo).find('td.sortindex').find('input').val();
+	            var sortTwo=$(o).find('td.sortindex').find('input').val();
+	            $.get("__URL__/moveUpDownTopMan",{manid:manidOne,sort_index:sortTwo,manid2:manidTwo,sort_index2:sortOne},function(data){
+	            	if(data.status!="200"){
+	            		alert(data.msg);
+	            	}
+	            },"json");
+	            $(tmp).find('td.sortindex').find('input').val(sortOne);
+	            $(oo).find('td.sortindex').find('input').val(sortTwo);
+	            o.remove();
+	            $(oo).after(tmp);
+	        }
+	    }
+
+	    function UpdateStatus(id,type){
+	    	if(confirm("确认修改？")){
+	    		 $.get("__URL__/updatestatus.html",{manid:id,type:type},function(data){
+	            	if(data.status=="200"){
+	            		location.reload();
+	            	}
+	            },"json");
+	    	}
+	    }
+	    //设置找室友
+	    function IsPost(id,type){
+	    	if(confirm("确认修改？")){
+	    		 $.get("__URL__/updatepost.html",{manid:id,type:type},function(data){
+	            	if(data.status=="200"){
+	            		location.reload();
+	            	}else if(data.status=="201"){
+	            		alert("有服务人员已设置，请先取消");
+	            	}else if(data.status=="202"){
+	            		alert("该服务人员已隐藏");
+	            	}
+	            },"json");
+	    	}
+
+	    }
+	</script>
+</body>
+</html>

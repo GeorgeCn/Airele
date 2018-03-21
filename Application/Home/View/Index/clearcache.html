@@ -1,0 +1,54 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>清除缓存</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 最新版本渲染 -->
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/basic.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common.css">
+    
+</head>
+<body>
+
+	<div class="main">
+		<div class="main_right">
+			<div class="common_head">
+				<h2>清除缓存选项</h2>
+			</div>
+			<div class="common_main">
+				<div class="table" id="dataDiv">
+					<table width="70%">
+						<thead>
+							<tr>
+								<th>序号</th>
+								<th>缓存项目</th>
+								<th>缓存时长</th>
+								<th>清理缓存</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>1</td>
+								<td>用户菜单</td>
+								<td>1小时</td>
+								<td><a href="javascript:;" onclick="clearCache('customerMenu')">清理</a></td>
+							</tr>
+						</tbody>
+					</table>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="__PUBLIC__/js/jquery.js"></script>
+<script src="__PUBLIC__/js/common.js"></script>
+<script type="text/javascript">
+	function clearCache(clearType){
+		if(confirm("确认清理该缓存项？")){
+			$.get("__URL__/reflushCache",{clearType:clearType},function(data){
+				alert(data.msg);
+			},"json");
+		}
+	}
+</script>
+</html>

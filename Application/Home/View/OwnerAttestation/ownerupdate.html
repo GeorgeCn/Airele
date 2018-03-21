@@ -1,0 +1,121 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>房东免审核认证</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 最新版本渲染 -->
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/audit_rent_orders.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/basic.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common.css">
+</head>
+<body>
+<include file="Public/head_city" />
+    <div class="title cf">
+    	<div class="logo fl cf">
+			<img src="__PUBLIC__/images/logo.png">
+		</div>
+		<ul class="cf fl">
+		<li><a href="{:U('Welcome/welcome')}">首页</a></li>
+			{$menutophtml}
+		</ul>
+		<div class="cf fr title_right">
+			<a class="blue" href="javascript:">欢迎您 <?php echo cookie("admin_user_name");?></a>
+			<span>|</span>
+			<a href="{:U('/Index/outlogin')}">退出</a>
+		</div>
+    </div>
+	<div class="main">
+		<div class="main_left subNavBox">
+		<include file="Public/left_menu" />
+			{$menulefthtml}
+		</div>
+		<div class="main_right">
+			<div class="common_head">
+				<h2>修改认证</h2>
+			</div>
+
+			<div class="common_main">
+				<!-- 表单 -->
+				<table class="table_one table_two">
+					<tr>
+						<td class="td_title">申请人：</td> 
+						<td>{$customer['mobile']}<if condition="strtoupper($customer['true_name']) neq ''">({$customer['true_name']})</if></td>
+					</tr>
+					<tr>
+						<td class="td_title">身份证号：</td>
+						<td class="td_main">
+							<label>{$infoarr['idcard']}</label>
+						</td>
+					</tr>
+					<tr>
+						<td class="td_title">身份证照片：</td>
+						<td class="td_main">
+							 <volist name="authimg" id="vo"  offset="0" length='2'>
+							<img src="{$vo['img_url']}" style="width:350px;height:200px;margin:10px;"/>
+							</volist>
+						</td>
+					</tr>
+
+				</table>
+				<div class="common_bottom cf">
+				<div class="back fl" style="width:15%;"></div>
+				<div class="remarks fl" style="width:500px;">
+				<div class="cf" style="position:relative;">
+				<if condition="strtoupper($infoarr['refuse_reason']) neq ''"></if>
+					<span class="fl" style="line-height:60px;">操作:</span>
+					<select id="status" style="width:320px;height:30px;margin-top:14px;float:left;margin-left:20px;" onchange="statusClick(this.options[this.selectedIndex].value)">
+						<option value="2" <?php if($customer['owner_verify']==2){echo "selected";}?>>通过认证</option>
+						<option value="5" <?php if($customer['owner_verify']==5){echo "selected";}?>>拉黑</option>
+						<option value="3" <?php if($customer['owner_verify']==3){echo "selected";}?>>拒绝认证</option>
+				    </select>
+				 </div>
+					 <div class="cf" id="jsreason" style="margin-bottom:10px;display:none">
+					 	<span class="fl" style="line-height:40px;">原因:</span>
+					    <input type="text" maxlength="30" name="reason" id="reason" placeholder="如果没有文字内容就不推送，空格不算内容" style="width:320px;height:30px;margin-top:5px;float:left;margin-left:20px;" value="{$infoarr['refuse_reason']}">
+				    </div>
+				</div>
+				<div class="through fl"><button class="buttom jujue" onclick="RefuseStatus('{$customer['id']}');">确认提交</button></div>
+		</div>
+		</div>
+		</div>
+
+		</div>
+</body>
+<script src="__PUBLIC__/js/jquery.js"></script>
+<script src="__PUBLIC__/js/common.js"></script>
+<script type="text/javascript">
+   var owner_verify={$customer['owner_verify']};
+   if(owner_verify > 2){
+   	  $("#jsreason").show();
+   }
+   function statusClick(value){
+		 if(value==2){
+		 	$("#reason").val("");
+		    $("#jsreason").hide();
+		 }else if(value==5){
+		 	$("#reason").val("");
+		 	$("#jsreason").show();
+		 }else if(value==3){
+		 	$("#reason").val("");
+		 	$("#jsreason").show();
+		 }
+	}
+
+   function RefuseStatus(customer_id){
+		var status=$("#status").val();
+   	    var reason=$("#reason").val();
+   	    if(status==5&&reason==""){
+   	    	alert("请填写原因");return false;
+   	    }else if(status==3&&reason==""){
+   	    	alert("请填写原因");return false;
+   	    }else{
+   	    	if(confirm("确认提交？")){
+   	    		$.get("__URL__/updatestatus.html",{customer_id:customer_id,status:status,reason:reason},function(data){
+	    	   		 if(data==200){
+	    	   	    	 window.location.href="__URL__/attestationlist.html?no=6&leftno=135";
+	    	   		 }
+			   },"json");
+		   }
+   	    }
+   }
+</script>
+</html>

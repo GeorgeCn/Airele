@@ -1,0 +1,305 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>职业房东详情</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 最新版本渲染 -->
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/audit_rent_orders.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/basic.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/plug/jquery.datetimepicker.css"/>
+</head>
+<body>
+<include file="Public/head_city" />
+    <div class="title cf">
+    	<div class="logo fl cf">
+			<img src="__PUBLIC__/images/logo.png">
+		</div>
+		<ul class="cf fl">
+			<li><a href="{:U('Welcome/welcome')}">首页</a></li>
+			{$menutophtml}
+		</ul>
+		<div class="cf fr title_right">
+			<a class="blue" href="javascript:">欢迎您 <?php echo cookie("admin_user_name");?></a>
+			<span>|</span>
+			<a href="{:U('/Index/outlogin')}">退出</a>
+		</div>
+    </div>
+	<div class="main">
+		<div class="main_left subNavBox">
+			<include file="Public/left_menu" />
+			{$menulefthtml}
+		</div>
+		<div class="main_right">	
+			<div class="common_main">
+				<!-- 个人信息 -->
+				<div  style="font-size:16px;margin:20px 0 10px 50px;">个人信息
+				<a href="{:U('Jobowner/ownersUpdate?no=6&leftno=204',array('id'=>$infoList['id']))}" class="btn_a" style="margin-left:50px" target="_blank">编辑</a>
+				</div>
+				<table  class="table_one table_two" style="margin:10px 0 30px 50px;width:70%;text-align:center;">
+					<thead>
+						<tr>
+							<th>用户身份</th>
+							<th>姓名</th>
+							<th>手机号</th>
+							<th>跟进状态</th>
+							<th>房东负责人</th>
+							<th>城市</th>
+							<th>所属公司</th>
+							<th>所属门店</th>
+							<th>权益</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								<switch name="infoList.is_owner">
+								<case value="0">租客</case><case value="3">个人房东</case><case value="4">职业房东</case><case value="5">中介经纪人</case>
+								</switch>
+							</td>
+							<td>{$infoList['true_name']}</td>
+							<td>{$infoList['mobile']}</td>
+							<td>
+								<switch name="infoList.status">
+										<case value="0">待跟进</case>
+										<case value="3">跟进中</case>
+										<case value="5">不合作</case>
+										<case value="2">已签约</case>、
+										<case value="4">职业房东</case>
+										<default />空
+								</switch>
+							</td>
+							<td>{$infoList['principal_man']}</td>
+							<td>
+								<switch name="infoList.city_code">
+									<case value="001009001">上海</case><case value="001001">北京</case><case value="001011001">杭州</case><case value="001010001">南京</case><case value="001019002">深圳</case>
+								</switch>
+							</td>
+							<td>{$infoList['agent_company_name']}</td>
+							<td>{$infoList['company_store_name']}</td>
+							<td>
+								<switch name="infoList['owner_verify']">
+									<case value="2">免审核</case>
+									<default/>无
+								</switch>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<!-- 端口信息 -->
+				<div  style="font-size:16px;margin:20px 0 10px 50px;">端口信息
+				<a href="{:U('Jobowner/ownerPortAdd?no=6&leftno=204',array('id'=>$infoList['id']))}" class="btn_a" style="margin-left:50px" target="_blank" id="portAdd">新增</a>
+				<a href="{:U('Jobowner/ownerPortDetail',array('id'=>$infoList['id']))}" class="btn_a" style="margin-left:50px" target="_blank">查看明细</a>
+				</div>
+				<table  class="table_one table_two" style="margin:10px 0 30px 50px;width:70%;text-align:center;">
+					<thead>
+						<tr>
+							<th>启用日期</th>
+							<th>端口时长(天)</th>
+							<th>到期日期</th>
+							<th>承诺链接数</th>
+							<th>城市</th>
+							<th>创建时间</th>
+							<th>操作</th>
+							<th>备注</th>
+						</tr>
+					</thead>
+					<tbody>
+					<if condition="$portList neq null">
+						<tr>
+							<td><if condition="($portList.service_start gt 0)">{$portList.service_start|date="Y-m-d",###}</if></td>
+							<td><?php echo round(($portList['service_end']-$portList['service_start'])/86400) ?></td>
+							<td><if condition="($portList.service_end gt 0)">{$portList.service_end|date="Y-m-d",###}</if></td>
+							<td>{$portList.links_num}</td>
+							<td>
+								<switch name="portList.city_code">
+									<case value="001009001">上海</case><case value="001001">北京</case><case value="001010001">南京</case><case value="001011001">杭州</case><case value="001019002">深圳</case>
+								</switch>
+							</td>
+							<td><if condition="($portList.create_time gt 0)">{$portList.create_time|date="Y-m-d H:i:s",###}</if></td>
+							<td>
+								<a href="javascript:;" onclick="portstopdown('{$portList.id}','{$portList.customer_id}','{$portList.service_start}')" class="btn_a" style="margin:0px 20px 5px 20px">&nbsp;停用&nbsp;</a>
+								<a href="{:U('Jobowner/ownerPortDelay',array('id'=>$portList['id'],'customer_id'=>$infoList['id']))}" class="btn_a" target="_blank" id="portDelay">延期&nbsp;</a>
+							</td>
+							<td>{$portList.memo}</td>
+						</tr>
+					</if>
+					</tbody>
+				</table>
+				<!-- 包月 -->
+				<div  style="font-size:16px;margin:20px 0 10px 50px;">包月
+				<if condition="$monthlyList.is_open eq 0">
+				<a href="{:U('Jobowner/ownerMonthlyAdd?no=6&leftno=204',array('id'=>$infoList['id']))}" class="btn_a" style="margin-left:80px" target="_blank">新增</a>
+				</if>
+				</div>
+				<table  class="table_one table_two" style="margin:10px 0 30px 50px;width:70%;text-align:center;">
+					<thead>
+						<tr>
+							<th>启用时间</th>
+							<th>到期时间</th>
+							<th>合同金额</th>
+							<th>操作时间</th>
+							<th>操作人</th>
+							<th>操作</th>
+							<th>备注</th>
+						</tr>
+					</thead>
+					<tbody>
+					<if condition="$monthlyList neq null">
+						<tr>
+							<td>
+								<if condition="($monthlyList.monthly_start gt 0)">{$monthlyList.monthly_start|date="Y-m-d",###}</if>
+							</td>
+							<td>
+								<if condition="($monthlyList.monthly_end gt 0)">{$monthlyList.monthly_end|date="Y-m-d",###}</if>
+							</td>
+							<td>{$monthlyList.monthly_money}</td>
+							<td><if condition="($monthlyList.create_time gt 0)">{$monthlyList.create_time|date="Y-m-d H:i",###}</if></td>
+							<td>{$monthlyList.create_man}</td>
+							<td>
+								<if condition="$monthlyList.is_open eq 1">
+								<a href="javascript:;" onclick="monthlystopdown('{$monthlyList.id}','{$monthlyList.customer_id}')" class="btn_a" style="margin:0px 20px 5px 20px">&nbsp;停用&nbsp;</a>
+								<elseif condition="$monthlyList.is_open eq 0"/>停用
+								</if>
+							</td>
+							<td>{$monthlyList.monthly_bak}</td>
+						</tr>
+					</if>
+					</tbody>
+				</table>
+				<!-- 佣金 -->
+				<div  style="font-size:16px;margin:20px 0 10px 50px;">佣金
+				<if condition="$commissionList.is_open eq 0">
+				<a href="{:U('Jobowner/ownerCommissionAdd?no=6&leftno=204',array('id'=>$infoList['id']))}" class="btn_a" style="margin-left:80px" target="_blank" id="isOpen">新增</a>
+				</if>
+				</div>
+				<table  class="table_one table_two" style="margin:10px 0 30px 50px;width:70%;text-align:center;">
+					<thead>
+						<tr>
+							<th>启用时间</th>
+							<th>到期时间</th>
+							<th>合同金额</th>
+							<th>佣金基数</th>
+							<th>结算方式</th>
+							<th>操作时间</th>
+							<th>操作人</th>
+							<th>操作</th>
+							<th>备注</th>
+						</tr>
+					</thead>
+					<tbody>
+					<if condition="$commissionList neq null">
+						<tr>
+							<td>
+								<if condition="$commissionList.use_time gt 0">{$commissionList.use_time|date="Y-m-d",###}</if>
+							</td>
+							<td>
+								<if condition="$commissionList.stop_time gt 0">{$commissionList.stop_time|date="Y-m-d",###}</if>
+							</td>
+							<td>
+								<if condition="$commissionList.contract_type eq 0">{$commissionList.contract_money}%
+								<elseif condition="$commissionList.contract_type eq 1" />{$commissionList.contract_money}
+								</if>
+							</td>
+							<td>
+								<if condition="$commissionList.contract_base eq 1">1个月
+								<elseif condition="$commissionList.contract_base eq 3" />1年
+								</if>
+							</td>
+							<td>
+								<if condition="$commissionList.pay_method eq 1">次结
+								<elseif condition="$commissionList.pay_method eq 2" />月结
+								</if>
+							</td>
+							<td>
+								<if condition="($commissionList.create_time gt 0)">{$commissionList.create_time|date="Y-m-d H:i",###}</if>
+							</td>
+							<td>{$commissionList.create_man}</td>
+							<td>
+								<if condition="$commissionList.is_open eq 1">
+								<a href="javascript:;" onclick="commissionstopdown('{$commissionList.id}','{$commissionList.customer_id}')" class="btn_a" style="margin:0px 20px 5px 20px">&nbsp;停用&nbsp;</a>
+								<elseif condition="$commissionList.is_open eq 0"/>停用
+								</if>
+							</td>
+							<td>{$commissionList.memo}</td>
+						</tr>
+					</if>
+					</tbody>
+				</table>
+				<!-- 置顶 -->
+				<div  style="font-size:16px;margin:20px 0 10px 50px;">置顶</div>
+				<table  class="table_one table_two" style="margin:10px 0 30px 50px;width:70%;text-align:center;">
+					<thead>
+						<tr>
+							<th>置顶房间编号</th>
+							<th>置顶位</th>
+							<th>行政区</th>
+							<th>商圈</th>
+							<th>地铁线</th>
+							<th>地铁站</th>
+							<th>操作时间</th>
+							<th>操作人</th>
+						</tr>
+					</thead>
+					<tbody>
+						<foreach name="stickList" item="vo">
+						<tr>
+							<td>{$vo.room_no}</td>
+							<td>
+								<switch name="vo.top_type"><case value="0">不置顶</case><case value="1">首页</case><case value="2">全城市</case><case value="3">区域</case><case value="4">板块</case><case value="5">地铁线</case><case value="6">地铁站</case><default/></switch>
+							</td>
+							<td>{$vo.region_name}</td>
+							<td>{$vo.scope_name}</td>
+							<td>{$vo.subwayline_name}</td>
+							<td>{$vo.subway_name}</td>
+							<td>
+								<if condition="$vo.toproom_createtime gt 0">{$vo.toproom_createtime|date="Y-m-d H:i:s",###}</if>
+							</td>
+							<td>{$vo.create_man}</td>
+						</tr>
+						</foreach>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</body>
+ <script src="__PUBLIC__/js/jquery.js"></script>
+ <script src="__PUBLIC__/js/common.js"></script>
+ <script src="__PUBLIC__/plug/jquery.datetimepicker.js"></script>
+<script type="text/javascript">
+$(document).ready(function(e) {
+	var portEndTime = "<?php echo $portList['service_end'];?>";
+	var timestamp = Date.parse(new Date());
+	if(portEndTime*1000 > timestamp+60000) {
+		$("#portAdd").hide();
+	} else {
+		$("#portDelay").hide();
+	}
+})
+function portstopdown(id,cid,time){
+		if(confirm('确认停用端口吗？')){
+			$.get('__URL__/ownerPortStop?id='+id+'&customer_id='+cid+'&service_start='+time,function(data){
+				alert(data.message);
+				document.location.reload();
+			},"json");
+		}
+}
+function monthlystopdown(id,cid){
+		if(confirm('确认停用包月吗？')){
+			$.get('__URL__/ownerMonthlyStop?id='+id+'&customer_id='+cid,function(data){
+				alert(data.message);
+				document.location.reload();
+			},"json");
+		}
+}
+function commissionstopdown(id,cid){
+		if(confirm('确认停用佣金吗？')){
+			$.get('__URL__/ownerCommissionStop?id='+id+'&customer_id='+cid,function(data){
+				alert(data.message);
+				document.location.reload();
+			},"json");
+		}
+}
+
+</script>
+</html>

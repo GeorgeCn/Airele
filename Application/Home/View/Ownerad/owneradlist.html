@@ -1,0 +1,102 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>banner配置</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 最新版本渲染 -->
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/basic.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/parameter_management_house.css">
+
+</head>
+<body>
+<include file="Public/head_city" />
+      <div class="title cf">
+    	<div class="logo fl cf">
+			<img src="__PUBLIC__/images/logo.png">
+		</div>
+		<ul class="cf fl">
+		<li><a href="{:U('Welcome/welcome')}">首页</a></li>
+			{$menutophtml}
+		</ul>
+		<div class="cf fr title_right">
+			<a class="blue" href="javascript:">欢迎您 <?php echo cookie("admin_user_name");?></a>
+			<span>|</span>
+			<a href="{:U('/Index/outlogin')}">退出</a>
+		</div>
+    </div>
+	<div class="main">
+		<div class="main_left subNavBox">
+		<include file="Public/left_menu" />
+			{$menulefthtml}
+		</div>
+		<div class="main_right">
+			<div class="common_head">
+			<h2></h2>
+				<!-- 	<form action="{:U('Paramappico/paramAppIcoList')}" method="get">
+				   <input type="hidden" name="no" value="1">
+				    <input type="hidden" name="leftno" value="25">
+						<table class="table_one" style="margin-top:0px">
+						<tr>
+							<td class="td_title">房源类型：</td>
+							<td class="td_main">
+								<select name="keyword">
+								 <option value="3" <?php if($_GET['keyword']==3){echo "selected";}?>>公共设施</option>
+								 <option value="11" <?php if($_GET['keyword']==11){echo "selected";}?>>房间设施</option>
+								</select>&nbsp;&nbsp;&nbsp;
+								
+							</td>
+							<td class="td_title"></td>
+							<td class="td_main"></td>
+						</tr>
+					</table>
+					<p class="head_p"><button class="btn_a">搜索</button></p>
+					 </form> -->
+				</div>
+				<div class="common_main">
+					<h2>Banner列表<a href="__URL__/addtemp.html?no=162&leftno=168" class="btn_a">新增banner</a></h2>
+				<div class="table">
+					<table>
+						<thead>
+							<tr>
+								<th>序号</th>
+								<th>banner图片</th>
+								<th>跳转地址</th>
+								<th>排序</th>
+								<th>显示/隐藏</th>
+								<th>操作</th>
+							</tr>
+						</thead>
+						<tbody>
+						<volist name="list" id="vo">
+							<tr>
+								<td>{$i}</td>
+								<td><img src="{$vo['img_url']}" style="width:180px;height:120px;margin:5px;"/></td>
+								<td>{$vo['link']}</td>
+								<td>{$vo['sort_index']}</td>
+								<td><?php if($vo['is_display']==0){echo"隐藏";}elseif($vo['is_display']==1){echo"显示";}?></td>
+								<td><a href="javascript:;" onclick="if(confirm('确定要删除吗？')){deletedata('{$vo['id']}');}">删除</a>&nbsp;&nbsp;&nbsp;
+								<a href="__URL__/updatetemp.html?no=162&leftno=168&upid={$vo['id']}">修改</a></td>
+							</tr>
+						</volist>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			</div>
+		</div>
+	</div>
+    <script src="__PUBLIC__/js/jquery.js"></script>
+    <script src="__PUBLIC__/js/common.js"></script>
+   <script src="__PUBLIC__/js/jquery.form.js"></script>
+   <script>
+   	function deletedata(pid){
+		$.post('__URL__/removeAdindex.html',{pid:pid},function(data){
+			if(data.status!="200"){
+				alert(data.msg);
+			}window.location.reload();
+		},'json');
+	}
+
+   </script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>修改账户</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 最新版本渲染 -->
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/audit_rent_orders.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/basic.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common.css">
+<style type="text/css">
+	.js_gl{display: none;}
+	.checknone{display:none;}
+</style>
+</head>
+<body>
+<include file="Public/head_city" />
+    <div class="title cf">
+    	<div class="logo fl cf">
+			<img src="__PUBLIC__/images/logo.png">
+		</div>
+		<ul class="cf fl">
+		<li><a href="{:U('Welcome/welcome')}">首页</a></li>
+			{$menutophtml}
+		</ul>
+		<div class="cf fr title_right">
+			<a class="blue" href="javascript:">欢迎您 <?php echo cookie("admin_user_name");?></a>
+			<span>|</span>
+			<a href="{:U('/Index/outlogin')}">退出</a>
+		</div>
+    </div>
+	<div class="main">
+		<div class="main_left subNavBox">
+		<include file="Public/left_menu" />
+			{$menulefthtml}
+		</div>
+		<div class="main_right">
+			<div class="common_head">
+				<h2>修改账户</h2>
+			</div>
+			<div class="common_main">
+				<form action="{:U('Account/upSubAccount')}" method="post" id="form">
+
+				<input type="hidden" name="user_id" value="{$user['id']}">
+				 <input type="hidden" name="user_name" value="{$user['user_name']}">
+					<table class="table_one table_two">
+						<tr>
+							<td class="td_title"><span>*</span>账户名称：</td>
+							<td class="td_main">{$user['user_name']}</td>
+						</tr>
+						<tr>
+							<td class="td_title"><span>*</span>员工工号：</td>
+							<td class="td_main"><input type="text" name="staffid" value="{$user['staffid']}"></td>
+						</tr>
+						<tr>
+							<td class="td_title"><span>*</span>员工姓名：</td>
+							<td class="td_main"><input type="text" name="real_name" value="{$user['real_name']}"></td>
+						</tr>
+						<tr>
+							<td class="td_title"><span>*</span>员工手机号：</td>
+							<td class="td_main"><input type="text" name="mobile" value="{$user['mobile']}"></td>
+						</tr>
+						<tr>
+							<td class="td_title"><span>*</span>邮箱：</td>
+							<td class="td_main"><input type="text" name="email" value="{$user['email']}"></td>
+						</tr>
+						<tr>
+							<td class="td_title"><span>*</span>城市：</td>
+							<td class="td_main">
+							<volist name="admincity" id="vo">
+							<label><input type="checkbox" name="admincity[]" value="{$vo['city_no']}" <?php if(strstr($user['city_auth'],$vo['city_no'])){echo "checked";}?>>&nbsp;{$vo['city_name']}</label>&nbsp;&nbsp;&nbsp;
+							</volist>
+							</td>
+						</tr>
+						<tr>
+							<td class="td_title"><span>*</span>部门：</td>
+							<td class="td_main">
+								<select name="department">
+								  <option value="住宿合作" <?php if($user['department']=="住宿合作"){echo"selected";}?>>住宿合作</option>
+								  <option value="技术" <?php if($user['department']=="技术"){echo"selected";}?>>技术</option>
+								  <option value="设计" <?php if($user['department']=="设计"){echo"selected";}?>>设计</option>
+								  <option value="行政" <?php if($user['department']=="行政"){echo"selected";}?>>行政</option>
+								  <option value="产品" <?php if($user['department']=="产品"){echo"selected";}?>>产品</option>
+								  <option value="市场推广" <?php if($user['department']=="市场推广"){echo"selected";}?>>市场推广</option>
+								  <option value="客服" <?php if($user['department']=="客服"){echo"selected";}?>>客服</option>
+								  <option value="运营兼职" <?php if($user['department']=="运营兼职"){echo"selected";}?>>运营兼职</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td class="td_title"><span></span>密码：</td>
+							<td class="td_main"><input type="password" name="pwd" value=""></td>
+						</tr>
+						<tr>
+							<td class="td_title"><span></span>再次输入密码：</td>
+							<td class="td_main"><input type="password" name="pwds"></td>
+						</tr>
+					</table>
+					<div class="addhouse_last addhouse_last_room">
+						<a href="{:U('Account/upaccountList')}?no=1&leftno=79" class="btn_b">返回</a>
+						<button class="btn_a" onclick="return check();">确定提交</button>
+					</div>
+				</form>
+			</div>
+		</div>
+</body>
+    <script src="__PUBLIC__/js/jquery.js"></script>
+    <script src="__PUBLIC__/js/common.js"></script>
+
+<script type="text/javascript">
+var public_check='{$menustr}';
+	if(public_check !=''){
+		var equipment_array=public_check.split(",");
+		for (var i = equipment_array.length - 1; i >= 0; i--){
+			$("input[name^=public_check][value="+equipment_array[i]+"]").attr("checked","checked");
+		};
+	}
+	/*提交表单*/
+ function check(){
+	   var user_name=$("input[name='user_name']").val();
+	   var staffid=$("input[name='staffid']").val();
+	   var real_name=$("input[name='real_name']").val();
+	   var mobile=$("input[name='mobile']").val();
+	   var email=$("input[name='email']").val();
+	   var pwd=$("input[name='pwd']").val();
+	   var pwds=$("input[name='pwds']").val();
+	   var admincity=$("input[type='checkbox']").is(':checked')
+	    var re = /^(\w-*\.*)+@hizhu+(\.\w{2,})+$/;
+	  if(staffid==""){
+		   alert("员工工号不能为空！");
+		   return false;
+	   }else if(real_name==""){
+		   alert("员工姓名不能为空！");
+		   return false;
+	   }else if(mobile==""){
+		   alert("请输入员工手机号！");
+		   return false;
+	   }else if(email==""){
+		   alert("请输入邮箱地址");
+		   return false;
+	   }else if(email!=""&& !re.test(email)){
+		   alert("请正确输入邮箱");
+		   return false;
+	   }else if(admincity==false){
+		   alert("请选择城市");
+		   return false;
+	   }else if(pwd!=""){
+		  if(pwds==""){
+		      alert("再次输入密码不能为空！");
+		      return false;
+	  	  }else if(pwds!=pwd){
+		      alert("两次输入密码不一致！");
+		      return false;
+	      }
+	   }else{
+		   $("#form").submit();
+	   } 
+   }
+</script>
+</html>

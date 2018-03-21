@@ -1,0 +1,183 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>批量刷新条件设置</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 最新版本渲染 -->
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/basic.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common.css">
+</head>
+<body>
+<include file="Public/head_city" />
+    <div class="title cf">
+    	<div class="logo fl cf">
+			<img src="__PUBLIC__/images/logo.png">
+		</div>
+		<ul class="cf fl">
+		<li><a href="{:U('Welcome/welcome')}">首页</a></li>
+			{$menutophtml}
+		</ul>
+		<div class="cf fr title_right">
+			<a class="blue" href="javascript:;">欢迎您 <?php echo cookie("admin_user_name");?></a>
+			<span>|</span>
+			<a href="{:U('/Index/outlogin')}">退出</a>
+		</div>
+    </div>
+	<div class="main">
+		<div class="main_left subNavBox">
+		<include file="Public/left_menu" />
+			{$menulefthtml}
+		</div>
+		<div class="main_right">
+			<div class="common_head">
+				<h2></h2>
+				<div class="common_head_main">
+				</div>
+			</div>
+			<div class="common_main">
+				<h2>列表<a href="__URL__/addrefreshwhere" target="_blank" class="btn_a">新增刷新</a></h2>
+				<div class="table" id="dataDiv">
+					<table>
+						<thead>
+							<tr>
+								<th>序号</th>
+								<th>刷新条件</th>
+								<th>创建人</th>
+								<th>创建时间</th>
+								<th>刷新时间</th>
+								<th>操作</th>
+							</tr>
+						</thead>
+						<tbody>
+							<volist name="list" id="vo">
+							<tr>
+								<td>{$i}</td>
+								<td>{$vo.condition_desc}</td>
+								<td>{$vo.create_man}</td>
+								<td><if condition="($vo.create_time gt 0)">{$vo['create_time']|date="Y-m-d H:i:s",###}</if></td>
+								<td><a href="#" onclick="showDialog('{$vo.id}',this)">设置</a></td>	
+								<td><a href="#" onclick="removeRefresh('{$vo.id}',this)">删除</a></td>							
+							</tr>
+							</volist>
+						</tbody>
+					</table>
+				
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--浮层(设置刷新时间) -->
+	<div id="dialogSettime" style="position:absolute;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.6);z-index:999;display:none;">
+		<div style="width:380px;height:260px;background:#fff;position:absolute;left:55%;margin-left:-300px;top:40%;margin-top:-55px;border-radius:10px;overflow:hidden;padding:30px;">
+			<form method="post" action="__URL__/refreshtimeSubmit">
+			<label style="height:30px;line-height:30px;margin-left:50px;">刷新时间1：</label>
+			<select name="ddlHour1" style="width:60px;height:28px;margin:10px 0;">
+			<option value=""></option><option value="8">8</option><option value="9">9</option>
+			<option value="10">10</option><option value="11">11</option><option value="12">12</option>
+			<option value="13">13</option><option value="14">14</option><option value="15">15</option>
+			<option value="16">16</option><option value="17">17</option><option value="18">18</option>
+			<option value="19">19</option><option value="20">20</option><option value="21">21</option>
+			</select>&nbsp;<select name="ddlMinute1" style="width:50px;height:28px;margin:10px 0;">
+			<option value=""></option><option value="0">00</option><option value="15">15</option>
+			<option value="30">30</option><option value="45">45</option>
+			</select><br>
+			<label style="height:30px;line-height:30px;margin-left:50px;">刷新时间2：</label>
+			<select name="ddlHour2" style="width:60px;height:28px;margin:10px 0;">
+			<option value=""></option><option value="8">8</option><option value="9">9</option>
+			<option value="10">10</option><option value="11">11</option><option value="12">12</option>
+			<option value="13">13</option><option value="14">14</option><option value="15">15</option>
+			<option value="16">16</option><option value="17">17</option><option value="18">18</option>
+			<option value="19">19</option><option value="20">20</option><option value="21">21</option>
+			</select>&nbsp;<select name="ddlMinute2" style="width:50px;height:28px;margin:10px 0;">
+			<option value=""></option><option value="0">00</option><option value="15">15</option>
+			<option value="30">30</option><option value="45">45</option>
+			</select><br>
+			<label style="height:30px;line-height:30px;margin-left:50px;">刷新时间3：</label>
+			<select name="ddlHour3" style="width:60px;height:28px;margin:10px 0;">
+			<option value=""></option><option value="8">8</option><option value="9">9</option>
+			<option value="10">10</option><option value="11">11</option><option value="12">12</option>
+			<option value="13">13</option><option value="14">14</option><option value="15">15</option>
+			<option value="16">16</option><option value="17">17</option><option value="18">18</option>
+			<option value="19">19</option><option value="20">20</option><option value="21">21</option>
+			</select>&nbsp;<select name="ddlMinute3" style="width:50px;height:28px;margin:10px 0;">
+			<option value=""></option><option value="0">00</option><option value="15">15</option>
+			<option value="30">30</option><option value="45">45</option>
+			</select><br>
+			<label style="height:30px;line-height:30px;margin-left:50px;">刷新时间4：</label>
+			<select name="ddlHour4" style="width:60px;height:28px;margin:10px 0;">
+			<option value=""></option><option value="8">8</option><option value="9">9</option>
+			<option value="10">10</option><option value="11">11</option><option value="12">12</option>
+			<option value="13">13</option><option value="14">14</option><option value="15">15</option>
+			<option value="16">16</option><option value="17">17</option><option value="18">18</option>
+			<option value="19">19</option><option value="20">20</option><option value="21">21</option>
+			</select>&nbsp;<select name="ddlMinute4" style="width:50px;height:28px;margin:10px 0;">
+			<option value=""></option><option value="0">00</option><option value="15">15</option>
+			<option value="30">30</option><option value="45">45</option>
+			</select><br>
+			<label style="height:30px;line-height:30px;margin-left:50px;">刷新时间5：</label>
+			<select name="ddlHour5" style="width:60px;height:28px;margin:10px 0;">
+			<option value=""></option><option value="8">8</option><option value="9">9</option>
+			<option value="10">10</option><option value="11">11</option><option value="12">12</option>
+			<option value="13">13</option><option value="14">14</option><option value="15">15</option>
+			<option value="16">16</option><option value="17">17</option><option value="18">18</option>
+			<option value="19">19</option><option value="20">20</option><option value="21">21</option>
+			</select>&nbsp;<select name="ddlMinute5" style="width:50px;height:28px;margin:10px 0;">
+			<option value=""></option><option value="0">00</option><option value="15">15</option>
+			<option value="30">30</option><option value="45">45</option>
+			</select>
+			<input type="hidden" id="modify_id" name="modify_id">
+			</form>
+			<div  style="text-align:center;margin-top:0px;">
+				
+				<button class="btn_b" style="margin-right:30px;" id="btn_cancel">取消</button>
+				<button class="btn_a" id="btn_save">保存</button>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="__PUBLIC__/js/jquery.js"></script>
+<script src="__PUBLIC__/js/common.js"></script>
+<script type="text/javascript">
+	function showDialog(mid,obj){
+		$("#dialogSettime").show();
+		$("#modify_id").val(mid);
+		/*绑定已有刷新时间点 */
+		$.get('__URL__/getRefreshtimes?rid='+mid,function(data){
+			if(data!=''){
+				var dataLen=data.length;
+				for (var i = 0; i < dataLen; i++) {
+					var ddlHour="select[name='ddlHour"+(i+1)+"']";
+					$(ddlHour).val(data[i].execute_hour);
+					var ddlMinute="select[name='ddlMinute"+(i+1)+"']";
+					$(ddlMinute).val(data[i].execute_minute);
+				}
+			}
+		},'json');
+	}
+	$("#btn_cancel").click(function(){
+		$("#dialogSettime").hide();
+		for (var i = 0; i < 6; i++) {
+			var ddlHour="select[name='ddlHour"+(i+1)+"']";
+			$(ddlHour).val('');
+			var ddlMinute="select[name='ddlMinute"+(i+1)+"']";
+			$(ddlMinute).val('');
+		}
+	});
+	
+	/*保存 */
+	$("#btn_save").click(function(){
+		$(this).unbind("click").text("提交中");
+		$("form").submit();
+	});
+	function removeRefresh(rid,obj){
+		if(confirm('确定要删除吗？')){
+			$.post('__URL__/removeRefresh',{rid:rid},function(data){
+				alert(data.message);
+				if(data.status=="200"){
+					$(obj).parent().parent().remove();
+				}
+			},'json');
+		}
+	}
+</script>
+
+</html>

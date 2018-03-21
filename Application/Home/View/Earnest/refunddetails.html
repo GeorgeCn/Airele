@@ -1,0 +1,246 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>订金单详情</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 最新版本渲染 -->
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/audit_rent_orders.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/basic.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common.css">
+
+</head>
+<body>
+<include file="Public/head_city" />
+  <div class="title cf">
+    	<div class="logo fl cf">
+			<img src="__PUBLIC__/images/logo.png">
+		</div>
+		<ul class="cf fl">
+		<li><a href="{:U('Welcome/welcome')}">首页</a></li>
+		{$menutophtml}
+		</ul>
+		<div class="cf fr title_right">
+			<a class="blue" href="javascript:">欢迎您 <?php echo cookie("admin_user_name");?></a>
+			<span>|</span>
+			<a href="{:U('/Index/outlogin')}">退出</a>
+		</div>
+    </div>
+<!-- <div class="floatDiv">
+		<div class="desk"></div>
+		<div class="floatDiv_main">
+			<table>
+				<caption>订单编号:{$ordersdetails.id}</caption>
+				<thead>
+					<th>序号</th>
+					<th>操作</th>
+					<th>操作人</th>
+					<th>操作时间</th>
+					<th>备注</th>
+				</thead>
+				<tbody>
+				  <volist name="statuslist" id="vo">
+					<tr>
+						<td>{$i}</td>
+						<td><?php if($vo['order_status']==0){echo"租客提交订单";}elseif($vo['order_status']==1){echo"租客取消订单";}elseif($vo['order_status']==2){echo"审核通过";}elseif($vo['order_status']==3){echo"审核拒绝";}elseif($vo['order_status']==4){echo"租客付款";}elseif($vo['order_status']==6){echo"机构打款";}elseif($vo['order_status']==7){echo"直接退款";}elseif($vo['order_status']==8){echo"打款失败退款";}?></td>
+						<td>{$vo['oper_id']}</td>
+						<td>{$vo['create_time']|date="Y-m-d H:i:s",###}</td>
+						<td>{$vo['desc']}</td>
+					</tr>
+			     </volist>
+					<tr class="out"><td colspan="5"><a href="javascript:">关闭</a></td></tr>
+				</tbody>
+			</table>
+		</div>
+	</div> -->
+
+	<div class="main">
+		<div class="main_left subNavBox">
+		<include file="Public/left_menu" />
+			{$menulefthtml}
+		</div>
+		<div class="main_right">
+			<div class="common_head">
+				<!-- <h2>确认退款</h2><span class="operate">操作记录</span> -->
+			</div>
+			<div class="common_main">
+				<table class="table_one">
+					<tr>
+						<td colspan="4"><span>订金信息</span></td>
+					</tr>
+					<tr>
+						<td class="td_title">订单编号：</td>
+						<td class="td_main">{$data['id']}</td>
+						<td class="td_title">订金金额：</td>
+						<td class="td_main red"><strong>{$data['earnest_money']}</strong> 元</td>
+					</tr>
+					<tr>
+						<td class="td_title">预计签约时间：</td>
+						<td class="td_main">{$data['signed_time']|date="Y-m-d",###}</td>
+						<td class="td_title">优惠金额：</td>
+						<td class="td_main red"><strong>{$data.coupon_money}</strong>元</td>
+					</tr>
+					<tr>
+						<td class="td_title">状态：</td>
+						<td class="td_main">
+							 <if condition="strtoupper($data['order_status']) eq '1'">
+							 待付款
+							<elseif condition="strtoupper($data['order_status']) eq '2'"/>
+					    	已付款
+							<elseif condition="strtoupper($data['order_status']) eq '3'"/>
+						    已取消
+						    <elseif condition="strtoupper($data['order_status']) eq '4'"/>
+						    已申请退款
+						     <elseif condition="strtoupper($data['order_status']) eq '5'"/>
+							已退款
+						     <elseif condition="strtoupper($data['order_status']) eq '6'"/>
+						     已打款
+							</if>
+						</td>
+						<td class="td_title">租客付款金额：</td>
+						<td class="td_main red"><strong><?php echo ($data['earnest_money']*100-$data['coupon_money']*100)/100;?></strong>元</td>
+					</tr>
+					<tr>
+						<td class="td_title">房间编号：</td>
+						<td class="td_main">{$data['room_no']}</td>
+						<td class="td_title">是否有佣金：</td>
+						<td class="td_main red">
+							<if condition="strtoupper($data['is_commission']) eq '0'">
+							 否
+							<elseif condition="strtoupper($data['is_commission']) eq '1'"/>
+					    	 是
+							</if>
+						</td>
+					</tr>
+					<tr>
+						<td class="td_title">房东电话：</td>
+						<td class="td_main">{$resource['client_phone']}</td>
+						<td class="td_title">房东姓名：</td>
+						<td class="td_main">{$resource['client_name']}</td>
+					</tr>
+					<tr>
+						<td class="td_title">房源负责人：</td>
+						<td class="td_main">{$resource['create_man']}</td>
+						<td class="td_title"></td>
+						<td class="td_main"></td>
+					</tr
+					<tr>
+						<td colspan="4"><span>房东信息</span></td>
+					</tr>
+					<tr>
+						<td class="td_title">房东姓名：</td>
+						<td class="td_main">{$data['owner_name']}</td>
+						<td class="td_title">打款给：</td>
+						<td>
+						    <if condition="strtoupper($data['number_type']) eq '1'">
+							 支付宝
+							<elseif condition="strtoupper($data['number_type']) eq '2'"/>
+					    	 私人银行卡
+							<elseif condition="strtoupper($data['number_type']) eq '3'"/>
+						     对公账号
+							</if>
+						</td>
+					</tr>
+					<tr>
+						<td class="td_title">房东手机：</td>
+						<td class="td_main">{$data['owner_mobile']}</td>
+						<td class="td_title"> <if condition="strtoupper($data['number_type']) eq '1'">
+							 支付宝账号
+							<elseif condition="strtoupper($data['number_type']) eq '2'"/>
+					    	 私人银行卡号
+							<elseif condition="strtoupper($data['number_type']) eq '3'"/>
+						     对公账号
+							</if>：</td>
+						<td>
+						   {$data['pay_number']}
+						</td>
+					</tr>
+					<tr>
+						<td colspan="4"><span>租客信息</span></td>
+					</tr>
+					<tr>
+						<td class="td_title">租客姓名：</td>
+						<td class="td_main">{$data['customer_name']}</td>
+						<td class="td_title">支付方式：</td>
+						<td>
+						   <if condition="strtoupper($paymanner['pay_platform']) eq '0'">
+							 微信
+							<elseif condition="strtoupper($paymanner['pay_platform']) eq '1'"/>
+							 银联
+							<elseif condition="strtoupper($paymanner['pay_platform']) eq '2'"/>
+							支付宝
+							</if>
+						</td>
+					</tr>
+					<tr>
+						<td class="td_title">租客手机：</td>
+						<td class="td_main">{$data['customer_mobile']}</td>
+						<td class="td_title"></td>
+						<td></td>
+					</tr>
+				</table>
+			</div>
+			<div class="common_bottom cf">
+				<div class="back fl"></div>
+				<div class="remarks fl cf">
+					<div style="float:left;" class="fl cf">
+						<span class="fl" style="line-height:60px;font-size:18px;">操作</span>
+				<select class="fl" style="width:100px;height:30px;margin:15px 35px 15px 25px;" onchange="cutClick1(this.options[this.selectedIndex].value)">
+							<option value="1">退款</option>
+							<option value="2">打款给房东</option>
+						</select>
+						<input type="hidden" id="typepay" value="1">
+					</div>
+					<div class="cf fl">
+						<span class="fl" style="line-height:60px;font-size:18px;">备注</span>
+						<input type="text" class="fl" style="width:200px;height:30px;margin-left:20px;margin-top:15px;font-size:16px;" id="js_desc">
+					</div>
+				</div>
+				<if condition="strtoupper($data['order_status']) eq '5'">
+				<div class="through fl"><button class="buttom" disabled="disabled" style="width:100px">已退款</button></div>
+				<elseif condition="strtoupper($data['order_status']) eq '6'"/>
+				<div class="through fl"><button class="buttom" disabled="disabled" style="width:100px">已打款给房东</button></div>
+				<else/>
+				<div class="through fl"><button class="buttom jujue" onclick="UpdateRemark({$data['id']})">提交</button></div>
+				</if>
+			
+			</div>
+		</div>
+</body>
+    <script src="__PUBLIC__/js/jquery.js"></script>
+     <script src="__PUBLIC__/js/common.js"></script>
+<script>
+
+    function UpdateRemark(orderid){
+			if(confirm("确认提交？")){
+				var paytype=$("#typepay").val();
+				var orderid="{$data['id']}";
+				var desc=$("#js_desc").val();
+				$.get("__URL__/refundpay.html",{orderid:orderid,paytype:paytype,desc:desc},function(data){
+    	   			 if(data.status==200){
+    	   			  window.location.href="__URL__/refundlist.html?no=7&leftno=115"; 
+    	   			 }
+				},"json");
+
+			}
+	}
+
+function cutClick1(value){
+		 if(value==1){
+		   $("#typepay").val('1');
+		  }else if(value==2){
+		  	$("#typepay").val('2');
+		  }
+	}
+
+</script>
+
+<script>
+	$(function(){
+		$(".operate").click(function(){
+			$(".floatDiv").fadeIn();
+		})
+		$(".out").click(function(){
+			$(".floatDiv").fadeOut();
+		})
+	})
+</script>
+</html>

@@ -1,0 +1,139 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>用户管理</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 最新版本渲染 -->
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/basic.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/plug/jquery.datetimepicker.css"/>
+    
+</head>
+<body>
+<include file="Public/head_city" />
+     <div class="title cf">
+    	<div class="logo fl cf">
+			<img src="__PUBLIC__/images/logo.png">
+		</div>
+		<ul class="cf fl">
+		<li><a href="{:U('Welcome/welcome')}">首页</a></li>
+			{$menutophtml}
+		</ul>
+		<div class="cf fr title_right">
+			<a class="blue" href="javascript:">欢迎您 <?php echo cookie("admin_user_name");?></a>
+			<span>|</span>
+			<a href="{:U('/Index/outlogin')}">退出</a>
+		</div>
+    </div>
+	<div class="main">
+		<div class="main_left subNavBox">
+			<include file="Public/left_menu" />
+			{$menulefthtml}
+		</div>
+		<div class="main_right">
+			<div class="common_head">
+				<h2>认证房东搜索</h2>
+				<div class="common_head_main">
+					<form action="{:U('Customer/authenticationList')}" method="get">
+					 <table class="table_one">
+						<tr>
+							<td class="td_title">认证日期：</td>
+							<td class="td_main"><input class="inpt_a" type="text" name="startTime" id="datetimepicker" value="<?php echo$_GET['startTime']?>">&nbsp;~&nbsp;<input class="inpt_a" type="text" name="endTime" id="datetimepicker1" value="<?php echo$_GET['endTime']?>"></td>
+							<td class="td_title">房东手机号：</td>
+							<td class="td_main"><input type="tel" name="mobile" maxlength="11" value="<?php echo$_GET['mobile']?>"></td>
+						</tr>
+						<tr>
+							<td class="td_title">房东姓名：</td>
+							<td class="td_main"><input type="text" name="name" value="<?php echo$_GET['name']?>"></td>
+							<td class="td_title"></td>
+							<td class="td_main"></td>
+						</tr>
+					</table>
+					<p class="head_p"><button class="btn_a">搜索</button></p>
+					</form>
+				</div>
+			</div>
+			<div class="common_main">
+				<h2>认证房东列表<a href="{:U('Customer/addAuthentication')}?dis=opym" class="btn_a">新增认证房东</a></h2>
+				<div class="table">
+					<table>
+						<thead>
+							<tr>
+								<th>序号</th>
+								<th>房东手机</th>
+								<th>房东姓名</th>
+								<th>性别</th>
+								<th>年龄段</th>
+								<th>认证状态</th>
+								<th>认证时间</th>
+								<th>操作</th>
+							</tr>
+						</thead>
+						<tbody>
+						 <volist name="list" id="vo">
+							<tr>
+								<td>{$i}</td>
+								<td>{$vo['mobile']}</td>
+								<td>{$vo['true_name']}</td>
+								<td>
+									<if condition="strtoupper($vo['sex']) eq '1'">
+									男
+									<elseif condition="strtoupper($vo['sex']) eq '0'"/>
+									女
+									<elseif condition="strtoupper($vo['sex']) eq '2'"/>
+									保密
+									</if>
+								</td>
+								<td><?php if($vo['age']=='0901'){echo"00后";}elseif($vo['age']=='0902'){echo"90后";}elseif($vo['age']=='0903'){echo"80后";}elseif($vo['age']=='0904'){echo"70后";}elseif($vo['age']=='0905'){echo"60后";}elseif($vo['age']=='0906'){echo"保密";}?></td>
+								<td>
+								<if condition="strtoupper($vo['is_auth']) eq '1'">
+									已认证
+								<elseif condition="strtoupper($vo['is_auth']) eq '0'"/>
+									已取消认证
+								</if>
+								</td>
+								<td>{$vo['auth_time']|date="Y-m-d H:i:s",###}</td>
+								<td>
+								<if condition="strtoupper($vo['is_auth']) eq '1'">
+									<a href="#" onclick="cancel('{$vo['id']}')">取消认证</a>
+								<elseif condition="strtoupper($vo['is_auth']) eq '0'"/>
+									<a href="#" onclick="certification('{$vo['id']}')">重新认证</a>
+								</if>
+								&nbsp&nbsp&nbsp&nbsp
+								<a href="{:U('Customer/upLandlord')}?uid={$vo['id']}">修改</a>
+								</td>
+							</tr>
+						 </volist>
+						</tbody>
+					</table>
+					<div class="skip cf">
+						<p class="fl skip_left">共{$pagecount}条记录，每页15条</p>
+						<p class="fr skip_right">
+						{$show}
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="__PUBLIC__/js/jquery.js"></script>
+    <script src="__PUBLIC__/js/common.js"></script>
+    <script src="__PUBLIC__/plug/jquery.datetimepicker.js"></script>
+    <script src="__PUBLIC__/js/listdata.js"></script>
+	<script>
+	$('#datetimepicker').datetimepicker({step:10,lang:'ch',timepicker:false,format:"Y-m-d"});
+	$('#datetimepicker1').datetimepicker({step:10,lang:'ch',timepicker:false,format:"Y-m-d"});
+	function cancel(resource_id){
+		if(confirm("确认取消认证？")){
+			var url="__URL__/upAuthenStatus.html?paid="+resource_id;
+			window.location.href = url;
+		}
+	}
+	function certification(res_id){
+		if(confirm("确认重新认证？")){
+			var url="__URL__/upAuthenStatus.html?paid="+res_id;
+			window.location.href = url;
+		}
+	}
+	</script>
+</body>
+</html>

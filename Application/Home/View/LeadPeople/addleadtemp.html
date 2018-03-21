@@ -1,0 +1,147 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>新增带看人员</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 最新版本渲染 -->
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/audit_rent_orders.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/basic.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/add_landlord.css">
+
+</head>
+<body>
+<include file="Public/head_city" />
+     <div class="title cf">
+    	<div class="logo fl cf">
+			<img src="__PUBLIC__/images/logo.png">
+		</div>
+		<ul class="cf fl">
+		<li><a href="{:U('Welcome/welcome')}">首页</a></li>
+			{$menutophtml}
+		</ul>
+		<div class="cf fr title_right">
+			<a class="blue" href="javascript:">欢迎您 <?php echo cookie("admin_user_name");?></a>
+			<span>|</span>
+			<a href="{:U('/Index/outlogin')}">退出</a>
+		</div>
+    </div>
+	<div class="main">
+		<div class="main_left subNavBox">
+			<include file="Public/left_menu" />
+			{$menulefthtml}
+		</div>
+		<div class="main_right">
+			<div class="common_head">
+				<h2>新增带看人员</h2>
+			</div>
+			<div class="common_main">
+			<form action="__URL__/addlead.html" method="post" id="submitForm" enctype='multipart/form-data'>
+				<table class="table_one table_two">
+					
+					<tr>
+						<td class="td_title"><span>*</span>服务区域：</td>
+						<td class="td_main">
+								<select name="region" id="region">
+						     		<option value="">请选择服务区域</option>
+								    <volist name="data" id="vo">
+								    <option value="{$vo.id}">{$vo.cname}</option>
+								    </volist>
+								</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="td_title"><span>*</span>服务人姓名：</td>
+						<td class="td_main"><input type="text" name="name"></td>
+					</tr>
+					<tr>
+						<td class="td_title"><span>*</span>服务人手机：</td>
+						<td class="td_main"><input type="tel" maxlength="11"  name="mobile"></td>
+					</tr>
+					<tr>
+						<td class="td_title"><span>*</span>服务人头像：</td>
+						<td class="td_main"><p style="width:100px;height:100px;border:1px solid #ddd;margin:10px 0;display:inline-block;" id="imglist"></p><div class="upload_photo" style="display:inline-block;margin-left:30px;">
+									<span id="yanse">上传头像</span>
+									<input type="file" id="fileupload" name="mypic">
+								</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="td_title"><span>*</span>服务标题：</td>
+						<td class="td_main"><input type="text" name="servicetitle"></td>
+					</tr>
+					<tr>
+						<td class="td_title"><span>*</span>服务价格：</td>
+						<td class="td_main"><input type="text" name="serviceprice"></td>
+					</tr>
+					<tr>
+						<td class="td_title"><span>*</span>服务说明：</td>
+						<td class="td_main"><textarea rows="10" cols="30" id="explain" name="explain">  </textarea></td>
+					</tr>
+					
+				  </table>
+				
+				  <div class="addhouse_last addhouse_last_room">
+					  <button class="btn_a" onclick="return check();">确认提交</button>
+				  </div>
+				  </form>
+			</div>
+		</div>
+ <script src="__PUBLIC__/js/jquery.js"></script>
+ <script src="__PUBLIC__/js/common.js"></script>
+    <script src="__PUBLIC__/js/jquery.form.js"></script>
+<script type="text/javascript">
+	/*提交表单*/
+ function check(){
+ 	   var isMobile=/^1[34578]\d{9}$/;
+	   var mobile=$("input[name='mobile']").val();
+	   var name=$("input[name='name']").val();
+       var region=$("#region").val();
+       var photo=$("#imglist").text();
+       var servicetitle=$("input[name='servicetitle']").val();
+       var serviceprice=$("input[name='serviceprice']").val();
+       var explain=$("#explain").val();
+	   if(region==""){
+		    alert("请选择服务区域");
+		    return false;
+	   }else if(name==""){
+	   		 alert("请输入服务人姓名");
+		    return false;
+	   }else if(!isMobile.test(mobile)){
+		   alert("请正确输入手机号");
+		   return false;
+	   }else if(servicetitle==""){
+		   alert("请输入服务标题");
+		   return false;
+	   }else if(serviceprice==""){
+		   alert("请输入服务价格");
+		   return false;
+	   }else if(explain==""){
+		   alert("请输入服务说明");
+		   return false;
+	   }
+   }
+
+    $("#fileupload").change(function(){
+		$("#submitForm").ajaxSubmit({
+			dataType:  'json',
+			data:{submitType:'upload'},
+			beforeSend: function() {
+    		},
+    		uploadProgress: function(event, position, total, percentComplete) {
+    		},
+			success: function(result) {
+			$("#imglist").text("");
+			$("#imglist").append('<img style="width:100px;height:100px;display:inline-block;" src="'+result.data.imgUrl+'"><input type="hidden" name="photo" value="'+result.data.imgUrl+'" />');
+				//$("#fileupload").val('');
+			    // $("#yanse").css("background","#ccc");
+               	// $("#fileupload").attr("disabled",true);
+			},
+			error:function(xhr){
+				alert(xhr.responseText);
+			}
+		});
+	});
+
+</script>
+</body>
+</html>

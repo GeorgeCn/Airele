@@ -1,0 +1,178 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>职业房东待确认列表</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 最新版本渲染 -->
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/basic.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/plug/jquery.datetimepicker.css"/>
+</head>
+<body>
+<include file="Public/head_city" />
+    <div class="title cf">
+    	<div class="logo fl cf">
+			<img src="__PUBLIC__/images/logo.png">
+		</div>
+		<ul class="cf fl">
+		<li><a href="{:U('Welcome/welcome')}">首页</a></li>
+			{$menutophtml}
+		</ul>
+		<div class="cf fr title_right">
+			<a class="blue" href="javascript:">欢迎您 <?php echo cookie("admin_user_name");?></a>
+			<span>|</span>
+			<a href="{:U('/Index/outlogin')}">退出</a>
+		</div>
+    </div>
+	<div class="main">
+		<div class="main_left subNavBox">
+		<include file="Public/left_menu" />
+			{$menulefthtml}
+		</div>
+		<div class="main_right">
+			<div class="common_head">
+				<h2>搜索</h2>
+				<div class="common_head_main">
+				<form action="__URL__/jobownerconfirmlist.html" method="get">
+				   <input type="hidden" name="no" value="6">
+				   <input type="hidden" name="leftno" value="116">
+					<table class="table_one">
+						<tr>
+							<td class="td_title">来源：</td>
+							<td class="td_main">
+							      <select id="js_source" name="source">
+										<option value="">全部</option>
+										<option value="app签约" <?php if(I('get.source')=="app签约"){echo "selected";}?>>app签约</option>
+										<option value="短信问房" <?php if(I('get.source')=="短信问房"){echo "selected";}?>>短信问房</option>
+										<option value="BD添加" <?php if(I('get.source')=="BD添加"){echo "selected";}?>>BD添加</option>
+										<option value="上房添加" <?php if(I('get.source')=="上房添加"){echo "selected";}?>>上房添加</option>
+										<option value="电话录音" <?php if(I('get.source')=="电话录音"){echo "selected";}?>>电话录音</option>
+										<option value="找室友发帖" <?php if(I('get.source')=="找室友发帖"){echo "selected";}?>>找室友发帖</option>
+										<option value="系统添加" <?php if(I('get.source')=="系统添加"){echo "selected";}?>>系统添加</option>
+									</select>
+							</td>
+							<td class="td_title">房东手机：</td>
+							<td class="td_main"><input type="tel" name="client_phone" value="<?php echo I('get.client_phone'); ?>"></td>
+							<td class="td_title">创建时间：</td>
+							<td class="td_main"><input class="inpt_a" type="text" name="start_time" value="<?php echo I('get.start_time'); ?>">&nbsp;~&nbsp;<input class="inpt_a" type="text"  name="end_time" value="<?php echo I('get.end_time'); ?>"></td>
+						</tr>
+						<tr>
+							<td class="td_title">状态：</td>
+							<td class="td_main">
+							      <select id="js_status" name="status">
+							         	<option value=""></option>
+										<option value="0" <?php if(strlen(I('get.status'))==1){echo "selected";}?>>待跟进</option>
+										<option value="3" <?php if(I('get.status')==3){echo "selected";}?>>跟进中</option>
+									</select>
+							</td>
+							<td class="td_title">创建人：</td>
+							<td class="td_main"><input type="text" name="create_man" value="<?php echo I('get.create_man'); ?>"></td>
+							<td class="td_title">处理人：</td>
+							<td class="td_main"><input class="inpt_a" type="text" name="update_man" value="<?php echo I('get.update_man'); ?>"></td>
+						</tr>
+					</table>
+					<p class="head_p"><button type="submit" class="btn_a">搜索</button></p>
+					</form>
+				</div>
+			</div>
+			<div class="common_main">
+				<h2>职业房东待确认列表</h2>
+				<div class="table">
+					<table>
+						<thead>
+							<tr>
+								<th>房东手机</th>
+								<th>来源</th>
+								<th>创建人</th>
+								<th>创建时间</th>
+								<th>处理人</th>
+								<th>处理时间</th>
+								<th>状态</th>
+								<th>备注</th>
+								<th>修改</th>
+							</tr>
+						</thead>
+						<tbody>
+						  <volist name="list" id="vo">
+							<tr>
+								<td><a href="__ROOT__/HouseResource/resourcelist?no=3&leftno=27&clientPhone={$vo['mobile']}" target="_blank">{$vo['mobile']}</a></td>
+								<td>{$vo['source']}</td>
+								<td>{$vo['create_man']}</td>
+								<td><gt name="vo.create_time" value="0">{$vo['create_time']|date="Y-m-d H:i",###}</gt></td>
+								<td>{$vo['update_man']}</td>
+								<td><gt name="vo.update_time" value="0">{$vo['update_time']|date="Y-m-d H:i",###}</gt></td>
+								<td><switch name="vo.status"><case value="0">待跟进</case><case value="3">跟进中</case></switch></td>
+								<td>{$vo['remark']}</td>
+								<td><a href="__URL__/confirmupdate.html?confirmid={$vo['id']}&no=6&leftno=116">修改</a></td>
+							</tr>
+				        	</volist>
+						</tbody>
+					</table>
+					<div class="skip cf">
+						<p class="fl skip_left">共{$pagecount}条记录，每页10条</p>
+						<p class="fr skip_right">
+							{$show}
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="dialogDiv" style="position:absolute;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.6);z-index:999;display:none;">
+		<div style="width:400px;height:170px;background:#fff;position:absolute;left:50%;margin-left:-200px;top:50%;margin-top:-85px;border-radius:10px;">
+			<div style="margin:30px;" class="cf">
+				<label class="fl" style="height:36px;line-height:36px;width:140px;text-align:right;">是否签约：</label>
+				<label style="height:36px;line-height:36px;text-align:center;"><input type="radio" name="is_deal" value="1">是</label>&nbsp;<label><input type="radio" name="is_deal" value="0">否</label>
+				
+			</div>
+			<div  style="text-align:center;">
+				<button class="btn_b" style="margin-right:50px;">取消</button>
+				<button class="btn_a" id="btn_submit">确认</button>
+				<input type="hidden" id="confirmId">
+			</div>
+		</div>
+	</div>
+	
+</body>
+<script src="__PUBLIC__/js/jquery.js"></script>
+<script src="__PUBLIC__/plug/jquery.datetimepicker.js"></script>
+<script src="__PUBLIC__/js/common.js"></script>
+<script src="__PUBLIC__/js/listdata.js"></script>
+<script type="text/javascript">
+$('.inpt_a').datetimepicker({validateOnBlur:false,step:5,lang:'ch',timepicker:false,yearStart:2015,yearEnd:2020,format:"Y-m-d"});
+$("#js_source").val('<?php echo I("get.source"); ?>');
+	function jobwonerConfirmNot(id,status){
+		if(confirm('确认操作？')){
+			$.get('__URL__/updateConfirm?confirmId='+id+'&confirmStatus='+status,function(data){
+				alert(data.message);
+				if(data.status=="200"){
+					window.location.reload();
+				}
+			},'json');
+		}
+	}
+	function jobwonerConfirm(pid){
+		$("#confirmId").val(pid);
+		$("#dialogDiv").show();
+	}
+	$(".btn_b").click(function(){
+		$("#dialogDiv").hide();
+	});
+	$("#btn_submit").click(function(){
+		submitConfirm();
+	});
+	function submitConfirm(){
+		var is_deal=$("input[name='is_deal']:checked").val();
+		if(is_deal==undefined){
+			alert("选择是否签约");return;
+		}
+		$("#btn_submit").unbind('click').text('提交中');
+		$.get('__URL__/updateConfirm?confirmId='+$("#confirmId").val()+'&confirmStatus=2&is_deal='+is_deal,function(data){
+			alert(data.message);
+			if(data.status=="200"){
+				window.location.reload();
+			}
+		},'json');
+	}
+</script>
+
+</html>

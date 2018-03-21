@@ -1,0 +1,105 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>发送签约短信</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 最新版本渲染 -->
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/basic.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/plug/jquery.datetimepicker.css"/>
+<style>
+		.anniu{text-align:center;padding:50px 0;width:70%;}
+		.anniu a{display:inline-block;margin:0 20px;}
+	</style>
+</head>
+<body>
+<include file="Public/head_city" />
+    <div class="title cf">
+    	<div class="logo fl cf">
+			<img src="__PUBLIC__/images/logo.png">
+		</div>
+		<ul class="cf fl">
+		<li><a href="{:U('Welcome/welcome')}">首页</a></li>
+			{$menutophtml}
+		</ul>
+		<div class="cf fr title_right">
+			<a class="blue" href="javascript:;">欢迎您 <?php echo cookie("admin_user_name");?></a>
+			<span>|</span>
+			<a href="{:U('/Index/outlogin')}">退出</a>
+		</div>
+    </div>
+	<div class="main">
+		<div class="main_left subNavBox">
+		<include file="Public/left_menu" />
+			{$menulefthtml}
+		</div>
+		<div class="main_right">
+			<div class="common_head">
+				<h2>发送签约短信</h2>
+			</div>
+			<div class="common_main">
+				<table class="table_one table_two">
+					<tr>
+						<td class="td_title"><span>*</span>手机号</td>
+						<td class="td_main"><input type="tel" name="mobile"  id="TextArea1" maxlength="11" onkeyup="words_deal();" ><span id="textCount">11</span></td>
+					</tr>
+					<tr>
+						<td class="td_title"><span>*</span>
+						<select name="moneytype" id="moneytype" style="width:100px;" onchange="cutClick(this.options[this.selectedIndex].value)">
+							<option value="0">佣金比例</option>
+							<option value="1">佣金金额</option>
+						</select>
+							
+						</td>
+						<td class="td_main"><input type="text" name="commission"> <i id="jstype">%</i></td>
+					</tr>
+					<tr>
+						<td class="td_title"><span>*</span>短信文案</td>
+						<td class="td_main">【嗨住网】 尊敬的房东，您好。请点击短信链接地址进行在线签约。http://hizhu.com/wsx</td>
+					</tr>
+				</table>
+				<div class="anniu">
+					<button class="btn_a" onclick="PushSmsSign();"> 发送签约短信</button>
+				</div>
+			</div>
+		</div>
+	</div>
+    <script src="__PUBLIC__/js/jquery.js"></script>
+    <script src="__PUBLIC__/js/common.js"></script>
+	<script>
+	function PushSmsSign(){
+	   var mobile=$("input[name='mobile']").val();
+	   var commission=$("input[name='commission']").val();
+	   var moneytype=$("#moneytype").val();
+	   var isMobile=/^1[34578]\d{9}$/;
+	  if(mobile=="" || !isMobile.test(mobile)){
+	  		alert("请输入正确手机号");
+	  }else if(commission==""){
+	  		alert("请输入佣金比例");
+	  }else{
+
+		$.get("__URL__/pushsmssgin.html",{mobile:mobile,commission:commission,moneytype:moneytype},function(data){
+    	   if(data.status==200){
+    	   	 window.location.href='__URL__/smssignlist.html?no=6&leftno=123';
+    	    }else if(data.status==201){
+    	    	alert("该房东已经签约");
+    	    }
+		},"json");
+	  }
+    }
+
+    function words_deal(){
+    var curLength=$("#TextArea1").val().length;
+       $("#textCount").text(11-$("#TextArea1").val().length);
+    }
+
+    function cutClick(value){
+		if(value==0){
+            $("#jstype").text("%");
+		}else if(value==1){
+			$("#jstype").text("元");
+		}
+	}
+
+    </script>
+</body>
+</html>

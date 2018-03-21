@@ -1,0 +1,142 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>联系房东统计</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 最新版本渲染 -->
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/basic.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/plug/jquery.datetimepicker.css"/>
+</head>
+<body>
+<include file="Public/head_city" />
+    <div class="title cf">
+    	<div class="logo fl cf">
+			<img src="__PUBLIC__/images/logo.png">
+		</div>
+		<ul class="cf fl">
+		<li><a href="{:U('Welcome/welcome')}">首页</a></li>
+			{$menutophtml}
+		</ul>
+		<div class="cf fr title_right">
+			<a class="blue" href="javascript:;">欢迎您 <?php echo cookie("admin_user_name");?></a>
+			<span>|</span>
+			<a href="{:U('/Index/outlogin')}">退出</a>
+		</div>
+    </div>
+	<div class="main">
+		<div class="main_left subNavBox">
+		<include file="Public/left_menu" />
+			{$menulefthtml}
+		</div>
+		<div class="main_right">
+			<div class="common_head">
+				<h2>查询条件</h2>
+				<div class="common_head_main">
+					<form id="searchForm" action="__URL__/contactsummary" method="get">
+						<input type="hidden" name="no" value="3">
+						<input type="hidden" name="leftno" value="122">
+						<input type="hidden" id="jump" name="p">
+						<input type="hidden" name="totalCount" value="{$totalCount}"> 
+						<table class="table_one">
+							<tr>
+								<td class="td_title">联系日期：</td>
+								<td class="td_main"><input class="inpt_a" type="text" name="startTime"  value="<?php echo isset($_GET['startTime'])?$_GET['startTime']:'' ?>">&nbsp;~&nbsp;<input class="inpt_a" type="text" name="endTime" value="<?php echo isset($_GET['endTime'])?$_GET['endTime']:'' ?>"></td>
+								<td class="td_title">区域&板块：</td>
+								<td class="td_main">
+									<select id="ddl_region" name="region" style="width:100px">
+										<option value=""></option><option value="0">空</option>
+										{$regionList}
+									</select>
+									<select id="ddl_scope" name="scope" style="width:100px">
+										{$scopeList}
+									</select>
+								</td>
+								<td class="td_title"></td>
+								<td class="td_main"></td>
+							</tr>
+							
+						</table>
+					</form>
+					<p class="head_p"><button class="btn_a" onclick="search()">搜索</button></p>
+				</div>
+			</div>
+			<div class="common_main">
+				<h2>统计列表<a href="__URL__/downloadContactSummary?<?php echo $_SERVER["QUERY_STRING"];?>" class="btn_a">下载</a></h2>
+				<div class="table" id="dataDiv">
+					<table>
+						<thead>
+							<tr>
+								<th>序号</th>
+								<th>区域</th>
+								<th>板块</th>
+								<th>联系次数</th>
+								<th>联系来自BD</th>
+								<th>预约次数</th>
+								<th>预约来自BD</th>
+								<th>浏览次数</th>
+								<th>浏览来自BD</th>
+							</tr>
+						</thead>
+						<tbody>
+							<?php $ident_num=1; ?>
+							<foreach item="vo" name="list">
+							<tr>
+								<td><?php echo $ident_num++; ?></td>
+								<td>{$vo.region_name}</td>
+								<td>{$vo.scope_name}</td>
+								
+								<td>{$vo.contact_count}</td>
+								<td>{$vo.contact_bd_count}</td>
+								<td>{$vo.appoint_count}</td>
+								<td>{$vo.appoint_bd_count}</td>
+								<td>{$vo.browse_count}</td>
+								<td>{$vo.browse_bd_count}</td>
+								
+							</tr>
+							</foreach>
+						</tbody>
+					</table>
+					<div class="skip cf">
+						<p class="fl skip_left">共{$totalCount}条记录，每页25条</p>
+						<p class="fr skip_right">
+							{$pageSHow}&nbsp;<input type="text" style="width:50px" maxlength="4" id="jumpPage" name="jumpPage">&nbsp;<button onclick="jump()">跳转</button>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="__PUBLIC__/js/jquery.js"></script>
+<script src="__PUBLIC__/js/common.js"></script>
+<script src="__PUBLIC__/plug/jquery.datetimepicker.js"></script>
+
+<script type="text/javascript">
+	
+	$("#ddl_region").val('<?php echo isset($_GET["region"])?$_GET["region"]:"" ?>');
+	$("#ddl_scope").val('<?php echo isset($_GET["scope"])?$_GET["scope"]:"" ?>');
+
+	$('.inpt_a').datetimepicker({validateOnBlur:false,step:5,lang:'ch',timepicker:false,yearStart:2015,yearEnd:2018,format:"Y-m-d"});
+	function search(){
+		$("#searchForm").submit();
+	}
+	
+	function jump(){
+		if(/^\d{1,4}$/.test($("#jumpPage").val())){
+			$("#jump").val($("#jumpPage").val());
+			$("#searchForm").submit();
+		}
+	}
+	//下拉联动
+	$("#ddl_region").change(function(){
+		if($(this).val()==""){
+			return $("#ddl_scope").html("");
+		}
+		$.get("__ROOT__/HouseResource/getScopes",{region_id:$(this).val()},function(data){
+			$("#ddl_scope").html(data);
+		},"html");
+	});
+
+	
+</script>
+</html>

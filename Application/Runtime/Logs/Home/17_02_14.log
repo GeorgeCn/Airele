@@ -1,0 +1,1097 @@
+[ 2017-02-14T13:49:40+08:00 ] ::1 /hizhu/admin.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2017-02-14T13:49:40+08:00 ] ::1 /hizhu/admin.php/Index/verufy.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-02-14T13:49:49+08:00 ] ::1 /hizhu/Index/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.014001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.009000s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' AND `user_pwd` = '0c6b4038cefe52dbba27c6434dc1fecd'  [ RunTime:0.020002s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.009000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-02-14T13:49:50+08:00 ] ::1 /hizhu/Welcome/welcome.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.011001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.010000s ]
+SQL: SHOW COLUMNS FROM `adminmenulist` [ RunTime:0.011000s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 0 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.010001s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 0 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.009001s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 1 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.011000s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 3 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.017001s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 4 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.010000s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 6 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.011000s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 7 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.009001s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 47 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.009001s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 77 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.009000s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 87 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.010000s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 107 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.009001s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 141 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.011001s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 162 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.010001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' AND `record_status` = 1 LIMIT 1   [ RunTime:0.009000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001001s ]
+
+[ 2017-02-14T13:50:05+08:00 ] ::1 /hizhu/stores/storesList.html?no=162
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.014001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.012001s ]
+SQL: SHOW COLUMNS FROM `adminmenulist` [ RunTime:0.014001s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 163 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.023001s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 167 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.016001s ]
+SQL: SHOW COLUMNS FROM `adminmenulistlimit` [ RunTime:0.016001s ]
+SQL: SELECT * FROM `adminmenulistlimit` WHERE `city_auth` = 1 AND `user_name` = 'admin'  [ RunTime:0.326019s ]
+SQL: SHOW COLUMNS FROM `stores` [ RunTime:0.026002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `stores` WHERE `city_code` = '001009001' AND `record_status` = 1 LIMIT 1   [ RunTime:0.018001s ]
+SQL: SELECT `id`,`name`,`medal_type`,`create_time`,`update_time`,`credit_score`,`earnestmoney` FROM `stores` WHERE `city_code` = '001009001' AND `record_status` = 1 ORDER BY create_time desc LIMIT 0,10   [ RunTime:0.031001s ]
+SQL: SHOW COLUMNS FROM `storemembers` [ RunTime:0.031001s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = '40AC4691-724F-851B-BDFB-B2786D949469' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.049003s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.041002s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = '2466eeee-06a6-d3e1-a151-46f06afbf57d' AND `record_status` = 1 LIMIT 1   [ RunTime:0.036002s ]
+SQL: SHOW COLUMNS FROM `houseroom` [ RunTime:0.038003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = '40AC4691-724F-851B-BDFB-B2786D949469' AND `record_status` = 1 LIMIT 1   [ RunTime:0.029001s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = 'C8E39069-6768-D3D5-A46D-7E467D5A46F1' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.031002s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = 'a5686a81-6a80-b832-2af5-f45ac06c2750' AND `record_status` = 1 LIMIT 1   [ RunTime:0.031002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = 'C8E39069-6768-D3D5-A46D-7E467D5A46F1' AND `record_status` = 1 LIMIT 1   [ RunTime:0.025001s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = '91715681-1122-3496-F076-54B0E786323D' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.024002s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = '53eba7e2-4c94-8bcb-e666-a8bfc154d98c' AND `record_status` = 1 LIMIT 1   [ RunTime:0.029002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = '91715681-1122-3496-F076-54B0E786323D' AND `record_status` = 1 LIMIT 1   [ RunTime:0.029001s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = '5843C29C-FEDE-8FE4-2C80-F7EC08702A84' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.030002s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = '53EBA7E2-4C94-8BCB-E666-A8BFC154D98C' AND `record_status` = 1 LIMIT 1   [ RunTime:0.031002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = '5843C29C-FEDE-8FE4-2C80-F7EC08702A84' AND `record_status` = 1 LIMIT 1   [ RunTime:0.018001s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = '50FB7B25-3CC8-56A1-6E72-359C64DE1AF1' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.011001s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = 'f2769640-6895-a154-2373-6019af266cc4' AND `record_status` = 1 LIMIT 1   [ RunTime:0.021001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = '50FB7B25-3CC8-56A1-6E72-359C64DE1AF1' AND `record_status` = 1 LIMIT 1   [ RunTime:0.017001s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = '5AA4464F-3FD5-DC55-112E-439E54365628' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.017001s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = 'F2769640-6895-A154-2373-6019AF266CC4' AND `record_status` = 1 LIMIT 1   [ RunTime:0.014001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = '5AA4464F-3FD5-DC55-112E-439E54365628' AND `record_status` = 1 LIMIT 1   [ RunTime:0.014001s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = '48C12938-4760-3C60-E18D-FE4BDE766F8B' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.025001s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = 'EDA14556-8019-39C5-1FBF-4A19001AB785' AND `record_status` = 1 LIMIT 1   [ RunTime:0.028002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = '48C12938-4760-3C60-E18D-FE4BDE766F8B' AND `record_status` = 1 LIMIT 1   [ RunTime:0.023001s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = '52C82564-FDDB-78CF-8053-E1877603F7FC' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.011001s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = 'dc7c5555-4012-12c6-25eb-ee2b2ac4032f' AND `record_status` = 1 LIMIT 1   [ RunTime:0.020001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = '52C82564-FDDB-78CF-8053-E1877603F7FC' AND `record_status` = 1 LIMIT 1   [ RunTime:0.023001s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = 'DB248090-C4A1-D06F-D3F1-853231A023BE' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.020002s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = 'DC7C5555-4012-12C6-25EB-EE2B2AC4032F' AND `record_status` = 1 LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = 'DB248090-C4A1-D06F-D3F1-853231A023BE' AND `record_status` = 1 LIMIT 1   [ RunTime:0.018001s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = '44979133-F033-2183-80C1-2D9A672CA17E' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.020001s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = '92ad24e8-1aeb-b3ba-9555-381edbb1c2a2' AND `record_status` = 1 LIMIT 1   [ RunTime:0.021001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = '44979133-F033-2183-80C1-2D9A672CA17E' AND `record_status` = 1 LIMIT 1   [ RunTime:0.016001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: type D:\wamp\www\hizhu\Application\Runtime\Cache\Home\9d94da0cf008813badfe0710e96249fc.php 第 81 行.
+NOTIC: [8] Undefined index: type D:\wamp\www\hizhu\Application\Runtime\Cache\Home\9d94da0cf008813badfe0710e96249fc.php 第 82 行.
+NOTIC: [8] Undefined index: type D:\wamp\www\hizhu\Application\Runtime\Cache\Home\9d94da0cf008813badfe0710e96249fc.php 第 83 行.
+NOTIC: [8] Undefined index: type D:\wamp\www\hizhu\Application\Runtime\Cache\Home\9d94da0cf008813badfe0710e96249fc.php 第 84 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.066004s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.066004s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2017-02-14T13:50:16+08:00 ] ::1 /hizhu/Stores/storesList.html?no=162&leftno=164&startTime=&endTime=&name=&type=&downScore=&upScore=&storeId=40AC4691-724F-851B-BDFB-B2786D949469
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.015001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.020001s ]
+SQL: SHOW COLUMNS FROM `stores` [ RunTime:0.011000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `stores` WHERE `city_code` = '001009001' AND `record_status` = 1 AND `id` = '40AC4691-724F-851B-BDFB-B2786D949469' LIMIT 1   [ RunTime:0.010001s ]
+SQL: SELECT `id`,`name`,`medal_type`,`create_time`,`update_time`,`credit_score`,`earnestmoney` FROM `stores` WHERE `city_code` = '001009001' AND `record_status` = 1 AND `id` = '40AC4691-724F-851B-BDFB-B2786D949469' ORDER BY create_time desc LIMIT 0,10   [ RunTime:0.012001s ]
+SQL: SHOW COLUMNS FROM `storemembers` [ RunTime:0.009000s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = '40AC4691-724F-851B-BDFB-B2786D949469' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.011001s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.019002s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = '2466eeee-06a6-d3e1-a151-46f06afbf57d' AND `record_status` = 1 LIMIT 1   [ RunTime:0.013000s ]
+SQL: SHOW COLUMNS FROM `houseroom` [ RunTime:0.015001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = '40AC4691-724F-851B-BDFB-B2786D949469' AND `record_status` = 1 LIMIT 1   [ RunTime:0.013001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.032002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-02-14T13:50:20+08:00 ] ::1 /hizhu/Stores/storesList.html?no=162&leftno=164&startTime=&endTime=&name=40AC4691-724F-851B-BDFB-B2786D949469&type=&downScore=&upScore=&storeId=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.020001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.018001s ]
+SQL: SHOW COLUMNS FROM `stores` [ RunTime:0.016001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `stores` WHERE `city_code` = '001009001' AND `record_status` = 1 AND `name` LIKE '%40AC4691-724F-851B-BDFB-B2786D949469%' LIMIT 1   [ RunTime:0.011000s ]
+SQL: SELECT `id`,`name`,`medal_type`,`create_time`,`update_time`,`credit_score`,`earnestmoney` FROM `stores` WHERE `city_code` = '001009001' AND `record_status` = 1 AND `name` LIKE '%40AC4691-724F-851B-BDFB-B2786D949469%' ORDER BY create_time desc LIMIT 0,10   [ RunTime:0.016000s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\hizhu\Application\Home\Controller\StoresController.class.php 第 70 行.
+NOTIC: [8] Undefined variable: info D:\wamp\www\hizhu\Application\Home\Controller\StoresController.class.php 第 89 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-02-14T13:50:57+08:00 ] ::1 /hizhu/Stores/storesList.html?no=162&leftno=164&startTime=&endTime=&name=40AC4691-724F-851B-BDFB-B2786D949469&type=&downScore=&upScore=&storeId=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.022001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.013001s ]
+SQL: SHOW COLUMNS FROM `stores` [ RunTime:0.010000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `stores` WHERE `city_code` = '001009001' AND `record_status` = 1 AND `name` LIKE '%40AC4691-724F-851B-BDFB-B2786D949469%' LIMIT 1   [ RunTime:0.013001s ]
+SQL: SELECT `id`,`name`,`medal_type`,`create_time`,`update_time`,`credit_score`,`earnestmoney` FROM `stores` WHERE `city_code` = '001009001' AND `record_status` = 1 AND `name` LIKE '%40AC4691-724F-851B-BDFB-B2786D949469%' ORDER BY create_time desc LIMIT 0,10   [ RunTime:0.012001s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\hizhu\Application\Home\Controller\StoresController.class.php 第 70 行.
+NOTIC: [8] Undefined variable: info D:\wamp\www\hizhu\Application\Home\Controller\StoresController.class.php 第 89 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-02-14T13:51:00+08:00 ] ::1 /hizhu/Stores/storesList.html?no=162&leftno=164&startTime=&endTime=&name=40AC4691-724F-851B-BDFB-B2786D949469&type=&downScore=&upScore=&storeId=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.010000s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.010001s ]
+SQL: SHOW COLUMNS FROM `stores` [ RunTime:0.013001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `stores` WHERE `city_code` = '001009001' AND `record_status` = 1 AND `name` LIKE '%40AC4691-724F-851B-BDFB-B2786D949469%' LIMIT 1   [ RunTime:0.009001s ]
+SQL: SELECT `id`,`name`,`medal_type`,`create_time`,`update_time`,`credit_score`,`earnestmoney` FROM `stores` WHERE `city_code` = '001009001' AND `record_status` = 1 AND `name` LIKE '%40AC4691-724F-851B-BDFB-B2786D949469%' ORDER BY create_time desc LIMIT 0,10   [ RunTime:0.010000s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\hizhu\Application\Home\Controller\StoresController.class.php 第 70 行.
+NOTIC: [8] Undefined variable: info D:\wamp\www\hizhu\Application\Home\Controller\StoresController.class.php 第 89 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-02-14T13:51:02+08:00 ] ::1 /hizhu/Stores/storesList.html?no=162&leftno=164
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.011000s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.010001s ]
+SQL: SHOW COLUMNS FROM `stores` [ RunTime:0.011001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `stores` WHERE `city_code` = '001009001' AND `record_status` = 1 LIMIT 1   [ RunTime:0.008000s ]
+SQL: SELECT `id`,`name`,`medal_type`,`create_time`,`update_time`,`credit_score`,`earnestmoney` FROM `stores` WHERE `city_code` = '001009001' AND `record_status` = 1 ORDER BY create_time desc LIMIT 0,10   [ RunTime:0.009001s ]
+SQL: SHOW COLUMNS FROM `storemembers` [ RunTime:0.013001s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = '40AC4691-724F-851B-BDFB-B2786D949469' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.008000s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.012001s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = '2466eeee-06a6-d3e1-a151-46f06afbf57d' AND `record_status` = 1 LIMIT 1   [ RunTime:0.009001s ]
+SQL: SHOW COLUMNS FROM `houseroom` [ RunTime:0.012000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = '40AC4691-724F-851B-BDFB-B2786D949469' AND `record_status` = 1 LIMIT 1   [ RunTime:0.008001s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = 'C8E39069-6768-D3D5-A46D-7E467D5A46F1' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = 'a5686a81-6a80-b832-2af5-f45ac06c2750' AND `record_status` = 1 LIMIT 1   [ RunTime:0.009000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = 'C8E39069-6768-D3D5-A46D-7E467D5A46F1' AND `record_status` = 1 LIMIT 1   [ RunTime:0.010001s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = '91715681-1122-3496-F076-54B0E786323D' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = '53eba7e2-4c94-8bcb-e666-a8bfc154d98c' AND `record_status` = 1 LIMIT 1   [ RunTime:0.009001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = '91715681-1122-3496-F076-54B0E786323D' AND `record_status` = 1 LIMIT 1   [ RunTime:0.007000s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = '5843C29C-FEDE-8FE4-2C80-F7EC08702A84' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.010001s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = '53EBA7E2-4C94-8BCB-E666-A8BFC154D98C' AND `record_status` = 1 LIMIT 1   [ RunTime:0.010001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = '5843C29C-FEDE-8FE4-2C80-F7EC08702A84' AND `record_status` = 1 LIMIT 1   [ RunTime:0.014000s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = '50FB7B25-3CC8-56A1-6E72-359C64DE1AF1' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.012001s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = 'f2769640-6895-a154-2373-6019af266cc4' AND `record_status` = 1 LIMIT 1   [ RunTime:0.008001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = '50FB7B25-3CC8-56A1-6E72-359C64DE1AF1' AND `record_status` = 1 LIMIT 1   [ RunTime:0.009000s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = '5AA4464F-3FD5-DC55-112E-439E54365628' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.008001s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = 'F2769640-6895-A154-2373-6019AF266CC4' AND `record_status` = 1 LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = '5AA4464F-3FD5-DC55-112E-439E54365628' AND `record_status` = 1 LIMIT 1   [ RunTime:0.010001s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = '48C12938-4760-3C60-E18D-FE4BDE766F8B' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.009001s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = 'EDA14556-8019-39C5-1FBF-4A19001AB785' AND `record_status` = 1 LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = '48C12938-4760-3C60-E18D-FE4BDE766F8B' AND `record_status` = 1 LIMIT 1   [ RunTime:0.013001s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = '52C82564-FDDB-78CF-8053-E1877603F7FC' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.015001s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = 'dc7c5555-4012-12c6-25eb-ee2b2ac4032f' AND `record_status` = 1 LIMIT 1   [ RunTime:0.013001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = '52C82564-FDDB-78CF-8053-E1877603F7FC' AND `record_status` = 1 LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = 'DB248090-C4A1-D06F-D3F1-853231A023BE' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.015001s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = 'DC7C5555-4012-12C6-25EB-EE2B2AC4032F' AND `record_status` = 1 LIMIT 1   [ RunTime:0.019001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = 'DB248090-C4A1-D06F-D3F1-853231A023BE' AND `record_status` = 1 LIMIT 1   [ RunTime:0.018001s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = '44979133-F033-2183-80C1-2D9A672CA17E' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.010001s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = '92ad24e8-1aeb-b3ba-9555-381edbb1c2a2' AND `record_status` = 1 LIMIT 1   [ RunTime:0.012000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = '44979133-F033-2183-80C1-2D9A672CA17E' AND `record_status` = 1 LIMIT 1   [ RunTime:0.014001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: type D:\wamp\www\hizhu\Application\Runtime\Cache\Home\9d94da0cf008813badfe0710e96249fc.php 第 81 行.
+NOTIC: [8] Undefined index: type D:\wamp\www\hizhu\Application\Runtime\Cache\Home\9d94da0cf008813badfe0710e96249fc.php 第 82 行.
+NOTIC: [8] Undefined index: type D:\wamp\www\hizhu\Application\Runtime\Cache\Home\9d94da0cf008813badfe0710e96249fc.php 第 83 行.
+NOTIC: [8] Undefined index: type D:\wamp\www\hizhu\Application\Runtime\Cache\Home\9d94da0cf008813badfe0710e96249fc.php 第 84 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004000s ]
+
+[ 2017-02-14T13:51:08+08:00 ] ::1 /hizhu/Stores/storesList.html?no=162&leftno=164&startTime=&endTime=&name=5858&type=&downScore=&upScore=&storeId=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.010001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.011000s ]
+SQL: SHOW COLUMNS FROM `stores` [ RunTime:0.014001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `stores` WHERE `city_code` = '001009001' AND `record_status` = 1 AND `name` LIKE '%5858%' LIMIT 1   [ RunTime:0.009000s ]
+SQL: SELECT `id`,`name`,`medal_type`,`create_time`,`update_time`,`credit_score`,`earnestmoney` FROM `stores` WHERE `city_code` = '001009001' AND `record_status` = 1 AND `name` LIKE '%5858%' ORDER BY create_time desc LIMIT 0,10   [ RunTime:0.022001s ]
+SQL: SHOW COLUMNS FROM `storemembers` [ RunTime:0.018001s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = '40AC4691-724F-851B-BDFB-B2786D949469' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.020001s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.033002s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = '2466eeee-06a6-d3e1-a151-46f06afbf57d' AND `record_status` = 1 LIMIT 1   [ RunTime:0.017001s ]
+SQL: SHOW COLUMNS FROM `houseroom` [ RunTime:0.040002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = '40AC4691-724F-851B-BDFB-B2786D949469' AND `record_status` = 1 LIMIT 1   [ RunTime:0.009000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-02-14T13:51:13+08:00 ] ::1 /hizhu/Stores/storesList.html?no=162&leftno=164&startTime=&endTime=&name=5858&type=&downScore=&upScore=&storeId=09E0941B-C194-06ED-1A6F-7BDD232AE8D7
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.019001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.018001s ]
+SQL: SHOW COLUMNS FROM `stores` [ RunTime:0.016001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `stores` WHERE `city_code` = '001009001' AND `record_status` = 1 AND `name` LIKE '%5858%' AND `id` = '09E0941B-C194-06ED-1A6F-7BDD232AE8D7' LIMIT 1   [ RunTime:0.022002s ]
+SQL: SELECT `id`,`name`,`medal_type`,`create_time`,`update_time`,`credit_score`,`earnestmoney` FROM `stores` WHERE `city_code` = '001009001' AND `record_status` = 1 AND `name` LIKE '%5858%' AND `id` = '09E0941B-C194-06ED-1A6F-7BDD232AE8D7' ORDER BY create_time desc LIMIT 0,10   [ RunTime:0.016001s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\hizhu\Application\Home\Controller\StoresController.class.php 第 70 行.
+NOTIC: [8] Undefined variable: info D:\wamp\www\hizhu\Application\Home\Controller\StoresController.class.php 第 89 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-02-14T13:51:17+08:00 ] ::1 /hizhu/Stores/storesList.html?no=162&leftno=164
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.009000s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.011000s ]
+SQL: SHOW COLUMNS FROM `stores` [ RunTime:0.016001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `stores` WHERE `city_code` = '001009001' AND `record_status` = 1 LIMIT 1   [ RunTime:0.009001s ]
+SQL: SELECT `id`,`name`,`medal_type`,`create_time`,`update_time`,`credit_score`,`earnestmoney` FROM `stores` WHERE `city_code` = '001009001' AND `record_status` = 1 ORDER BY create_time desc LIMIT 0,10   [ RunTime:0.012000s ]
+SQL: SHOW COLUMNS FROM `storemembers` [ RunTime:0.020002s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = '40AC4691-724F-851B-BDFB-B2786D949469' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.018001s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.028001s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = '2466eeee-06a6-d3e1-a151-46f06afbf57d' AND `record_status` = 1 LIMIT 1   [ RunTime:0.019001s ]
+SQL: SHOW COLUMNS FROM `houseroom` [ RunTime:0.028002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = '40AC4691-724F-851B-BDFB-B2786D949469' AND `record_status` = 1 LIMIT 1   [ RunTime:0.010001s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = 'C8E39069-6768-D3D5-A46D-7E467D5A46F1' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.013001s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = 'a5686a81-6a80-b832-2af5-f45ac06c2750' AND `record_status` = 1 LIMIT 1   [ RunTime:0.020001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = 'C8E39069-6768-D3D5-A46D-7E467D5A46F1' AND `record_status` = 1 LIMIT 1   [ RunTime:0.009000s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = '91715681-1122-3496-F076-54B0E786323D' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.014001s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = '53eba7e2-4c94-8bcb-e666-a8bfc154d98c' AND `record_status` = 1 LIMIT 1   [ RunTime:0.010001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = '91715681-1122-3496-F076-54B0E786323D' AND `record_status` = 1 LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = '5843C29C-FEDE-8FE4-2C80-F7EC08702A84' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.010001s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = '53EBA7E2-4C94-8BCB-E666-A8BFC154D98C' AND `record_status` = 1 LIMIT 1   [ RunTime:0.009001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = '5843C29C-FEDE-8FE4-2C80-F7EC08702A84' AND `record_status` = 1 LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = '50FB7B25-3CC8-56A1-6E72-359C64DE1AF1' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.011001s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = 'f2769640-6895-a154-2373-6019af266cc4' AND `record_status` = 1 LIMIT 1   [ RunTime:0.009001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = '50FB7B25-3CC8-56A1-6E72-359C64DE1AF1' AND `record_status` = 1 LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = '5AA4464F-3FD5-DC55-112E-439E54365628' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.009001s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = 'F2769640-6895-A154-2373-6019AF266CC4' AND `record_status` = 1 LIMIT 1   [ RunTime:0.011001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = '5AA4464F-3FD5-DC55-112E-439E54365628' AND `record_status` = 1 LIMIT 1   [ RunTime:0.011000s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = '48C12938-4760-3C60-E18D-FE4BDE766F8B' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.012001s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = 'EDA14556-8019-39C5-1FBF-4A19001AB785' AND `record_status` = 1 LIMIT 1   [ RunTime:0.010001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = '48C12938-4760-3C60-E18D-FE4BDE766F8B' AND `record_status` = 1 LIMIT 1   [ RunTime:0.011000s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = '52C82564-FDDB-78CF-8053-E1877603F7FC' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.010001s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = 'dc7c5555-4012-12c6-25eb-ee2b2ac4032f' AND `record_status` = 1 LIMIT 1   [ RunTime:0.011001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = '52C82564-FDDB-78CF-8053-E1877603F7FC' AND `record_status` = 1 LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = 'DB248090-C4A1-D06F-D3F1-853231A023BE' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.011001s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = 'DC7C5555-4012-12C6-25EB-EE2B2AC4032F' AND `record_status` = 1 LIMIT 1   [ RunTime:0.010001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = 'DB248090-C4A1-D06F-D3F1-853231A023BE' AND `record_status` = 1 LIMIT 1   [ RunTime:0.009000s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = '44979133-F033-2183-80C1-2D9A672CA17E' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.011001s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = '92ad24e8-1aeb-b3ba-9555-381edbb1c2a2' AND `record_status` = 1 LIMIT 1   [ RunTime:0.011000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = '44979133-F033-2183-80C1-2D9A672CA17E' AND `record_status` = 1 LIMIT 1   [ RunTime:0.010001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: type D:\wamp\www\hizhu\Application\Runtime\Cache\Home\9d94da0cf008813badfe0710e96249fc.php 第 81 行.
+NOTIC: [8] Undefined index: type D:\wamp\www\hizhu\Application\Runtime\Cache\Home\9d94da0cf008813badfe0710e96249fc.php 第 82 行.
+NOTIC: [8] Undefined index: type D:\wamp\www\hizhu\Application\Runtime\Cache\Home\9d94da0cf008813badfe0710e96249fc.php 第 83 行.
+NOTIC: [8] Undefined index: type D:\wamp\www\hizhu\Application\Runtime\Cache\Home\9d94da0cf008813badfe0710e96249fc.php 第 84 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-02-14T13:51:31+08:00 ] ::1 /hizhu/Stores/storesList.html?no=162&leftno=164&startTime=&endTime=&name=5858&type=&downScore=&upScore=&storeId=40AC4691-724F-851B-BDFB-B2786D949469
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.012001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.016001s ]
+SQL: SHOW COLUMNS FROM `stores` [ RunTime:0.013001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `stores` WHERE `city_code` = '001009001' AND `record_status` = 1 AND `name` LIKE '%5858%' AND `id` = '40AC4691-724F-851B-BDFB-B2786D949469' LIMIT 1   [ RunTime:0.018001s ]
+SQL: SELECT `id`,`name`,`medal_type`,`create_time`,`update_time`,`credit_score`,`earnestmoney` FROM `stores` WHERE `city_code` = '001009001' AND `record_status` = 1 AND `name` LIKE '%5858%' AND `id` = '40AC4691-724F-851B-BDFB-B2786D949469' ORDER BY create_time desc LIMIT 0,10   [ RunTime:0.016001s ]
+SQL: SHOW COLUMNS FROM `storemembers` [ RunTime:0.020001s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = '40AC4691-724F-851B-BDFB-B2786D949469' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.019001s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.012001s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = '2466eeee-06a6-d3e1-a151-46f06afbf57d' AND `record_status` = 1 LIMIT 1   [ RunTime:0.009000s ]
+SQL: SHOW COLUMNS FROM `houseroom` [ RunTime:0.013001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = '40AC4691-724F-851B-BDFB-B2786D949469' AND `record_status` = 1 LIMIT 1   [ RunTime:0.213012s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-02-14T16:10:06+08:00 ] ::1 /hizhu/admin.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-02-14T16:10:06+08:00 ] ::1 /hizhu/admin.php/Index/verufy.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-02-14T16:10:08+08:00 ] ::1 /hizhu/admin.php/Index/verufy?d=0.6645525601170998
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001001s ]
+
+[ 2017-02-14T16:10:12+08:00 ] ::1 /hizhu/Index/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.018001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.021001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' AND `user_pwd` = '0c6b4038cefe52dbba27c6434dc1fecd'  [ RunTime:0.019001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.010001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001001s ]
+
+[ 2017-02-14T16:10:13+08:00 ] ::1 /hizhu/Welcome/welcome.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.009000s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.009001s ]
+SQL: SHOW COLUMNS FROM `adminmenulist` [ RunTime:0.009001s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 0 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.008000s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 0 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.009001s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 1 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.010001s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 3 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.009000s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 4 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.009000s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 6 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.009001s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 7 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.011001s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 47 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.007000s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 77 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.008001s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 87 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.010001s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 107 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.009000s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 141 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.008000s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 162 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.008001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' AND `record_status` = 1 LIMIT 1   [ RunTime:0.010001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001001s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2017-02-14T16:10:18+08:00 ] ::1 /hizhu/stores/storesList.html?no=162
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.011001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.009000s ]
+SQL: SHOW COLUMNS FROM `adminmenulist` [ RunTime:0.010001s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 163 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.012001s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 167 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.010000s ]
+SQL: SHOW COLUMNS FROM `adminmenulistlimit` [ RunTime:0.010000s ]
+SQL: SELECT * FROM `adminmenulistlimit` WHERE `city_auth` = 1 AND `user_name` = 'admin'  [ RunTime:0.113007s ]
+SQL: SHOW COLUMNS FROM `stores` [ RunTime:0.019001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `stores` WHERE `city_code` = '001009001' AND `record_status` = 1 LIMIT 1   [ RunTime:0.008000s ]
+SQL: SELECT `id`,`name`,`medal_type`,`create_time`,`update_time`,`credit_score`,`earnestmoney` FROM `stores` WHERE `city_code` = '001009001' AND `record_status` = 1 ORDER BY create_time desc LIMIT 0,10   [ RunTime:0.012001s ]
+SQL: SHOW COLUMNS FROM `storemembers` [ RunTime:0.021001s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = '40AC4691-724F-851B-BDFB-B2786D949469' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.019002s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.028002s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = '2466eeee-06a6-d3e1-a151-46f06afbf57d' AND `record_status` = 1 LIMIT 1   [ RunTime:0.015001s ]
+SQL: SHOW COLUMNS FROM `houseroom` [ RunTime:0.025001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = '40AC4691-724F-851B-BDFB-B2786D949469' AND `record_status` = 1 LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = '91715681-1122-3496-F076-54B0E786323D' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.018001s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = '53eba7e2-4c94-8bcb-e666-a8bfc154d98c' AND `record_status` = 1 LIMIT 1   [ RunTime:0.015001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = '91715681-1122-3496-F076-54B0E786323D' AND `record_status` = 1 LIMIT 1   [ RunTime:0.012001s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = '5843C29C-FEDE-8FE4-2C80-F7EC08702A84' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.009001s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = '53EBA7E2-4C94-8BCB-E666-A8BFC154D98C' AND `record_status` = 1 LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = '5843C29C-FEDE-8FE4-2C80-F7EC08702A84' AND `record_status` = 1 LIMIT 1   [ RunTime:0.011001s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = '50FB7B25-3CC8-56A1-6E72-359C64DE1AF1' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.010001s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = 'f2769640-6895-a154-2373-6019af266cc4' AND `record_status` = 1 LIMIT 1   [ RunTime:0.008000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = '50FB7B25-3CC8-56A1-6E72-359C64DE1AF1' AND `record_status` = 1 LIMIT 1   [ RunTime:0.013001s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = '5AA4464F-3FD5-DC55-112E-439E54365628' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.010001s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = 'F2769640-6895-A154-2373-6019AF266CC4' AND `record_status` = 1 LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = '5AA4464F-3FD5-DC55-112E-439E54365628' AND `record_status` = 1 LIMIT 1   [ RunTime:0.012001s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = '48C12938-4760-3C60-E18D-FE4BDE766F8B' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.010001s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = 'EDA14556-8019-39C5-1FBF-4A19001AB785' AND `record_status` = 1 LIMIT 1   [ RunTime:0.011000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = '48C12938-4760-3C60-E18D-FE4BDE766F8B' AND `record_status` = 1 LIMIT 1   [ RunTime:0.012001s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = '52C82564-FDDB-78CF-8053-E1877603F7FC' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.010001s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = 'dc7c5555-4012-12c6-25eb-ee2b2ac4032f' AND `record_status` = 1 LIMIT 1   [ RunTime:0.009000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = '52C82564-FDDB-78CF-8053-E1877603F7FC' AND `record_status` = 1 LIMIT 1   [ RunTime:0.011001s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = 'DB248090-C4A1-D06F-D3F1-853231A023BE' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.012001s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = 'DC7C5555-4012-12C6-25EB-EE2B2AC4032F' AND `record_status` = 1 LIMIT 1   [ RunTime:0.011000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = 'DB248090-C4A1-D06F-D3F1-853231A023BE' AND `record_status` = 1 LIMIT 1   [ RunTime:0.012001s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = '44979133-F033-2183-80C1-2D9A672CA17E' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.010001s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = '92ad24e8-1aeb-b3ba-9555-381edbb1c2a2' AND `record_status` = 1 LIMIT 1   [ RunTime:0.014001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = '44979133-F033-2183-80C1-2D9A672CA17E' AND `record_status` = 1 LIMIT 1   [ RunTime:0.013000s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = 'C6AB4B24-7D19-EFA9-2B0E-DD4C431177CE' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.009001s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = '0b1a8fc1-e616-1bde-9ec0-9552e9c5f652' AND `record_status` = 1 LIMIT 1   [ RunTime:0.009000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = 'C6AB4B24-7D19-EFA9-2B0E-DD4C431177CE' AND `record_status` = 1 LIMIT 1   [ RunTime:0.026001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: type D:\wamp\www\hizhu\Application\Runtime\Cache\Home\9d94da0cf008813badfe0710e96249fc.php 第 81 行.
+NOTIC: [8] Undefined index: type D:\wamp\www\hizhu\Application\Runtime\Cache\Home\9d94da0cf008813badfe0710e96249fc.php 第 82 行.
+NOTIC: [8] Undefined index: type D:\wamp\www\hizhu\Application\Runtime\Cache\Home\9d94da0cf008813badfe0710e96249fc.php 第 83 行.
+NOTIC: [8] Undefined index: type D:\wamp\www\hizhu\Application\Runtime\Cache\Home\9d94da0cf008813badfe0710e96249fc.php 第 84 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-02-14T16:10:21+08:00 ] ::1 /hizhu/stores/storeDetail/no/162/leftno/164/id/44979133-F033-2183-80C1-2D9A672CA17E.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.010000s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.008001s ]
+SQL: SHOW COLUMNS FROM `stores` [ RunTime:0.011001s ]
+SQL: SELECT `id`,`name`,`medal_type`,`create_time`,`credit_score`,`earnestmoney` FROM `stores` WHERE `id` = '44979133-F033-2183-80C1-2D9A672CA17E' LIMIT 1   [ RunTime:0.013001s ]
+SQL: SHOW COLUMNS FROM `storemembers` [ RunTime:0.017001s ]
+SQL: SELECT `customer_id`,`title_id` FROM `storemembers` WHERE `store_id` = '44979133-F033-2183-80C1-2D9A672CA17E' AND `record_status` = 1  [ RunTime:0.019001s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.029002s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = '92ad24e8-1aeb-b3ba-9555-381edbb1c2a2' AND `record_status` = 1 LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = 'CFC36332-4BCB-6A21-D070-60116F52CFB9' AND `record_status` = 1 LIMIT 1   [ RunTime:0.015001s ]
+SQL: SHOW COLUMNS FROM `houseroom` [ RunTime:0.026001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = '44979133-F033-2183-80C1-2D9A672CA17E' AND `record_status` = 1 LIMIT 1   [ RunTime:0.009001s ]
+SQL: SELECT `room_no`,`room_money`,`status`,`create_time`,`id`,customer_id as mobile FROM `houseroom` WHERE `store_id` = '44979133-F033-2183-80C1-2D9A672CA17E' AND `record_status` = 1 ORDER BY create_time desc LIMIT 0,10   [ RunTime:0.012001s ]
+SQL: SELECT `mobile` FROM `customer` WHERE `id` = '92ad24e8-1aeb-b3ba-9555-381edbb1c2a2' AND `record_status` = 1 LIMIT 1   [ RunTime:0.020001s ]
+SQL: SELECT `mobile` FROM `customer` WHERE `id` = 'CFC36332-4BCB-6A21-D070-60116F52CFB9' AND `record_status` = 1 LIMIT 1   [ RunTime:0.017001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\wamp\www\hizhu\Application\Runtime\Cache\Home\aaa9c5374d418312d46035356b94f682.php 第 172 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\wamp\www\hizhu\Application\Runtime\Cache\Home\aaa9c5374d418312d46035356b94f682.php 第 172 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.033002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.033002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-02-14T16:10:27+08:00 ] ::1 /hizhu/Stores/storeCreditScore/no/162/leftno/164/id/44979133-F033-2183-80C1-2D9A672CA17E.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.016001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.010000s ]
+SQL: SHOW COLUMNS FROM `stores` [ RunTime:0.032002s ]
+SQL: SELECT `id`,`name`,`medal_type`,`create_time`,`credit_score`,`earnestmoney` FROM `stores` WHERE `id` = '44979133-F033-2183-80C1-2D9A672CA17E' LIMIT 1   [ RunTime:0.008001s ]
+SQL: SHOW COLUMNS FROM `storecreditdetail` [ RunTime:0.015001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `storecreditdetail` WHERE `store_id` = '44979133-F033-2183-80C1-2D9A672CA17E' LIMIT 1   [ RunTime:0.020001s ]
+SQL: SELECT `now_score`,`score_num`,`create_time`,`score_type`,`oper_man_name`,`msg_txt` FROM `storecreditdetail` WHERE `store_id` = '44979133-F033-2183-80C1-2D9A672CA17E' ORDER BY create_time desc LIMIT 0,10   [ RunTime:0.014001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-02-14T16:10:30+08:00 ] ::1 /hizhu/Stores/storeModifyCreScore/no/162/leftno/164/id/44979133-F033-2183-80C1-2D9A672CA17E.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.011001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.014000s ]
+SQL: SHOW COLUMNS FROM `stores` [ RunTime:0.011001s ]
+SQL: SELECT `id`,`name`,`medal_type`,`create_time`,`credit_score`,`earnestmoney` FROM `stores` WHERE `id` = '44979133-F033-2183-80C1-2D9A672CA17E' LIMIT 1   [ RunTime:0.023001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-02-14T16:17:01+08:00 ] ::1 /hizhu/Stores/storesList.html?no=162&leftno=164
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.011001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.008001s ]
+SQL: SHOW COLUMNS FROM `stores` [ RunTime:0.009000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `stores` WHERE `city_code` = '001009001' AND `record_status` = 1 LIMIT 1   [ RunTime:0.008001s ]
+SQL: SELECT `id`,`name`,`medal_type`,`create_time`,`update_time`,`credit_score`,`earnestmoney` FROM `stores` WHERE `city_code` = '001009001' AND `record_status` = 1 ORDER BY create_time desc LIMIT 0,10   [ RunTime:0.011001s ]
+SQL: SHOW COLUMNS FROM `storemembers` [ RunTime:0.012000s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = '40AC4691-724F-851B-BDFB-B2786D949469' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.010000s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.012001s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = '2466eeee-06a6-d3e1-a151-46f06afbf57d' AND `record_status` = 1 LIMIT 1   [ RunTime:0.009001s ]
+SQL: SHOW COLUMNS FROM `houseroom` [ RunTime:0.010000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = '40AC4691-724F-851B-BDFB-B2786D949469' AND `record_status` = 1 LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = '91715681-1122-3496-F076-54B0E786323D' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.008001s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = '53eba7e2-4c94-8bcb-e666-a8bfc154d98c' AND `record_status` = 1 LIMIT 1   [ RunTime:0.009000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = '91715681-1122-3496-F076-54B0E786323D' AND `record_status` = 1 LIMIT 1   [ RunTime:0.009001s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = '5843C29C-FEDE-8FE4-2C80-F7EC08702A84' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.008000s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = '53EBA7E2-4C94-8BCB-E666-A8BFC154D98C' AND `record_status` = 1 LIMIT 1   [ RunTime:0.007001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = '5843C29C-FEDE-8FE4-2C80-F7EC08702A84' AND `record_status` = 1 LIMIT 1   [ RunTime:0.009000s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = '50FB7B25-3CC8-56A1-6E72-359C64DE1AF1' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.008001s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = 'f2769640-6895-a154-2373-6019af266cc4' AND `record_status` = 1 LIMIT 1   [ RunTime:0.009000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = '50FB7B25-3CC8-56A1-6E72-359C64DE1AF1' AND `record_status` = 1 LIMIT 1   [ RunTime:0.008001s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = '5AA4464F-3FD5-DC55-112E-439E54365628' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.010001s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = 'F2769640-6895-A154-2373-6019AF266CC4' AND `record_status` = 1 LIMIT 1   [ RunTime:0.008000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = '5AA4464F-3FD5-DC55-112E-439E54365628' AND `record_status` = 1 LIMIT 1   [ RunTime:0.008001s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = '48C12938-4760-3C60-E18D-FE4BDE766F8B' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.008000s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = 'EDA14556-8019-39C5-1FBF-4A19001AB785' AND `record_status` = 1 LIMIT 1   [ RunTime:0.009001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = '48C12938-4760-3C60-E18D-FE4BDE766F8B' AND `record_status` = 1 LIMIT 1   [ RunTime:0.008000s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = '52C82564-FDDB-78CF-8053-E1877603F7FC' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.010001s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = 'dc7c5555-4012-12c6-25eb-ee2b2ac4032f' AND `record_status` = 1 LIMIT 1   [ RunTime:0.007000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = '52C82564-FDDB-78CF-8053-E1877603F7FC' AND `record_status` = 1 LIMIT 1   [ RunTime:0.009001s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = 'DB248090-C4A1-D06F-D3F1-853231A023BE' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.009000s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = 'DC7C5555-4012-12C6-25EB-EE2B2AC4032F' AND `record_status` = 1 LIMIT 1   [ RunTime:0.017001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = 'DB248090-C4A1-D06F-D3F1-853231A023BE' AND `record_status` = 1 LIMIT 1   [ RunTime:0.016000s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = '44979133-F033-2183-80C1-2D9A672CA17E' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.013000s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = '92ad24e8-1aeb-b3ba-9555-381edbb1c2a2' AND `record_status` = 1 LIMIT 1   [ RunTime:0.018001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = '44979133-F033-2183-80C1-2D9A672CA17E' AND `record_status` = 1 LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = 'C6AB4B24-7D19-EFA9-2B0E-DD4C431177CE' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.015001s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = '0b1a8fc1-e616-1bde-9ec0-9552e9c5f652' AND `record_status` = 1 LIMIT 1   [ RunTime:0.013001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = 'C6AB4B24-7D19-EFA9-2B0E-DD4C431177CE' AND `record_status` = 1 LIMIT 1   [ RunTime:0.016001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: type D:\wamp\www\hizhu\Application\Runtime\Cache\Home\9d94da0cf008813badfe0710e96249fc.php 第 81 行.
+NOTIC: [8] Undefined index: type D:\wamp\www\hizhu\Application\Runtime\Cache\Home\9d94da0cf008813badfe0710e96249fc.php 第 82 行.
+NOTIC: [8] Undefined index: type D:\wamp\www\hizhu\Application\Runtime\Cache\Home\9d94da0cf008813badfe0710e96249fc.php 第 83 行.
+NOTIC: [8] Undefined index: type D:\wamp\www\hizhu\Application\Runtime\Cache\Home\9d94da0cf008813badfe0710e96249fc.php 第 84 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-02-14T16:17:06+08:00 ] ::1 /hizhu/stores/storeDetail/no/162/leftno/164/id/50FB7B25-3CC8-56A1-6E72-359C64DE1AF1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.009000s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.009001s ]
+SQL: SHOW COLUMNS FROM `stores` [ RunTime:0.010000s ]
+SQL: SELECT `id`,`name`,`medal_type`,`create_time`,`credit_score`,`earnestmoney` FROM `stores` WHERE `id` = '50FB7B25-3CC8-56A1-6E72-359C64DE1AF1' LIMIT 1   [ RunTime:0.009001s ]
+SQL: SHOW COLUMNS FROM `storemembers` [ RunTime:0.010000s ]
+SQL: SELECT `customer_id`,`title_id` FROM `storemembers` WHERE `store_id` = '50FB7B25-3CC8-56A1-6E72-359C64DE1AF1' AND `record_status` = 1  [ RunTime:0.009001s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.009001s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = 'f2769640-6895-a154-2373-6019af266cc4' AND `record_status` = 1 LIMIT 1   [ RunTime:0.009001s ]
+SQL: SHOW COLUMNS FROM `houseroom` [ RunTime:0.010000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = '50FB7B25-3CC8-56A1-6E72-359C64DE1AF1' AND `record_status` = 1 LIMIT 1   [ RunTime:0.008001s ]
+SQL: SELECT `room_no`,`room_money`,`status`,`create_time`,`id`,customer_id as mobile FROM `houseroom` WHERE `store_id` = '50FB7B25-3CC8-56A1-6E72-359C64DE1AF1' AND `record_status` = 1 ORDER BY create_time desc LIMIT 0,10   [ RunTime:0.012001s ]
+SQL: SELECT `mobile` FROM `customer` WHERE `id` = 'f2769640-6895-a154-2373-6019af266cc4' AND `record_status` = 1 LIMIT 1   [ RunTime:0.009000s ]
+SQL: SELECT `mobile` FROM `customer` WHERE `id` = 'f2769640-6895-a154-2373-6019af266cc4' AND `record_status` = 1 LIMIT 1   [ RunTime:0.009001s ]
+SQL: SELECT `mobile` FROM `customer` WHERE `id` = 'f2769640-6895-a154-2373-6019af266cc4' AND `record_status` = 1 LIMIT 1   [ RunTime:0.008000s ]
+SQL: SELECT `mobile` FROM `customer` WHERE `id` = 'f2769640-6895-a154-2373-6019af266cc4' AND `record_status` = 1 LIMIT 1   [ RunTime:0.008001s ]
+SQL: SELECT `mobile` FROM `customer` WHERE `id` = 'f2769640-6895-a154-2373-6019af266cc4' AND `record_status` = 1 LIMIT 1   [ RunTime:0.008000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\wamp\www\hizhu\Application\Runtime\Cache\Home\aaa9c5374d418312d46035356b94f682.php 第 172 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\wamp\www\hizhu\Application\Runtime\Cache\Home\aaa9c5374d418312d46035356b94f682.php 第 172 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\wamp\www\hizhu\Application\Runtime\Cache\Home\aaa9c5374d418312d46035356b94f682.php 第 172 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\wamp\www\hizhu\Application\Runtime\Cache\Home\aaa9c5374d418312d46035356b94f682.php 第 172 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\wamp\www\hizhu\Application\Runtime\Cache\Home\aaa9c5374d418312d46035356b94f682.php 第 172 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.033002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.034002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-02-14T16:17:12+08:00 ] ::1 /hizhu/Stores/storeCreditScore/no/162/leftno/164/id/50FB7B25-3CC8-56A1-6E72-359C64DE1AF1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.009001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.010000s ]
+SQL: SHOW COLUMNS FROM `stores` [ RunTime:0.013001s ]
+SQL: SELECT `id`,`name`,`medal_type`,`create_time`,`credit_score`,`earnestmoney` FROM `stores` WHERE `id` = '50FB7B25-3CC8-56A1-6E72-359C64DE1AF1' LIMIT 1   [ RunTime:0.020001s ]
+SQL: SHOW COLUMNS FROM `storecreditdetail` [ RunTime:0.020002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `storecreditdetail` WHERE `store_id` = '50FB7B25-3CC8-56A1-6E72-359C64DE1AF1' LIMIT 1   [ RunTime:0.019001s ]
+SQL: SELECT `now_score`,`score_num`,`create_time`,`score_type`,`oper_man_name`,`msg_txt` FROM `storecreditdetail` WHERE `store_id` = '50FB7B25-3CC8-56A1-6E72-359C64DE1AF1' ORDER BY create_time desc LIMIT 0,10   [ RunTime:0.015001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-02-14T16:17:14+08:00 ] ::1 /hizhu/Stores/storeModifyCreScore/no/162/leftno/164/id/50FB7B25-3CC8-56A1-6E72-359C64DE1AF1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.010001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.011000s ]
+SQL: SHOW COLUMNS FROM `stores` [ RunTime:0.012001s ]
+SQL: SELECT `id`,`name`,`medal_type`,`create_time`,`credit_score`,`earnestmoney` FROM `stores` WHERE `id` = '50FB7B25-3CC8-56A1-6E72-359C64DE1AF1' LIMIT 1   [ RunTime:0.010001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-02-14T16:17:38+08:00 ] ::1 /hizhu/stores/modifyCreScore.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `storemembers` [ RunTime:0.009001s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = '50FB7B25-3CC8-56A1-6E72-359C64DE1AF1' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.011001s ]
+SQL: SHOW COLUMNS FROM `rsakeys` [ RunTime:0.008001s ]
+SQL: SELECT * FROM `rsakeys` WHERE `platform` = 'web' LIMIT 1   [ RunTime:0.009000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-02-14T16:17:40+08:00 ] ::1 /hizhu/stores/storesList.html?no=162&leftno=164&id=50FB7B25-3CC8-56A1-6E72-359C64DE1AF1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.018001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.019001s ]
+SQL: SHOW COLUMNS FROM `stores` [ RunTime:0.011001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `stores` WHERE `city_code` = '001009001' AND `record_status` = 1 LIMIT 1   [ RunTime:0.009000s ]
+SQL: SELECT `id`,`name`,`medal_type`,`create_time`,`update_time`,`credit_score`,`earnestmoney` FROM `stores` WHERE `city_code` = '001009001' AND `record_status` = 1 ORDER BY create_time desc LIMIT 0,10   [ RunTime:0.010001s ]
+SQL: SHOW COLUMNS FROM `storemembers` [ RunTime:0.010001s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = '40AC4691-724F-851B-BDFB-B2786D949469' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.008000s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.011001s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = '2466eeee-06a6-d3e1-a151-46f06afbf57d' AND `record_status` = 1 LIMIT 1   [ RunTime:0.013001s ]
+SQL: SHOW COLUMNS FROM `houseroom` [ RunTime:0.013000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = '40AC4691-724F-851B-BDFB-B2786D949469' AND `record_status` = 1 LIMIT 1   [ RunTime:0.008001s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = '91715681-1122-3496-F076-54B0E786323D' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.008000s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = '53eba7e2-4c94-8bcb-e666-a8bfc154d98c' AND `record_status` = 1 LIMIT 1   [ RunTime:0.009001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = '91715681-1122-3496-F076-54B0E786323D' AND `record_status` = 1 LIMIT 1   [ RunTime:0.010001s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = '5843C29C-FEDE-8FE4-2C80-F7EC08702A84' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.009000s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = '53EBA7E2-4C94-8BCB-E666-A8BFC154D98C' AND `record_status` = 1 LIMIT 1   [ RunTime:0.011001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = '5843C29C-FEDE-8FE4-2C80-F7EC08702A84' AND `record_status` = 1 LIMIT 1   [ RunTime:0.009000s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = '50FB7B25-3CC8-56A1-6E72-359C64DE1AF1' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.012000s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = 'f2769640-6895-a154-2373-6019af266cc4' AND `record_status` = 1 LIMIT 1   [ RunTime:0.013001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = '50FB7B25-3CC8-56A1-6E72-359C64DE1AF1' AND `record_status` = 1 LIMIT 1   [ RunTime:0.010001s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = '5AA4464F-3FD5-DC55-112E-439E54365628' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.011000s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = 'F2769640-6895-A154-2373-6019AF266CC4' AND `record_status` = 1 LIMIT 1   [ RunTime:0.012000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = '5AA4464F-3FD5-DC55-112E-439E54365628' AND `record_status` = 1 LIMIT 1   [ RunTime:0.013001s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = '48C12938-4760-3C60-E18D-FE4BDE766F8B' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.009001s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = 'EDA14556-8019-39C5-1FBF-4A19001AB785' AND `record_status` = 1 LIMIT 1   [ RunTime:0.009000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = '48C12938-4760-3C60-E18D-FE4BDE766F8B' AND `record_status` = 1 LIMIT 1   [ RunTime:0.009001s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = '52C82564-FDDB-78CF-8053-E1877603F7FC' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = 'dc7c5555-4012-12c6-25eb-ee2b2ac4032f' AND `record_status` = 1 LIMIT 1   [ RunTime:0.013001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = '52C82564-FDDB-78CF-8053-E1877603F7FC' AND `record_status` = 1 LIMIT 1   [ RunTime:0.009001s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = 'DB248090-C4A1-D06F-D3F1-853231A023BE' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = 'DC7C5555-4012-12C6-25EB-EE2B2AC4032F' AND `record_status` = 1 LIMIT 1   [ RunTime:0.009001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = 'DB248090-C4A1-D06F-D3F1-853231A023BE' AND `record_status` = 1 LIMIT 1   [ RunTime:0.009000s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = '44979133-F033-2183-80C1-2D9A672CA17E' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.009000s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = '92ad24e8-1aeb-b3ba-9555-381edbb1c2a2' AND `record_status` = 1 LIMIT 1   [ RunTime:0.012001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = '44979133-F033-2183-80C1-2D9A672CA17E' AND `record_status` = 1 LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT `customer_id` FROM `storemembers` WHERE `store_id` = 'C6AB4B24-7D19-EFA9-2B0E-DD4C431177CE' AND `title_id` = 300 AND `record_status` = 1 LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = '0b1a8fc1-e616-1bde-9ec0-9552e9c5f652' AND `record_status` = 1 LIMIT 1   [ RunTime:0.011001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = 'C6AB4B24-7D19-EFA9-2B0E-DD4C431177CE' AND `record_status` = 1 LIMIT 1   [ RunTime:0.009000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: type D:\wamp\www\hizhu\Application\Runtime\Cache\Home\9d94da0cf008813badfe0710e96249fc.php 第 81 行.
+NOTIC: [8] Undefined index: type D:\wamp\www\hizhu\Application\Runtime\Cache\Home\9d94da0cf008813badfe0710e96249fc.php 第 82 行.
+NOTIC: [8] Undefined index: type D:\wamp\www\hizhu\Application\Runtime\Cache\Home\9d94da0cf008813badfe0710e96249fc.php 第 83 行.
+NOTIC: [8] Undefined index: type D:\wamp\www\hizhu\Application\Runtime\Cache\Home\9d94da0cf008813badfe0710e96249fc.php 第 84 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.032002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-02-14T16:17:42+08:00 ] ::1 /hizhu/stores/storeDetail/no/162/leftno/164/id/50FB7B25-3CC8-56A1-6E72-359C64DE1AF1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.011001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.012001s ]
+SQL: SHOW COLUMNS FROM `stores` [ RunTime:0.011001s ]
+SQL: SELECT `id`,`name`,`medal_type`,`create_time`,`credit_score`,`earnestmoney` FROM `stores` WHERE `id` = '50FB7B25-3CC8-56A1-6E72-359C64DE1AF1' LIMIT 1   [ RunTime:0.010000s ]
+SQL: SHOW COLUMNS FROM `storemembers` [ RunTime:0.009001s ]
+SQL: SELECT `customer_id`,`title_id` FROM `storemembers` WHERE `store_id` = '50FB7B25-3CC8-56A1-6E72-359C64DE1AF1' AND `record_status` = 1  [ RunTime:0.009001s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.013001s ]
+SQL: SELECT `mobile`,`true_name` FROM `customer` WHERE `id` = 'f2769640-6895-a154-2373-6019af266cc4' AND `record_status` = 1 LIMIT 1   [ RunTime:0.010001s ]
+SQL: SHOW COLUMNS FROM `houseroom` [ RunTime:0.012000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `store_id` = '50FB7B25-3CC8-56A1-6E72-359C64DE1AF1' AND `record_status` = 1 LIMIT 1   [ RunTime:0.009001s ]
+SQL: SELECT `room_no`,`room_money`,`status`,`create_time`,`id`,customer_id as mobile FROM `houseroom` WHERE `store_id` = '50FB7B25-3CC8-56A1-6E72-359C64DE1AF1' AND `record_status` = 1 ORDER BY create_time desc LIMIT 0,10   [ RunTime:0.012001s ]
+SQL: SELECT `mobile` FROM `customer` WHERE `id` = 'f2769640-6895-a154-2373-6019af266cc4' AND `record_status` = 1 LIMIT 1   [ RunTime:0.012000s ]
+SQL: SELECT `mobile` FROM `customer` WHERE `id` = 'f2769640-6895-a154-2373-6019af266cc4' AND `record_status` = 1 LIMIT 1   [ RunTime:0.007001s ]
+SQL: SELECT `mobile` FROM `customer` WHERE `id` = 'f2769640-6895-a154-2373-6019af266cc4' AND `record_status` = 1 LIMIT 1   [ RunTime:0.010001s ]
+SQL: SELECT `mobile` FROM `customer` WHERE `id` = 'f2769640-6895-a154-2373-6019af266cc4' AND `record_status` = 1 LIMIT 1   [ RunTime:0.011000s ]
+SQL: SELECT `mobile` FROM `customer` WHERE `id` = 'f2769640-6895-a154-2373-6019af266cc4' AND `record_status` = 1 LIMIT 1   [ RunTime:0.009001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\wamp\www\hizhu\Application\Runtime\Cache\Home\aaa9c5374d418312d46035356b94f682.php 第 172 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\wamp\www\hizhu\Application\Runtime\Cache\Home\aaa9c5374d418312d46035356b94f682.php 第 172 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\wamp\www\hizhu\Application\Runtime\Cache\Home\aaa9c5374d418312d46035356b94f682.php 第 172 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\wamp\www\hizhu\Application\Runtime\Cache\Home\aaa9c5374d418312d46035356b94f682.php 第 172 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\wamp\www\hizhu\Application\Runtime\Cache\Home\aaa9c5374d418312d46035356b94f682.php 第 172 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.042002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.042002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002001s ]
+
+[ 2017-02-14T16:27:22+08:00 ] ::1 /hizhu/Stores/storeCreditScore/no/162/leftno/164/id/50FB7B25-3CC8-56A1-6E72-359C64DE1AF1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.020002s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.009000s ]
+SQL: SHOW COLUMNS FROM `stores` [ RunTime:0.018001s ]
+SQL: SELECT `id`,`name`,`medal_type`,`create_time`,`credit_score`,`earnestmoney` FROM `stores` WHERE `id` = '50FB7B25-3CC8-56A1-6E72-359C64DE1AF1' LIMIT 1   [ RunTime:0.008000s ]
+SQL: SHOW COLUMNS FROM `storecreditdetail` [ RunTime:0.015001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `storecreditdetail` WHERE `store_id` = '50FB7B25-3CC8-56A1-6E72-359C64DE1AF1' LIMIT 1   [ RunTime:0.010001s ]
+SQL: SELECT `now_score`,`score_num`,`create_time`,`score_type`,`oper_man_name`,`msg_txt` FROM `storecreditdetail` WHERE `store_id` = '50FB7B25-3CC8-56A1-6E72-359C64DE1AF1' ORDER BY create_time desc LIMIT 0,10   [ RunTime:0.011000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-02-14T16:27:24+08:00 ] ::1 /hizhu/Stores/storeModifyCreScore/no/162/leftno/164/id/50FB7B25-3CC8-56A1-6E72-359C64DE1AF1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.020002s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.013000s ]
+SQL: SHOW COLUMNS FROM `stores` [ RunTime:0.017001s ]
+SQL: SELECT `id`,`name`,`medal_type`,`create_time`,`credit_score`,`earnestmoney` FROM `stores` WHERE `id` = '50FB7B25-3CC8-56A1-6E72-359C64DE1AF1' LIMIT 1   [ RunTime:0.009000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001001s ]
+
+[ 2017-02-14T16:27:37+08:00 ] ::1 /hizhu/Stores/storeModifyCreScore/no/162/leftno/164/id/50FB7B25-3CC8-56A1-6E72-359C64DE1AF1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.024001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.026001s ]
+SQL: SHOW COLUMNS FROM `stores` [ RunTime:0.018001s ]
+SQL: SELECT `id`,`name`,`medal_type`,`create_time`,`credit_score`,`earnestmoney` FROM `stores` WHERE `id` = '50FB7B25-3CC8-56A1-6E72-359C64DE1AF1' LIMIT 1   [ RunTime:0.008001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001001s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+

@@ -1,0 +1,91 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>管理租客</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 最新版本渲染 -->
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/audit_rent_orders.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/basic.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common.css">
+
+</head>
+<body>
+<include file="Public/head_city" />
+    <div class="title cf">
+    	<div class="logo fl cf">
+			<img src="__PUBLIC__/images/logo.png">
+		</div>
+		<ul class="cf fl">
+		<li><a href="{:U('Welcome/welcome')}">首页</a></li>
+			{$menutophtml}
+		</ul>
+		<div class="cf fr title_right">
+			<a class="blue" href="javascript:">欢迎您 <?php echo cookie("admin_user_name");?></a>
+			<span>|</span>
+			<a href="{:U('/Index/outlogin')}">退出</a>
+		</div>
+    </div>
+	<div class="main">
+		<div class="main_left subNavBox">
+		<include file="Public/left_menu" />
+			{$menulefthtml}
+		</div>
+		<div class="main_right">
+			<div class="common_head">
+				<h2>管理租客</h2>
+				<p>房间名称：<span>{$room_name}</span></p>
+			</div>
+			<div class="common_main">
+				<h2>租客信息</h2>
+				<form id="submitForm" method="post" action="__URL__/submitrenter">
+					<input type="hidden" name="resource_id" value="{$resource_id}" />
+					<input type="hidden" name="room_id" value="{$room_id}" />
+					<input type="hidden" name="room_name" value="{$room_name}" />
+					<input type="hidden" name="handle_type" value="{$handle_type}" />
+					<input type="hidden" name="renter_id" value="{$renterModel['id']}" />
+				<table class="table_one table_two">
+					<tr>
+						<td class="td_title"><span>*</span>性别：</td>
+						<td class="td_main">
+							<label><input type="radio" name="sex" value="1" checked="checked" />男</label>&nbsp;
+							<label><input type="radio" name="sex" value="0" />女</label>
+						</td>
+					</tr>
+					<tr>
+						<td class="td_title"><span>*</span>年龄段：</td>
+						<td class="td_main">
+							{$age_list}
+						</td>
+					</tr>
+					<tr>
+						<td class="td_title"><span>*</span>入住人数：</td>
+						<td class="td_main">
+							{$num_list}
+						</td>
+					</tr>
+				</table>
+			</form>
+				<div class="addhouse_last addhouse_last_room"><a href="javascript:window.history.back();" class="btn_b">返回</a><a href="javascript:;" onclick="submitForm()" class="btn_a">提交</a></div>
+			</div>
+		</div>
+</body>
+<script src="__PUBLIC__/js/jquery.js"></script>
+<script src="__PUBLIC__/js/common.js"></script>
+
+<script type="text/javascript">
+	var handle_type='{$handle_type}';
+	if(handle_type=="update"){
+		var sex='{$renterModel["renter_sex"]}';
+		var age='{$renterModel["renter_age"]}';
+		var num='{$renterModel["renter_num"]}';
+		$("input[name=sex][value="+sex+"]").attr("checked","checked");
+		$("input[name=age][value="+age+"]").attr("checked","checked");
+		$("input[name=num][value="+num+"]").attr("checked","checked");
+	}else{
+		$("input[name=age]:eq(3)").attr("checked","checked");
+		$("input[name=num]:eq(0)").attr("checked","checked");
+	}
+	function submitForm(){
+		$("#submitForm").submit();
+	}
+</script>
+</html>

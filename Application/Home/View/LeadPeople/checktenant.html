@@ -1,0 +1,172 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>查看租客信息</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 最新版本渲染 -->
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/audit_rent_orders.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/basic.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/add_landlord.css">
+
+</head>
+<body>
+<include file="Public/head_city" />
+     <div class="title cf">
+    	<div class="logo fl cf">
+			<img src="__PUBLIC__/images/logo.png">
+		</div>
+		<ul class="cf fl">
+		<li><a href="{:U('Welcome/welcome')}">首页</a></li>
+			{$menutophtml}
+		</ul>
+		<div class="cf fr title_right">
+			<a class="blue" href="javascript:">欢迎您 <?php echo cookie("admin_user_name");?></a>
+			<span>|</span>
+			<a href="{:U('/Index/outlogin')}">退出</a>
+		</div>
+    </div>
+	<div class="main">
+		<div class="main_left subNavBox">
+			<include file="Public/left_menu" />
+			{$menulefthtml}
+		</div>
+		<div class="main_right">
+			<div class="common_head">
+				<h2>查看租客信息</h2>
+			</div>
+			<div class="common_main">
+		
+				<table class="table_one table_two">
+					<tr>
+						<td class="td_title"><span></span>服务区域：</td>
+						<td class="td_main">{$regionarr['cname']}</td>
+					</tr>
+					<tr>
+						<td class="td_title"><span></span>服务人姓名：</td>
+						<td class="td_main">{$data['name']}</td>
+					</tr>
+					<tr>
+						<td class="td_title"><span></span>服务人手机：</td>
+						<td class="td_main">{$data['mobile']}</td>
+					</tr>
+				  </table>
+				  <div class="table">
+					<table>
+						<thead>
+							<tr>
+								<th>序号</th>
+								<th>付款时间</th>
+								<th>结束时间</th>
+								<th>用户手机</th>
+								<th>状态</th>
+								<th>准时程度</th>
+								<th>服务态度</th>
+								<th>房源质量</th>
+								<th>房源价格</th>
+								<th>评价内容</th>
+								<th>回复内容</th>
+								<th>操作</th>
+							</tr>
+						</thead>
+						<tbody>
+						    <volist name="list" id="vo">
+							<tr>
+								<td>{$i}</td>
+								<td>{$vo['pay_time']|date="Y-m-d H:i:s",###}</td>
+								<td> <if condition="strtoupper($vo['end_time']) neq 0">{$vo['end_time']|date="Y-m-d H:i:s",###}</if></td>
+								<td>{$vo.customer_mobile}</td>
+								<td>
+									<if condition="$vo['order_status'] eq '2'">
+									支付成功
+									<elseif condition="$vo['order_status'] eq '3'"/>
+								     退款中
+									<elseif condition="$vo['order_status'] eq '4'"/>
+									 已退款
+									<elseif condition="$vo['order_status'] eq '5'"/>
+									 已完成
+									</if>
+								</td>
+								<td>{$vo.stat_zhunshi}</td>
+								<td>{$vo.stat_fuwu}</td>
+								<td>{$vo.stat_zhiliang}</td>
+								<td>{$vo.stat_price}</td>
+								<td>{$vo.content}</td>
+								<td>{$vo.reply_content}</td>
+								<td>
+						    	   <if condition="$vo['reply_id'] eq '' and $vo['content'] neq ''"><a href="javascript:;" onclick="OpenReply('{$vo['id']}');">回复</a></if>
+								   <if condition="$vo['reply_id'] neq ''"><a href="javascript:;" onclick="DelReply('{$vo['reply_id']}');">删除回复</a></if>
+								   <if condition="$vo['reply_id'] eq ''and $vo['content'] eq ''">回复</if>
+							   </td>
+								<input type="hidden" name="order_id" value="{$vo['id']}">
+							</tr>
+							</volist>
+						</tbody>
+					</table>
+					<div class="skip cf">
+						<p class="fl skip_left">共{$pagecount}条记录，每页15条</p>
+						<p class="fr skip_right">
+							{$show}
+						</p>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	<!--回复-->
+		<div class="addReply" style="display:none;">
+		<div class="addReply_main">
+	
+			 <input type="hidden" name="order_id">
+				<div class="cf reply_text">
+					<span>回复内容</span>
+					<textarea name="reply_content" id="reply_content"></textarea>
+				</div>
+				<div class="anniu cf">	
+					<a href="#" class="anniu_back">返回</a>
+					<button class="anniu_add" onclick="return check1();">确认回复</button>
+				</div>
+		</div>
+	</div>	
+ <script src="__PUBLIC__/js/jquery.js"></script>
+ <script src="__PUBLIC__/js/common.js"></script>
+ <script src="__PUBLIC__/js/jquery.form.js"></script>
+<script type="text/javascript">
+
+  function OpenReply(order_id){
+          $("input[name='order_id']").val(order_id);
+		  $(".addReply").show();
+  }  	 
+		  
+	 $(".anniu_back").on("click",function(){
+	      $(".addReply").hide();
+      })
+  
+  function DelReply(reply_id){
+  		if(confirm("确认删除回复？")){
+	    		 $.get("__URL__/deletereply.html",{reply_id:reply_id},function(data){
+	            	if(data=="200"){
+	            		location.reload();
+	            	}
+	            },"json");
+	    }
+  }
+
+function check1(){
+	var orderid=$("input[name='order_id']").val();
+	var reply_content=$("#reply_content").val();
+	if(reply_content==""){
+		alert("请输入回复内容");
+		return false;
+	}else{
+		 $(".anniu_add").unbind();
+		$.get("__URL__/postreplycontent.html",{orderid:orderid,reply_content:reply_content},function(data){
+	    	if(data=="200"){
+	    		alert("回复成功");
+	    		location.reload();
+	    	}
+		},"json");
+	}
+}
+</script>
+</body>
+</html>

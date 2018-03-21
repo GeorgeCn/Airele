@@ -1,0 +1,2 @@
+User-agent£º*
+Disallow£º/

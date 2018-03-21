@@ -1,0 +1,1608 @@
+[ 2017-06-10T14:27:46+08:00 ] ::1 /hizhu/admin.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-10T14:27:46+08:00 ] ::1 /hizhu/admin.php/Index/verufy.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001001s ]
+
+[ 2017-06-10T14:27:50+08:00 ] ::1 /hizhu/Index/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.013001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.017001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' AND `user_pwd` = '0c6b4038cefe52dbba27c6434dc1fecd'  [ RunTime:0.012001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.012000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-10T14:27:53+08:00 ] ::1 /hizhu/Welcome/welcome.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.012001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.013001s ]
+SQL: SHOW COLUMNS FROM `adminmenulist` [ RunTime:0.013001s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 0 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.013001s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 0 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.011000s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 1 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.013000s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 3 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.012001s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 4 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.012001s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 6 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.012001s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 7 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.013001s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 47 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.013001s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 77 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.012001s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 87 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.016001s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 107 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.012001s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 141 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.012001s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 162 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.012001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' AND `record_status` = 1 LIMIT 1   [ RunTime:0.013000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.032002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-10T14:34:25+08:00 ] ::1 /hizhu/Customer/authenticationList.html?no=6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.019001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.016001s ]
+SQL: SHOW COLUMNS FROM `adminmenulist` [ RunTime:0.012001s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 31 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.226013s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 32 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.020001s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 191 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.013001s ]
+SQL: SHOW COLUMNS FROM `adminmenulistlimit` [ RunTime:0.016001s ]
+SQL: SELECT * FROM `adminmenulistlimit` WHERE `city_auth` = 1 AND `user_name` = 'admin'  [ RunTime:0.049003s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.020001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `customer` WHERE `is_auth` = 1 AND ( `auth_time` > 1427817600 AND `auth_time` < 1743523200  ) LIMIT 1   [ RunTime:0.021001s ]
+NOTIC: [2] urlencode() expects parameter 1 to be string, array given D:\wamp\www\hizhu\Application\Home\Controller\CustomerController.class.php 第 44 行.
+NOTIC: [2] urlencode() expects parameter 1 to be string, array given D:\wamp\www\hizhu\Application\Home\Controller\CustomerController.class.php 第 44 行.
+SQL: SELECT * FROM `customer` WHERE `is_auth` = 1 AND ( `auth_time` > 1427817600 AND `auth_time` < 1743523200  ) ORDER BY auth_time desc LIMIT 0,15   [ RunTime:0.017001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: startTime D:\wamp\www\hizhu\Application\Runtime\Cache\Home\ef908816fe1538536da457bb5abcc42d.php 第 72 行.
+NOTIC: [8] Undefined index: endTime D:\wamp\www\hizhu\Application\Runtime\Cache\Home\ef908816fe1538536da457bb5abcc42d.php 第 72 行.
+NOTIC: [8] Undefined index: mobile D:\wamp\www\hizhu\Application\Runtime\Cache\Home\ef908816fe1538536da457bb5abcc42d.php 第 74 行.
+NOTIC: [8] Undefined index: name D:\wamp\www\hizhu\Application\Runtime\Cache\Home\ef908816fe1538536da457bb5abcc42d.php 第 78 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-10T14:34:36+08:00 ] ::1 /hizhu/Jobowner/jobownerlist.html?no=6&leftno=111
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.231013s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.017001s ]
+SQL: select id,cname,parent_id from region where is_display=1 and parent_id=0 and city_code='001009001' [ RunTime:0.022001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2017-06-10T14:34:55+08:00 ] ::1 /hizhu/Jobowner/ownersManageList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.017001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.009000s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.012001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM customer a INNER JOIN gaodudata.customerinfo b ON a.id=b.customer_id  WHERE `city_code` = '001009001' AND a.record_status = 1 AND a.is_owner = 4 LIMIT 1   [ RunTime:0.057003s ]
+SQL: SELECT a.true_name,a.mobile,a.is_commission,a.is_monthly,b.status,b.create_time,b.update_man,b.principal_man,b.source,b.region_name,b.customer_id FROM customer a INNER JOIN gaodudata.customerinfo b ON a.id=b.customer_id  WHERE `city_code` = '001009001' AND a.record_status = 1 AND a.is_owner = 4 ORDER BY create_time desc LIMIT 0,10   [ RunTime:0.043003s ]
+
+[ 2017-06-10T14:36:40+08:00 ] ::1 /hizhu/Jobowner/ownersManageList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.010001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.010000s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.013001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM customer a INNER JOIN gaodudata.customerinfo b ON a.id=b.customer_id  WHERE `city_code` = '001009001' AND a.record_status = 1 AND a.is_owner = 4 LIMIT 1   [ RunTime:0.011001s ]
+SQL: SELECT a.true_name,a.mobile,a.is_commission,a.is_monthly,b.status,b.create_time,b.update_man,b.principal_man,b.source,b.region_name,b.customer_id FROM customer a INNER JOIN gaodudata.customerinfo b ON a.id=b.customer_id  WHERE `city_code` = '001009001' AND a.record_status = 1 AND a.is_owner = 4 ORDER BY create_time desc LIMIT 0,10   [ RunTime:0.011001s ]
+NOTIC: [8] Undefined variable: fileds D:\wamp\www\hizhu\Application\Logic\CustomerLogic.class.php 第 210 行.
+SQL: SHOW COLUMNS FROM `customerservicedata` [ RunTime:0.028001s ]
+ERR: 1146:Table 'gaodudata.customerservicedata' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `customerservicedata`
+SQL: SELECT * FROM `customerservicedata` WHERE `customer_id` = 'ce345dae-d56f-163f-5acf-945560ba3d92' AND `city_code` = '001009001' AND `service_end` > 1497076599  [ RunTime:0.012001s ]
+ERR: 1146:Table 'gaodudata.customerservicedata' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `customerservicedata` WHERE `customer_id` = 'ce345dae-d56f-163f-5acf-945560ba3d92' AND `city_code` = '001009001' AND `service_end` > 1497076599 
+NOTIC: [8] Undefined variable: fileds D:\wamp\www\hizhu\Application\Logic\CustomerLogic.class.php 第 210 行.
+SQL: SELECT * FROM `customerservicedata` WHERE `customer_id` = 'c75547c0-28a1-9702-ee4b-b89900ac4c53' AND `city_code` = '001009001' AND `service_end` > 1497076599  [ RunTime:0.010001s ]
+ERR: 1146:Table 'gaodudata.customerservicedata' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `customerservicedata` WHERE `customer_id` = 'c75547c0-28a1-9702-ee4b-b89900ac4c53' AND `city_code` = '001009001' AND `service_end` > 1497076599 
+NOTIC: [8] Undefined variable: fileds D:\wamp\www\hizhu\Application\Logic\CustomerLogic.class.php 第 210 行.
+SQL: SELECT * FROM `customerservicedata` WHERE `customer_id` = 'BDB25DB7-AE01-13EF-7892-800058715245' AND `city_code` = '001009001' AND `service_end` > 1497076599  [ RunTime:0.010000s ]
+ERR: 1146:Table 'gaodudata.customerservicedata' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `customerservicedata` WHERE `customer_id` = 'BDB25DB7-AE01-13EF-7892-800058715245' AND `city_code` = '001009001' AND `service_end` > 1497076599 
+NOTIC: [8] Undefined variable: fileds D:\wamp\www\hizhu\Application\Logic\CustomerLogic.class.php 第 210 行.
+SQL: SELECT * FROM `customerservicedata` WHERE `customer_id` = 'F557523B-83EC-2AE3-1DB7-0E935641E5A0' AND `city_code` = '001009001' AND `service_end` > 1497076599  [ RunTime:0.011001s ]
+ERR: 1146:Table 'gaodudata.customerservicedata' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `customerservicedata` WHERE `customer_id` = 'F557523B-83EC-2AE3-1DB7-0E935641E5A0' AND `city_code` = '001009001' AND `service_end` > 1497076599 
+NOTIC: [8] Undefined variable: fileds D:\wamp\www\hizhu\Application\Logic\CustomerLogic.class.php 第 210 行.
+SQL: SELECT * FROM `customerservicedata` WHERE `customer_id` = 'a1df2a9c-41a8-978a-c72f-74554bfca16d' AND `city_code` = '001009001' AND `service_end` > 1497076599  [ RunTime:0.010000s ]
+ERR: 1146:Table 'gaodudata.customerservicedata' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `customerservicedata` WHERE `customer_id` = 'a1df2a9c-41a8-978a-c72f-74554bfca16d' AND `city_code` = '001009001' AND `service_end` > 1497076599 
+NOTIC: [8] Undefined variable: fileds D:\wamp\www\hizhu\Application\Logic\CustomerLogic.class.php 第 210 行.
+SQL: SELECT * FROM `customerservicedata` WHERE `customer_id` = 'c52b859d-8071-270f-dfbb-ab272b772be6' AND `city_code` = '001009001' AND `service_end` > 1497076599  [ RunTime:0.010000s ]
+ERR: 1146:Table 'gaodudata.customerservicedata' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `customerservicedata` WHERE `customer_id` = 'c52b859d-8071-270f-dfbb-ab272b772be6' AND `city_code` = '001009001' AND `service_end` > 1497076599 
+NOTIC: [8] Undefined variable: fileds D:\wamp\www\hizhu\Application\Logic\CustomerLogic.class.php 第 210 行.
+SQL: SELECT * FROM `customerservicedata` WHERE `customer_id` = '0EA1B980-801A-3938-D82F-34C8544B39C5' AND `city_code` = '001009001' AND `service_end` > 1497076599  [ RunTime:0.011001s ]
+ERR: 1146:Table 'gaodudata.customerservicedata' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `customerservicedata` WHERE `customer_id` = '0EA1B980-801A-3938-D82F-34C8544B39C5' AND `city_code` = '001009001' AND `service_end` > 1497076599 
+NOTIC: [8] Undefined variable: fileds D:\wamp\www\hizhu\Application\Logic\CustomerLogic.class.php 第 210 行.
+SQL: SELECT * FROM `customerservicedata` WHERE `customer_id` = 'BE1102E0-6B96-7B21-E8FE-78EEE0F32C89' AND `city_code` = '001009001' AND `service_end` > 1497076599  [ RunTime:0.013001s ]
+ERR: 1146:Table 'gaodudata.customerservicedata' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `customerservicedata` WHERE `customer_id` = 'BE1102E0-6B96-7B21-E8FE-78EEE0F32C89' AND `city_code` = '001009001' AND `service_end` > 1497076599 
+NOTIC: [8] Undefined variable: fileds D:\wamp\www\hizhu\Application\Logic\CustomerLogic.class.php 第 210 行.
+SQL: SELECT * FROM `customerservicedata` WHERE `customer_id` = '99AF38F0-E3C4-6DA0-021C-8AE8C8CF6716' AND `city_code` = '001009001' AND `service_end` > 1497076599  [ RunTime:0.011000s ]
+ERR: 1146:Table 'gaodudata.customerservicedata' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `customerservicedata` WHERE `customer_id` = '99AF38F0-E3C4-6DA0-021C-8AE8C8CF6716' AND `city_code` = '001009001' AND `service_end` > 1497076599 
+NOTIC: [8] Undefined variable: fileds D:\wamp\www\hizhu\Application\Logic\CustomerLogic.class.php 第 210 行.
+SQL: SELECT * FROM `customerservicedata` WHERE `customer_id` = '851FDA32-5A79-136B-2655-7948776F0947' AND `city_code` = '001009001' AND `service_end` > 1497076599  [ RunTime:0.011001s ]
+ERR: 1146:Table 'gaodudata.customerservicedata' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `customerservicedata` WHERE `customer_id` = '851FDA32-5A79-136B-2655-7948776F0947' AND `city_code` = '001009001' AND `service_end` > 1497076599 
+SQL: SHOW COLUMNS FROM `agentcompany` [ RunTime:0.009000s ]
+SQL: SELECT `id`,`company_name` FROM `agentcompany` WHERE `city_code` = '001009001' AND `record_status` = 1 ORDER BY create_time desc  [ RunTime:0.010001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: agent_company_name D:\wamp\www\hizhu\Application\Runtime\Cache\Home\afc8eefe2e1dab6b8ec7e4cfe6cac822.php 第 177 行.
+NOTIC: [8] Undefined index: agent_company_name D:\wamp\www\hizhu\Application\Runtime\Cache\Home\afc8eefe2e1dab6b8ec7e4cfe6cac822.php 第 177 行.
+NOTIC: [8] Undefined index: agent_company_name D:\wamp\www\hizhu\Application\Runtime\Cache\Home\afc8eefe2e1dab6b8ec7e4cfe6cac822.php 第 177 行.
+NOTIC: [8] Undefined index: agent_company_name D:\wamp\www\hizhu\Application\Runtime\Cache\Home\afc8eefe2e1dab6b8ec7e4cfe6cac822.php 第 177 行.
+NOTIC: [8] Undefined index: agent_company_name D:\wamp\www\hizhu\Application\Runtime\Cache\Home\afc8eefe2e1dab6b8ec7e4cfe6cac822.php 第 177 行.
+NOTIC: [8] Undefined index: agent_company_name D:\wamp\www\hizhu\Application\Runtime\Cache\Home\afc8eefe2e1dab6b8ec7e4cfe6cac822.php 第 177 行.
+NOTIC: [8] Undefined index: agent_company_name D:\wamp\www\hizhu\Application\Runtime\Cache\Home\afc8eefe2e1dab6b8ec7e4cfe6cac822.php 第 177 行.
+NOTIC: [8] Undefined index: agent_company_name D:\wamp\www\hizhu\Application\Runtime\Cache\Home\afc8eefe2e1dab6b8ec7e4cfe6cac822.php 第 177 行.
+NOTIC: [8] Undefined index: agent_company_name D:\wamp\www\hizhu\Application\Runtime\Cache\Home\afc8eefe2e1dab6b8ec7e4cfe6cac822.php 第 177 行.
+NOTIC: [8] Undefined index: agent_company_name D:\wamp\www\hizhu\Application\Runtime\Cache\Home\afc8eefe2e1dab6b8ec7e4cfe6cac822.php 第 177 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-10T14:37:03+08:00 ] ::1 /hizhu/Jobowner/ownersManageDetail.html?no=6&leftno=111&id=ce345dae-d56f-163f-5acf-945560ba3d92
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.019001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.016001s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.032002s ]
+SQL: SELECT `id`,`true_name`,`mobile`,`is_owner`,`city_code`,`owner_verify`,`agent_company_name`,`company_store_name` FROM `customer` WHERE `id` = 'ce345dae-d56f-163f-5acf-945560ba3d92' LIMIT 1   [ RunTime:0.665038s ]
+SQL: SHOW COLUMNS FROM `customerinfo` [ RunTime:0.018001s ]
+SQL: SELECT `principal_man`,`status` FROM `customerinfo` WHERE `customer_id` = 'ce345dae-d56f-163f-5acf-945560ba3d92' LIMIT 1   [ RunTime:0.015001s ]
+SQL: SHOW COLUMNS FROM `customerservicedata` [ RunTime:0.016001s ]
+ERR: 1146:Table 'gaodudata.customerservicedata' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `customerservicedata`
+SQL: SELECT `customer_id`,`service_start`,`service_end`,`city_code`,`update_time` FROM `customerservicedata` WHERE `customer_id` = 'ce345dae-d56f-163f-5acf-945560ba3d92'  [ RunTime:0.228013s ]
+ERR: 1146:Table 'gaodudata.customerservicedata' doesn't exist
+ [ SQL语句 ] : SELECT `customer_id`,`service_start`,`service_end`,`city_code`,`update_time` FROM `customerservicedata` WHERE `customer_id` = 'ce345dae-d56f-163f-5acf-945560ba3d92' 
+SQL: SHOW COLUMNS FROM `commissionmonthly` [ RunTime:0.649037s ]
+SQL: SELECT `customer_id`,`monthly_start`,`monthly_end`,`is_open` FROM `commissionmonthly` WHERE `customer_id` = 'ce345dae-d56f-163f-5acf-945560ba3d92' ORDER BY create_time desc LIMIT 0,10   [ RunTime:0.022002s ]
+SQL: SHOW COLUMNS FROM `commissionmanage_fd` [ RunTime:0.012000s ]
+SQL: SELECT `customer_id`,`use_time`,`stop_time`,`contract_type`,`contract_money`,`contract_base`,`pay_method` FROM `commissionmanage_fd` WHERE `customer_id` = 'ce345dae-d56f-163f-5acf-945560ba3d92' ORDER BY create_time desc LIMIT 0,10   [ RunTime:0.021001s ]
+SQL: SHOW COLUMNS FROM `houseselect` [ RunTime:0.013000s ]
+SQL: SELECT `room_id`,`room_no`,`top_type`,`region_name`,`scope_name`,`subwayline_name`,`subway_name`,`create_man`,`create_time` FROM `houseselect` WHERE `customer_id` = 'ce345dae-d56f-163f-5acf-945560ba3d92' LIMIT 1   [ RunTime:0.045003s ]
+SQL: SHOW COLUMNS FROM `customerlinks` [ RunTime:0.011001s ]
+SQL: SELECT `renter_num`,`contact_num`,`reserve_num`,`total_num` FROM `customerlinks` WHERE `customer_id` = 'ce345dae-d56f-163f-5acf-945560ba3d92' LIMIT 1   [ RunTime:0.020001s ]
+SQL: SHOW COLUMNS FROM `houseroom` [ RunTime:0.015001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `customer_id` = 'ce345dae-d56f-163f-5acf-945560ba3d92' AND `status` = 2 LIMIT 1   [ RunTime:0.013001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: owner_verify D:\wamp\www\hizhu\Application\Runtime\Cache\Home\695426c465026b0e7861388daebce774.php 第 104 行.
+NOTIC: [8] Undefined variable: contactlist D:\wamp\www\hizhu\Application\Runtime\Cache\Home\695426c465026b0e7861388daebce774.php 第 132 行.
+NOTIC: [8] Undefined variable: appointlist D:\wamp\www\hizhu\Application\Runtime\Cache\Home\695426c465026b0e7861388daebce774.php 第 166 行.
+NOTIC: [8] Undefined variable: looklist D:\wamp\www\hizhu\Application\Runtime\Cache\Home\695426c465026b0e7861388daebce774.php 第 197 行.
+NOTIC: [8] Undefined variable: trackinglist D:\wamp\www\hizhu\Application\Runtime\Cache\Home\695426c465026b0e7861388daebce774.php 第 223 行.
+NOTIC: [8] Undefined variable: applybacklist D:\wamp\www\hizhu\Application\Runtime\Cache\Home\695426c465026b0e7861388daebce774.php 第 249 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.048002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.048002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-10T14:37:24+08:00 ] ::1 /hizhu/Jobowner/ownersUpdate.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: switchcity D:\wamp\www\hizhu\Application\Runtime\Cache\Home\88df3d5c49e7557b0faf7a15f11ee0fc.php 第 13 行.
+NOTIC: [8] Undefined variable: menutophtml D:\wamp\www\hizhu\Application\Runtime\Cache\Home\88df3d5c49e7557b0faf7a15f11ee0fc.php 第 45 行.
+NOTIC: [8] Undefined variable: menulefthtml D:\wamp\www\hizhu\Application\Runtime\Cache\Home\88df3d5c49e7557b0faf7a15f11ee0fc.php 第 61 行.
+NOTIC: [8] Undefined variable: regionList D:\wamp\www\hizhu\Application\Runtime\Cache\Home\88df3d5c49e7557b0faf7a15f11ee0fc.php 第 115 行.
+NOTIC: [8] Undefined variable: customer D:\wamp\www\hizhu\Application\Runtime\Cache\Home\88df3d5c49e7557b0faf7a15f11ee0fc.php 第 123 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.034002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.034002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-10T14:51:41+08:00 ] ::1 /hizhu/Jobowner/ownersAdd.html?
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.011001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.016000s ]
+SQL: select user_name,real_name from admin_user where  city_auth like '%1%' order by user_name [ RunTime:0.011001s ]
+SQL: SHOW COLUMNS FROM `agentcompany` [ RunTime:0.011000s ]
+SQL: SELECT `id`,`company_name`,`commission_fee` FROM `agentcompany` WHERE `city_code` = '001009001' AND `record_status` = 1 ORDER BY create_time desc  [ RunTime:0.010001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-10T15:18:54+08:00 ] ::1 /hizhu/HouseResource/searchHandleMen?keyword=h
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: select user_name,real_name from admin_user where  city_auth like '%1%' and (user_name like 'h%' or real_name like 'h%') order by user_name [ RunTime:0.012001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-10T15:18:55+08:00 ] ::1 /hizhu/HouseResource/searchHandleMen?keyword=hu
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: select user_name,real_name from admin_user where  city_auth like '%1%' and (user_name like 'hu%' or real_name like 'hu%') order by user_name [ RunTime:0.010001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-10T15:18:55+08:00 ] ::1 /hizhu/HouseResource/searchHandleMen?keyword=hud
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: select user_name,real_name from admin_user where  city_auth like '%1%' and (user_name like 'hud%' or real_name like 'hud%') order by user_name [ RunTime:0.011000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-06-10T15:18:56+08:00 ] ::1 /hizhu/HouseResource/searchHandleMen?keyword=%E8%83%A1%E5%86%AC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: select user_name,real_name from admin_user where  city_auth like '%1%' and (user_name like '胡冬%' or real_name like '胡冬%') order by user_name [ RunTime:0.009001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-10T15:24:48+08:00 ] ::1 /hizhu/AgentsManage/agentsProveInfo.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.015001s ]
+SQL: SELECT `id`,`is_owner` FROM `customer` WHERE `record_status` = 1 AND `mobile` = '18810417823' LIMIT 1   [ RunTime:0.012000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001001s ]
+
+[ 2017-06-10T15:26:46+08:00 ] ::1 /hizhu/AgentsManage/agentsProveInfo.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.012001s ]
+SQL: SELECT `id`,`is_owner` FROM `customer` WHERE `record_status` = 1 AND `mobile` = '18151162207' LIMIT 1   [ RunTime:0.012001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-10T15:26:46+08:00 ] ::1 /hizhu/Jobowner/agentsAddInfo.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 非法操作:agentsAddInfo
+
+[ 2017-06-10T15:27:05+08:00 ] ::1 /hizhu/AgentsManage/agentsProveInfo.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.014001s ]
+SQL: SELECT `id`,`is_owner` FROM `customer` WHERE `record_status` = 1 AND `mobile` = '18151162207' LIMIT 1   [ RunTime:0.013001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-10T15:27:05+08:00 ] ::1 /hizhu/Jobowner/agentsAddInfo.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 非法操作:agentsAddInfo
+
+[ 2017-06-10T15:27:08+08:00 ] ::1 /hizhu/Jobowner/ownersAdd.html?
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.012001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.012000s ]
+SQL: SHOW COLUMNS FROM `agentcompany` [ RunTime:0.012001s ]
+SQL: SELECT `id`,`company_name`,`commission_fee` FROM `agentcompany` WHERE `city_code` = '001009001' AND `record_status` = 1 ORDER BY create_time desc  [ RunTime:0.012001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-10T15:27:23+08:00 ] ::1 /hizhu/HouseResource/searchHandleMen?keyword=h
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: select user_name,real_name from admin_user where  city_auth like '%1%' and (user_name like 'h%' or real_name like 'h%') order by user_name [ RunTime:0.011001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-10T15:27:24+08:00 ] ::1 /hizhu/HouseResource/searchHandleMen?keyword=hu
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: select user_name,real_name from admin_user where  city_auth like '%1%' and (user_name like 'hu%' or real_name like 'hu%') order by user_name [ RunTime:0.010000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-10T15:27:24+08:00 ] ::1 /hizhu/HouseResource/searchHandleMen?keyword=hud
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: select user_name,real_name from admin_user where  city_auth like '%1%' and (user_name like 'hud%' or real_name like 'hud%') order by user_name [ RunTime:0.011001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-10T15:27:24+08:00 ] ::1 /hizhu/HouseResource/searchHandleMen?keyword=%E8%83%A1%E5%86%AC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: select user_name,real_name from admin_user where  city_auth like '%1%' and (user_name like '胡冬%' or real_name like '胡冬%') order by user_name [ RunTime:0.010000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-06-10T15:27:29+08:00 ] ::1 /hizhu/AgentsManage/agentsProveInfo.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.013001s ]
+SQL: SELECT `id`,`is_owner` FROM `customer` WHERE `record_status` = 1 AND `mobile` = '18810417831' LIMIT 1   [ RunTime:0.012000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-10T15:27:29+08:00 ] ::1 /hizhu/Jobowner/ownersAddInfo.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-06-10T16:12:31+08:00 ] ::1 /hizhu/Jobowner/ownersAdd.html?
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.012001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.014001s ]
+SQL: SHOW COLUMNS FROM `adminmenulist` [ RunTime:0.012001s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 0 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.010000s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 6 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.009001s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 31 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.011000s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 32 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.010001s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 191 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.009001s ]
+SQL: SHOW COLUMNS FROM `agentcompany` [ RunTime:0.011000s ]
+SQL: SELECT `id`,`company_name`,`commission_fee` FROM `agentcompany` WHERE `city_code` = '001009001' AND `record_status` = 1 ORDER BY create_time desc  [ RunTime:0.010001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-10T16:13:08+08:00 ] ::1 /hizhu/Jobowner/ownersManageDetail.html?no=6&leftno=111&id=ce345dae-d56f-163f-5acf-945560ba3d92
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.015001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.014001s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.015001s ]
+SQL: SELECT `id`,`true_name`,`mobile`,`is_owner`,`city_code`,`owner_verify`,`agent_company_name`,`company_store_name` FROM `customer` WHERE `id` = 'ce345dae-d56f-163f-5acf-945560ba3d92' LIMIT 1   [ RunTime:0.012000s ]
+SQL: SHOW COLUMNS FROM `customerinfo` [ RunTime:0.013001s ]
+SQL: SELECT `principal_man`,`status` FROM `customerinfo` WHERE `customer_id` = 'ce345dae-d56f-163f-5acf-945560ba3d92' LIMIT 1   [ RunTime:0.012001s ]
+SQL: SHOW COLUMNS FROM `customerservicedata` [ RunTime:0.013001s ]
+ERR: 1146:Table 'gaodudata.customerservicedata' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `customerservicedata`
+SQL: SELECT `customer_id`,`service_start`,`service_end`,`city_code`,`update_time` FROM `customerservicedata` WHERE `customer_id` = 'ce345dae-d56f-163f-5acf-945560ba3d92'  [ RunTime:0.012000s ]
+ERR: 1146:Table 'gaodudata.customerservicedata' doesn't exist
+ [ SQL语句 ] : SELECT `customer_id`,`service_start`,`service_end`,`city_code`,`update_time` FROM `customerservicedata` WHERE `customer_id` = 'ce345dae-d56f-163f-5acf-945560ba3d92' 
+SQL: SHOW COLUMNS FROM `commissionmonthly` [ RunTime:0.015001s ]
+SQL: SELECT `customer_id`,`monthly_start`,`monthly_end`,`is_open` FROM `commissionmonthly` WHERE `customer_id` = 'ce345dae-d56f-163f-5acf-945560ba3d92' ORDER BY create_time desc LIMIT 0,10   [ RunTime:0.017001s ]
+SQL: SHOW COLUMNS FROM `commissionmanage_fd` [ RunTime:0.014001s ]
+SQL: SELECT `customer_id`,`use_time`,`stop_time`,`contract_type`,`contract_money`,`contract_base`,`pay_method` FROM `commissionmanage_fd` WHERE `customer_id` = 'ce345dae-d56f-163f-5acf-945560ba3d92' ORDER BY create_time desc LIMIT 0,10   [ RunTime:0.018001s ]
+SQL: SHOW COLUMNS FROM `houseselect` [ RunTime:0.069004s ]
+SQL: SELECT `room_id`,`room_no`,`top_type`,`region_name`,`scope_name`,`subwayline_name`,`subway_name`,`create_man`,`create_time` FROM `houseselect` WHERE `customer_id` = 'ce345dae-d56f-163f-5acf-945560ba3d92' LIMIT 1   [ RunTime:0.021002s ]
+SQL: SHOW COLUMNS FROM `customerlinks` [ RunTime:0.013000s ]
+SQL: SELECT `renter_num`,`contact_num`,`reserve_num`,`total_num` FROM `customerlinks` WHERE `customer_id` = 'ce345dae-d56f-163f-5acf-945560ba3d92' LIMIT 1   [ RunTime:0.014001s ]
+SQL: SHOW COLUMNS FROM `houseroom` [ RunTime:0.014001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `houseroom` WHERE `customer_id` = 'ce345dae-d56f-163f-5acf-945560ba3d92' AND `status` = 2 LIMIT 1   [ RunTime:0.013001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: owner_verify D:\wamp\www\hizhu\Application\Runtime\Cache\Home\695426c465026b0e7861388daebce774.php 第 104 行.
+NOTIC: [8] Undefined variable: contactlist D:\wamp\www\hizhu\Application\Runtime\Cache\Home\695426c465026b0e7861388daebce774.php 第 132 行.
+NOTIC: [8] Undefined variable: appointlist D:\wamp\www\hizhu\Application\Runtime\Cache\Home\695426c465026b0e7861388daebce774.php 第 166 行.
+NOTIC: [8] Undefined variable: looklist D:\wamp\www\hizhu\Application\Runtime\Cache\Home\695426c465026b0e7861388daebce774.php 第 197 行.
+NOTIC: [8] Undefined variable: trackinglist D:\wamp\www\hizhu\Application\Runtime\Cache\Home\695426c465026b0e7861388daebce774.php 第 223 行.
+NOTIC: [8] Undefined variable: applybacklist D:\wamp\www\hizhu\Application\Runtime\Cache\Home\695426c465026b0e7861388daebce774.php 第 249 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.050003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.050003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-06-10T16:13:09+08:00 ] ::1 /hizhu/Jobowner/ownersUpdate/id/ce345dae-d56f-163f-5acf-945560ba3d92.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: switchcity D:\wamp\www\hizhu\Application\Runtime\Cache\Home\88df3d5c49e7557b0faf7a15f11ee0fc.php 第 13 行.
+NOTIC: [8] Undefined variable: menutophtml D:\wamp\www\hizhu\Application\Runtime\Cache\Home\88df3d5c49e7557b0faf7a15f11ee0fc.php 第 45 行.
+NOTIC: [8] Undefined variable: menulefthtml D:\wamp\www\hizhu\Application\Runtime\Cache\Home\88df3d5c49e7557b0faf7a15f11ee0fc.php 第 61 行.
+NOTIC: [8] Undefined variable: regionList D:\wamp\www\hizhu\Application\Runtime\Cache\Home\88df3d5c49e7557b0faf7a15f11ee0fc.php 第 115 行.
+NOTIC: [8] Undefined variable: customer D:\wamp\www\hizhu\Application\Runtime\Cache\Home\88df3d5c49e7557b0faf7a15f11ee0fc.php 第 123 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-10T16:17:17+08:00 ] ::1 /hizhu/Jobowner/ownersUpdate/id/ce345dae-d56f-163f-5acf-945560ba3d92.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001001s ]
+NOTIC: [8] Undefined variable: switchcity D:\wamp\www\hizhu\Application\Runtime\Cache\Home\88df3d5c49e7557b0faf7a15f11ee0fc.php 第 13 行.
+NOTIC: [8] Undefined variable: menutophtml D:\wamp\www\hizhu\Application\Runtime\Cache\Home\88df3d5c49e7557b0faf7a15f11ee0fc.php 第 45 行.
+NOTIC: [8] Undefined variable: menulefthtml D:\wamp\www\hizhu\Application\Runtime\Cache\Home\88df3d5c49e7557b0faf7a15f11ee0fc.php 第 61 行.
+NOTIC: [8] Undefined variable: regionList D:\wamp\www\hizhu\Application\Runtime\Cache\Home\88df3d5c49e7557b0faf7a15f11ee0fc.php 第 115 行.
+NOTIC: [8] Undefined variable: customer D:\wamp\www\hizhu\Application\Runtime\Cache\Home\88df3d5c49e7557b0faf7a15f11ee0fc.php 第 123 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-10T16:19:32+08:00 ] ::1 /hizhu/Jobowner/ownersUpdate/id/ce345dae-d56f-163f-5acf-945560ba3d92.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-10T16:20:17+08:00 ] ::1 /hizhu/Jobowner/ownersUpdate/id/ce345dae-d56f-163f-5acf-945560ba3d92.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.011001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.010000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: regionList D:\wamp\www\hizhu\Application\Runtime\Cache\Home\88df3d5c49e7557b0faf7a15f11ee0fc.php 第 115 行.
+NOTIC: [8] Undefined variable: customer D:\wamp\www\hizhu\Application\Runtime\Cache\Home\88df3d5c49e7557b0faf7a15f11ee0fc.php 第 123 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-10T16:36:32+08:00 ] ::1 /hizhu/Jobowner/ownersAdd.html?
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.011001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.012001s ]
+SQL: SHOW COLUMNS FROM `agentcompany` [ RunTime:0.010001s ]
+SQL: SELECT `id`,`company_name`,`commission_fee` FROM `agentcompany` WHERE `city_code` = '001009001' AND `record_status` = 1 ORDER BY create_time desc  [ RunTime:0.010000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-10T16:39:53+08:00 ] ::1 /hizhu/Jobowner/ownersAdd.html?
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.013001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.011000s ]
+SQL: SHOW COLUMNS FROM `agentcompany` [ RunTime:0.011001s ]
+SQL: SELECT `id`,`company_name`,`commission_fee` FROM `agentcompany` WHERE `city_code` = '001009001' AND `record_status` = 1 ORDER BY create_time desc  [ RunTime:0.011001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-10T16:40:19+08:00 ] ::1 /hizhu/Jobowner/ownersAdd.html?
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.011000s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.013001s ]
+SQL: SHOW COLUMNS FROM `agentcompany` [ RunTime:0.025002s ]
+SQL: SELECT `id`,`company_name`,`commission_fee` FROM `agentcompany` WHERE `city_code` = '001009001' AND `record_status` = 1 ORDER BY create_time desc  [ RunTime:0.010001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-10T16:55:02+08:00 ] ::1 /hizhu/Jobowner/ownersUpdate/id/ce345dae-d56f-163f-5acf-945560ba3d92.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.012001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.013000s ]
+NOTIC: [8] Undefined variable: jobOwnerLogic D:\wamp\www\hizhu\Application\Home\Controller\JobownerController.class.php 第 1735 行.
+
+[ 2017-06-10T16:55:52+08:00 ] ::1 /hizhu/Jobowner/ownersUpdate/id/ce345dae-d56f-163f-5acf-945560ba3d92.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.011001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.010000s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.017001s ]
+SQL: SELECT `id`,`true_name`,`mobile`,`is_owner`,`city_code`,`owner_verify`,`agent_company_name`,`company_store_name` FROM `customer` WHERE `id` = 'ce345dae-d56f-163f-5acf-945560ba3d92' LIMIT 1   [ RunTime:0.015001s ]
+SQL: SHOW COLUMNS FROM `customerinfo` [ RunTime:0.014001s ]
+SQL: SELECT `principal_man`,`status`,`margin` FROM `customerinfo` WHERE `customer_id` = 'ce345dae-d56f-163f-5acf-945560ba3d92' LIMIT 1   [ RunTime:0.013001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: regionList D:\wamp\www\hizhu\Application\Runtime\Cache\Home\88df3d5c49e7557b0faf7a15f11ee0fc.php 第 115 行.
+NOTIC: [8] Undefined variable: customer D:\wamp\www\hizhu\Application\Runtime\Cache\Home\88df3d5c49e7557b0faf7a15f11ee0fc.php 第 123 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-10T16:56:53+08:00 ] ::1 /hizhu/Jobowner/ownersUpdate/id/ce345dae-d56f-163f-5acf-945560ba3d92.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.014001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.014001s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.015001s ]
+SQL: SELECT `id`,`true_name`,`mobile`,`is_owner`,`city_code`,`owner_verify`,`agent_company_name`,`company_store_name` FROM `customer` WHERE `id` = 'ce345dae-d56f-163f-5acf-945560ba3d92' LIMIT 1   [ RunTime:0.012001s ]
+SQL: SHOW COLUMNS FROM `customerinfo` [ RunTime:0.013001s ]
+SQL: SELECT `principal_man`,`status`,`margin` FROM `customerinfo` WHERE `customer_id` = 'ce345dae-d56f-163f-5acf-945560ba3d92' LIMIT 1   [ RunTime:0.011000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: regionList D:\wamp\www\hizhu\Application\Runtime\Cache\Home\88df3d5c49e7557b0faf7a15f11ee0fc.php 第 116 行.
+NOTIC: [8] Undefined variable: customer D:\wamp\www\hizhu\Application\Runtime\Cache\Home\88df3d5c49e7557b0faf7a15f11ee0fc.php 第 124 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-10T16:57:41+08:00 ] ::1 /hizhu/Jobowner/ownersUpdate/id/ce345dae-d56f-163f-5acf-945560ba3d92.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.012000s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.011001s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.013001s ]
+SQL: SELECT `id`,`true_name`,`mobile`,`is_owner`,`city_code`,`owner_verify`,`agent_company_name`,`company_store_name` FROM `customer` WHERE `id` = 'ce345dae-d56f-163f-5acf-945560ba3d92' LIMIT 1   [ RunTime:0.011000s ]
+SQL: SHOW COLUMNS FROM `customerinfo` [ RunTime:0.012000s ]
+SQL: SELECT `principal_man`,`status`,`margin` FROM `customerinfo` WHERE `customer_id` = 'ce345dae-d56f-163f-5acf-945560ba3d92' LIMIT 1   [ RunTime:0.011001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: regionList D:\wamp\www\hizhu\Application\Runtime\Cache\Home\88df3d5c49e7557b0faf7a15f11ee0fc.php 第 117 行.
+NOTIC: [8] Undefined variable: customer D:\wamp\www\hizhu\Application\Runtime\Cache\Home\88df3d5c49e7557b0faf7a15f11ee0fc.php 第 125 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2017-06-10T16:59:04+08:00 ] ::1 /hizhu/Jobowner/ownersUpdate/id/ce345dae-d56f-163f-5acf-945560ba3d92.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.012000s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.011000s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.013001s ]
+SQL: SELECT `id`,`true_name`,`mobile`,`is_owner`,`city_code`,`owner_verify`,`agent_company_name`,`company_store_name` FROM `customer` WHERE `id` = 'ce345dae-d56f-163f-5acf-945560ba3d92' LIMIT 1   [ RunTime:0.012001s ]
+SQL: SHOW COLUMNS FROM `customerinfo` [ RunTime:0.013001s ]
+SQL: SELECT `principal_man`,`status`,`margin` FROM `customerinfo` WHERE `customer_id` = 'ce345dae-d56f-163f-5acf-945560ba3d92' LIMIT 1   [ RunTime:0.011000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: regionList D:\wamp\www\hizhu\Application\Runtime\Cache\Home\88df3d5c49e7557b0faf7a15f11ee0fc.php 第 117 行.
+NOTIC: [8] Undefined variable: customer D:\wamp\www\hizhu\Application\Runtime\Cache\Home\88df3d5c49e7557b0faf7a15f11ee0fc.php 第 125 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-10T17:01:10+08:00 ] ::1 /hizhu/Jobowner/jobownerlist.html?no=6&leftno=111
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.010001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.011000s ]
+SQL: SHOW COLUMNS FROM `adminmenulistlimit` [ RunTime:0.011001s ]
+SQL: SELECT * FROM `adminmenulistlimit` WHERE `city_auth` = 1 AND `user_name` = 'admin'  [ RunTime:0.264015s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-10T17:01:15+08:00 ] ::1 /hizhu/Jobowner/jobownerlist.html?handle=query&no=6&leftno=111&pagecount=0&name=&mobile=&source=&update_man=&principal_man=&startTime=&endTime=&signed=&marginMin=&marginMax=&is_commission=&is_black=&status=&isMonth=&monthStart=&monthEnd=&isFee=&region_id=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.015001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.014001s ]
+SQL: select count(1) as cnt from customer a right join customerinfo b on a.id=b.customer_id where a.record_status=1 and a.is_owner=4 and a.city_code='001009001'  [ RunTime:0.027002s ]
+SQL: select a.true_name,a.mobile,b.status,b.create_time,b.principal_man,b.source,b.update_man,b.signed,b.margin,b.owner_remark,a.is_black,a.is_commission,a.is_monthly,b.region_name,b.customer_id from customer a right join customerinfo b on a.id=b.customer_id where a.record_status=1 and a.is_owner=4 and a.city_code='001009001'  order by b.create_time desc,b.id desc limit 0,8 [ RunTime:0.015001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-10T17:01:17+08:00 ] ::1 /hizhu/Jobowner/updatejobowner.html?no=6&leftno=111&cuid=ce345dae-d56f-163f-5acf-945560ba3d92
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.010001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.214012s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.012001s ]
+SQL: SELECT * FROM `customer` WHERE `id` = 'ce345dae-d56f-163f-5acf-945560ba3d92' LIMIT 1   [ RunTime:0.015001s ]
+SQL: SHOW COLUMNS FROM `customerinfo` [ RunTime:0.011000s ]
+SQL: SELECT * FROM `customerinfo` WHERE `customer_id` = 'ce345dae-d56f-163f-5acf-945560ba3d92' LIMIT 1   [ RunTime:0.011001s ]
+SQL: select user_name,real_name from admin_user where  city_auth like '%1%' order by user_name [ RunTime:0.010001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001001s ]
+
+[ 2017-06-10T17:03:49+08:00 ] ::1 /hizhu/Jobowner/ownersUpdate/id/ce345dae-d56f-163f-5acf-945560ba3d92.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.012001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.223013s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.013001s ]
+SQL: SELECT `id`,`true_name`,`mobile`,`is_owner`,`city_code`,`owner_verify`,`agent_company_name`,`company_store_name` FROM `customer` WHERE `id` = 'ce345dae-d56f-163f-5acf-945560ba3d92' LIMIT 1   [ RunTime:0.010000s ]
+SQL: SHOW COLUMNS FROM `customerinfo` [ RunTime:0.010001s ]
+SQL: SELECT `principal_man`,`status`,`margin` FROM `customerinfo` WHERE `customer_id` = 'ce345dae-d56f-163f-5acf-945560ba3d92' LIMIT 1   [ RunTime:0.010001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: regionList D:\wamp\www\hizhu\Application\Runtime\Cache\Home\88df3d5c49e7557b0faf7a15f11ee0fc.php 第 112 行.
+NOTIC: [8] Undefined variable: customer D:\wamp\www\hizhu\Application\Runtime\Cache\Home\88df3d5c49e7557b0faf7a15f11ee0fc.php 第 120 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-10T17:06:25+08:00 ] ::1 /hizhu/Jobowner/jobownerfollow?no=6&leftno=111&customer_id=a1df2a9c-41a8-978a-c72f-74554bfca16d
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.011001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.010000s ]
+SQL: SHOW COLUMNS FROM `customerinfo` [ RunTime:0.011001s ]
+SQL: SELECT * FROM `customerinfo` WHERE ( customer_id='a1df2a9c-41a8-978a-c72f-74554bfca16d' ) LIMIT 1   [ RunTime:0.011001s ]
+SQL: select r.id,r.room_no,h.client_name,h.client_phone,h.house_no,h.estate_name,h.region_name,h.scope_name,h.unit_no,h.room_no as shi_no,r.room_name,r.room_area,r.room_money,r.update_time,r.update_man,r.create_man,r.principal_man,r.create_time,
+      h.business_type ,h.info_resource,r.status,r.record_status,r.is_commission,r.is_monthly,h.area,h.room_type,h.rent_type,h.room_num,h.hall_num,h.wei_num,r.resource_id,h.customer_id,h.is_owner,h.rental_type,r.had_vedio from houseresource h inner join houseroom r on h.id=r.resource_id where h.city_code='001009001'  and r.customer_id='a1df2a9c-41a8-978a-c72f-74554bfca16d' and r.record_status=1  order by r.update_time desc,r.id desc limit 0,10 [ RunTime:0.019001s ]
+SQL: select id,customer_id,status,create_man,create_time,remark from customerinfolog where  customer_id='a1df2a9c-41a8-978a-c72f-74554bfca16d'   limit 10  [ RunTime:0.049003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-10T17:57:22+08:00 ] ::1 /hizhu/Jobowner/ownersAdd.html?
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.012001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.011000s ]
+SQL: SHOW COLUMNS FROM `adminmenulist` [ RunTime:0.010001s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 0 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.012000s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 6 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.010000s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 31 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.013001s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 32 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.012001s ]
+SQL: SELECT * FROM `adminmenulist` WHERE `parent_id` = 191 AND `record_status` = 1 ORDER BY index_no asc  [ RunTime:0.011001s ]
+SQL: SHOW COLUMNS FROM `agentcompany` [ RunTime:0.012001s ]
+SQL: SELECT `id`,`company_name`,`commission_fee` FROM `agentcompany` WHERE `city_code` = '001009001' AND `record_status` = 1 ORDER BY create_time desc  [ RunTime:0.011001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-10T17:58:05+08:00 ] ::1 /hizhu/Jobowner/updatejobowner.html?no=6&leftno=111&cuid=ce345dae-d56f-163f-5acf-945560ba3d92
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.215012s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.012001s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.013000s ]
+SQL: SELECT * FROM `customer` WHERE `id` = 'ce345dae-d56f-163f-5acf-945560ba3d92' LIMIT 1   [ RunTime:0.011001s ]
+SQL: SHOW COLUMNS FROM `customerinfo` [ RunTime:0.012001s ]
+SQL: SELECT * FROM `customerinfo` WHERE `customer_id` = 'ce345dae-d56f-163f-5acf-945560ba3d92' LIMIT 1   [ RunTime:0.013001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2017-06-10T17:58:54+08:00 ] ::1 /hizhu/Jobowner/updatejobowner.html?no=6&leftno=111&cuid=ce345dae-d56f-163f-5acf-945560ba3d92
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.012001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.011000s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.016001s ]
+SQL: SELECT * FROM `customer` WHERE `id` = 'ce345dae-d56f-163f-5acf-945560ba3d92' LIMIT 1   [ RunTime:0.231013s ]
+SQL: SHOW COLUMNS FROM `customerinfo` [ RunTime:0.013001s ]
+SQL: SELECT * FROM `customerinfo` WHERE `customer_id` = 'ce345dae-d56f-163f-5acf-945560ba3d92' LIMIT 1   [ RunTime:0.011001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-10T17:59:09+08:00 ] ::1 /hizhu/Jobowner/ownersUpdate/id/ce345dae-d56f-163f-5acf-945560ba3d92.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.012001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.011000s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.227013s ]
+SQL: SELECT `id`,`true_name`,`mobile`,`is_owner`,`city_code`,`owner_verify`,`agent_company_name`,`company_store_name` FROM `customer` WHERE `id` = 'ce345dae-d56f-163f-5acf-945560ba3d92' LIMIT 1   [ RunTime:0.014001s ]
+SQL: SHOW COLUMNS FROM `customerinfo` [ RunTime:0.015001s ]
+SQL: SELECT `principal_man`,`status`,`margin` FROM `customerinfo` WHERE `customer_id` = 'ce345dae-d56f-163f-5acf-945560ba3d92' LIMIT 1   [ RunTime:0.014001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: regionList D:\wamp\www\hizhu\Application\Runtime\Cache\Home\88df3d5c49e7557b0faf7a15f11ee0fc.php 第 112 行.
+NOTIC: [8] Undefined variable: customer D:\wamp\www\hizhu\Application\Runtime\Cache\Home\88df3d5c49e7557b0faf7a15f11ee0fc.php 第 120 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-10T18:00:28+08:00 ] ::1 /hizhu/Jobowner/ownersAdd.html?
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.012001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.011000s ]
+SQL: SHOW COLUMNS FROM `agentcompany` [ RunTime:0.011001s ]
+SQL: SELECT `id`,`company_name`,`commission_fee` FROM `agentcompany` WHERE `city_code` = '001009001' AND `record_status` = 1 ORDER BY create_time desc  [ RunTime:0.011000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-06-10T18:00:42+08:00 ] ::1 /hizhu/Jobowner/ownersAdd.html?
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.012001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.012001s ]
+SQL: SHOW COLUMNS FROM `agentcompany` [ RunTime:0.009001s ]
+SQL: SELECT `id`,`company_name`,`commission_fee` FROM `agentcompany` WHERE `city_code` = '001009001' AND `record_status` = 1 ORDER BY create_time desc  [ RunTime:0.010000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-10T18:03:35+08:00 ] ::1 /hizhu/Jobowner/ownersUpdate/id/ce345dae-d56f-163f-5acf-945560ba3d92.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.013000s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.220012s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.014001s ]
+SQL: SELECT `id`,`true_name`,`mobile`,`is_owner`,`city_code`,`owner_verify`,`agent_company_name`,`company_store_name` FROM `customer` WHERE `id` = 'ce345dae-d56f-163f-5acf-945560ba3d92' LIMIT 1   [ RunTime:0.011001s ]
+SQL: SHOW COLUMNS FROM `customerinfo` [ RunTime:0.013001s ]
+SQL: SELECT `principal_man`,`status`,`margin` FROM `customerinfo` WHERE `customer_id` = 'ce345dae-d56f-163f-5acf-945560ba3d92' LIMIT 1   [ RunTime:0.011000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: regionList D:\wamp\www\hizhu\Application\Runtime\Cache\Home\88df3d5c49e7557b0faf7a15f11ee0fc.php 第 113 行.
+NOTIC: [8] Undefined variable: customer D:\wamp\www\hizhu\Application\Runtime\Cache\Home\88df3d5c49e7557b0faf7a15f11ee0fc.php 第 121 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-10T18:15:54+08:00 ] ::1 /hizhu/Jobowner/ownersUpdate/id/ce345dae-d56f-163f-5acf-945560ba3d92.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.012001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.011001s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.012000s ]
+SQL: SELECT `id`,`true_name`,`mobile`,`is_owner`,`city_code`,`owner_verify`,`agent_company_name`,`company_store_name` FROM `customer` WHERE `id` = 'ce345dae-d56f-163f-5acf-945560ba3d92' LIMIT 1   [ RunTime:0.010001s ]
+SQL: SHOW COLUMNS FROM `customerinfo` [ RunTime:0.012001s ]
+SQL: SELECT `principal_man`,`status`,`margin` FROM `customerinfo` WHERE `customer_id` = 'ce345dae-d56f-163f-5acf-945560ba3d92' LIMIT 1   [ RunTime:0.010000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: regionList D:\wamp\www\hizhu\Application\Runtime\Cache\Home\88df3d5c49e7557b0faf7a15f11ee0fc.php 第 113 行.
+NOTIC: [8] Undefined variable: customer D:\wamp\www\hizhu\Application\Runtime\Cache\Home\88df3d5c49e7557b0faf7a15f11ee0fc.php 第 121 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-10T18:16:42+08:00 ] ::1 /hizhu/Jobowner/ownersUpdate/id/ce345dae-d56f-163f-5acf-945560ba3d92.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.013000s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.011001s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.019001s ]
+SQL: SELECT `id`,`true_name`,`mobile`,`is_owner`,`city_code`,`owner_verify`,`agent_company_name`,`company_store_name` FROM `customer` WHERE `id` = 'ce345dae-d56f-163f-5acf-945560ba3d92' LIMIT 1   [ RunTime:0.013001s ]
+SQL: SHOW COLUMNS FROM `customerinfo` [ RunTime:0.014001s ]
+SQL: SELECT `principal_man`,`status`,`margin` FROM `customerinfo` WHERE `customer_id` = 'ce345dae-d56f-163f-5acf-945560ba3d92' LIMIT 1   [ RunTime:0.012000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: regionList D:\wamp\www\hizhu\Application\Runtime\Cache\Home\88df3d5c49e7557b0faf7a15f11ee0fc.php 第 113 行.
+NOTIC: [8] Undefined variable: customer D:\wamp\www\hizhu\Application\Runtime\Cache\Home\88df3d5c49e7557b0faf7a15f11ee0fc.php 第 121 行.
+NOTIC: [8] Undefined index: region_id D:\wamp\www\hizhu\Application\Runtime\Cache\Home\88df3d5c49e7557b0faf7a15f11ee0fc.php 第 198 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-10T18:16:45+08:00 ] ::1 /hizhu/Jobowner/ownersUpdate/id/ce345dae-d56f-163f-5acf-945560ba3d92.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.014001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.011001s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.015001s ]
+SQL: SELECT `id`,`true_name`,`mobile`,`is_owner`,`city_code`,`owner_verify`,`agent_company_name`,`company_store_name` FROM `customer` WHERE `id` = 'ce345dae-d56f-163f-5acf-945560ba3d92' LIMIT 1   [ RunTime:0.013001s ]
+SQL: SHOW COLUMNS FROM `customerinfo` [ RunTime:0.014001s ]
+SQL: SELECT `principal_man`,`status`,`margin` FROM `customerinfo` WHERE `customer_id` = 'ce345dae-d56f-163f-5acf-945560ba3d92' LIMIT 1   [ RunTime:0.012000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: regionList D:\wamp\www\hizhu\Application\Runtime\Cache\Home\88df3d5c49e7557b0faf7a15f11ee0fc.php 第 113 行.
+NOTIC: [8] Undefined variable: customer D:\wamp\www\hizhu\Application\Runtime\Cache\Home\88df3d5c49e7557b0faf7a15f11ee0fc.php 第 121 行.
+NOTIC: [8] Undefined index: region_id D:\wamp\www\hizhu\Application\Runtime\Cache\Home\88df3d5c49e7557b0faf7a15f11ee0fc.php 第 198 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-10T18:19:42+08:00 ] ::1 /hizhu/Jobowner/ownersUpdate/id/ce345dae-d56f-163f-5acf-945560ba3d92.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.011001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.012000s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.013001s ]
+SQL: SELECT `id`,`true_name`,`mobile`,`is_owner`,`city_code`,`owner_verify`,`agent_company_name`,`company_store_name` FROM `customer` WHERE `id` = 'ce345dae-d56f-163f-5acf-945560ba3d92' LIMIT 1   [ RunTime:0.010001s ]
+SQL: SHOW COLUMNS FROM `customerinfo` [ RunTime:0.013001s ]
+SQL: SELECT `principal_man`,`status`,`margin` FROM `customerinfo` WHERE `customer_id` = 'ce345dae-d56f-163f-5acf-945560ba3d92' LIMIT 1   [ RunTime:0.009000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: customer D:\wamp\www\hizhu\Application\Runtime\Cache\Home\88df3d5c49e7557b0faf7a15f11ee0fc.php 第 121 行.
+NOTIC: [8] Undefined index: region_id D:\wamp\www\hizhu\Application\Runtime\Cache\Home\88df3d5c49e7557b0faf7a15f11ee0fc.php 第 198 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2017-06-10T18:24:18+08:00 ] ::1 /hizhu/Jobowner/ownersUpdate/id/ce345dae-d56f-163f-5acf-945560ba3d92.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.015001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.013000s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.014001s ]
+SQL: SELECT `id`,`true_name`,`mobile`,`is_owner`,`city_code`,`owner_verify`,`agent_company_name`,`company_store_name` FROM `customer` WHERE `id` = 'ce345dae-d56f-163f-5acf-945560ba3d92' LIMIT 1   [ RunTime:0.010001s ]
+SQL: SHOW COLUMNS FROM `customerinfo` [ RunTime:0.011001s ]
+SQL: SELECT `principal_man`,`status`,`margin`,`region_id`,`region_name` FROM `customerinfo` WHERE `customer_id` = 'ce345dae-d56f-163f-5acf-945560ba3d92' LIMIT 1   [ RunTime:0.010000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: customer D:\wamp\www\hizhu\Application\Runtime\Cache\Home\88df3d5c49e7557b0faf7a15f11ee0fc.php 第 121 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-10T18:33:16+08:00 ] ::1 /hizhu/Jobowner/ownersUpdate/id/ce345dae-d56f-163f-5acf-945560ba3d92.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.012000s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.010001s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.015001s ]
+SQL: SELECT `id`,`true_name`,`mobile`,`is_owner`,`city_code`,`owner_verify`,`agent_company_name`,`company_store_name` FROM `customer` WHERE `id` = 'ce345dae-d56f-163f-5acf-945560ba3d92' LIMIT 1   [ RunTime:0.013001s ]
+SQL: SHOW COLUMNS FROM `customerinfo` [ RunTime:0.014001s ]
+SQL: SELECT `principal_man`,`status`,`margin`,`region_id`,`region_name` FROM `customerinfo` WHERE `customer_id` = 'ce345dae-d56f-163f-5acf-945560ba3d92' LIMIT 1   [ RunTime:0.012001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: customer D:\wamp\www\hizhu\Application\Runtime\Cache\Home\88df3d5c49e7557b0faf7a15f11ee0fc.php 第 121 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-10T18:33:20+08:00 ] ::1 /hizhu/HouseResource/searchHandleMen?keyword=h
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: select user_name,real_name from admin_user where  city_auth like '%1%' and (user_name like 'h%' or real_name like 'h%') order by user_name [ RunTime:0.012001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-10T18:33:20+08:00 ] ::1 /hizhu/HouseResource/searchHandleMen?keyword=hu
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: select user_name,real_name from admin_user where  city_auth like '%1%' and (user_name like 'hu%' or real_name like 'hu%') order by user_name [ RunTime:0.011001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-10T18:33:20+08:00 ] ::1 /hizhu/HouseResource/searchHandleMen?keyword=hud
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+SQL: select user_name,real_name from admin_user where  city_auth like '%1%' and (user_name like 'hud%' or real_name like 'hud%') order by user_name [ RunTime:0.010001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-10T18:33:21+08:00 ] ::1 /hizhu/HouseResource/searchHandleMen?keyword=%E8%83%A1%E5%86%AC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: select user_name,real_name from admin_user where  city_auth like '%1%' and (user_name like '胡冬%' or real_name like '胡冬%') order by user_name [ RunTime:0.013001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-10T18:40:54+08:00 ] ::1 /hizhu/Jobowner/ownersUpdate/id/ce345dae-d56f-163f-5acf-945560ba3d92.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.013001s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.013001s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.012001s ]
+SQL: SELECT `id`,`true_name`,`mobile`,`is_owner`,`city_code`,`owner_verify`,`agent_company_name`,`company_store_name` FROM `customer` WHERE `id` = 'ce345dae-d56f-163f-5acf-945560ba3d92' LIMIT 1   [ RunTime:0.011001s ]
+SQL: SHOW COLUMNS FROM `customerinfo` [ RunTime:0.012001s ]
+SQL: SELECT `principal_man`,`status`,`margin`,`region_id`,`region_name` FROM `customerinfo` WHERE `customer_id` = 'ce345dae-d56f-163f-5acf-945560ba3d92' LIMIT 1   [ RunTime:0.010000s ]
+SQL: select id,cname,parent_id from region where is_display=1 and parent_id=0 and city_code='001009001' [ RunTime:0.027002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: customer D:\wamp\www\hizhu\Application\Runtime\Cache\Home\88df3d5c49e7557b0faf7a15f11ee0fc.php 第 121 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-06-10T18:40:57+08:00 ] ::1 /hizhu/HouseResource/searchHandleMen?keyword=h
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: select user_name,real_name from admin_user where  city_auth like '%1%' and (user_name like 'h%' or real_name like 'h%') order by user_name [ RunTime:0.010001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-10T18:40:57+08:00 ] ::1 /hizhu/HouseResource/searchHandleMen?keyword=hu
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: select user_name,real_name from admin_user where  city_auth like '%1%' and (user_name like 'hu%' or real_name like 'hu%') order by user_name [ RunTime:0.030002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-10T18:40:57+08:00 ] ::1 /hizhu/HouseResource/searchHandleMen?keyword=hud
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: select user_name,real_name from admin_user where  city_auth like '%1%' and (user_name like 'hud%' or real_name like 'hud%') order by user_name [ RunTime:0.010000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-10T18:40:58+08:00 ] ::1 /hizhu/HouseResource/searchHandleMen?keyword=%E8%83%A1%E5%86%AC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: select user_name,real_name from admin_user where  city_auth like '%1%' and (user_name like '胡冬%' or real_name like '胡冬%') order by user_name [ RunTime:0.012001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-10T18:41:02+08:00 ] ::1 /hizhu/AgentsManage/agentsProveInfo.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.013001s ]
+SQL: SELECT `id`,`is_owner` FROM `customer` WHERE `record_status` = 1 AND `mobile` = '15000219168' LIMIT 1   [ RunTime:0.011001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-10T18:44:38+08:00 ] ::1 /hizhu/Jobowner/ownersUpdate/id/ce345dae-d56f-163f-5acf-945560ba3d92.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.013000s ]
+SQL: SELECT * FROM `admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.013001s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.014001s ]
+SQL: SELECT `id`,`true_name`,`mobile`,`is_owner`,`city_code`,`owner_verify`,`agent_company_name`,`company_store_name` FROM `customer` WHERE `id` = 'ce345dae-d56f-163f-5acf-945560ba3d92' LIMIT 1   [ RunTime:0.013001s ]
+SQL: SHOW COLUMNS FROM `customerinfo` [ RunTime:0.014001s ]
+SQL: SELECT `principal_man`,`status`,`margin`,`region_id`,`region_name` FROM `customerinfo` WHERE `customer_id` = 'ce345dae-d56f-163f-5acf-945560ba3d92' LIMIT 1   [ RunTime:0.012000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-10T18:44:49+08:00 ] ::1 /hizhu/HouseResource/searchHandleMen?keyword=h
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: select user_name,real_name from admin_user where  city_auth like '%1%' and (user_name like 'h%' or real_name like 'h%') order by user_name [ RunTime:0.014000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-10T18:44:49+08:00 ] ::1 /hizhu/HouseResource/searchHandleMen?keyword=hu
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: select user_name,real_name from admin_user where  city_auth like '%1%' and (user_name like 'hu%' or real_name like 'hu%') order by user_name [ RunTime:0.011001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-06-10T18:44:49+08:00 ] ::1 /hizhu/HouseResource/searchHandleMen?keyword=hud
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: select user_name,real_name from admin_user where  city_auth like '%1%' and (user_name like 'hud%' or real_name like 'hud%') order by user_name [ RunTime:0.012001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-10T18:44:50+08:00 ] ::1 /hizhu/HouseResource/searchHandleMen?keyword=%E8%83%A1%E5%86%AC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: select user_name,real_name from admin_user where  city_auth like '%1%' and (user_name like '胡冬%' or real_name like '胡冬%') order by user_name [ RunTime:0.013000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-10T18:44:55+08:00 ] ::1 /hizhu/Jobowner/ownersModifyInfo.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001001s ]
+

@@ -1,0 +1,205 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>聚合房源确认</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 最新版本渲染 -->
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/basic.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common.css">
+</head>
+<body>
+
+	<div class="main">
+	
+		<div class="">
+			
+			<div class="common_main">
+			<form method="post" action="__URL__/aggregationAuditSubmit">
+				<input type="hidden" name="main_roomid">
+				<input type="hidden" name="mid" value="<?php echo I('get.mid'); ?>">
+				<input type="hidden" name="room1_id" value="<?php echo I('get.room1_id'); ?>">
+				<input type="hidden" name="room2_id" value="<?php echo I('get.room2_id'); ?>">
+				<input type="hidden" name="had_online" value="{$had_online}">
+				<input type="hidden" name="had_online_offer" value="{$had_online_offer}">
+				<div class="roompic" style="width:100%;">
+					<h3>&nbsp;聚合中间图</h3>
+					<ul class="cf">
+						{$aggregatImg}
+					</ul>
+				</div>
+				<div class="roompic" style="width:100%;">
+					<h3>&nbsp;{$company1}</h3>
+					<ul class="cf" id="imgli_one">
+						{$imgList1}
+					</ul>
+				</div>
+				<div class="roompic" style="width:100%;">
+					<h3>&nbsp;{$company2}</h3>
+					<ul class="cf" id="imgli_two">
+						{$imgList2}
+					</ul>
+				</div>
+			</form>
+				<div class="table" id="dataDiv">
+					<table>
+						<thead>
+							<tr>
+								<th>主信息</th>
+								<th>小区名称</th>
+								<th>面积</th>
+								<th>户型</th>
+								<th>所属公司</th>
+								<th>姓名</th>
+								<th>手机号</th>
+								<th>租金</th>
+								<th>地址</th>
+							</tr>
+						</thead>
+						<tbody>
+							 <volist name="list" id="vo">
+								<tr>
+									<if condition="($had_online eq 0 or $had_online eq 2)">
+									<td><input type="radio" name="main_info" value="{$vo.room_id}" data-source="{$vo.info_resource}"></td>
+									<else/>
+										<?php if($main_id==$vo['room_id']){ ?>
+											<td>主</td>
+										<?php }else{?>
+											<td></td><input type="hidden" name="rob_id" value="<?php echo $vo['room_id']; ?>">
+										<?php }?>
+									</if>
+									
+									<td>{$vo.estate_name}</td>
+									<td>{$vo.area}</td>
+									<td>{$vo.room_num}室{$vo.hall_num}厅{$vo.wei_num}卫</td>
+									<td>{$vo.info_resource}</td>
+									<td>{$vo.client_name}</td>
+									<td><input type="text" style="line-height:28px;" name="client_phone" value="{$vo.client_phone}">&nbsp;<button class="btn_a" onclick="modifyPhone('{$vo.room_id}',this)">修改</button></td>
+									<td>{$vo.room_money}</td>
+									<td><if condition="($vo.info_resource_url neq '')"><a target="_blank" href="{$vo.info_resource_url}">地址</a></if></td>
+												
+								</tr>
+							</volist> 
+						</tbody>
+					</table>
+			
+				</div>
+				<div  style="text-align:center;margin-top:20px;">
+					<button class="btn_a" id="btnIndependentSubmit">独立发布</button>&nbsp;&nbsp;
+					<button class="btn_a" id="btnAggregatSubmit">聚合发布</button>&nbsp;&nbsp;&nbsp;&nbsp;
+					<button class="btn_a" id="btnDelete">删除</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--浮层(大图) -->
+	<div id="dialogAdd" style="position:absolute;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.6);z-index:999;display:none;">
+		<div style="width:780px;height:500px;background:#fff;position:absolute;left:50%;margin-left:-400px;top:30%;margin-top:-105px;border-radius:10px;">
+			<img style="width:100%;height:100%;" src="">
+		</div>
+	</div>
+</body>
+<script src="__PUBLIC__/js/jquery.js"></script>
+<script src="__PUBLIC__/js/common.js"></script>
+<script type="text/javascript">
+if($("input[name='had_online']").val()==2){
+	var main_id='{$main_id}';
+	$("input[name='main_info'][value='"+main_id+"']").attr("checked","checked");
+}else{
+	var source_one='{$company1}';
+	var source_two='{$company2}';
+	$("input[name='main_info']").click(function(){
+		var source=$(this).attr('data-source');
+		if($("input[name^=img_li]:checked").length==0){
+			if(source==source_one){
+				$("#imgli_one").find("input[name^=img_li]").slice(0,9).attr("checked","checked");
+			}else{
+				$("#imgli_two").find("input[name^=img_li]").slice(0,9).attr("checked","checked");
+			}
+		}
+	});
+}
+
+
+	$("#btnAggregatSubmit").click(function(){
+		var had_online=$("input[name='had_online']").val();
+		if(had_online==0 || had_online==2){
+			var main_roomid=$('input:radio[name="main_info"]:checked').val();
+			if(main_roomid==undefined || main_roomid==''){
+				alert('请选择一个主信息');return;
+			}
+			$("input[name='main_roomid']").val(main_roomid);
+		}
+		if(had_online==0){
+		   var imgLen=$("input[name^=img_li]:checked").length;
+		   if(imgLen==0){
+		   	alert('请选择几张图片');return;
+		   }
+		   if(imgLen>9){
+		   	alert('选择的图片不能大于9张');return;
+		   }
+		   if($("input[name='main_img']:checked").length==0){
+		   	alert('请选中一张封面图');return;
+		   }
+		   var mainImgV=$("input[name='main_img']:checked").val();
+		   var mainImgF=0;
+		   $("input[name^=img_li]:checked").each(function(){
+		   		if($(this).val()==mainImgV){
+		   			mainImgF=1;
+		   		}
+		   });
+		   if(mainImgF==0){
+		   		alert('封面图必须在已选图片中');return;
+		   }
+		}
+		$(this).unbind('click').text('发布中');
+		$("form").submit();
+	});
+	function modifyPhone(rid,obj){
+		var mobile=$(obj).prev().val();
+		var isTel=/^(\d+\,{0,1}\d*){11,20}$/;
+		if(!isTel.test(mobile)){
+			alert('请填写有效的联系电话');return;
+		}
+		$.post('__URL__/modifyPhoneSubmit',{room_id:rid,mobile:mobile},function(result){
+			alert(result);
+		});
+	}
+	/*独立发布 */
+	$("#btnIndependentSubmit").click(function(){
+		var isTelF=0;
+		var isTel=/^(\d+\,{0,1}\d*){11,20}$/;
+		$("input[name='client_phone']").each(function(){
+			if(!isTel.test($(this).val())){
+				isTelF=1;
+			}
+		});
+		if(isTelF==1){
+			alert('请填写有效的联系电话');return;
+		}
+		if(confirm('确定要独立发布房源到线上吗？')){
+			$(this).unbind('click').text('发布中');
+			var rob_id='';
+			if($("input[name='had_online']").val()==1){
+				rob_id=$("input[name='rob_id']").val();
+			}
+			$.post('__URL__/independentSubmit',{mid:$("input[name='mid']").val(),rob_id:rob_id},function(result){
+				alert(result);$("#btnIndependentSubmit").hide();$("#btnAggregatSubmit").hide();
+			});
+		}
+	});
+	$("#dialogAdd").click(function(){
+		$(this).hide();
+	});
+	function showBigImage(url){
+		$("#dialogAdd").show();
+		$("#dialogAdd img").attr('src',url);
+	}
+	$("#btnDelete").click(function(){
+		if(confirm("确认删除吗？")){
+			$(this).unbind("click").text("正在删除");
+			$.post('__URL__/deleteAggregatAudit',{room1_id:$("input[name='room1_id']").val(),room2_id:$("input[name='room2_id']").val()},function(result){
+				alert(result);$("#btnDelete").hide();
+			});
+		}
+	})
+</script>
+</html>

@@ -1,0 +1,157 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>更改店铺保证金</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 最新版本渲染 -->
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/basic.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/plug/jquery.datetimepicker.css"/>
+   <style>
+   		.table_two .td_title{white-space:nowrap;}
+   </style>
+</head>
+<body>
+<include file="Public/head_city" />
+    <div class="title cf">
+    	<div class="logo fl cf">
+			<img src="__PUBLIC__/images/logo.png">
+		</div>
+		<ul class="cf fl">
+		<li><a href="{:U('Welcome/welcome')}">首页</a></li>
+			{$menutophtml}
+		</ul>
+		<div class="cf fr title_right">
+			<a class="blue" href="javascript:">欢迎您 <?php echo cookie("admin_user_name");?></a>
+			<span>|</span>
+			<a href="{:U('/Index/outlogin')}">退出</a>
+		</div>
+    </div>
+	<div class="main">
+		<div class="main_left subNavBox">
+			<include file="Public/left_menu" />
+			{$menulefthtml}
+		</div>
+		<div class="main_right">
+			<div class="common_head">
+				<h2>店铺信息</h2>
+				<div class="common_head_main"  style="margin-bottom:40px">
+					<table class="table_one">
+						<tr>
+							<td class="td_title">店铺名称：</td>
+							<td class="td_main" >{$detail['name']}</td>
+							<td class="td_title">创建时间：</td>
+							<td class="td_main">{$detail['create_time']|date="Y-m-d H:i:s",###}</td>
+						</tr>
+						<tr>
+							<td class="td_title">信用分：</td>
+							<td class="td_main" >{$detail['credit_score']}</td>
+							<td class="td_title">保证金：</td>
+							<td class="td_main" >{$detail['earnestmoney']}</td>
+						</tr>
+						<tr>
+							<td class="td_title">店铺类型：</td>
+							<td class="td_main">
+								<if condition="strtoupper($detail['medal_type']) eq '0'">
+									 普通
+									<elseif condition="strtoupper($detail['medal_type']) eq '1'"/>
+									 金牌
+									<elseif condition="strtoupper($detail['medal_type']) eq '2'"/>
+									 银牌
+								</if>
+							</td>
+							<td class="td_title"></td>
+							<td class="td_main"></td>	
+						</tr>	
+					</table>
+					<div class="table">
+						<form action="__URL__/createEarnestMoney" name="regForm" method="post" onsubmit="return checkMobile()&&checkContent()">
+						<table class="table_one table_two">
+							<tr>
+								<td class="td_title"><span>*</span>修改保证金为:</td> 
+								<td><input type="text" name="earnestmoney" value="{$detail['earnestmoney']}"><span>&nbsp;元</span></td>
+							</tr>
+							<tr>
+								<td class="td_title"><span>*</span>缴纳人手机号:</td> 
+								<td><input type="text" name="mobile" onblur="checkMobile()" id="mobile"><span id="ttab">&nbsp;* 必填项,请输入手机号</span></td>
+							</tr>
+							<tr>
+								<td class="td_title"><span>*</span>修改原因:</td> 
+								<td><input type="text" name="remark" onblur="checkContent()" id="contents" style="min-width:800px" placeholder="原因将推送给店长，例如：缴纳保证金2000元"></td>
+							</tr>
+							<input type="hidden" name="id" value="{$detail['id']}">
+							<input type="hidden" name="title" value="{$detail['name']}">
+						</table>
+						<div class="addhouse_last addhouse_last_room">
+						<input type="submit" value="修改" class="btn_a" style="min-width: 400px;min-height:40px;line-height:40px;margin:20px 20px 20px 0px" id="button1">
+						</div>
+						</form>
+						<div class="skip">&nbsp;注 ：保证金的修改不会影响信用分 </div>
+					</div>
+				</div>
+			</div>
+			<div class="common_main">
+				<h2>修改历史</h2>
+				<div class="table">
+					<table>
+						<thead>
+							<tr>
+								<th>保证金</th>
+								<th>变更时间</th>
+								<th>缴纳人手机号</th>
+								<th>修改原因</th>
+								<th>操作人</th>
+							</tr>
+						</thead>
+						<tbody>
+						  <volist name="list" id="vo">
+							<tr>
+								<td>{$vo['price']}</td>
+								<td>{$vo['create_time']|date="Y-m-d H:i:s",###}</td>
+								<td>{$vo['mobile']}</td>
+								<td>
+									{$vo['remark']}
+								</td>
+								<td>{$vo['oper_man_name']}</td>
+							</tr>
+				        	</volist>
+						</tbody>
+					</table>
+					<div class="skip cf">
+						<p class="fl skip_left" id="count">共{$pagecount}条记录，每页10条</p>
+						<p class="fr skip_right">
+							{$show}
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="__PUBLIC__/js/jquery.js"></script>
+	<script>
+		//验证标题函数
+        function checkMobile() {
+            var mobile = document.getElementById('mobile').value;
+            var ttab = document.getElementById('ttab');
+            if (mobile.match(/^1[34578]\d{9}/) == null) {
+                // 匹配失败
+                ttab.innerHTML = '* 手机号格式不正确!';
+                ttab.style.color = '#f00';
+                return false;
+            } else{
+                ttab.innerHTML = '* √通过验证!';
+                ttab.style.color = '#0a0';
+                return true;
+            }
+        }
+        function checkContent() {
+            var content = document.getElementById('contents').value;
+            if (content == "") {
+                alert('原因不能为空!');
+                return false;
+            } else{
+                return true;
+            }
+        }
+	</script>
+</body>
+</html>

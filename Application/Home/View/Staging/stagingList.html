@@ -1,0 +1,163 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>分期订单</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 最新版本渲染 -->
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/basic.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/plug/jquery.datetimepicker.css"/>
+
+</head>
+<body>
+<include file="Public/head_city" />
+    <div class="title cf">
+    	<div class="logo fl cf">
+			<img src="__PUBLIC__/images/logo.png">
+		</div>
+		<ul class="cf fl">
+		<li><a href="{:U('Welcome/welcome')}">首页</a></li>
+			{$menutophtml}
+		</ul>
+		<div class="cf fr title_right">
+			<a class="blue" href="javascript:;">欢迎您 <?php echo cookie("admin_user_name");?></a>
+			<span>|</span>
+			<a href="{:U('/Index/outlogin')}">退出</a>
+		</div>
+    </div>
+	<div class="main">
+		<div class="main_left subNavBox">
+			<include file="Public/left_menu" />
+			{$menulefthtml}
+		</div>
+		<div class="main_right">
+			<div class="common_head">
+				<h2>分期查询</h2>
+				<div class="common_head_main">
+					<form action="{:U('Staging/stagingList')}" method="get">
+					<input type="hidden" name="no" value="4"/>
+					<input type="hidden" name="leftno" value="55"/>
+						<table class="table_one">
+							<tr>
+								<td class="td_title">提交日期：</td>
+								<td class="td_main"><input class="inpt_a" type="text" name="startTime" id="datetimepicker" value="<?php echo isset($_GET['startTime'])?$_GET['startTime']:''; ?>">&nbsp;~&nbsp;<input class="inpt_a" type="text"  name="endTime" id="datetimepicker1" value="<?php echo isset($_GET['endTime'])?$_GET['endTime']:''; ?>"></td>
+								<td class="td_title">租客手机号：</td>
+								<td class="td_main"><input type="text" name="mobile" value="<?php echo isset($_GET['mobile'])?$_GET['mobile']:''; ?>"></td>
+								<td class="td_title">状态：</td>
+								<td class="td_main">
+									<select name="stages_status" id="stages_status">
+										<option value="">全部</option>
+										{$stagStagusList}
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td class="td_title">租客姓名：</td>
+								<td class="td_main"><input type="text" name="name" value="<?php echo isset($_GET['name'])?$_GET['name']:''; ?>"></td>
+								<td class="td_title">房东姓名：</td>
+								<td class="td_main"><input type="text" name="owner_name" value="<?php echo isset($_GET['owner_name'])?$_GET['owner_name']:''; ?>"></td>
+								<td class="td_title">房东手机：</td>
+								<td class="td_main"><input type="text" name="owner_mobile" value="<?php echo isset($_GET['owner_mobile'])?$_GET['owner_mobile']:''; ?>"></td>
+							</tr>
+						</table>
+						<p class="head_p"><button class="btn_a">搜索</button></p>
+					</form>
+				</div>
+			</div>
+			<div class="common_main">
+				<h2>分期列表<a href="javascript:;" id="download" class="btn_a">下载</a></h2>
+				<div class="table">
+					<table>
+						<thead>
+							<tr>
+								<th>序号</th>
+								<th>分期编号</th>
+								<th>订单号</th>
+								<th>租客姓名</th>
+								<th>租客手机</th>
+								<th>地区</th>
+								<th>支付方式</th>
+								<th>月租金</th>
+								<th>房东姓名</th>
+								<th>房东手机</th>
+								<th>状态</th>
+								<th>分期来源</th>
+								<th>提交时间</th>
+								<th>操作</th>
+							</tr>
+						</thead>
+						<tbody>
+							  <volist name="list" id="vo">
+							<tr>
+								<td>{$i}</td>
+								<td>{$vo['stag_id']}</td>
+								<td>{$vo['order_id']}</td>
+								<td>{$vo['name']}</td>
+								<td>{$vo['mobile']}</td>
+								<td>{$vo['city']}</td>
+								<td>{$vo['paymanner']}</td>
+								<td class="red">{$vo['rental']}</td>
+								<td>{$vo['owner_name']}</td>
+								<td>{$vo['owner_mobile']}</td>
+								<td>{$vo['stages_status']}</td>
+								<td>
+									<if condition="$vo['sub_type'] eq '0'">
+									APP
+									<elseif condition="$vo['sub_type'] eq '1'"/>
+									APP
+									<elseif condition="$vo['sub_type'] eq '2'"/>
+									微信
+									<elseif condition="$vo['sub_type'] eq '3'"/>
+									H5
+									<else/>
+									——
+									</if>
+								</td>
+								<td>{$vo['create_time']|date="Y-m-d H:i:s",###}</td>
+								<td><a href="{:U('Staging/upstaging')}?sid={$vo['id']}&no=4&leftno=55">修改</a></td>
+								<input type="hidden" name="js_id" value ="{$vo['id']}">
+							</tr>
+							</volist>
+						</tbody>
+					</table>
+					<div class="skip cf">
+						<p class="fl skip_left">共{$pagecount}条记录，每页15条</p>
+						<p class="fr skip_right">
+							{$show}
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="__PUBLIC__/js/jquery.js"></script>
+    <script src="__PUBLIC__/plug/jquery.datetimepicker.js"></script>
+    <script src="__PUBLIC__/js/common.js"></script>
+    <script type="text/javascript">
+		$('#datetimepicker').datetimepicker({step:10,lang:'ch',timepicker:false,format:"Y-m-d"});
+	    $('#datetimepicker1').datetimepicker({step:10,lang:'ch',timepicker:false,format:"Y-m-d"});
+	    $("table tr").find("a").click(function(){
+	       var js_verifi=$(this).siblings("select").val();
+           var js_id=$(this).parent().siblings("input").val();
+           window.location.href="__URL__/upstaging.html?verifi="+js_verifi+"&id="+js_id;
+	    })
+	    /*分期状态*/
+	    $("#stages_status").val('<?php echo isset($_GET["stages_status"])?$_GET["stages_status"]:"" ?>');
+	    $(".table table tr").each(function(){
+	    	var td_object=$(this).children("td:eq(10)");
+	    	var b_type_name=$("#stages_status option[value="+td_object.text()+"]").text();
+	    	td_object.text(b_type_name);
+	    });
+	    $("#download").click(function(){
+			var startTime=$("input[name='startTime']").val();
+			var endTime=$("input[name='endTime']").val();
+			var mobile=$("input[name='mobile']").val();
+			var stages_status=$("#stages_status").val();
+			var name=$("input[name='name']").val();
+			var owner_name=$("input[name='owner_name']").val();
+			var owner_mobile=$("input[name='owner_mobile']").val();
+        	var url="__URL__/dowStaging.html?startTime="+startTime+"&endTime="+endTime+"&mobile="+mobile+"&stages_status="+stages_status+"&name="+name+"&name="+name+"&owner_name="+owner_name+"&owner_mobile="+owner_mobile;
+        	window.location.href=url;
+    	});
+	</script>
+</body>
+</html>

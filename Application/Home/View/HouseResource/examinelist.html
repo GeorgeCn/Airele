@@ -1,0 +1,134 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>审核房源列表</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 最新版本渲染 -->
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/basic.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common.css">
+</head>
+<body>
+<include file="Public/head_city" />
+    <div class="title cf">
+    	<div class="logo fl cf">
+			<img src="__PUBLIC__/images/logo.png">
+		</div>
+		<ul class="cf fl">
+		<li><a href="{:U('Welcome/welcome')}">首页</a></li>
+			{$menutophtml}
+		</ul>
+		<div class="cf fr title_right">
+			<a class="blue" href="javascript:;">欢迎您 <?php echo cookie("admin_user_name");?></a>
+			<span>|</span>
+			<a href="{:U('/Index/outlogin')}">退出</a>
+		</div>
+    </div>
+	<div class="main">
+		<div class="main_left subNavBox">
+		<include file="Public/left_menu" />
+			{$menulefthtml}
+		</div>
+		<div class="main_right">
+			<div class="common_head">
+				<h2>审核查询</h2>
+				<div class="common_head_main">
+					<form id="searchForm" action="__URL__/examinelist" method="get">
+						<input type="hidden" name="no" value="3">
+						<input type="hidden" name="leftno" value="82"> 
+						<table class="table_one">
+							
+							<tr>
+								<td class="td_title">房东电话：</td>
+								<td class="td_main"><input type="text" name="client_phone" value="<?php echo I('get.client_phone'); ?>"></td>
+								<td class="td_title">数据来源：</td>
+								<td class="td_main">
+									<select name="info_resource_type" style="width:110px;">
+										{$infoResourceTypeList}
+									</select>
+									<select name="info_resource" style="width:110px;">
+										<option value=""></option>
+										{$infoResourceList}
+									</select>
+								</td>
+								<td class="td_title"></td>
+								<td class="td_main"></td>
+							</tr>
+						</table>
+					</form>
+					<p class="head_p"><button class="btn_a" onclick="javascript:$('form').submit();">搜索</button></p>
+				</div>
+			</div>
+			<div class="common_main">
+				<h2>审核列表</h2>
+				<div class="table" id="dataDiv">
+					<table>
+						<thead>
+							<tr>
+								<th>序号</th>
+								<th>房屋编号</th>
+								<th>小区名称</th>
+								<th>区域板块</th>
+								<th>业务类型</th>
+								<th>楼栋/单元号</th>
+								<th>室号</th>
+								<th>户型</th>
+								<th>房间数</th>
+								<th>房东姓名</th>
+								<th>更新日期</th>
+								<th>更新操作人</th>
+								<th>房源负责人</th>
+								<th>数据来源</th>
+								<th>来源URL</th>
+								<th>审核</th>
+							</tr>
+						</thead>
+						<tbody>
+							<foreach item="list" name="list">
+							<tr>
+								<td>{$list.ident_num}</td>
+								<td>{$list.house_no}</td>
+								<td>{$list.estate_name}</td>
+								<td>{$list.region_scope}</td>
+								<td><switch name="list.business_type"><case value="1501">小区住宅</case><case value="1502">集中公寓</case><case value="1503">酒店长租</case></switch></td>
+								<td>{$list.unit_no}</td>
+								<td>{$list.room_no}</td>
+								<td>{$list.room_hall_wei}</td>
+								<td>{$list.room_count}</td>
+								<td>{$list.client_name}</td>
+								<td>{$list.update_time}</td>
+								<td>{$list.update_man}</td>
+								<td>{$list.create_man}</td>
+								<td>{$list.info_resource}</td>
+								<td><neq name="list.info_resource_url" value=""><a target="_blank" href="{$list.info_resource_url}">地址</neq></td>
+								<td><a target="_blank" href="__URL__/examhouse?no=3&leftno=82&resource_id={$list.id}&handletype=examine&room_id={$list.room_id}">审核</a></td>
+							</tr>
+							</foreach>
+						</tbody>
+					</table>
+					<div class="skip cf">
+						<p class="fl skip_left">共{$totalcnt}条记录，每页15条。</p>
+						<p class="fr skip_right">
+							{$pageSHow}
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="__PUBLIC__/js/jquery.js"></script>
+<script src="__PUBLIC__/js/common.js"></script> 
+<script type="text/javascript">
+	$("select[name='info_resource_type']").val('<?php echo I("get.info_resource_type"); ?>');
+	$("select[name='info_resource']").val('<?php echo I("get.info_resource"); ?>');
+	//下拉联动，来源
+	$("select[name='info_resource_type']").change(function(){
+		if($(this).val()==""){
+			$("select[name='info_resource']").html("");
+			return;
+		}
+		$.get("__ROOT__/HouseResource/getInforesourceByType",{type:$(this).val()},function(data){
+			$("select[name='info_resource']").html('<option value=""></option>'+data);
+		},"html");
+	});
+</script>
+</html>

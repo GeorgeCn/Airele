@@ -1,0 +1,123 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>中介房源报价审核</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 最新版本渲染 -->
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/basic.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/plug/jquery.datetimepicker.css">
+</head>
+<body>
+<include file="Public/head_city" />
+    <div class="title cf">
+    	<div class="logo fl cf">
+			<img src="__PUBLIC__/images/logo.png">
+		</div>
+		<ul class="cf fl">
+		<li><a href="{:U('Welcome/welcome')}">首页</a></li>
+			{$menutophtml}
+		</ul>
+		<div class="cf fr title_right">
+			<a class="blue" href="javascript:;">欢迎您 <?php echo cookie("admin_user_name");?></a>
+			<span>|</span>
+			<a href="{:U('/Index/outlogin')}">退出</a>
+		</div>
+    </div>
+	<div class="main">
+		<div class="main_left subNavBox">
+		<include file="Public/left_menu" />
+			{$menulefthtml}
+		</div>
+		<div class="main_right">
+			<div class="common_head">
+				<h2>查询</h2>
+				<div class="common_head_main">
+					<form id="searchForm" action="__URL__/quotationAuditList.html" method="get">
+						<input type="hidden" name="no" value="3">
+						<input type="hidden" name="leftno" value="196">
+						<input type="hidden" name="totalCount" value="{$totalCount}"> 
+						<table class="table_one">
+							<tr>
+								<td class="td_title">手机号：</td>
+								<td class="td_main"><input type="text" name="mobile" value="<?php echo I('get.mobile'); ?>"></td>
+								<td class="td_title">状态：</td>
+								<td class="td_main">
+									<select name="status_code">
+										<option value="all"></option>
+										<option value="0">待审核</option>
+										<option value="1">拒绝</option>
+										<option value="3">通过</option>
+										<option value="4">下架</option>
+									</select>
+								</td>
+								<td class="td_title"></td>
+								<td class="td_main"></td>
+							</tr>
+						
+						</table>
+					</form>
+					<p class="head_p"><button class="btn_a" id="btnSearch">搜索</button></p>
+				</div>
+			</div>
+			<div class="common_main">
+				<h2>列表</h2>
+				<div class="table" id="dataDiv">
+					<table>
+						<thead>
+							<tr>
+								<th>序号</th>
+								<th>房源编号</th>
+								<th>房间编号</th>
+								<th>小区名称</th>
+								<th>区域</th>
+								<th>板块</th>
+								<th>状态</th>
+								<th>租金</th>
+								<th>收佣</th>
+								<th>提交时间</th>
+								<th>操作</th>
+							</tr>
+						</thead>
+						<tbody>
+							<volist name="list" id="vo">
+							<tr>
+								<td>{$i}</td>
+								<td><a target="_blank" href="__ROOT__/HouseResource/addresource?resource_id={$vo.house_id}">{$vo.house_no}</a></td>
+								<td><a target="_blank" href="__ROOT__/HouseRoom/modifyroom?no=3&leftno=44&room_id={$vo.room_id}">{$vo.room_no}</a></td>
+								<td>{$vo.estate_name}</td>
+								<td>{$vo.region_name}</td>
+								<td>{$vo.scope_name}</td>
+								<td><switch name="vo.status_code"><case value="0">待审核</case><case value="1">拒绝</case><case value="3">通过</case><case value="4">下架</case></switch></td>
+								<td>{$vo.room_price}</td>
+								<td><switch name="vo.commission_type"><case value="0">{$vo['commission_price']/100}%</case><case value="1">{$vo.commission_price}</case></switch></td>
+								<td><if condition="($vo.create_time gt 0)">{$vo['create_time']|date="Y-m-d H:i:s",###}</if></td>
+						
+								<td><if condition="($vo.status_code eq 0)"><a target="_blank" href="__URL__/quotationAudit?mid={$vo.id}">审核</a></if></td>							
+							</tr>
+							</volist>
+						</tbody>
+					</table>
+				<div class="skip cf">
+						<p class="fl skip_left" id="count">共{$totalCount}条记录，每页5条</p>
+						<p class="fr skip_right">
+							{$pageSHow}
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="__PUBLIC__/js/jquery.js"></script>
+<script src="__PUBLIC__/js/common.js"></script>
+<script type="text/javascript">
+	var status_code='<?php echo isset($_GET["status_code"])?$_GET["status_code"]:"0"; ?>';
+	$("select[name='status_code']").val(status_code);
+	
+	$('#btnSearch').click(function(){
+		$(this).unbind('click').text('搜索中');
+		$('form').submit();
+	});
+
+</script>
+</html>

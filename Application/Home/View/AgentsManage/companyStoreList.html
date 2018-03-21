@@ -1,0 +1,137 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>门店管理</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 最新版本渲染 -->
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/basic.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common.css">
+    
+</head>
+<body>
+<include file="Public/head_city" />
+    <div class="title cf">
+    	<div class="logo fl cf">
+			<img src="__PUBLIC__/images/logo.png">
+		</div>
+		<ul class="cf fl">
+		<li><a href="{:U('Welcome/welcome')}">首页</a></li>
+			{$menutophtml}
+		</ul>
+		<div class="cf fr title_right">
+			<a class="blue" href="javascript:">欢迎您 <?php echo cookie("admin_user_name");?></a>
+			<span>|</span>
+			<a href="{:U('/Index/outlogin')}">退出</a>
+		</div>
+    </div>
+	<div class="main">
+		<div class="main_left subNavBox">
+			<include file="Public/left_menu" />
+			{$menulefthtml}
+		</div>
+		<div class="main_right">
+			<div class="common_head">
+				<h2>门店管理
+					<a href="javascript:;" onclick="addStore('{$company.id}','{$company.company_name}','{$company.company_type}')" class="btn_a">添加</a>
+				</h2>
+			</div>
+			<div class="common_main">
+				<div class="table" id="dataDiv">
+					<table width="50%">
+						<thead>
+							<tr>
+								<th>序号</th>
+								<th>公司</th>
+								<th>门店</th>
+								<th>操作时间</th>
+								<th>操作</th>
+							</tr>
+						</thead>
+						<tbody>
+							<volist name="list" id="vo">
+							<tr>
+								<td>{$i}</td>
+								<td>{$vo.company_name}</td>
+								<td>{$vo.company_store}</td>
+								<td><if condition="($vo.create_time gt 0)">{$vo.create_time|date="Y-m-d H:i:s",###}</if></td>
+								<td>
+									<a href="javascript:;" onclick="editStore('{$vo.id}')" class="btn_a">编辑</a>
+								</td>
+							</tr>	
+							</volist>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="infoAdd" style="position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.6);z-index:999;display:none;">
+		<div style="width:600px;height:470px;background:#fff;position:absolute;left:50%;margin-left:-300px;top:50%;margin-top:-235px;border-radius:10px;">
+			<div style="margin:50px;" class="cf">
+				<label class="fl" style="height:36px;line-height:36px;width:150px;text-align:right;">门店名称：</label>
+				<input type="text" class="fl" id="companyStore" style="width:200px;height:36px;">
+			</div>
+			<div  style="text-align:center;">
+				<button class="btn_b" style="margin-right:50px;">取消</button>
+				<button class="btn_a" id="btn_submit">提交</button>
+			</div>
+		</div>
+	</div>
+<script src="__PUBLIC__/js/jquery.js"></script>
+<script src="__PUBLIC__/js/common.js"></script>
+<script>
+	//添加租客信息录入
+  	function addStore(id,name,type) {
+  		operation = 0;
+  		pid = id;
+  		company_name = name;
+  		company_type = type;
+  		$("#infoAdd").show();
+	};
+	function editStore(id,name) {
+		operation = 1;
+  		store_id = id;
+  		$("#infoAdd").show();
+	};
+	$(".btn_b").click(function(){
+		$("#infoAdd").hide();
+	});
+	$("#btn_submit").click(function() {
+		var store = $("#companyStore").val(); 
+		if(operation == 0) {
+			$.ajax({
+		            type:"post",
+		            url: "{:U('AgentsManage/companyStoreAddInfo')}",
+		            data:{"pid":pid,"company_name":company_name,"company_store":store,"company_type":company_type},
+					dataType:"json",
+		            success:function(data) {
+		            	if(data.code == 404) alert(data.message);
+			            if(data.code == 400) alert(data.message);
+			            if(data.code == 200) {
+			            	alert(data.message);
+			            	$("#infoAdd").hide(); 
+			            	location.reload();
+						}
+			    	}
+				})
+		} else if(operation == 1) {
+			$.ajax({
+		            type:"post",
+		            url: "{:U('AgentsManage/companyStoreEditInfo')}",
+		            data:{"id":store_id,"company_store":store},
+					dataType:"json",
+		            success:function(data) {
+		            	if(data.code == 404) alert(data.message);
+			            if(data.code == 400) alert(data.message);
+			            if(data.code == 200) {
+			            	alert(data.message);
+			            	$("#infoAdd").hide(); 
+			            	location.reload();
+						}
+			    	}
+				})
+		}
+	})
+</script>
+</body>
+</html>
