@@ -5,7 +5,8 @@ namespace Admin\Controller;
 class IndexController extends AdminController {
     
     public function index(){
-       $this->display();
+    	// $_SESSION = array();
+    	$this->display();
     }
 
     // public function images(){

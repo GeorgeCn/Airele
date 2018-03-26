@@ -9,7 +9,6 @@ class PublicController extends Controller
 	//执行登陆
 	public function dologin()
 	{	
-
 		// 检查验证码  
 		$verify = I('param.verify','');  
 		if(!check_verify($verify)){  
@@ -18,7 +17,7 @@ class PublicController extends Controller
 		//接收用户名和密码
 		$username = I('post.username');
 		$password = I('post.password');
-
+		// dump(md5($password));exit;
 		//验证
 		$user = M('User');
 		$data = $user->where(array('username'=>$username))->find();
