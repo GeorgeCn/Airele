@@ -28,10 +28,8 @@ return array(
 
     // 模板变量
     'TMPL_PARSE_STRING' =>array(
-        '__UPLOAD__' => __ROOT__.'./Uploads', // 增加新的上传路径替换规则
-        '__ADMINSTYLE__' => __ROOT__ . '/Public/Admin',
-        '__HOMESTYLE__' => __ROOT__ . '/Public/Home',
-        '__API__' => __ROOT__ . '/Public/Api',
+        '__UPLOAD__' => __ROOT__.'./public/uploads', // 增加新的上传路径替换规则
+        '__ASSECTS__' => __ROOT__ . '/Public/assets',
     ),
 
     /** 以下为权限管理系统(居家必备之良药)切勿删除 **/
