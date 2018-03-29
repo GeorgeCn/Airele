@@ -1,10 +1,75 @@
 <?php 
+// +----------------------------------------------------------------------
+// | 基于Thinkphp3.2.3开发的一款权限管理系统
+// +----------------------------------------------------------------------
+// | Copyright (c) www.php63.cc All rights reserved.
+// +----------------------------------------------------------------------
+// | Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
+// +----------------------------------------------------------------------
+// | Author: 普罗米修斯 <996674366@qq.com>
+// +----------------------------------------------------------------------
+// | Maintainer: 乔治 <923143925@qq.com>
+// +----------------------------------------------------------------------
 namespace Admin\Controller;
 
 use \Think\Controller;
 
 class PublicController extends Controller
 {
+	/**
+	 * skip 没有条件时跳转地址
+	 * @author 普罗米修斯(996674366@qq.com)
+	 * @maintainer 乔治 (923143925@qq.com) 
+	 **/
+	public function skip()
+	{
+		session(C('ADMIN_UID'), null);
+		$this->redirect(C('DEFAULT_MOUDLE') . 'Public/login'); 
+	}
+
+	/**
+     * success 执行成功返回json格式
+     * @param $message 提示字符串
+     * @param $url 跳转地址
+     * @author 普罗米修斯(996674366@qq.com)
+     * @maintainer 乔治 (923143925@qq.com)
+     **/
+	public function success($message, $url)
+	{
+		$array = array(
+			'statusCode' => 200,
+			'message' => $message,
+			'url' => $url,
+		);
+		die(json_encode($array));
+	}
+
+	/**
+     * error 执行成功返回json格式
+     * @param string $message 提示字符串
+     * @param string $url 跳转地址
+     * @author 普罗米修斯(996674366@qq.com)
+     * @maintainer 乔治 (923143925@qq.com)
+     **/
+    protected function error($message = '')
+    {
+        $array = array(
+            'statusCode' => 300,
+            'message'    => $message,
+        );
+        die(json_encode($array));
+    }
+
+    /**
+     * login 登录页面
+     * @author 普罗米修斯(996674366@qq.com)
+     * @maintainer 乔治 (923143925@qq.com)
+     **/
+    public function login()
+    {
+    	if(session(C('ADMIN_UID'))) $this->redirect(C('DEFAULT_MOUDLE') . '/Index/Index');
+    	$this->display();
+    }
 
 	//执行登陆
 	public function dologin()
