@@ -19,15 +19,47 @@ return array(
     'DB_MASTER_NUM'         =>  1, // 读写分离后 主服务器数量
     'DB_SLAVE_NO'           =>  '', // 指定从服务器序号
 
-	//模板配置
+	// 模板配置
 	'TMPL_L_DELIM'=>'<{',
 	'TMPL_R_DELIM'=>'}>',
 
     // 显示页面Trace信息
     'SHOW_PAGE_TRACE' =>true,
 
+    // 模板变量
     'TMPL_PARSE_STRING' =>array(
-        '__UPLOAD__' => __ROOT__.'./Uploads', // 增加新的上传路径替换规则
-    )
+        '__UPLOAD__' => __ROOT__.'./public/uploads', // 增加新的上传路径替换规则
+        '__ASSECTS__' => __ROOT__ . '/Public/assets',
+    ),
 
+    /** 以下为权限管理系统(居家必备之良药)切勿删除 **/
+    'AUTH_CONFIG'           => array(
+        'AUTH_ON'           => true,  // 认证开关
+        'AUTH_TYPE'         => 1, // 认证方式，1为实时认证；2为登录认证。
+        'AUTH_GROUP'        => 'a_group', // 用户组数据表名
+        'AUTH_GROUP_ACCESS' => 'a_group_access', // 用户-用户组关系表
+        'AUTH_RULE'         => 'a_auth_cate', // 权限规则表
+        'AUTH_USER'         => 'a_admin', // 用户信息表
+    ),
+    'SHOW_PAGE_TRACE'       => true, //开启调试,上线后删除
+    'DATA_CACHE_PREFIX'     =>  'think_auth_',     // 缓存前缀
+    //'DATA_CACHE_TYPE'       => '',
+    'ADMIN_UID'                   => 'admin_uid',
+    'PAGENUM'               => 20, //默认展示条数
+    'ADMINISTRATOR'         => 1,
+    'USERNAME'              => 'username',
+    'APP_SUB_DOMAIN_DEPLOY' => 1, // 开启子域名配置
+    'DEFAULTS_MODULE'       => 'Admin',
+    'DEFAULT_MODULE'        => 'Admin',
+
+    //邮件配置
+    'MAIL_HOST' =>'smtp.163.com',//smtp服务器的名称
+    'MAIL_SMTPAUTH' =>TRUE, //启用smtp认证
+    'MAIL_USERNAME' =>'',//你的邮箱名
+    'MAIL_FROM' =>'',//发件人地址
+    'MAIL_FROMNAME'=>'',//发件人姓名
+    'MAIL_PASSWORD' =>'',//邮箱密码
+    'MAIL_CHARSET' =>'utf-8',//设置邮件编码
+    'MAIL_ISHTML' =>TRUE, // 是否HTML格式邮件
+    'CACHE_TIME'          => '600', //缓存时间
 );
