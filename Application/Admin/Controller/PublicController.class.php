@@ -82,7 +82,6 @@ class PublicController extends Controller
 		//接收用户名和密码
 		$username = I('post.username');
 		$password = I('post.password');
-		// dump(md5($password));exit;
 		//验证
 		$user = M('User');
 		$data = $user->where(array('username'=>$username))->find();
@@ -194,16 +193,45 @@ class PublicController extends Controller
     }
 
     /**
-	 * 验证码生成
+	 * 验证码生成 支持数字、英文字母、汉字
+	 * @author George <[<923143925@qq.com>]>
+	 * @param int $type 验证码类型 1-数字 2-英文字母 3-混合 4-汉字(略) 
+	 * @time() 2018-3-30
+	 * 
 	 */
-	public function verify(){
+	public function verify($type = 1){
+		$codeArr = ['0123456789', 'abcdefhijkmnpqrstuvwxyzABCDEFGHJKLMNPQRTUVWXY', '2345678abcdefhijkmnpqrstuvwxyzABCDEFGHJKLMNPQRTUVWXY'];
         $Verify = new \Think\Verify();
         $Verify->fontSize = 15;  
         $Verify->length = 4;  
-        $Verify->useNoise = false;  
-        $Verify->codeSet = '0123456789';
+        $Verify->useNoise = false;
+        switch ($type) {
+          	case 1:
+          		$Verify->codeSet = $codeArr[0];
+          		break;
+          		case 2:
+          		$Verify->codeSet = $codeArr[1];
+          		break;
+          		case 3:
+          		$Verify->codeSet = $codeArr[2];
+          		break;
+          	
+          	default:
+          		$Verify->codeSet = $codeArr[0];
+          		break;
+          }  
         $Verify->imageW = 110;
         $Verify->imageH = 40;
         $Verify->entry();  
+    }
+
+    /**
+     * code 检测验证码
+     * @author 普罗米修斯
+     * @time 2015-3-23
+     **/
+    public function code()
+    {
+        code();
     }
 }

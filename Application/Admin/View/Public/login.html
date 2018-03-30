@@ -6,110 +6,17 @@
 	</head>
 
 	<body class="login-layout">
-		<div class="main-container">
-			<div class="main-content">
-				<div class="row">
-					<div class="col-sm-10 col-sm-offset-1">
-						<div class="login-container">
-							<div class="center">
-								<h1>
-									<i class="icon-glass white"></i>
-									<span class="red">欢迎登陆</span>
-									<span class="green">Airbnb</span>
-								</h1>
-								<h4 class="blue">&copy; 空中食宿</h4>
-							</div>
-
-							<div class="position-relative">
-								<div id="login-box" class="login-box visible widget-box no-border">
-									<div class="widget-body">
-										<div class="widget-main">
-											<h4 class="header blue lighter bigger">
-												<i class="icon-beer green"></i>
-												请输入您的登陆信息
-											</h4>
-
-											<div class="space-6"></div>
-
-											<form action="<{:U('Public/dologin')}>" method="post">
-												<fieldset>
-													<label class="block clearfix">
-														<span class="block input-icon input-icon-right">
-															<input type="text" class="form-control" placeholder="请输入您的的用户名" name="username" />
-															<i class="icon-user"></i>
-														</span>
-													</label>
-
-													<label class="block clearfix">
-														<span class="block input-icon input-icon-right">
-															<input type="password" class="form-control" placeholder="请输入您的密码" name="password"/>
-															<i class="icon-lock"></i>
-														</span>
-													</label>
-
-													<div class="block clearfix">
-														<input name="verify" width="50%" height="40" class="captcha-text" placeholder="验证码" type="text">                  
-  														<img id="verify_img" alt="验证码" src="<{:U('Admin/Public/verify')}>" title="点击刷新" style="cursor:pointer"> 
-													</div>
-
-													<div class="clearfix">
-														<label class="inline">
-															<input type="checkbox" class="ace" />
-															<span class="lbl"> 记住密码 </span>
-														</label>
-
-														<button type="submit" class="width-35 pull-right btn btn-sm btn-primary">
-															<i class="icon-key"></i>
-															登 陆
-														</button>
-													</div>
-
-													<div class="space-4"></div>
-												</fieldset>
-											</form>
-
-											<div class="social-or-login center">
-												<span class="bigger-110">支持第三方登陆</span>
-											</div>
-
-											<div class="social-login center">
-												<a class="btn btn-primary">
-													<i class="icon-facebook"></i>
-												</a>
-
-												<a class="btn btn-info">
-													<i class="icon-twitter"></i>
-												</a>
-
-												<a class="btn btn-danger">
-													<i class="icon-google-plus"></i>
-												</a>
-											</div>
-										</div><!-- /widget-main -->
-
-										<div class="toolbar clearfix">
-											<div>
-												<a href="#" onclick="show_box('forgot-box'); return false;" class="forgot-password-link">
-													<i class="icon-arrow-left"></i>
-													忘记密码
-												</a>
-											</div>
-
-											<div>
-												<a href="#" onclick="show_box('signup-box'); return false;" class="user-signup-link">
-													注册
-													<i class="icon-arrow-right"></i>
-												</a>
-											</div>
-										</div>
-									</div><!-- /widget-body -->
-								</div><!-- /login-box -->
-							</div><!-- /position-relative -->
-						</div>
-					</div><!-- /.col -->
-				</div><!-- /.row -->
-			</div>
-		</div><!-- /.main-container -->
+		<div class="main1">
+    	<p>爱瑞乐后台管理系统</p>
+	    	<form action="{:U('Index/login')}" method="post" onsubmit="return check()">
+	    		<p class="cf"><span>用户名：</span><input type="text" name="user_name" id="name" tabindex="1"></p>
+	    		<p class="cf"><span>密&nbsp;&nbsp;&nbsp;码：</span><input type="password" name="password" id="pwd" tabindex="2"></p>
+	            <p class="cf"><span>验证码：</span><input type="text" name="code" class="code" id="code_id" placeholder="请输入验证码" tabindex="3">
+	            <img id="verify_img" alt="验证码" src="<{:U('Admin/Public/verify?type=1')}>" title="点击刷新" style="cursor:pointer"> 
+	    		<p class="cf"><button type="reset">重置</button><button>登录</button></p>
+	    	</form>
+    	</div>
+	
 		<script type="text/javascript">
 			function show_box(id) {
 			 jQuery('.widget-box.visible').removeClass('visible');
@@ -121,7 +28,7 @@
 		var verify_img = $('#verify_img');
 		var src_img = verify_img.attr('src');
 		verify_img.click(function (){
-			$(this).attr('src',src_img+'?verify='+Math.random());
+			$(this).attr('src',src_img+'?type=1&verify='+Math.random());
 		})
 		</script>
 </body>
