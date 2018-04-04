@@ -71,6 +71,33 @@ class PublicController extends Controller
     	$this->display();
     }
 
+    /**
+     * islogin 检测登录
+     * @author 普罗米修斯
+     * @maintainer 乔治
+     **/
+    public function islogin()
+    {
+        $model = D('Admin');
+    	dump(I('post.'));exit;
+        $data = $model->login();
+        if ($data) {
+            //登陆后获取所属分组的id
+            $str = self::_rules();
+            //查询默认跳转地
+            $where = array(
+                'id'     => array('in', $str),
+                'level'  => 0,
+                'status' => 1
+            );
+			//调用getOneField方法传参格式getOneField('字段','条件（数组）','指定条数或者true如果只查询一条就为空','排序方式')
+            
+            $url = D('AuthCate')->where($where)->order('sort DESC')->getField('module');
+            $this->success('登录成功', U($url . '/Index/index'));
+        }
+        $this->error($model->getError());
+    }
+
 	//执行登陆
 	public function dologin()
 	{	

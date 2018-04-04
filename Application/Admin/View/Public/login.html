@@ -8,7 +8,7 @@
 	<body class="login-layout">
 		<div class="main1">
     	<p>爱瑞乐后台管理系统</p>
-	    	<form action="{:U('Index/login')}" method="post" onsubmit="return check()">
+	    	<form action="<{:U('islogin')}>" method="post" onsubmit="return check()">
 	    		<p class="cf"><span>用户名：</span><input type="text" name="user_name" id="name" tabindex="1"></p>
 	    		<p class="cf"><span>密&nbsp;&nbsp;&nbsp;码：</span><input type="password" name="password" id="pwd" tabindex="2"></p>
 	            <p class="cf"><span>验证码：</span><input type="text" name="code" class="code" id="code_id" placeholder="请输入验证码" tabindex="3">
