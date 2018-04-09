@@ -64,4 +64,109 @@ class PublicModel extends model
         $list = $this -> where($where)->limit($limit)->order($order)->field($field)->select();
         return $list;
     }
+    /**
+     * 更改一条数据
+     * @param string $where 查询条件
+     * @param string $limit 分页参数
+     * @param string $value 修改的值
+     * @author 刘中胜
+     * @maintainer 乔治
+     * @return bool 
+     **/
+    public function onesave($where,$field,$value)
+    {
+        $res = $this->where($where)->setField($field,$value);
+        return $res;
+    }
+
+    /**
+     * 删除数据(软删除)
+     * @param int $id 要删除的数据id默认0
+     * @param string $tableName 表名默认为空
+	 * @param string $key 查询的key,默认id
+     * @author 刘中胜
+     * @maintainer 乔治
+     * @return bool 
+     **/
+	public function del($id = 0,$key = 'id', $type = 0, $tableName = null)
+	{
+        if(empty($id)) {
+            $this -> error = '参数错误';
+            return false;
+        }
+        if(is_null($tableName)) {
+            $tableName = $this;
+        } else {
+            $tableName = M($tableName);
+        }
+
+        $where['status'] = 1;
+        if($type == 1) {
+            $where[$key] = array('in', $id);
+        } else {
+            $where[$key] = $id;
+        }
+        $res = $tableName -> where($where) ->setField('status', 0);
+        if(!$res) {
+            $this -> error = '删除失败';
+            return false;
+        }
+        return $res;
+	}
+
+    /**
+     * edit 添加编辑页面
+     * @author 刘中胜
+     * @maintainer 乔治
+     **/
+    public function edit ()
+    {
+        $data = $this->create();
+        if(empty($data)) {
+            return false;
+        }
+        $id = $this -> add($data);
+        if(!id) {
+            $this -> error = '添加操作失败';
+            return false;
+        }
+
+        return $data;
+    }
+
+    /**
+     * 删除分类
+     * @author 刘中胜
+     * @maintainer 乔治
+     * @time 2016-01-29
+     **/
+    public function delcate()
+    {
+        $id = I('get.id', 0, 'intval');
+        if(empty($id)) {
+            $this -> error = '参数错误';
+            return false;
+        }
+        $where = array(
+            'pid' => $id;
+            'status' =>1
+        )
+        $res = $this -> where($where) -> getField('id');
+        if($res){
+            $this -> error = '该分类下拥有子分类无法删除';
+            return  false;
+        }
+        $where = array(
+            'status' => 1,
+            'id' => $id
+        );
+        $res = $this -> where($where) -> setField('status', 0);
+        if($res){
+            delTemp();
+            return true;
+        } else{
+            $this -> errro = '参数错误';
+            return false;
+        }
+    }
 }

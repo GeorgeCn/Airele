@@ -13,10 +13,6 @@ class PublicController extends Controller {
 		//接收用户名和密码
 		$username = I('post.username');
 		$password = I('post.password');
-
-		// dump($username);
-		// dump($password);
-		// exit;
 		//验证
 		$user = M('yonghu');
 		$d = $user->field('status')->where(array('tel'=>$username))->find();
@@ -27,8 +23,6 @@ class PublicController extends Controller {
 			exit;
 		}
 		$data = $user->where(array('tel'=>$username))->find();
-		// echo $user->getLastSql();
-		// exit;
 		if (!$data) {
 			$this->error('用户名不存在！');
 			exit;
@@ -44,6 +38,7 @@ class PublicController extends Controller {
 		//跳转到首页
 		$this->redirect('Index/index');
 	}
+
 	public function logout()
 	{
 		//清空session
