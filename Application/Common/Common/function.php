@@ -1,11 +1,12 @@
 <?php 
 require ('Application/Common/Common/CCPRestSDK.php');
 //公共函数库
-/** 
+    /** 
      * 发送 容联云通讯 验证码 
      * @param  int $phone 手机号 
      * @param  int $code  验证码 
-     * @return boole      是否发送成功 
+     * @return boole      是否发送成功
+     * @author 乔治 <923143925@qq.com> 
      */  
     function send_sms_code($phone,$code){  
         //请求地址，格式如下，不需要写https://  
@@ -41,6 +42,7 @@ require ('Application/Common/Common/CCPRestSDK.php');
  * 格式化输出数组
  * @param mixed $data
  * @return null
+ * @author  乔治 
  */
 function V($data)
 {
@@ -56,6 +58,7 @@ function V($data)
  * @param string $pid parent标记字段
  * @param string $level level标记字段
  * @return array
+ * @author  乔治
  */
 function list_to_tree($list, $pk='id', $pid = 'pid', $child = '_child', $root = 0) {
     // 创建Tree
@@ -92,6 +95,7 @@ function list_to_tree($list, $pk='id', $pid = 'pid', $child = '_child', $root = 
  * @param  string $order 排序显示的键，一般是主键 升序排列
  * @param  array  $list  过渡用的中间数组，
  * @return array        返回排过序的列表数组
+ * @author  乔治
  */
 function tree_to_list($tree, $child = '_child', $order='id', &$list = array()){
     if(is_array($tree)) {
@@ -110,7 +114,7 @@ function tree_to_list($tree, $child = '_child', $order='id', &$list = array()){
 }
 
 /**
- * @author 普修米洛斯 www.php63.cc
+ * @author 普修米洛斯
  * @param int $width 宽度
  * @param int $height 高度
  * @param int $font_size 字体大小

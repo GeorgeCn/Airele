@@ -34,9 +34,7 @@
 				}
 				$v['role'] = $roles; //将新得到角色信息放置到$v中
 				$arr[] = $v;
-			}
-
-		
+			}	
 
 			//分配变量
 			$this->assign("list",$arr);

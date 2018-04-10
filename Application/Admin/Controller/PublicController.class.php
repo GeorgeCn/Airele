@@ -79,7 +79,6 @@ class PublicController extends Controller
     public function islogin()
     {
         $model = D('Admin');
-    	dump(I('post.'));exit;
         $data = $model->login();
         if ($data) {
             //登陆后获取所属分组的id
