@@ -2,17 +2,9 @@
 namespace Admin\Controller;
 
 
-class IndexController extends AdminController {
+class IndexController extends PrivateController {
     
     public function index(){
-    	// $_SESSION = array();
     	$this->display();
     }
-
-    // public function images(){
-    // 	$list = M('himages')->select();
-    // 	$this->assign("list",$list);
-    // 	$this->display();
-    // }
-    
 }
