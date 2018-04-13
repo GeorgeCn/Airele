@@ -7,7 +7,7 @@ return array(
     'DB_HOST'               =>  '106.15.189.59', // 服务器地址
     'DB_NAME'               =>  'airele',          // 数据库名
     'DB_USER'               =>  'root',      // 用户名
-    'DB_PWD'                =>  '',          // 密码
+    'DB_PWD'                =>  'Airele123',          // 密码
     'DB_PORT'               =>  '3306',        // 端口
     'DB_PREFIX'             =>  '',    // 数据库表前缀
     'DB_PARAMS'          	=>  array(), // 数据库连接参数    
@@ -28,7 +28,7 @@ return array(
 
     // 模板变量
     'TMPL_PARSE_STRING' =>array(
-        '__UPLOAD__' => __ROOT__.'./public/uploads', // 增加新的上传路径替换规则
+        '__UPLOAD__' => __ROOT__.'/public/uploads', // 增加新的上传路径替换规则
         '__ASSECTS__' => __ROOT__ . '/Public/assets',
     ),
 

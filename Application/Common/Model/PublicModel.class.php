@@ -3,7 +3,7 @@ namespace Common\Model;
 
 use Think\Model;
 
-class PublicModel extends model
+class PublicModel extends Model
 {
 	/**
 	 * 获取某些指定用户的指定字段
@@ -13,7 +13,7 @@ class PublicModel extends model
 	 * @author 普罗米修斯 (996674366@qq.com)
 	 * @maintainer 乔治 (923143925@qq.com)
 	 **/
-	public function getOneField($field, $where = array, $type = false, $order = '')
+	public function getOneField($field, $where = array(), $type = false, $order = '')
 	{	
 		$result = $this->where($where)->order($order)->getField($field, $type);
 		return $result;
@@ -148,9 +148,9 @@ class PublicModel extends model
             return false;
         }
         $where = array(
-            'pid' => $id;
+            'pid' => $id,
             'status' =>1
-        )
+        );
         $res = $this -> where($where) -> getField('id');
         if($res){
             $this -> error = '该分类下拥有子分类无法删除';
@@ -166,6 +166,27 @@ class PublicModel extends model
             return true;
         } else{
             $this -> errro = '参数错误';
+            return false;
+        }
+    }
+
+    /**
+     * 更新分类操作
+     * @author 刘中胜
+     * @time 2016-01-29
+     **/
+    public function updateCate()
+    {
+        $data = $this -> create();
+        if(empty($data)){
+            return false;
+        }
+
+        $res   = $this ->  save();
+        if($res){
+            delTemp();
+            return true;
+        }else{
             return false;
         }
     }

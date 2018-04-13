@@ -24,7 +24,7 @@ class PublicController extends Controller
 	public function skip()
 	{
 		session(C('ADMIN_UID'), null);
-		$this->redirect(C('DEFAULT_MOUDLE') . 'Public/login'); 
+		$this->redirect(C('DEFAULT_MODULE') . '/Public/login'); 
 	}
 
 	/**
@@ -67,7 +67,7 @@ class PublicController extends Controller
      **/
     public function login()
     {
-    	if(session(C('ADMIN_UID'))) $this->redirect(C('DEFAULT_MOUDLE') . '/Index/Index');
+    	if(session(C('ADMIN_UID'))) $this->redirect(C('DEFAULT_MODULE') . '/Index/Index');
     	$this->display();
     }
 
@@ -80,6 +80,7 @@ class PublicController extends Controller
     {
         $model = D('Admin');
         $data = $model->login();
+    	dump($model);exit;
         if ($data) {
             //登陆后获取所属分组的id
             $str = self::_rules();
@@ -413,14 +414,8 @@ class PublicController extends Controller
 		}else{// 上传成功
 			
 			$list = $_POST;
-			// dump($info);
-			// dump($list);
-			// exit;
 			
 			$model = M('himages');
-			// dump($model);
-			// exit;
-			// 保存当前数据对象
 			$data['name'] = $list['name'];
 			// $data['pid'] = $list['pid'];
 			// $data['uid'] = $list['uid'];

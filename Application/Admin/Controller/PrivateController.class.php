@@ -17,6 +17,58 @@ use Think\Auth;
 class PrivateController extends PublicController
 {
 	public $model = null;
+    private $auth = null;
+    private $group_id = array();
+
+    /**
+     * 初始化方法
+     * @auth 普罗米修斯 www.php63.cc
+     **/
+    public function _initialize()
+    {
+        //获取到当前用户所属所有分组拥有的权限id
+        $this->group_id = self::_rules();
+        $UserName = session(C('USERNAME'));
+        //检测后台管理员昵称是否存在，如果不等于空或者0则获取配置文件里定义的name名字并分配给首页
+        if (!empty($UserName)) {
+            $this->assign('UserName', session(C('USERNAME')));
+        }
+        //分配左边菜单
+        $this->_left_menu();
+        //分配列表上方菜单
+        $this->_top_menu();
+        //分配网站顶部菜单
+        $this->_web_top_menu();
+        //检测是否为超级管理员
+        if (UID == C('ADMINISTRATOR')) {
+            return true;
+        }
+        //读取缓存名为check_iskey+uid的缓存
+        $key = MODULE_NAME.'/'. CONTROLLER_NAME . '/' . ACTION_NAME;
+        $where = array(
+            'name'   => $key,
+            'status' => 1
+        );
+        $iskey = M('auth_cate')->where($where)->getField('id');
+        //检测该规则id是否存在于分组拥有的权限里
+        if(!empty($iskey) && !in_array($iskey,$this -> group_id)){
+            $this->auth = new Auth();
+            if(!$this->auth->check($key, UID)){
+                $url = C('DEFAULTS_MODULE').'/Public/login';
+                //如果为ajax请求，则返回301，并且跳转到指定页面
+                if(IS_AJAX){
+                    session('[destroy]');
+                    $data = array(
+                        'statusCode' => 301,
+                        'url'        => $url
+                    );
+                    die(json_encode($data));
+                }
+                session('[destroy]');
+                $this->redirect($url);
+            }
+        }
+    }
 
 	/**
 	 * 查询总条数
