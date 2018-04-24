@@ -1535,16 +1535,28 @@ function send_http_status($code) {
     }
 }
 
-function think_filter(&$value){
-	// TODO 其他安全过滤
-
+/**
+ * [过滤特殊字符]
+ * @Author   George                   <[<923143925@qq.com>]>
+ * @DateTime 2018-04-23T11:16:09+0800
+ * @param    [type]                   &$value                [description]
+ * @return   [type]                                          [description]
+ */
+function think_filter(&$value) {
 	// 过滤查询特殊字符
     if(preg_match('/^(EXP|NEQ|GT|EGT|LT|ELT|OR|XOR|LIKE|NOTLIKE|NOT BETWEEN|NOTBETWEEN|BETWEEN|NOTIN|NOT IN|IN)$/i',$value)){
         $value .= ' ';
     }
 }
 
-// 不区分大小写的in_array实现
+/**
+ * [不区分大小写的in_array实现]
+ * @Author   George                   <[<923143925@qq.com>]>
+ * @DateTime 2018-04-23T11:17:40+0800
+ * @param    [type]                   $value                 [规定要在数组搜索的值]
+ * @param    [type]                   $array                 [规定要搜索的数组]
+ * @return   [Boolean]                                          [description]
+ */
 function in_array_case($value,$array){
     return in_array(strtolower($value),array_map('strtolower',$array));
 }

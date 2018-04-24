@@ -80,7 +80,6 @@ class PublicController extends Controller
     {
         $model = D('Admin');
         $data = $model->login();
-    	dump($model);exit;
         if ($data) {
             //登陆后获取所属分组的id
             $str = self::_rules();

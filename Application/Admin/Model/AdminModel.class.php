@@ -148,13 +148,11 @@ class AdminModel extends \Common\Model\PublicModel
             'a.status'   => 1,
             'c.type'     => 0
         );
-        dump($userWhere);exit();
         $chars = M()
             ->table('a_admin a')
             ->join('LEFT JOIN `char` c ON a.id=c.id')
             ->where($userWhere)
             ->getField('chars');
-          
         if(!$chars){
             $this->error = '登陆出错,用户名或者密码错误';
             return false;
