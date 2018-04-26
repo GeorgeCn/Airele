@@ -90,10 +90,11 @@ class PublicController extends Controller
                 'status' => 1
             );
 			//调用getOneField方法传参格式getOneField('字段','条件（数组）','指定条数或者true如果只查询一条就为空','排序方式')
-            
             $url = D('AuthCate')->where($where)->order('sort DESC')->getField('module');
+
             $this->success('登录成功', U($url . '/Index/index'));
         }
+
         $this->error($model->getError());
     }
 
@@ -205,19 +206,19 @@ class PublicController extends Controller
             $where = array(
                 'status' => 1
             );
-			if ($uid != C('ADMINISTRATOR')) {
-				//如果为普通管理员查看当前用户的数据
+            if ($uid != C('ADMINISTRATOR')) {
+                //如果为普通管理员查看当前用户的数据
                 $map = array(
                     'uid' => $uid
                 );
-				$group = $userGroupId ->getOneField('group_id',$map, true);
+                $group = $userGroupId ->getOneField('group_id',$map, true);
                 if (empty($group)) {
                     $this->error('登陆失败,权限不足');
                     $this -> skip();
                 }
-				$where['id'] = array('in', $group);
+                $where['id'] = array('in', $group);
             }
-            $list = M('a_group')->where($where)->getField('rules', true);
+            $list = M('adm_group')->where($where)->getField('rules', true);
             if (empty($list[0])) {
                 $this->error('登陆失败,权限不足');
                 $this -> skip();
@@ -406,8 +407,6 @@ class PublicController extends Controller
 		$upload->savePath = ''; // 设置附件上传（子）目录
 		// 上传文件
 		$info = $upload->upload();
-		// dump($info);
-		// exit;
 		if(!$info) {// 上传错误提示错误信息
 			$this->error($upload->getError());
 		}else{// 上传成功
@@ -421,8 +420,6 @@ class PublicController extends Controller
 			// $data['content'] = $list['content'];
 			// $data['create_time'] = NOW_TIME;
 			$data['image'] = $info['image']['savepath'].$info['image']['savename'];
-			// dump($data);
-			// exit;
 			$model->add($data);
 			$this->success('上传成功！',U('Public/upload'));
 		}	

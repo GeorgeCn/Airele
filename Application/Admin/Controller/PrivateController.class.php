@@ -28,10 +28,10 @@ class PrivateController extends PublicController
     {
         //获取到当前用户所属所有分组拥有的权限id
         $this->group_id = self::_rules();
-        $UserName = session(C('USERNAME'));
+        $userName = session(C('USERNAME'));
         //检测后台管理员昵称是否存在，如果不等于空或者0则获取配置文件里定义的name名字并分配给首页
-        if (!empty($UserName)) {
-            $this->assign('UserName', session(C('USERNAME')));
+        if (!empty($userName)) {
+            $this->assign('userName', session(C('USERNAME')));
         }
         //分配左边菜单
         $this->_left_menu();
@@ -127,5 +127,44 @@ class PrivateController extends PublicController
         );
         
         return $list;
+    }
+
+    /**
+     * 左边菜单
+     * @author 普罗米修斯<www.php63.cc>
+     * @time 2015-12-11
+     **/
+    public function _left_menu()
+    {
+        $url = S('left_menu');
+        if ($url == false) {
+            $where = array(
+                'status' => 1,
+                'level'  => 1,
+                'module' => MODULE_NAME
+            );
+            if (UID != C('ADMINISTRATOR')) {
+                $where['id'] = array('in', $this->group_id);
+            }
+            $model = D('auth_cate');
+            $url = $model->where($where)->order('sort DESC')->select();
+            foreach ($url as $key => &$value) {
+                $where = array(
+                    'pid' => $value['id'],
+                    'status' => 1,
+                    'is_menu' => array('neq',0)
+                );
+                $info = $model->where($where)->count();
+                if($info){
+                    array_splice($url, $key,1);
+                }else{
+                    $urls = $value['name'] . '/index';
+                    $value['name'] = U($urls); 
+                }
+            }
+            unset($value);
+            S('left_menu' . UID, $url);
+        }
+        $this->assign('menu_url', $url);
     }
 }

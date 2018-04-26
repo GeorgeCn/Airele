@@ -2,6 +2,7 @@
 namespace Admin\Model;
 class AdminModel extends \Common\Model\PublicModel
 {
+    protected $tablePrefix = 'adm_';
     /**
      * $_validate 自动验证
      * @author 刘中胜
@@ -135,6 +136,7 @@ class AdminModel extends \Common\Model\PublicModel
      * login　登录操作
      * @reutrn string
      * @author 刘中胜
+     * @maintainer George
      * @time 2015-06-07
      **/
     public function login()
@@ -149,8 +151,8 @@ class AdminModel extends \Common\Model\PublicModel
             'c.type'     => 0
         );
         $chars = M()
-            ->table('a_admin a')
-            ->join('LEFT JOIN `char` c ON a.id=c.id')
+            ->table('adm_admin a')
+            ->join('LEFT JOIN adm_char c ON a.id=c.id')
             ->where($userWhere)
             ->getField('chars');
         if(!$chars){
