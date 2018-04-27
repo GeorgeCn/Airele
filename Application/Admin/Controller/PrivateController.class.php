@@ -131,7 +131,7 @@ class PrivateController extends PublicController
 
     /**
      * 左边菜单
-     * @author 普罗米修斯<www.php63.cc>
+     * @author 普罗米修斯
      * @time 2015-12-11
      **/
     public function _left_menu()
@@ -166,5 +166,220 @@ class PrivateController extends PublicController
             S('left_menu' . UID, $url);
         }
         $this->assign('menu_url', $url);
+    }
+    /**
+     * 列表上方菜单
+     * @author 普罗米修斯
+     * @time 2015-12-11
+     **/
+    public function _top_menu()
+    {
+        $module_name = MODULE_NAME;
+        $controller  = CONTROLLER_NAME;
+        $where = array(
+            'status'     => 1,
+            'level'      => 2,
+            'is_menu'    => 0,
+            'module'     => $module_name,
+            'controller' => $controller
+        );
+        if (UID != C('ADMINISTRATOR')) {
+            $where['id'] = array('in', $this->group_id);
+        }
+        $model = D('auth_cate');
+        $url = $model->where($where)->field('module,controller,method,title,name')->order('sort DESC')->select(false);
+        //检测控制器是不是等于Index
+        if ($controller == 'Index') {
+            $arr = array(
+                'module'     => $module_name,
+                'controller' => 'Index',
+                'method'     => 'index',
+                'title'      => '站点信息',
+                'name'       => $module_name . '/Index/index'
+            );
+            array_unshift($url, $arr);
+        }
+        $this->assign('top_menu_url', $url);
+    }
+
+
+    /**
+     * 网站顶部菜单
+     * @author 普罗米修斯
+     * @time 2015-12-11
+     **/
+    public function _web_top_menu()
+    {
+        $model = M('adm_auth_cate');
+        $url = S('web_top_menu' . UID);
+        //检测缓存是否存在,如果不存在则生成缓存
+        if ($url == false) {
+            $where = array(
+                'status' => 1,
+                'level'  => 0,
+            );
+            if (UID != C('ADMINISTRATOR')) {
+                $where['id'] = array('in', $this->group_id);
+            }
+            $dataArr = $model->where($where)->select();
+            $module = array();
+            foreach ($dataArr as $key => $value) {
+                $where = array(
+                    'pid'    => $value['id'],
+                    'status' => 1
+                );
+                $res = $model->where($where)->getField('id');
+                if ($res) {
+                    $module[] = $value['id'];
+                }
+            }
+            if (!empty($module)) {
+                $where = array(
+                    'id'     => array('in', $module),
+                    'status' => 1
+                );
+                $url = $model->where($where)->field('id,title,module')->order('sort DESC')->select();
+                foreach ($url as $key => &$value) {
+                    $where = array(
+                        'pid'    => $value['id'],
+                        'status' => 1
+                    );
+                    $str = $model->where($where)->getField('module');
+                    $value['url'] = U($str . '/Index/index', array('module' => MODULE_NAME));
+                }
+                unset($value);
+                //生成缓存
+                S('web_top_menu' . UID, $url);
+            }
+        }
+        if (count($url) > 1) {
+            $this->assign('web_top_menu_url', $url);
+        }
+    }
+
+
+    /**
+     * 权限判断 所有一级菜单点击都进入这个方法
+     * @author 普罗米修斯
+     * @time 2016-06-15
+     **/
+    public function index()
+    {
+        $url = MODULE_NAME . '/' . CONTROLLER_NAME;
+        $where = array(
+            'a.name' => $url,
+            'a.level'=> 1,
+            'b.status' => 1
+        );
+        if(UID != C('ADMINISTRATOR')){
+            $where['b.id']   = array('in',$this->group_id);
+        }
+        $info = M()
+            -> table('__AUTH_CATE__ a')
+            -> join('LEFT JOIN __AUTH_CATE__ b ON a.id=b.pid')
+            -> where($where)
+            -> order('b.sort DESC')
+            -> getField('b.name');
+        $this->redirect($info);
+    }
+
+
+    /**
+     * 分类列表
+     * @param string $model 要操作的表
+     * @param string $cache 缓存名称
+     * @author 普罗米修斯
+     * @time 2016-01-21
+     **/
+    public function _cateList($model, $title, $sort = '', $cache = '')
+    {
+       // $list = S($cache . UID);
+       // if ($list == false) {
+            $this->model = D($model);
+            $where = array(
+                'status' => 1,
+                'type'=>1
+            );
+            $list = self::_modelSelect($where, $sort);
+            if (!$list) {
+                $list = array();
+            }
+            $arr = array(
+                'id'       => 0,
+                'pid'      => null,
+                'title'    => $title,
+                'isParent' => true,
+                'open'     => true,
+            );
+         array_unshift($list, $arr);
+            $list = json_encode($list);
+           // S($cache . UID, $list);
+       // }
+        $this->assign('list', $list);
+    }
+
+    /**
+     * 列表右边操作按钮
+     * 数组里第二个参数为跳转类型参数
+     * type 1弹出层 2删除 3审核 4直接打开
+     * @author 普罗米修斯<www.php63.cc>
+     **/
+    protected function _listBut($data)
+    {
+        $dataArr = array();
+        foreach ($data as $key => $value) {
+            if (self::_is_check_url($value[3])) {
+                $dataArr[$key]['name'] = $value[0];
+                $dataArr[$key]['opt']['title'] = $value[2];
+                $dataArr[$key]['opt']['url'] = $value[4];
+                switch ($value[1]) {
+                    case 1://弹出层
+                        $dataArr[$key]['target'] = 'popDialog';
+                        break;
+                    case 2:
+                        $dataArr[$key]['opt']['msg'] = $value[5];
+                        $dataArr[$key]['target'] = 'ajaxDel';
+                        break;
+                    case 3:
+                        $dataArr[$key]['opt']['msg'] = $value[5];
+                        $dataArr[$key]['target'] = 'ajaxTodo';
+                        $dataArr[$key]['opt']['value'] = $value[7];
+                        $dataArr[$key]['opt']['type'] = $value[6];
+                        break;
+                    default:
+                        # code...
+                        break;
+                }
+            }
+        }
+        return $dataArr;
+    }
+
+    /**
+     * 删除分类
+     * @author 普罗米修斯
+     **/
+    protected function _delcate($url)
+    {
+        if (!$this->model) {
+            $this->error("表名未定义");
+        }
+        $res = $this->model->delcate();
+        if ($res) {
+            $this->success('操作成功', U($url));
+        }
+        $this->error($this->model->getError());
+    }
+    
+    /**
+     *  param 跳转地址
+     * author 普罗米修斯
+     **/
+    protected function urlRedirect($url = '/info'){
+        $modules = I('get.module');
+        if(!empty($modules)){
+            delTemp();
+        }
+        $this -> redirect(MODULE_NAME.'/'.CONTROLLER_NAME.$url);
     }
 }
