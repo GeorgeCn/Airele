@@ -1,3 +1,4 @@
 /Application/Runtime
 /sftp-config.json
 /Application/Common/Conf/database.php
+/vendor

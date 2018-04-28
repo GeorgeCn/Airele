@@ -12,7 +12,7 @@
 	    		<p class="cf"><span>用户名：</span><input type="text" name="username" id="name" tabindex="1"></p>
 	    		<p class="cf"><span>密&nbsp;&nbsp;&nbsp;码：</span><input type="password" name="password" id="pwd" tabindex="2"></p>
 	            <p class="cf"><span>验证码：</span><input type="text" name="code" class="code" id="code_id" placeholder="请输入验证码" tabindex="3">
-	            <img id="verify_img" alt="验证码" src="<{:U('Admin/Public/verify?type=1')}>" title="点击刷新" style="cursor:pointer"> 
+	            <img id="verify_img" alt="验证码" src="{{:U('Admin/Public/verify?type=1')}}" title="点击刷新" style="cursor:pointer"> 
 	    		<p class="cf"><button type="reset">重置</button><button>登录</button></p>
 	    	</form>
     </div>
