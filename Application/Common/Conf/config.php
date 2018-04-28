@@ -21,17 +21,18 @@ return array(
     'DB_SLAVE_NO'           =>  '', // 指定从服务器序号
 */
 	// 模板配置
-	'TMPL_L_DELIM'=>'<{',
-	'TMPL_R_DELIM'=>'}>',
-
-    // 显示页面Trace信息
-    'SHOW_PAGE_TRACE' =>true,
+	'TMPL_L_DELIM'=>'{{',
+	'TMPL_R_DELIM'=>'}}',
 
     // 模板变量
     'TMPL_PARSE_STRING' =>array(
         '__UPLOAD__' => __ROOT__.'/public/uploads', // 增加新的上传路径替换规则
-        '__ASSECTS__' => __ROOT__ . '/Public/assets',
+        '__ASSECTS__' => __ROOT__ . '/Public/Assets',
     ),
+
+    // 显示页面Trace信息
+    'SHOW_PAGE_TRACE' =>true,
+
 
     /** 以下为权限管理系统(居家必备之良药)切勿删除 **/
     'AUTH_CONFIG'           => array(
