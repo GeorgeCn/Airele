@@ -8,7 +8,7 @@ td,article,aside,canvas,details,figure,figcaption,
 header,footer,hgroup,menu,nav,output,section,summary,
 time,mark,audio,video,input,select,button
 { 
-    margin:0; padding:0;font-size:14px;font-family:Arial '微软雅黑';
+    margin:0; padding:0;font-size:14px;font-family:"Helvetica Neue", Helvetica, "微软雅黑", sans-serif;
 }
 ul,ol,dl,li,dt,dd{list-style:none;}
 

@@ -1,5 +1,5 @@
 /*main*/
-.main1{width:500px;height:380px;background:url(../images/login/login.png) left top no-repeat;background-size:100% 100%;position:absolute;left:50%;top:50%;margin-left:-250px;margin-top:-190px;filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+.main1{width:500px;height:380px;background:url(../images/login.png) left top no-repeat;background-size:100% 100%;position:absolute;left:50%;top:50%;margin-left:-250px;margin-top:-190px;filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
     src='images/login.png',sizingMethod='scale');}
 .main1>p{height:50px;line-height:50px;text-align:center;font-size:22px;color:#fff;}
 .main1 form{width:400px;margin:10px 50px;color:#fff;display:block;position:relative;}

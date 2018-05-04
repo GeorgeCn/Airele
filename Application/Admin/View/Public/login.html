@@ -6,30 +6,38 @@
 </head>
 
 <body class="login-layout">
-	<div class="main1">
-    	<p>后台管理系统</p>
-	    	<form action="<{:U('islogin')}>" method="post" onsubmit="return check()">
-	    		<p class="cf"><span>用户名：</span><input type="text" name="username" id="name" tabindex="1"></p>
-	    		<p class="cf"><span>密&nbsp;&nbsp;&nbsp;码：</span><input type="password" name="password" id="pwd" tabindex="2"></p>
-	            <p class="cf"><span>验证码：</span><input type="text" name="code" class="code" id="code_id" placeholder="请输入验证码" tabindex="3">
-	            <img id="verify_img" alt="验证码" src="{{:U('Admin/Public/verify?type=1')}}" title="点击刷新" style="cursor:pointer"> 
-	    		<p class="cf"><button type="reset">重置</button><button>登录</button></p>
-	    	</form>
+	<div class="main-container main1">
+		<div class="main-content">
+			<div class="login-center" style="width:340px;height:40px">
+				<h2>
+					aaa
+				</h2>
+				<h4 class="blue">&copy; Airele</h4>
+			</div>
+			<div class="login-form login_wrap_main position-relative">
+			    	<form action="{{:U('islogin')}}" method="post" onsubmit="return check()">
+			    		<p class="cf"><span>用户名：</span><input type="text" name="username" id="name" tabindex="1"></p>
+			    		<p class="cf"><span>密&nbsp;&nbsp;&nbsp;码：</span><input type="password" name="password" id="pwd" tabindex="2"></p>
+			            <p class="cf"><span>验证码：</span><input type="text" name="code" class="code" id="code_id" placeholder="请输入验证码" tabindex="3">
+			            <img id="verify_img" alt="验证码" src="{{:U('Admin/Public/verify?type=1')}}" title="点击刷新" style="cursor:pointer"> 
+			    		<p class="cf"><button type="reset">重置</button><button>登录</button></p>
+			    	</form>
+			</div>
+			<script type="text/javascript">
+				function show_box(id) {
+				 jQuery('.widget-box.visible').removeClass('visible');
+				 jQuery('#'+id).addClass('visible');
+				}
+			</script>
+			<script>
+			// 验证码刷新
+			var verify_img = $('#verify_img');
+			var src_img = verify_img.attr('src');
+			verify_img.click(function (){
+				$(this).attr('src',src_img+'?type=1&verify='+Math.random());
+			})
+			</script>
+		</div>
     </div>
-	
-		<script type="text/javascript">
-			function show_box(id) {
-			 jQuery('.widget-box.visible').removeClass('visible');
-			 jQuery('#'+id).addClass('visible');
-			}
-		</script>
-		<script>
-		// 验证码刷新
-		var verify_img = $('#verify_img');
-		var src_img = verify_img.attr('src');
-		verify_img.click(function (){
-			$(this).attr('src',src_img+'?type=1&verify='+Math.random());
-		})
-		</script>
 </body>
 </html>

@@ -12,7 +12,7 @@ DROP TABLE IF EXISTS `adm_char`;
 CREATE TABLE `adm_char` (
   `id` int(10) NOT NULL DEFAULT '0',
   `chars` int(11) NOT NULL DEFAULT '0',
-  `type` tinyint(1) NOT NULL DEFAULT '0',
+  `type` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='特殊表';
 
 -- ----------------------------
