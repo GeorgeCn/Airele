@@ -27,7 +27,7 @@ return array(
     // 模板变量
     'TMPL_PARSE_STRING' =>array(
         '__UPLOAD__' => __ROOT__.'/Public/uploads', // 增加新的上传路径替换规则
-        '__ASSECTS__' => __ROOT__ . '/Public/assets',
+        '__ASSETS__' => __ROOT__ . '/Public/assets',
     ),
 
     // 显示页面Trace信息

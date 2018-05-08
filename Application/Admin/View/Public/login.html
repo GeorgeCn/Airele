@@ -13,36 +13,34 @@
 
 			<div class="login-content">
 				<div class="login-form">
-			    	<form action="{{:U('islogin')}}" method="post" onsubmit="return check()">
+			    	<form action="{{:U('islogin')}}" method="post" onsubmit="return Juuz.ajaxForm(this);">
 			    		<div class="login-username">
-			    			<span>用户名：</span><img src="__ASSECTS__/images/login_img_username.jpg" /><input type="text" name="username" id="name" tabindex="1">
+			    			<span>用户名：</span><img src="__ASSETS__/images/login_img_username.jpg" /><input type="text" name="username" data-opt='{
+			    				type : "require",
+			    				msg : "请输入用户名" 
+			    		}' placeholder="请输入用户名" tabindex="1">
 			    		</div>
 			    		<div class="login-password">	
-			    			<span>密&nbsp;&nbsp;&nbsp;码：</span><img src="__ASSECTS__/images/login_img_pwd.jpg" /><input type="password" name="password" id="pwd" tabindex="2">
+			    			<span>密&nbsp;&nbsp;&nbsp;码：</span><img src="__ASSETS__/images/login_img_pwd.jpg" /><input type="password" name="password" data-opt='{
+			    				type : "require",
+                                msg : "请输入密码"
+                            }' placeholder="请输入密码" tabindex="2">
 			    		</div>
 			    		<div class="login-code">
 			            	<span>验证码：</span>
-			    			<input type="text" name="code" class="code" id="code_id" placeholder="请输入验证码" tabindex="3">
-			            	<img id="verify_img" alt="验证码" src="{{:U('Admin/Public/verify?type=1')}}" title="点击刷新" class="code_img"> 
-			    			<p class="cf"><button type="reset">重置</button><button>登录</button></p>
+			    			<input type="text" name="verify" class="code" placeholder="请输入验证码" tabindex="3">
+			            	<img src="{{:U('verify')}}" class="code-img" alt="验证码" title="点击刷新" onclick="change(this)"> 
 			    		</div>
+			    			<button type="reset">重置</button><button type="submit" class="login_bt_submit">登录</button>
 			    	</form>
 		    	</div>
 		    </div>
     </div>
-<script type="text/javascript">
-	function show_box(id) {
-	 jQuery('.widget-box.visible').removeClass('visible');
-	 jQuery('#'+id).addClass('visible');
-	}
-</script>
 <script>
-// 验证码刷新
-var verify_img = $('#verify_img');
-var src_img = verify_img.attr('src');
-verify_img.click(function (){
-	$(this).attr('src',src_img+'?type=1&verify='+Math.random());
-})
+    var __url = "{{:U('verify')}}";
+    function change(img){
+        img.src =  __url +'?type=1&verify='+ Math.random();
+    }
 </script>
 </body>
 </html>
