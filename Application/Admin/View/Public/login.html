@@ -29,7 +29,7 @@
 			    		<div class="login-code">
 			            	<span>验证码：</span>
 			    			<input type="text" name="verify" class="code" placeholder="请输入验证码" tabindex="3">
-			            	<img src="{{:U('verify')}}" class="code-img" alt="验证码" title="点击刷新" onclick="change(this)"> 
+			            	<img src="{{:U('code')}}" class="code-img" alt="验证码" title="点击刷新" onclick="change(this)"> 
 			    		</div>
 			    			<button type="reset">重置</button><button type="submit" class="login_bt_submit">登录</button>
 			    	</form>
@@ -37,9 +37,9 @@
 		    </div>
     </div>
 <script>
-    var __url = "{{:U('verify')}}";
+    var __url = "{{:U('code')}}";
     function change(img){
-        img.src =  __url +'?type=1&verify='+ Math.random();
+        img.src =  __url +'?t='+ Math.random();
     }
 </script>
 </body>

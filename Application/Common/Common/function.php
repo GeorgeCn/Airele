@@ -123,7 +123,7 @@ function tree_to_list($tree, $child = '_child', $order='id', &$list = array()){
  * @param string $font 字体名称
  * @param int $interference 雪花数量
  */
-function code($width = 100, $height = 32, $font_size = 13, $code_len = 4, $line_num = 5, $font = './Public/assets/fonts/5.ttf', $interference = 40,$verifyName = 'code'){
+function code($width = 100, $height = 32, $font_size = 13, $code_len = 4, $line_num = 5, $font = './Public/assets/font/yahoo.ttf', $interference = 40,$verifyName = 'code'){
     $image = imagecreatetruecolor($width, $height);
     $image_color = imagecolorallocate($image,mt_rand(157,255), mt_rand(157,255), mt_rand(157,255));
     imagefilledrectangle($image,0,$height,$width,0,$image_color);
