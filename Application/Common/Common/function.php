@@ -1,64 +1,48 @@
 <?php 
 require ('Application/Common/Common/CCPRestSDK.php');
-//公共函数库
-    /** 
-     * 发送 容联云通讯 验证码 
-     * @param  int $phone 手机号 
-     * @param  int $code  验证码 
-     * @return boole      是否发送成功
-     * @author 乔治 <923143925@qq.com> 
-     */  
-    function send_sms_code($phone,$code){  
-        //请求地址，格式如下，不需要写https://  
-        $serverIP='app.cloopen.com';  
-        //请求端口  
-        $serverPort='8883';  
-        //REST版本号  
-        $softVersion='2013-12-26';  
-        //主帐号  
-        $accountSid=C('RONGLIAN_ACCOUNT_SID');  
-        //主帐号Token  
-        $accountToken=C('RONGLIAN_ACCOUNT_TOKEN');  
-        //应用Id  
-        $appId=C('RONGLIAN_APPID');  
-        $rest = new REST($serverIP,$serverPort,$softVersion);  
-        $rest->setAccount($accountSid,$accountToken);  
-        $rest->setAppId($appId);  
-        // 发送模板短信  
-        $result=$rest->sendTemplateSMS($phone,array($code,5),1);  
-        if($result==NULL) {  
-            return false;  
-        }  
-        if($result->statusCode!=0) {  
-            return  false;  
-        }else{  
-            return true;  
-        }  
-    }
-
-
-
-/**
- * 格式化输出数组
- * @param mixed $data
- * @return null
- * @author  乔治 
- */
-function V($data)
-{
-	echo "<pre>";
-	print_r($data);
-	echo "</pre>";
+/**公共函数库**/
+/** 
+ * [发送 容联云通讯 验证码]
+ * @author 乔治 <923143925@qq.com> 
+ * @param  int $phone 手机号 
+ * @param  int $code  验证码 
+ * @return boole      是否发送成功
+ */  
+function send_sms_code($phone,$code){  
+    //请求地址，格式如下，不需要写https://  
+    $serverIP='app.cloopen.com';  
+    //请求端口  
+    $serverPort='8883';  
+    //REST版本号  
+    $softVersion='2013-12-26';  
+    //主帐号  
+    $accountSid=C('RONGLIAN_ACCOUNT_SID');  
+    //主帐号Token  
+    $accountToken=C('RONGLIAN_ACCOUNT_TOKEN');  
+    //应用Id  
+    $appId=C('RONGLIAN_APPID');  
+    $rest = new REST($serverIP,$serverPort,$softVersion);  
+    $rest->setAccount($accountSid,$accountToken);  
+    $rest->setAppId($appId);  
+    // 发送模板短信  
+    $result=$rest->sendTemplateSMS($phone,array($code,5),1);  
+    if($result==NULL) {  
+        return false;  
+    }  
+    if($result->statusCode!=0) {  
+        return  false;  
+    }else{  
+        return true;  
+    }  
 }
 
-
 /**
- * 把返回的数据集转换成Tree
- * @param array $list 要转换的数据集
- * @param string $pid parent标记字段
- * @param string $level level标记字段
- * @return array
+ * [把返回的数据集转换成Tree]
  * @author  乔治
+ * @param  array $list 要转换的数据集
+ * @param  string $pid parent标记字段
+ * @param  string $level level标记字段
+ * @return array
  */
 function list_to_tree($list, $pk='id', $pid = 'pid', $child = '_child', $root = 0) {
     // 创建Tree
@@ -89,13 +73,13 @@ function list_to_tree($list, $pk='id', $pid = 'pid', $child = '_child', $root = 
 }
 
 /**
- * 将 list_to_tree 的树还原成列表
+ * [将 list_to_tree 的树还原成列表]
+ * @author 乔治
  * @param  array $tree  原来的树
  * @param  string $child 孩子节点的键
  * @param  string $order 排序显示的键，一般是主键 升序排列
  * @param  array  $list  过渡用的中间数组，
  * @return array        返回排过序的列表数组
- * @author  乔治
  */
 function tree_to_list($tree, $child = '_child', $order='id', &$list = array()){
     if(is_array($tree)) {
@@ -172,6 +156,7 @@ function md5Encrypt($str='',$rand=''){
     $chars =  MD5(hash('sha256', $hash));
     return $chars;
 }
+
 /**
  * 删除缓存文件
  * @param string $dir 默认temp目录
@@ -258,6 +243,7 @@ function getThumb($url='', $width=null, $height=null){
     $allname = implode('/', $tmpArr) ."/thumb/{$width}x{$height}/" . $name;
     return $allname;
 }
+
 /**
  * cut_str 字符串截取
  * @param string $sourcestr 要截取的内容
@@ -297,6 +283,7 @@ function cut_str($sourcestr,$cutlength){
     }
     return $returnstr;
 }
+
 /**
  * 生成随机字符串
  * @author 普修米洛斯
@@ -314,13 +301,16 @@ function getRandStr($length=8) {
 
 /**
  * 逗号中文转英文
+ * @author 普修米洛斯 www.php63.cc
  **/
 function bianma($str)
 {
    return str_replace('，',',',$str);
 }
+
 /**
  * 邮件发送函数
+ * @author 普修米洛斯 www.php63.cc
  */
 function sendMail($to, $title, $content) {
     require APP_PATH . 'Common/Lib/PHPMailer/class.smtp.php';
@@ -345,9 +335,11 @@ function sendMail($to, $title, $content) {
 }
 
 /**
+ * @author 普修米洛斯 www.php63.cc
  * @param $str 要加密的字符串
  * @return string 加密后的字符串
  */
+
 function homeUserPwd($str)
 {
     $hash = Md5($str);

@@ -17,7 +17,7 @@ class AdminModel extends \Common\Model\PublicModel
         array('phone', 'require', '电话必须填写'),
         array('sort', 'require', '排序方式必须填写'),
         array('sort', 'number', '排序只能是数字'),
-        array('verify', 'checkcode', '验证码不正确', 0, 'function'),
+        array('verify', 'check_code', '验证码不正确', 0, 'function'),
     );
 
     protected $_auto = array(
