@@ -34,7 +34,7 @@ class PublicController extends Controller
      * @author 普罗米修斯(996674366@qq.com)
      * @maintainer 乔治 (923143925@qq.com)
      **/
-	public function success($message, $url)
+	public function success($message='', $url='', $type=false)
 	{
 		$array = array(
 			'statusCode' => 200,
@@ -48,14 +48,16 @@ class PublicController extends Controller
      * error 执行成功返回json格式
      * @param string $message 提示字符串
      * @param string $url 跳转地址
+     * @param int $type 回调类型 1-验证码刷新地址
      * @author 普罗米修斯(996674366@qq.com)
      * @maintainer 乔治 (923143925@qq.com)
      **/
-    protected function error($message = '')
+    protected function error($message = '', $url='', $type=false)
     {
         $array = array(
             'statusCode' => 300,
             'message'    => $message,
+            'type'       => $type,
         );
         die(json_encode($array));
     }
@@ -95,7 +97,7 @@ class PublicController extends Controller
             $this->success('登录成功', U($url . '/Index/index'));
         }
 
-        $this->error($model->getError());
+        $this->error($model->getError(), '', 1);
     }
 
     /**

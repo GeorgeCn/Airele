@@ -112,6 +112,7 @@ var Juuz = {
         var message = json.message || '请求失败';
         var $this = $this || null;
         var type = (status == Juuz.code.ajaxSuccess) ? 'success' : 'error';
+        var optionType = parseInt(json.type) || 0;
 
         Juuz.showMsg(type, message, 1500, function(){
             if(json.url && json.url != ''){
@@ -119,6 +120,14 @@ var Juuz = {
             }
             if(type=='success' && $.isFunction(callback)){
                 callback(json, $this);
+            }
+            if('error'==type && optionType) {
+                switch(optionType) {
+                    case 1: 
+                        var __url = "/index.php/Admin/Public/code.html";
+                        $('.code-img').attr('src', __url +'?t='+ Math.random());break;
+                    default:break;
+                }
             }
             Juuz.hideMsg();
         });
