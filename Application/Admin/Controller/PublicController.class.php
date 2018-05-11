@@ -93,7 +93,6 @@ class PublicController extends Controller
             );
 			//调用getOneField方法传参格式getOneField('字段','条件（数组）','指定条数或者true如果只查询一条就为空','排序方式')
             $url = D('AuthCate')->where($where)->order('sort DESC')->getField('module');
-
             $this->success('登录成功', U($url . '/Index/index'));
         }
 

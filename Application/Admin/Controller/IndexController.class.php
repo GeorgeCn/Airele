@@ -19,6 +19,6 @@ class IndexController extends PrivateController {
         if(!empty($modules)){
             delTemp();
         }
-        $this -> redirect(MODULE_NAME.'/'.CONTROLLER_NAME.'/info');
+        $this -> redirect('Public/block');
     }
 }
