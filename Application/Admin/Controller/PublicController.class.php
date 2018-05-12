@@ -116,6 +116,7 @@ class PublicController extends Controller
     public function logout()
     {
         session(C('ADMIN_UID'), null);
+        echo("alert(123)");
         $this->redirect(C('DEFAULTS_MODULE') . '/Public/login');
     }
     /**
