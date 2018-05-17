@@ -1,0 +1,131 @@
+@charset "UTF-8";
+
+/*
+新细明体      \65B0\7EC6\660E\4F53
+细明体        \7EC6\660E\4F53
+标楷体        \6807\6977\4F53
+黑体          \9ED1\4F53
+宋体          \5B8B\4F53
+新宋体        \65B0\5B8B\4F53
+仿宋          \4EFF\5B8B
+楷体          \6977\4F53
+仿宋_GB2312   \4EFF\5B8B_GB2312
+楷体_GB2312   \6977\4F53_GB2312
+微软正黑体    \5FAE\x8F6F\6B63\9ED1\4F53
+微软雅黑      \5FAE\8F6F\96C5\9ED1
+*/
+
+/** 列宽 **/
+@colW:40px;
+
+/**颜色**/
+@heightLightColor:#076EB8;
+@linkDefaultColor:#076EB8;
+@linkHoverColor:#FF6600;
+
+@buttonDefaultColor:#076EB8;
+@buttonDefaultTextColor:#FFF;
+@buttonHoverColor:#FF6600;
+@buttonHoverTextColor:#FFF;
+
+/***预定义函数***/
+.colWidth(@n:24){ //加括号不被编译
+    width:@n*@colW;
+}
+.inputWidth(@n:24, @i){
+    width:(@n*@colW)-@i;
+}
+
+/***Airele基础样式***/
+.layout(1);
+.layout(@n:0, @i:24) when (@i > @n) {
+    .ui-col-@{i}{
+        float:left;
+        .colWidth(@i);
+        input,textarea{
+            .inputWidth(@i, 22);
+        }
+        input.ui_button{
+            width:auto;
+        }
+        input.js_find_back{
+            .inputWidth(@i, 52);
+        }
+        input.js_find_search{
+            .inputWidth(@i, 52);
+        }
+        input.js_color_input{
+            .inputWidth(@i, 110);
+        }
+        textarea.editor{
+            .inputWidth(@i, 12);
+        }
+        textarea.kindEditor{
+            .inputWidth(@i, 10);
+        }
+        .ui-select-input{
+            .inputWidth(@i, 12);
+        }
+    }
+    .layout(@n, (@i - 1));
+}
+
+.ui-label{
+    display:block;font-size:12px;color:#333;line-height:22px;padding:10px 0 6px;
+}
+
+/***自定义ArtDialog样式***/
+.ui-dialog{
+    &.ui_success{
+        border-color: #0c0;
+        box-shadow: none;
+    }
+    &.ui_error{
+        border-color:#c00;
+        box-shadow:none;
+    }
+    &.ui_tips{
+        border-color:#00c;
+        box-shadow:none;
+    }
+    &.ui_alert,&.ui_confirm,&.ui_pop_box{
+        border-radius:0;
+        border-color:#E5E5E5;
+        box-shadow:none;
+        .ui-dialog-header{
+            background:#F4F5F9;
+            .ui-dialog-close{
+                top:8px;
+                right:8px;
+            }
+        }
+        .ui-dialog-title{
+            padding:10px 15px;cursor:move;
+        }
+        .ui-dialog-footer{
+            background:#F4F5F9;
+            padding:10px;
+            border-top:1px solid #E5E5E5;
+        }
+        .ui-dialog-button button{
+            padding:0 15px;
+            line-height:26px;
+            height:26px;
+            background:#fcfcfc;
+            color:#333;
+            font-size:12px;
+            outline:0;
+            border:1px solid #bababa;
+            border-radius:0;
+            &.ui-dialog-autofocus{
+                border-color:#bababa;
+                color:#333;
+            }
+            &:hover{
+                background:#f7fafe;
+                border-color:#3598fe;
+                color:#333;
+            }
+        }
+    }
+}

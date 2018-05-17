@@ -1,0 +1,763 @@
+@charset "UTF-8";
+/*
+新细明体      \65B0\7EC6\660E\4F53
+细明体        \7EC6\660E\4F53
+标楷体        \6807\6977\4F53
+黑体          \9ED1\4F53
+宋体          \5B8B\4F53
+新宋体        \65B0\5B8B\4F53
+仿宋          \4EFF\5B8B
+楷体          \6977\4F53
+仿宋_GB2312   \4EFF\5B8B_GB2312
+楷体_GB2312   \6977\4F53_GB2312
+微软正黑体    \5FAE\x8F6F\6B63\9ED1\4F53
+微软雅黑      \5FAE\8F6F\96C5\9ED1
+*/
+/** 列宽 **/
+/**颜色**/
+/**预定义函数**/
+/***Airele基础样式***/
+.ui-col-24 {
+  float: left;
+  width: 960px;
+}
+.ui-col-24 input,
+.ui-col-24 textarea {
+  width: 938px;
+}
+.ui-col-24 input.ui_button {
+  width: auto;
+}
+.ui-col-24 input.js_find_back {
+  width: 908px;
+}
+.ui-col-24 input.js_find_search {
+  width: 908px;
+}
+.ui-col-24 input.js_color_input {
+  width: 850px;
+}
+.ui-col-24 textarea.editor {
+  width: 948px;
+}
+.ui-col-24 textarea.kindEditor {
+  width: 950px;
+}
+.ui-col-24 .ui_select_input {
+  width: 948px;
+}
+.ui-col-23 {
+  float: left;
+  width: 920px;
+}
+.ui-col-23 input,
+.ui-col-23 textarea {
+  width: 898px;
+}
+.ui-col-23 input.ui_button {
+  width: auto;
+}
+.ui-col-23 input.js_find_back {
+  width: 868px;
+}
+.ui-col-23 input.js_find_search {
+  width: 868px;
+}
+.ui-col-23 input.js_color_input {
+  width: 810px;
+}
+.ui-col-23 textarea.editor {
+  width: 908px;
+}
+.ui-col-23 textarea.kindEditor {
+  width: 910px;
+}
+.ui-col-23 .ui_select_input {
+  width: 908px;
+}
+.ui-col-22 {
+  float: left;
+  width: 880px;
+}
+.ui-col-22 input,
+.ui-col-22 textarea {
+  width: 858px;
+}
+.ui-col-22 input.ui_button {
+  width: auto;
+}
+.ui-col-22 input.js_find_back {
+  width: 828px;
+}
+.ui-col-22 input.js_find_search {
+  width: 828px;
+}
+.ui-col-22 input.js_color_input {
+  width: 770px;
+}
+.ui-col-22 textarea.editor {
+  width: 868px;
+}
+.ui-col-22 textarea.kindEditor {
+  width: 870px;
+}
+.ui-col-22 .ui_select_input {
+  width: 868px;
+}
+.ui-col-21 {
+  float: left;
+  width: 840px;
+}
+.ui-col-21 input,
+.ui-col-21 textarea {
+  width: 818px;
+}
+.ui-col-21 input.ui_button {
+  width: auto;
+}
+.ui-col-21 input.js_find_back {
+  width: 788px;
+}
+.ui-col-21 input.js_find_search {
+  width: 788px;
+}
+.ui-col-21 input.js_color_input {
+  width: 730px;
+}
+.ui-col-21 textarea.editor {
+  width: 828px;
+}
+.ui-col-21 textarea.kindEditor {
+  width: 830px;
+}
+.ui-col-21 .ui_select_input {
+  width: 828px;
+}
+.ui-col-20 {
+  float: left;
+  width: 800px;
+}
+.ui-col-20 input,
+.ui-col-20 textarea {
+  width: 778px;
+}
+.ui-col-20 input.ui_button {
+  width: auto;
+}
+.ui-col-20 input.js_find_back {
+  width: 748px;
+}
+.ui-col-20 input.js_find_search {
+  width: 748px;
+}
+.ui-col-20 input.js_color_input {
+  width: 690px;
+}
+.ui-col-20 textarea.editor {
+  width: 788px;
+}
+.ui-col-20 textarea.kindEditor {
+  width: 790px;
+}
+.ui-col-20 .ui_select_input {
+  width: 788px;
+}
+.ui-col-19 {
+  float: left;
+  width: 760px;
+}
+.ui-col-19 input,
+.ui-col-19 textarea {
+  width: 738px;
+}
+.ui-col-19 input.ui_button {
+  width: auto;
+}
+.ui-col-19 input.js_find_back {
+  width: 708px;
+}
+.ui-col-19 input.js_find_search {
+  width: 708px;
+}
+.ui-col-19 input.js_color_input {
+  width: 650px;
+}
+.ui-col-19 textarea.editor {
+  width: 748px;
+}
+.ui-col-19 textarea.kindEditor {
+  width: 750px;
+}
+.ui-col-19 .ui_select_input {
+  width: 748px;
+}
+.ui-col-18 {
+  float: left;
+  width: 720px;
+}
+.ui-col-18 input,
+.ui-col-18 textarea {
+  width: 698px;
+}
+.ui-col-18 input.ui_button {
+  width: auto;
+}
+.ui-col-18 input.js_find_back {
+  width: 668px;
+}
+.ui-col-18 input.js_find_search {
+  width: 668px;
+}
+.ui-col-18 input.js_color_input {
+  width: 610px;
+}
+.ui-col-18 textarea.editor {
+  width: 708px;
+}
+.ui-col-18 textarea.kindEditor {
+  width: 710px;
+}
+.ui-col-18 .ui_select_input {
+  width: 708px;
+}
+.ui-col-17 {
+  float: left;
+  width: 680px;
+}
+.ui-col-17 input,
+.ui-col-17 textarea {
+  width: 658px;
+}
+.ui-col-17 input.ui_button {
+  width: auto;
+}
+.ui-col-17 input.js_find_back {
+  width: 628px;
+}
+.ui-col-17 input.js_find_search {
+  width: 628px;
+}
+.ui-col-17 input.js_color_input {
+  width: 570px;
+}
+.ui-col-17 textarea.editor {
+  width: 668px;
+}
+.ui-col-17 textarea.kindEditor {
+  width: 670px;
+}
+.ui-col-17 .ui_select_input {
+  width: 668px;
+}
+.ui-col-16 {
+  float: left;
+  width: 640px;
+}
+.ui-col-16 input,
+.ui-col-16 textarea {
+  width: 618px;
+}
+.ui-col-16 input.ui_button {
+  width: auto;
+}
+.ui-col-16 input.js_find_back {
+  width: 588px;
+}
+.ui-col-16 input.js_find_search {
+  width: 588px;
+}
+.ui-col-16 input.js_color_input {
+  width: 530px;
+}
+.ui-col-16 textarea.editor {
+  width: 628px;
+}
+.ui-col-16 textarea.kindEditor {
+  width: 630px;
+}
+.ui-col-16 .ui_select_input {
+  width: 628px;
+}
+.ui-col-15 {
+  float: left;
+  width: 600px;
+}
+.ui-col-15 input,
+.ui-col-15 textarea {
+  width: 578px;
+}
+.ui-col-15 input.ui_button {
+  width: auto;
+}
+.ui-col-15 input.js_find_back {
+  width: 548px;
+}
+.ui-col-15 input.js_find_search {
+  width: 548px;
+}
+.ui-col-15 input.js_color_input {
+  width: 490px;
+}
+.ui-col-15 textarea.editor {
+  width: 588px;
+}
+.ui-col-15 textarea.kindEditor {
+  width: 590px;
+}
+.ui-col-15 .ui_select_input {
+  width: 588px;
+}
+.ui-col-14 {
+  float: left;
+  width: 560px;
+}
+.ui-col-14 input,
+.ui-col-14 textarea {
+  width: 538px;
+}
+.ui-col-14 input.ui_button {
+  width: auto;
+}
+.ui-col-14 input.js_find_back {
+  width: 508px;
+}
+.ui-col-14 input.js_find_search {
+  width: 508px;
+}
+.ui-col-14 input.js_color_input {
+  width: 450px;
+}
+.ui-col-14 textarea.editor {
+  width: 548px;
+}
+.ui-col-14 textarea.kindEditor {
+  width: 550px;
+}
+.ui-col-14 .ui_select_input {
+  width: 548px;
+}
+.ui-col-13 {
+  float: left;
+  width: 520px;
+}
+.ui-col-13 input,
+.ui-col-13 textarea {
+  width: 498px;
+}
+.ui-col-13 input.ui_button {
+  width: auto;
+}
+.ui-col-13 input.js_find_back {
+  width: 468px;
+}
+.ui-col-13 input.js_find_search {
+  width: 468px;
+}
+.ui-col-13 input.js_color_input {
+  width: 410px;
+}
+.ui-col-13 textarea.editor {
+  width: 508px;
+}
+.ui-col-13 textarea.kindEditor {
+  width: 510px;
+}
+.ui-col-13 .ui_select_input {
+  width: 508px;
+}
+.ui-col-12 {
+  float: left;
+  width: 480px;
+}
+.ui-col-12 input,
+.ui-col-12 textarea {
+  width: 458px;
+}
+.ui-col-12 input.ui_button {
+  width: auto;
+}
+.ui-col-12 input.js_find_back {
+  width: 428px;
+}
+.ui-col-12 input.js_find_search {
+  width: 428px;
+}
+.ui-col-12 input.js_color_input {
+  width: 370px;
+}
+.ui-col-12 textarea.editor {
+  width: 468px;
+}
+.ui-col-12 textarea.kindEditor {
+  width: 470px;
+}
+.ui-col-12 .ui_select_input {
+  width: 468px;
+}
+.ui-col-11 {
+  float: left;
+  width: 440px;
+}
+.ui-col-11 input,
+.ui-col-11 textarea {
+  width: 418px;
+}
+.ui-col-11 input.ui_button {
+  width: auto;
+}
+.ui-col-11 input.js_find_back {
+  width: 388px;
+}
+.ui-col-11 input.js_find_search {
+  width: 388px;
+}
+.ui-col-11 input.js_color_input {
+  width: 330px;
+}
+.ui-col-11 textarea.editor {
+  width: 428px;
+}
+.ui-col-11 textarea.kindEditor {
+  width: 430px;
+}
+.ui-col-11 .ui_select_input {
+  width: 428px;
+}
+.ui-col-10 {
+  float: left;
+  width: 400px;
+}
+.ui-col-10 input,
+.ui-col-10 textarea {
+  width: 378px;
+}
+.ui-col-10 input.ui_button {
+  width: auto;
+}
+.ui-col-10 input.js_find_back {
+  width: 348px;
+}
+.ui-col-10 input.js_find_search {
+  width: 348px;
+}
+.ui-col-10 input.js_color_input {
+  width: 290px;
+}
+.ui-col-10 textarea.editor {
+  width: 388px;
+}
+.ui-col-10 textarea.kindEditor {
+  width: 390px;
+}
+.ui-col-10 .ui_select_input {
+  width: 388px;
+}
+.ui-col-9 {
+  float: left;
+  width: 360px;
+}
+.ui-col-9 input,
+.ui-col-9 textarea {
+  width: 338px;
+}
+.ui-col-9 input.ui_button {
+  width: auto;
+}
+.ui-col-9 input.js_find_back {
+  width: 308px;
+}
+.ui-col-9 input.js_find_search {
+  width: 308px;
+}
+.ui-col-9 input.js_color_input {
+  width: 250px;
+}
+.ui-col-9 textarea.editor {
+  width: 348px;
+}
+.ui-col-9 textarea.kindEditor {
+  width: 350px;
+}
+.ui-col-9 .ui_select_input {
+  width: 348px;
+}
+.ui-col-8 {
+  float: left;
+  width: 320px;
+}
+.ui-col-8 input,
+.ui-col-8 textarea {
+  width: 298px;
+}
+.ui-col-8 input.ui_button {
+  width: auto;
+}
+.ui-col-8 input.js_find_back {
+  width: 268px;
+}
+.ui-col-8 input.js_find_search {
+  width: 268px;
+}
+.ui-col-8 input.js_color_input {
+  width: 210px;
+}
+.ui-col-8 textarea.editor {
+  width: 308px;
+}
+.ui-col-8 textarea.kindEditor {
+  width: 310px;
+}
+.ui-col-8 .ui_select_input {
+  width: 308px;
+}
+.ui-col-7 {
+  float: left;
+  width: 280px;
+}
+.ui-col-7 input,
+.ui-col-7 textarea {
+  width: 258px;
+}
+.ui-col-7 input.ui_button {
+  width: auto;
+}
+.ui-col-7 input.js_find_back {
+  width: 228px;
+}
+.ui-col-7 input.js_find_search {
+  width: 228px;
+}
+.ui-col-7 input.js_color_input {
+  width: 170px;
+}
+.ui-col-7 textarea.editor {
+  width: 268px;
+}
+.ui-col-7 textarea.kindEditor {
+  width: 270px;
+}
+.ui-col-7 .ui_select_input {
+  width: 268px;
+}
+.ui-col-6 {
+  float: left;
+  width: 240px;
+}
+.ui-col-6 input,
+.ui-col-6 textarea {
+  width: 218px;
+}
+.ui-col-6 input.ui_button {
+  width: auto;
+}
+.ui-col-6 input.js_find_back {
+  width: 188px;
+}
+.ui-col-6 input.js_find_search {
+  width: 188px;
+}
+.ui-col-6 input.js_color_input {
+  width: 130px;
+}
+.ui-col-6 textarea.editor {
+  width: 228px;
+}
+.ui-col-6 textarea.kindEditor {
+  width: 230px;
+}
+.ui-col-6 .ui_select_input {
+  width: 228px;
+}
+.ui-col-5 {
+  float: left;
+  width: 200px;
+}
+.ui-col-5 input,
+.ui-col-5 textarea {
+  width: 178px;
+}
+.ui-col-5 input.ui_button {
+  width: auto;
+}
+.ui-col-5 input.js_find_back {
+  width: 148px;
+}
+.ui-col-5 input.js_find_search {
+  width: 148px;
+}
+.ui-col-5 input.js_color_input {
+  width: 90px;
+}
+.ui-col-5 textarea.editor {
+  width: 188px;
+}
+.ui-col-5 textarea.kindEditor {
+  width: 190px;
+}
+.ui-col-5 .ui_select_input {
+  width: 188px;
+}
+.ui-col-4 {
+  float: left;
+  width: 160px;
+}
+.ui-col-4 input,
+.ui-col-4 textarea {
+  width: 138px;
+}
+.ui-col-4 input.ui_button {
+  width: auto;
+}
+.ui-col-4 input.js_find_back {
+  width: 108px;
+}
+.ui-col-4 input.js_find_search {
+  width: 108px;
+}
+.ui-col-4 input.js_color_input {
+  width: 50px;
+}
+.ui-col-4 textarea.editor {
+  width: 148px;
+}
+.ui-col-4 textarea.kindEditor {
+  width: 150px;
+}
+.ui-col-4 .ui_select_input {
+  width: 148px;
+}
+.ui-col-3 {
+  float: left;
+  width: 120px;
+}
+.ui-col-3 input,
+.ui-col-3 textarea {
+  width: 98px;
+}
+.ui-col-3 input.ui_button {
+  width: auto;
+}
+.ui-col-3 input.js_find_back {
+  width: 68px;
+}
+.ui-col-3 input.js_find_search {
+  width: 68px;
+}
+.ui-col-3 input.js_color_input {
+  width: 10px;
+}
+.ui-col-3 textarea.editor {
+  width: 108px;
+}
+.ui-col-3 textarea.kindEditor {
+  width: 110px;
+}
+.ui-col-3 .ui_select_input {
+  width: 108px;
+}
+.ui-col-2 {
+  float: left;
+  width: 80px;
+}
+.ui-col-2 input,
+.ui-col-2 textarea {
+  width: 58px;
+}
+.ui-col-2 input.ui_button {
+  width: auto;
+}
+.ui-col-2 input.js_find_back {
+  width: 28px;
+}
+.ui-col-2 input.js_find_search {
+  width: 28px;
+}
+.ui-col-2 input.js_color_input {
+  width: -30px;
+}
+.ui-col-2 textarea.editor {
+  width: 68px;
+}
+.ui-col-2 textarea.kindEditor {
+  width: 70px;
+}
+.ui-col-2 .ui_select_input {
+  width: 68px;
+}
+.ui-label {
+  display: block;
+  font-size: 12px;
+  color: #333;
+  line-height: 22px;
+  padding: 10px 0 6px;
+}
+/***自定义ArtDialog样式***/
+.ui-dialog.ui_success {
+  border-color: #0c0;
+  box-shadow: none;
+}
+.ui-dialog.ui_error {
+  border-color: #c00;
+  box-shadow: none;
+}
+.ui-dialog.ui_tips {
+  border-color: #00c;
+  box-shadow: none;
+}
+.ui-dialog.ui_alert,
+.ui-dialog.ui_confirm,
+.ui-dialog.ui_pop_box {
+  border-radius: 0;
+  border-color: #E5E5E5;
+  box-shadow: none;
+}
+.ui-dialog.ui_alert .ui-dialog-header,
+.ui-dialog.ui_confirm .ui-dialog-header,
+.ui-dialog.ui_pop_box .ui-dialog-header {
+  background: #F4F5F9;
+}
+.ui-dialog.ui_alert .ui-dialog-header .ui-dialog-close,
+.ui-dialog.ui_confirm .ui-dialog-header .ui-dialog-close,
+.ui-dialog.ui_pop_box .ui-dialog-header .ui-dialog-close {
+  top: 8px;
+  right: 8px;
+}
+.ui-dialog.ui_alert .ui-dialog-title,
+.ui-dialog.ui_confirm .ui-dialog-title,
+.ui-dialog.ui_pop_box .ui-dialog-title {
+  padding: 10px 15px;
+  cursor: move;
+}
+.ui-dialog.ui_alert .ui-dialog-footer,
+.ui-dialog.ui_confirm .ui-dialog-footer,
+.ui-dialog.ui_pop_box .ui-dialog-footer {
+  background: #F4F5F9;
+  padding: 10px;
+  border-top: 1px solid #E5E5E5;
+}
+.ui-dialog.ui_alert .ui-dialog-button button,
+.ui-dialog.ui_confirm .ui-dialog-button button,
+.ui-dialog.ui_pop_box .ui-dialog-button button {
+  padding: 0 15px;
+  line-height: 26px;
+  height: 26px;
+  background: #fcfcfc;
+  color: #333;
+  font-size: 12px;
+  outline: 0;
+  border: 1px solid #bababa;
+  border-radius: 0;
+}
+.ui-dialog.ui_alert .ui-dialog-button button.ui-dialog-autofocus,
+.ui-dialog.ui_confirm .ui-dialog-button button.ui-dialog-autofocus,
+.ui-dialog.ui_pop_box .ui-dialog-button button.ui-dialog-autofocus {
+  border-color: #bababa;
+  color: #333;
+}
+.ui-dialog.ui_alert .ui-dialog-button button:hover,
+.ui-dialog.ui_confirm .ui-dialog-button button:hover,
+.ui-dialog.ui_pop_box .ui-dialog-button button:hover {
+  background: #f7fafe;
+  border-color: #3598fe;
+  color: #333;
+}
