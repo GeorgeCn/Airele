@@ -17,8 +17,10 @@
 
 /** 列宽 **/
 @colW:40px;
+@loginDefaulHeight:300px;
 
 /**颜色**/
+@whiteDefaultColor:#fafafa;
 @heightLightColor:#076EB8;
 @linkDefaultColor:#076EB8;
 @linkHoverColor:#FF6600;
@@ -72,6 +74,61 @@
 
 .ui-label{
     display:block;font-size:12px;color:#333;line-height:22px;padding:10px 0 6px;
+}
+
+/***Airele登录页***/
+.main-login{
+    width:480px;height:400px;background:url(../images/login.png) left top no-repeat;background-size:100% 100%;position:absolute;left:37.5%;top:25%;
+    .login-head{
+        width: 350px;height: 60px;line-height: 60px;font-size: 22px;margin: auto;text-align: center;
+        span{
+            font-size: 22px;color:@whiteDefaultColor;
+        }
+    }
+    .login-content{
+        width: 100%;height: 300px;
+        .login-form{
+            height: 300px;margin: auto;position: relative;
+            .login-username{
+                width: 100%;height: 50px;margin-top:6px;
+                span{
+                    font-size: 17px;padding: 8px;color: #fff;margin-left: 65px;
+                }
+                img {
+                    width: 30px;height: 34px;border-radius: 3px !important;margin-bottom: 3px; 
+                } 
+                input {
+                    width: 200px;height: 34px;margin: 8px 0px;border: 1px solid @whiteDefaultColor;border-left: 0px;border-radius:3px !important;background: @whiteDefaultColor!important;height: 34px;line-height: 34px;
+                }
+            }
+            .login-password {
+                width: 100%;height: 50px;position: relative;top:10px;
+                span{
+                    font-size: 17px;padding: 8px;color:@whiteDefaultColor;margin-left: 67px;
+                }
+                img {
+                    width: 30px;height: 34px;border-radius:3px !important;margin-bottom: 3px;
+                }
+                input {
+                    width: 200px;height: 34px;margin: 8px 0px;border: 1px solid @whiteDefaultColor;border-left: 0px;border-radius:3px !important;background: @whiteDefaultColor!important;line-height: 34px;
+                }
+            }
+            .login-code {
+                width: 100%;height: 50px;position: relative;top: 20px;
+                span{
+                    font-size: 17px;padding: 6px;color:#fff;margin-left: 65px;
+                }
+                input {
+                    width: 100px;height: 34px;margin: 8px 0px;border: 1px solid @whiteDefaultColor;border-left: 0px;border-radius:3px !important;background: @whiteDefaultColor!important;line-height: 34px;
+                }
+                .code-img {
+                    width: 102px;height: 34px;margin: 8px 0px;border: 1px solid @whiteDefaultColor;cursor: pointer;margin: 0px 0px 5px 24px; 
+                }
+            }
+        }
+        button{width:110px;height:40px;text-align:center;margin-left:78px;margin-top:30px;float:left;border:1px solid #ddd;border-radius:3px;background:none;color:@whiteDefaultColor;
+        }
+    }
 }
 
 /***自定义ArtDialog样式***/
@@ -129,3 +186,5 @@
         }
     }
 }
+
+

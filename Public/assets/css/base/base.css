@@ -15,7 +15,7 @@
 */
 /** 列宽 **/
 /**颜色**/
-/**预定义函数**/
+/***预定义函数***/
 /***Airele基础样式***/
 .ui-col-24 {
   float: left;
@@ -43,7 +43,7 @@
 .ui-col-24 textarea.kindEditor {
   width: 950px;
 }
-.ui-col-24 .ui_select_input {
+.ui-col-24 .ui-select-input {
   width: 948px;
 }
 .ui-col-23 {
@@ -72,7 +72,7 @@
 .ui-col-23 textarea.kindEditor {
   width: 910px;
 }
-.ui-col-23 .ui_select_input {
+.ui-col-23 .ui-select-input {
   width: 908px;
 }
 .ui-col-22 {
@@ -101,7 +101,7 @@
 .ui-col-22 textarea.kindEditor {
   width: 870px;
 }
-.ui-col-22 .ui_select_input {
+.ui-col-22 .ui-select-input {
   width: 868px;
 }
 .ui-col-21 {
@@ -130,7 +130,7 @@
 .ui-col-21 textarea.kindEditor {
   width: 830px;
 }
-.ui-col-21 .ui_select_input {
+.ui-col-21 .ui-select-input {
   width: 828px;
 }
 .ui-col-20 {
@@ -159,7 +159,7 @@
 .ui-col-20 textarea.kindEditor {
   width: 790px;
 }
-.ui-col-20 .ui_select_input {
+.ui-col-20 .ui-select-input {
   width: 788px;
 }
 .ui-col-19 {
@@ -188,7 +188,7 @@
 .ui-col-19 textarea.kindEditor {
   width: 750px;
 }
-.ui-col-19 .ui_select_input {
+.ui-col-19 .ui-select-input {
   width: 748px;
 }
 .ui-col-18 {
@@ -217,7 +217,7 @@
 .ui-col-18 textarea.kindEditor {
   width: 710px;
 }
-.ui-col-18 .ui_select_input {
+.ui-col-18 .ui-select-input {
   width: 708px;
 }
 .ui-col-17 {
@@ -246,7 +246,7 @@
 .ui-col-17 textarea.kindEditor {
   width: 670px;
 }
-.ui-col-17 .ui_select_input {
+.ui-col-17 .ui-select-input {
   width: 668px;
 }
 .ui-col-16 {
@@ -275,7 +275,7 @@
 .ui-col-16 textarea.kindEditor {
   width: 630px;
 }
-.ui-col-16 .ui_select_input {
+.ui-col-16 .ui-select-input {
   width: 628px;
 }
 .ui-col-15 {
@@ -304,7 +304,7 @@
 .ui-col-15 textarea.kindEditor {
   width: 590px;
 }
-.ui-col-15 .ui_select_input {
+.ui-col-15 .ui-select-input {
   width: 588px;
 }
 .ui-col-14 {
@@ -333,7 +333,7 @@
 .ui-col-14 textarea.kindEditor {
   width: 550px;
 }
-.ui-col-14 .ui_select_input {
+.ui-col-14 .ui-select-input {
   width: 548px;
 }
 .ui-col-13 {
@@ -362,7 +362,7 @@
 .ui-col-13 textarea.kindEditor {
   width: 510px;
 }
-.ui-col-13 .ui_select_input {
+.ui-col-13 .ui-select-input {
   width: 508px;
 }
 .ui-col-12 {
@@ -391,7 +391,7 @@
 .ui-col-12 textarea.kindEditor {
   width: 470px;
 }
-.ui-col-12 .ui_select_input {
+.ui-col-12 .ui-select-input {
   width: 468px;
 }
 .ui-col-11 {
@@ -420,7 +420,7 @@
 .ui-col-11 textarea.kindEditor {
   width: 430px;
 }
-.ui-col-11 .ui_select_input {
+.ui-col-11 .ui-select-input {
   width: 428px;
 }
 .ui-col-10 {
@@ -449,7 +449,7 @@
 .ui-col-10 textarea.kindEditor {
   width: 390px;
 }
-.ui-col-10 .ui_select_input {
+.ui-col-10 .ui-select-input {
   width: 388px;
 }
 .ui-col-9 {
@@ -478,7 +478,7 @@
 .ui-col-9 textarea.kindEditor {
   width: 350px;
 }
-.ui-col-9 .ui_select_input {
+.ui-col-9 .ui-select-input {
   width: 348px;
 }
 .ui-col-8 {
@@ -507,7 +507,7 @@
 .ui-col-8 textarea.kindEditor {
   width: 310px;
 }
-.ui-col-8 .ui_select_input {
+.ui-col-8 .ui-select-input {
   width: 308px;
 }
 .ui-col-7 {
@@ -536,7 +536,7 @@
 .ui-col-7 textarea.kindEditor {
   width: 270px;
 }
-.ui-col-7 .ui_select_input {
+.ui-col-7 .ui-select-input {
   width: 268px;
 }
 .ui-col-6 {
@@ -565,7 +565,7 @@
 .ui-col-6 textarea.kindEditor {
   width: 230px;
 }
-.ui-col-6 .ui_select_input {
+.ui-col-6 .ui-select-input {
   width: 228px;
 }
 .ui-col-5 {
@@ -594,7 +594,7 @@
 .ui-col-5 textarea.kindEditor {
   width: 190px;
 }
-.ui-col-5 .ui_select_input {
+.ui-col-5 .ui-select-input {
   width: 188px;
 }
 .ui-col-4 {
@@ -623,7 +623,7 @@
 .ui-col-4 textarea.kindEditor {
   width: 150px;
 }
-.ui-col-4 .ui_select_input {
+.ui-col-4 .ui-select-input {
   width: 148px;
 }
 .ui-col-3 {
@@ -652,7 +652,7 @@
 .ui-col-3 textarea.kindEditor {
   width: 110px;
 }
-.ui-col-3 .ui_select_input {
+.ui-col-3 .ui-select-input {
   width: 108px;
 }
 .ui-col-2 {
@@ -681,7 +681,7 @@
 .ui-col-2 textarea.kindEditor {
   width: 70px;
 }
-.ui-col-2 .ui_select_input {
+.ui-col-2 .ui-select-input {
   width: 68px;
 }
 .ui-label {
@@ -690,6 +690,134 @@
   color: #333;
   line-height: 22px;
   padding: 10px 0 6px;
+}
+/***Airele登录页***/
+.main-login {
+  width: 480px;
+  height: 400px;
+  background: url(../images/login.png) left top no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  left: 37.5%;
+  top: 25%;
+}
+.main-login .login-head {
+  width: 350px;
+  height: 60px;
+  line-height: 60px;
+  font-size: 22px;
+  margin: auto;
+  text-align: center;
+}
+.main-login .login-head span {
+  font-size: 22px;
+  color: #fafafa;
+}
+.main-login .login-content {
+  width: 100%;
+  height: 300px;
+}
+.main-login .login-content .login-form {
+  height: 300px;
+  margin: auto;
+  position: relative;
+}
+.main-login .login-content .login-form .login-username {
+  width: 100%;
+  height: 50px;
+  margin-top: 6px;
+}
+.main-login .login-content .login-form .login-username span {
+  font-size: 17px;
+  padding: 8px;
+  color: #fff;
+  margin-left: 65px;
+}
+.main-login .login-content .login-form .login-username img {
+  width: 30px;
+  height: 34px;
+  border-radius: 3px !important;
+  margin-bottom: 3px;
+}
+.main-login .login-content .login-form .login-username input {
+  width: 200px;
+  margin: 8px 0px;
+  border: 1px solid #fafafa;
+  border-left: 0px;
+  border-radius: 3px !important;
+  background: #fafafa !important;
+  height: 34px;
+  line-height: 34px;
+}
+.main-login .login-content .login-form .login-password {
+  width: 100%;
+  height: 50px;
+  position: relative;
+  top: 10px;
+}
+.main-login .login-content .login-form .login-password span {
+  font-size: 17px;
+  padding: 8px;
+  color: #fafafa;
+  margin-left: 67px;
+}
+.main-login .login-content .login-form .login-password img {
+  width: 30px;
+  height: 34px;
+  border-radius: 3px !important;
+  margin-bottom: 3px;
+}
+.main-login .login-content .login-form .login-password input {
+  width: 200px;
+  height: 34px;
+  margin: 8px 0px;
+  border: 1px solid #fafafa;
+  border-left: 0px;
+  border-radius: 3px !important;
+  background: #fafafa !important;
+  line-height: 34px;
+}
+.main-login .login-content .login-form .login-code {
+  width: 100%;
+  height: 50px;
+  position: relative;
+  top: 20px;
+}
+.main-login .login-content .login-form .login-code span {
+  font-size: 17px;
+  padding: 6px;
+  color: #fff;
+  margin-left: 65px;
+}
+.main-login .login-content .login-form .login-code input {
+  width: 100px;
+  height: 34px;
+  margin: 8px 0px;
+  border: 1px solid #fafafa;
+  border-left: 0px;
+  border-radius: 3px !important;
+  background: #fafafa !important;
+  line-height: 34px;
+}
+.main-login .login-content .login-form .login-code .code-img {
+  width: 102px;
+  height: 34px;
+  margin: 8px 0px;
+  border: 1px solid #fafafa;
+  cursor: pointer;
+  margin: 0px 0px 5px 24px;
+}
+.main-login .login-content button {
+  width: 110px;
+  height: 40px;
+  text-align: center;
+  margin-left: 78px;
+  margin-top: 30px;
+  float: left;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  background: none;
+  color: #fafafa;
 }
 /***自定义ArtDialog样式***/
 .ui-dialog.ui_success {
