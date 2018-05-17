@@ -723,7 +723,7 @@
 .main-login .login-content .login-form .login-username span {
   font-size: 17px;
   padding: 8px;
-  color: #fff;
+  color: #fafafa;
   margin-left: 65px;
 }
 .main-login .login-content .login-form .login-username img {
@@ -741,6 +741,12 @@
   background: #fafafa !important;
   height: 34px;
   line-height: 34px;
+}
+.main-login .login-content .login-form .login-username input:hover {
+  border-color: #b5b5b5;
+}
+.main-login .login-content .login-form .login-username input:focus {
+  border-color: #f59942;
 }
 .main-login .login-content .login-form .login-password {
   width: 100%;
@@ -770,6 +776,12 @@
   background: #fafafa !important;
   line-height: 34px;
 }
+.main-login .login-content .login-form .login-password input:hover {
+  border-color: #b5b5b5;
+}
+.main-login .login-content .login-form .login-password input:focus {
+  border-color: #f59942;
+}
 .main-login .login-content .login-form .login-code {
   width: 100%;
   height: 50px;
@@ -779,7 +791,7 @@
 .main-login .login-content .login-form .login-code span {
   font-size: 17px;
   padding: 6px;
-  color: #fff;
+  color: #fafafa;
   margin-left: 65px;
 }
 .main-login .login-content .login-form .login-code input {
@@ -791,6 +803,12 @@
   border-radius: 3px !important;
   background: #fafafa !important;
   line-height: 34px;
+}
+.main-login .login-content .login-form .login-code input:hover {
+  border-color: #b5b5b5;
+}
+.main-login .login-content .login-form .login-code input:focus {
+  border-color: #f59942;
 }
 .main-login .login-content .login-form .login-code .code-img {
   width: 102px;
@@ -807,9 +825,7 @@
   margin-left: 78px;
   margin-top: 30px;
   float: left;
-  border: 1px solid #ddd;
-  border-radius: 3px;
-  background: none;
+  border-radius: 4px;
   color: #fafafa;
 }
 /***设置密码***/
@@ -822,7 +838,7 @@
 }
 .ui-pop-foot {
   background-color: #fafafa;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #b5b5b5;
   text-align: right;
   position: absolute;
   padding: 8px 0;
@@ -833,12 +849,13 @@
 /** 文本框 **/
 .ui-text-input {
   height: 25px;
-  *line-height: 25px;
-  line-height: 25px\0;
+  line-height: 25px;
   margin: 0;
   padding: 0 5px;
   border: 1px solid #ddd;
   font-size: 12px;
+  border: 1px solid #6fb3e0;
+  border-radius: 3px;
 }
 .ui-text-input.focus {
   border-color: #9dd0ff;
@@ -850,7 +867,7 @@
 .ui-text-input.disabled {
   background-color: #f2f2f2;
   color: #999;
-  border-color: #ddd;
+  border-color: #b5b5b5;
 }
 .ui-text-input.title {
   background-image: url(Images/rule.png);

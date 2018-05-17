@@ -7,21 +7,21 @@
     <div class="ui-col-10" style="width:420px;padding:10px 20px 20px 20px">
         <div class="ui-col-10">
             <label class="ui-label">原密码 : </label>
-            <input class="ui-text-input" value="" type="password" name="password" data-opt='{
+            <input class="ui-text-input" value="" type="password" name="password" tabindex="1" data-opt='{
             type : "require",
             msg : "请输入原密码"
         }' />
         </div>
         <div class="ui-col-10">
             <label class="ui-label">新密码 : </label>
-            <input class="ui-text-input" id="new_pwd"  type="password" name="new_pwd"data-opt='{
+            <input class="ui-text-input" id="new_pwd"  type="password" name="new_pwd" tabindex="2" data-opt='{
             type : "require",
             msg : "请输入新密码"
         }' />
         </div>
         <div class="ui-col-10">
             <label class="ui-label">重复新密码 : </label>
-            <input class="ui-text-input"  type="password" name="rep_new_pwd" data-opt='{
+            <input class="ui-text-input"  type="password" name="rep_new_pwd" tabindex="3" data-opt='{
             type : "repeat",
             rel : "newPwd",
             msg : "2次密码输入不一致"

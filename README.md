@@ -27,6 +27,7 @@ This is my first standard project
 	       	folder                  文件夹   国产   帕斯卡命名
 	       	                                舶来品  小写
 	       	export template-variable        输出模板变量    小写/下划线
+	       	session                 键      大写 多个单词下划线隔开
 
 	  Mysql 库名称                  小写
 	        表名称                  小写     多个单词  添加下划线

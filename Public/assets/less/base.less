@@ -23,12 +23,15 @@
 @whiteDefaultColor:#fafafa;
 @heightLightColor:#076EB8;
 @linkDefaultColor:#076EB8;
-@linkHoverColor:#FF6600;
+@linkHoverColor:#b5b5b5;
+@linkFocusColor:#f59942;
 
 @buttonDefaultColor:#409eff;
 @buttonDefaultTextColor:#FFF;
 @buttonHoverColor:#FF6600;
 @buttonHoverTextColor:#FFF;
+
+@borderDefaultColor:#b5b5b5;
 
 /***预定义函数***/
 .colWidth(@n:24){ //加括号不被编译
@@ -88,13 +91,19 @@
             .login-username{
                 width: 100%;height: 50px;margin-top:6px;
                 span{
-                    font-size: 17px;padding: 8px;color: #fff;margin-left: 65px;
+                    font-size: 17px;padding: 8px;color: @whiteDefaultColor;margin-left: 65px;
                 }
                 img {
                     width: 30px;height: 34px;border-radius: 3px !important;margin-bottom: 3px; 
                 } 
                 input {
                     width: 200px;height: 34px;margin: 8px 0px;border: 1px solid @whiteDefaultColor;border-left: 0px;border-radius:3px !important;background: @whiteDefaultColor!important;height: 34px;line-height: 34px;
+                    &:hover{
+                        border-color:@linkHoverColor;
+                    }
+                    &:focus{
+                        border-color:@linkFocusColor;
+                    }
                 }
             }
             .login-password {
@@ -107,22 +116,34 @@
                 }
                 input {
                     width: 200px;height: 34px;margin: 8px 0px;border: 1px solid @whiteDefaultColor;border-left: 0px;border-radius:3px !important;background: @whiteDefaultColor!important;line-height: 34px;
+                    &:hover{
+                        border-color:@linkHoverColor;
+                    }
+                    &:focus{
+                        border-color:@linkFocusColor;
+                    }
                 }
             }
             .login-code {
                 width: 100%;height: 50px;position: relative;top: 20px;
                 span{
-                    font-size: 17px;padding: 6px;color:#fff;margin-left: 65px;
+                    font-size: 17px;padding: 6px;color:@whiteDefaultColor;margin-left: 65px;
                 }
                 input {
                     width: 100px;height: 34px;margin: 8px 0px;border: 1px solid @whiteDefaultColor;border-left: 0px;border-radius:3px !important;background: @whiteDefaultColor!important;line-height: 34px;
+                    &:hover{
+                        border-color:@linkHoverColor;
+                    }
+                    &:focus{
+                        border-color:@linkFocusColor;
+                    }
                 }
                 .code-img {
                     width: 102px;height: 34px;margin: 8px 0px;border: 1px solid @whiteDefaultColor;cursor: pointer;margin: 0px 0px 5px 24px; 
                 }
             }
         }
-        button{width:110px;height:40px;text-align:center;margin-left:78px;margin-top:30px;float:left;border:1px solid #ddd;border-radius:3px;background:none;color:@whiteDefaultColor;
+        button{width:110px;height:40px;text-align:center;margin-left:78px;margin-top:30px;float:left;border-radius:4px;color:@whiteDefaultColor;
         }
     }
 }
@@ -132,7 +153,7 @@
     display:block;font-size:12px;color:#333;line-height:22px;padding:10px 0 6px;
 }
 .ui-pop-foot{
-    background-color:@whiteDefaultColor;border-top:1px solid #ddd;text-align:right;position:absolute;padding:8px 0;bottom:0;left:0;width:100%;
+    background-color:@whiteDefaultColor;border-top:1px solid @borderDefaultColor;text-align:right;position:absolute;padding:8px 0;bottom:0;left:0;width:100%;
 }
 
 /** 文本框 **/
@@ -145,7 +166,7 @@
         background:url(./Images/require_icon.png) no-repeat right top;
     }
     &.readonly,&.disabled{
-        background-color:#f2f2f2;color:#999;border-color:#ddd;
+        background-color:#f2f2f2;color:#999;border-color:@borderDefaultColor;
     }
     &.title{
         background-image:url(./Images/rule.png);
