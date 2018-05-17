@@ -684,13 +684,6 @@
 .ui-col-2 .ui-select-input {
   width: 68px;
 }
-.ui-label {
-  display: block;
-  font-size: 12px;
-  color: #333;
-  line-height: 22px;
-  padding: 10px 0 6px;
-}
 /***Airele登录页***/
 .main-login {
   width: 480px;
@@ -818,6 +811,92 @@
   border-radius: 3px;
   background: none;
   color: #fafafa;
+}
+/***设置密码***/
+.ui-label {
+  display: block;
+  font-size: 12px;
+  color: #333;
+  line-height: 22px;
+  padding: 10px 0 6px;
+}
+.ui-pop-foot {
+  background-color: #fafafa;
+  border-top: 1px solid #ddd;
+  text-align: right;
+  position: absolute;
+  padding: 8px 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+/** 文本框 **/
+.ui-text-input {
+  height: 25px;
+  *line-height: 25px;
+  line-height: 25px\0;
+  margin: 0;
+  padding: 0 5px;
+  border: 1px solid #ddd;
+  font-size: 12px;
+}
+.ui-text-input.focus {
+  border-color: #9dd0ff;
+}
+.ui-text-input.require {
+  background: url(Images/require_icon.png) no-repeat right top;
+}
+.ui-text-input.readonly,
+.ui-text-input.disabled {
+  background-color: #f2f2f2;
+  color: #999;
+  border-color: #ddd;
+}
+.ui-text-input.title {
+  background-image: url(Images/rule.png);
+  background-repeat: no-repeat;
+  background-position: 5px bottom;
+}
+/** 按钮 **/
+.ui-button {
+  padding: 0 15px;
+  margin: 0;
+  border: 0;
+  font-size: 14px;
+  background-color: #409eff;
+  color: #FFF;
+  height: 30px;
+  line-height: 30px;
+  display: inline-block;
+  vertical-align: top;
+  *display: inline;
+  *zoom: 1;
+  *overflow: visible;
+  text-align: center;
+  box-sizing: content-box;
+  border-radius: 4px;
+}
+.ui-button.small {
+  font-size: 12px;
+  height: 27px;
+  line-height: 27px;
+}
+.ui-button.medium {
+  font-size: 14px;
+  height: 32px;
+  line-height: 32px;
+  min-width: 40px;
+}
+.ui-button.large {
+  font-size: 16px;
+  height: 36px;
+  line-height: 36px;
+}
+.ui-button.long {
+  width: 300px;
+}
+.ui-button.bold {
+  font-weight: 700;
 }
 /***自定义ArtDialog样式***/
 .ui-dialog.ui_success {

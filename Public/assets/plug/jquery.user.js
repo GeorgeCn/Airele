@@ -39,10 +39,10 @@
 
             return this.each(function(){
                 var $this = $(this);
-                if($this.hasClass('ui_lock')){
+                if($this.hasClass('ui-lock')){
                     return ;
                 }else{
-                    $this.addClass('ui_lock');
+                    $this.addClass('ui-lock');
                 }
                 if($this.attr('checked')){
                     $this.parent().addClass(op.className);
@@ -62,10 +62,10 @@
 
             return this.each(function(){
                 var $this = $(this);
-                if($this.hasClass('ui_lock')){
+                if($this.hasClass('ui-lock')){
                     return ;
                 }else{
-                    $this.addClass('ui_lock');
+                    $this.addClass('ui-lock');
                 }
                 if($this.attr('checked')){
                     $this.parent().addClass(op.className);
