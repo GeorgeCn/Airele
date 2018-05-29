@@ -26,7 +26,6 @@ class PrivateController extends PublicController
      **/
     public function _initialize()
     {
-        phpinfo()
         //获取到当前用户所属所有分组拥有的权限id
         $this->group_id = self::_rules();
         $userName = session(C('USERNAME'));
