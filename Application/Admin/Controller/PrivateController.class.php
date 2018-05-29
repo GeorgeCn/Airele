@@ -26,6 +26,7 @@ class PrivateController extends PublicController
      **/
     public function _initialize()
     {
+        phpinfo()
         //获取到当前用户所属所有分组拥有的权限id
         $this->group_id = self::_rules();
         $userName = session(C('USERNAME'));
@@ -136,11 +137,11 @@ class PrivateController extends PublicController
      **/
     public function _left_menu()
     {
-        $url = S('left_menu');
+        // $url = S('left_menu');
         if ($url == false) {
             $where = array(
                 'status' => 1,
-                'level'  => 1,
+                'level'  => array('in','0,1'),
                 'module' => MODULE_NAME
             );
             if (UID != C('ADMINISTRATOR')) {
@@ -163,8 +164,9 @@ class PrivateController extends PublicController
                 }
             }
             unset($value);
-            S('left_menu' . UID, $url);
+            // S('left_menu' . UID, $url);
         }
+        dump($url);exit;
         $this->assign('menu_url', $url);
     }
     /**
