@@ -140,7 +140,6 @@ class PrivateController extends PublicController
         if ($url == false) {
             $where = array(
                 'status' => 1,
-                'level'  => array('in','0,1'),
                 'module' => MODULE_NAME
             );
             if (UID != C('ADMINISTRATOR')) {
@@ -148,25 +147,22 @@ class PrivateController extends PublicController
             }
             $model = D('auth_cate');
             $url = $model->where($where)->order('sort DESC')->select();
-            foreach ($url as $key => &$value) {
-                $where = array(
-                    'pid' => $value['id'],
-                    'status' => 1,
-                    'is_menu' => array('neq',0)
+            foreach ($url as $key => $value) {
+                $menu['childrenAttributes'] = array(
+                    'id'    => 'sideMenu',
+                    'class' => 'nav',
                 );
-                $info = $model->where($where)->count();
-                if($info){
-                    array_splice($url, $key,1);
-                }else{
-                    $urls = $value['name'] . '/index';
-                    $value['name'] = U($urls); 
+                if(0 == $value['level']) {
+                    $menu['children'][$value['title']] =['url' => 'Index/index.html','name' => $value['title'], 'attribute' =>['icon_class'=>$value['icon_class']]]; 
+                } elseif(1 == $value['level']) {
+                    $menu['children'][$value['title']] =['url' => '#','name' => $value['title'], 'attribute' =>['icon_class'=>$value['icon_class']]];
+                } else {
+                    $menu['children'][$value['pid_name']]['children'][]=['url' => '/'.$value['name'].'.html', 'name' => $value['title'], 'attribute' =>['icon_class'=>$value['icon_class']]];
                 }
             }
-            unset($value);
             // S('left_menu' . UID, $url);
         }
-        dump($url);exit;
-        $this->assign('menu_url', $url);
+        $this->assign('menu_url', $menu);
     }
     /**
      * 列表上方菜单

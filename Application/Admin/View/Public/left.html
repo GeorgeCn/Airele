@@ -33,16 +33,32 @@
 		</div>
 	</div><!-- #sidebar-shortcuts -->
 
-	<ul class="nav nav-list">
-		<volist name="menu_url" id="vo">
-			<assign name="title" value="$vo['title']" />
-			<li <eq name="title" value="控制台">class="active"</eq>>
-				<a href="{{$vo['name']}}">
-					<i class="$vo['icon_class']"></i>
-					<span class="menu-text"> {{$title}} </span>
+	<assign name="attribute" value="$menu_url['childrenAttributes']['id']" />
+	<ul class="nav nav-list" id={{$attribute}}>
+		<foreach name="menu_url['children']" item="vo" key="k">
+			<li class="">
+				<a href={{$vo['url']}} class="dropdown-toggle">
+					<i class={{$vo['attribute']['icon_class']}}></i>
+					<span class="menu-text"> {{$k}} </span>
+
+					<notempty name="vo['children']">
+					    <b class="arrow icon-angle-right"></b>
+					</notempty>
 				</a>
+				<notempty name="vo['children']">
+					<ul class="submenu">
+						<volist name="vo['children']" id="vo2">
+							<li>
+								<a href={{$vo2['url']}}>
+									<i class="icon-double-angle-right"></i>
+									{{$vo2['name']}}
+								</a>
+							</li>
+						</volist>
+					</ul>
+				</notempty>
 			</li>
-		</volist>
+		</foreach>
 	</ul>
 
 	<div class="sidebar-collapse" id="sidebar-collapse">
@@ -51,5 +67,17 @@
 
 	<script type="text/javascript">
 		try{ace.settings.check('sidebar' , 'collapsed')}catch(e){}
+	</script>
+	<script type="text/javascript">
+		$(function(){
+			$(".dropdown-toggle").parent("li").on("click", function(){
+				var $class = $(this).attr("class");
+				if("open" == $class) {
+					$(this).find("b").attr("class", "arrow icon-angle-right");
+				} else {
+					$(this).find("b").attr("class", "arrow icon-angle-down");
+				}
+			})
+		})
 	</script>
 </div>

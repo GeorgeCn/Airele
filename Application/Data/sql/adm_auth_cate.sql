@@ -51,3 +51,7 @@ INSERT INTO `adm_auth_cate` VALUES ('18', '路由管理', '1', 'Admin', 'Rules',
 INSERT INTO `adm_auth_cate` VALUES ('19', '规则列表', '2', 'Admin', 'Rules', 'lists', 'Admin/Rules/lists', '28', '99', '', '0', '1', '');
 INSERT INTO `adm_auth_cate` VALUES ('20', '控制台', '0', 'Admin', '', '', 'Admin', '0', '99', '', '1', '1', 'icon-dashboard');
 INSERT INTO `adm_auth_cate` VALUES ('21', '文字排版', '1', 'Admin', 'Typograpy', 'typography', 'Admin/Typograpy', '20', '99', '', '1', '1', 'icon-dashboard');
+INSERT INTO `adm_auth_cate` VALUES ('22', '标题', '2', 'Admin', 'Typograpy', 'title', 'Admin/Typograpy/title', '20', '99', '', '1', '1', '');
+INSERT INTO `adm_auth_cate` VALUES ('23', 'UI组件', '1', 'Admin', 'UIElements', 'uielements', 'Admin/UIElements', '20', '99', '', '1', '1', 'icon-desktop');
+INSERT INTO `adm_auth_cate` VALUES ('24', '组件', '2', 'Admin', 'UIElements', 'elements', 'Admin/UIElements/elements', '20', '99', '', '1', '1', '');
+INSERT INTO `adm_auth_cate` VALUES ('25', '按钮 & 图表', '2', 'Admin', 'UIElements', 'buttons', 'Admin/UIElements/buttons', '20', '99', '', '1', '1', '');
